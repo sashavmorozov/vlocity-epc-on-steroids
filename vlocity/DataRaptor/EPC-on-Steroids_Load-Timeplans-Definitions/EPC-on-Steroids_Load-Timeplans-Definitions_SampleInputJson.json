@@ -1,0 +1,54 @@
+{
+    "Timeplans": [
+        {
+            "Active": "Yes",
+            "Description": "Charge daily",
+            "Effective End Date": "Thu Apr 30 2020 09:00:00 GMT+0200 (CEST)",
+            "Effective Start Date": "Tue Apr 30 2019 09:00:00 GMT+0200 (CEST)",
+            "Timeplan Code": "VEPC_TIMEPLAN_TP_1D",
+            "Timeplan Name": "XXTP-1D",
+            "Total Duration": "1",
+            "Total Duration UoM": "Day"
+        },
+        {
+            "Active": "Yes",
+            "Description": "Charge weekly",
+            "Effective End Date": "Thu Apr 30 2020 09:00:00 GMT+0200 (CEST)",
+            "Effective Start Date": "Tue Apr 30 2019 09:00:00 GMT+0200 (CEST)",
+            "Timeplan Code": "VEPC_TIMEPLAN_TP_1W",
+            "Timeplan Name": "XXTP-1W",
+            "Total Duration": "1",
+            "Total Duration UoM": "Week"
+        },
+        {
+            "Active": "Yes",
+            "Description": "Charge monthly",
+            "Effective End Date": "Thu Apr 30 2020 09:00:00 GMT+0200 (CEST)",
+            "Effective Start Date": "Tue Apr 30 2019 09:00:00 GMT+0200 (CEST)",
+            "Timeplan Code": "VEPC_TIMEPLAN_TP_1M",
+            "Timeplan Name": "XXTP-1M",
+            "Total Duration": "1",
+            "Total Duration UoM": "Month"
+        },
+        {
+            "Active": "Yes",
+            "Description": "Charge quarterly",
+            "Effective End Date": "Thu Apr 30 2020 09:00:00 GMT+0200 (CEST)",
+            "Effective Start Date": "Tue Apr 30 2019 09:00:00 GMT+0200 (CEST)",
+            "Timeplan Code": "VEPC_TIMEPLAN_TP_1Q",
+            "Timeplan Name": "XXTP-1Q",
+            "Total Duration": "1",
+            "Total Duration UoM": "Quarter"
+        },
+        {
+            "Active": "Yes",
+            "Description": "Charge annually",
+            "Effective End Date": "Thu Apr 30 2020 09:00:00 GMT+0200 (CEST)",
+            "Effective Start Date": "Tue Apr 30 2019 09:00:00 GMT+0200 (CEST)",
+            "Timeplan Code": "VEPC_TIMEPLAN_TP_1Y",
+            "Timeplan Name": "XXTP-1Y",
+            "Total Duration": "1",
+            "Total Duration UoM": "Year"
+        }
+    ]
+}

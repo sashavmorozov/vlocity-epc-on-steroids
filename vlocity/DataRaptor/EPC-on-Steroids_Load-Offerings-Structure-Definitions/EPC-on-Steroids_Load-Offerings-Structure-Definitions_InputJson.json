@@ -1,0 +1,60 @@
+{
+    "Offerings Structure": [
+        {
+            "Child Offer": "AMOROZOV Default mobile subscription",
+            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SUBSCRIPTION",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "AMOROZOV 321 Offer",
+            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": "10",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "AMOROZOV Default Mobile subscriber ISDN",
+            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SUBSCRIBER_ISDN",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "AMOROZOV 321 Offer",
+            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": "20",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "AMOROZOV Default Mobile SUBSCRIBER",
+            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SUBSCRIBER",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "AMOROZOV 321 Offer",
+            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": "30",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "AMOROZOV Default Mobile SIM card",
+            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SIM_CARD",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "AMOROZOV 321 Offer",
+            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": "40",
+            "Virtual Item": "No"
+        }
+    ]
+}

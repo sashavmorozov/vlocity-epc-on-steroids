@@ -1,0 +1,274 @@
+{
+    "Pricelist Elements-Charges": [
+        {
+            "Amount": "1",
+            "Currency Code": "EUR",
+            "Display Text": "EUR1.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_1_00_EUR",
+            "Pricing Element Name": "MRC-1.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "2",
+            "Currency Code": "EUR",
+            "Display Text": "EUR2.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_2_00_EUR",
+            "Pricing Element Name": "MRC-2.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "3",
+            "Currency Code": "EUR",
+            "Display Text": "EUR3.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_3_00_EUR",
+            "Pricing Element Name": "MRC-3.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "4",
+            "Currency Code": "EUR",
+            "Display Text": "EUR4.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_4_00_EUR",
+            "Pricing Element Name": "MRC-4.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "5",
+            "Currency Code": "EUR",
+            "Display Text": "EUR5.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_5_00_EUR",
+            "Pricing Element Name": "MRC-5.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "10",
+            "Currency Code": "EUR",
+            "Display Text": "EUR10.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_10_00_EUR",
+            "Pricing Element Name": "MRC-10.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "20",
+            "Currency Code": "EUR",
+            "Display Text": "EUR20.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_20_00_EUR",
+            "Pricing Element Name": "MRC-20.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "30",
+            "Currency Code": "EUR",
+            "Display Text": "EUR30.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_30_00_EUR",
+            "Pricing Element Name": "MRC-30.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "40",
+            "Currency Code": "EUR",
+            "Display Text": "EUR40.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_40_00_EUR",
+            "Pricing Element Name": "MRC-40.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "50",
+            "Currency Code": "EUR",
+            "Display Text": "EUR50.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_50_00_EUR",
+            "Pricing Element Name": "MRC-50.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "60",
+            "Currency Code": "EUR",
+            "Display Text": "EUR60.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_60_00_EUR",
+            "Pricing Element Name": "MRC-60.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "70",
+            "Currency Code": "EUR",
+            "Display Text": "EUR70.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_70_00_EUR",
+            "Pricing Element Name": "MRC-70.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "80",
+            "Currency Code": "EUR",
+            "Display Text": "EUR80.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_80_00_EUR",
+            "Pricing Element Name": "MRC-80.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "90",
+            "Currency Code": "EUR",
+            "Display Text": "EUR90.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_90_00_EUR",
+            "Pricing Element Name": "MRC-90.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "100",
+            "Currency Code": "EUR",
+            "Display Text": "EUR100.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_100_00_EUR",
+            "Pricing Element Name": "MRC-100.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": "1",
+            "Currency Code": "EUR",
+            "Display Text": "EUR1.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_1_00_EUR",
+            "Pricing Element Name": "OTC-1.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "2",
+            "Currency Code": "EUR",
+            "Display Text": "EUR2.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_2_00_EUR",
+            "Pricing Element Name": "OTC-2.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "3",
+            "Currency Code": "EUR",
+            "Display Text": "EUR3.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_3_00_EUR",
+            "Pricing Element Name": "OTC-3.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "4",
+            "Currency Code": "EUR",
+            "Display Text": "EUR4.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_4_00_EUR",
+            "Pricing Element Name": "OTC-4.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "5",
+            "Currency Code": "EUR",
+            "Display Text": "EUR5.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_5_00_EUR",
+            "Pricing Element Name": "OTC-5.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "10",
+            "Currency Code": "EUR",
+            "Display Text": "EUR10.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_10_00_EUR",
+            "Pricing Element Name": "OTC-10.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "20",
+            "Currency Code": "EUR",
+            "Display Text": "EUR20.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_20_00_EUR",
+            "Pricing Element Name": "OTC-20.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "30",
+            "Currency Code": "EUR",
+            "Display Text": "EUR30.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_30_00_EUR",
+            "Pricing Element Name": "OTC-30.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "40",
+            "Currency Code": "EUR",
+            "Display Text": "EUR40.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_40_00_EUR",
+            "Pricing Element Name": "OTC-40.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "50",
+            "Currency Code": "EUR",
+            "Display Text": "EUR50.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_50_00_EUR",
+            "Pricing Element Name": "OTC-50.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "60",
+            "Currency Code": "EUR",
+            "Display Text": "EUR60.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_60_00_EUR",
+            "Pricing Element Name": "OTC-60.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "70",
+            "Currency Code": "EUR",
+            "Display Text": "EUR70.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_70_00_EUR",
+            "Pricing Element Name": "OTC-70.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "80",
+            "Currency Code": "EUR",
+            "Display Text": "EUR80.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_80_00_EUR",
+            "Pricing Element Name": "OTC-80.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "90",
+            "Currency Code": "EUR",
+            "Display Text": "EUR90.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_90_00_EUR",
+            "Pricing Element Name": "OTC-90.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": "100",
+            "Currency Code": "EUR",
+            "Display Text": "EUR100.00",
+            "Pricelist": "Kek",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_100_00_EUR",
+            "Pricing Element Name": "OTC-100.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        }
+    ]
+}

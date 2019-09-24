@@ -1,0 +1,73 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__Picklist__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Code__c",
+        "%vlocity_namespace%__GlobalKey__c": "0bdd0b8c-5ea2-6b5c-b0cb-4e12192d9b40",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Picklists:Picklist Code",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": true,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_PicklistsCustom9531",
+        "%vlocity_namespace%__UpsertKey__c": true,
+        "Name": "EPC on Steroids_Load Picklists Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__Picklist__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__DataType__c",
+        "%vlocity_namespace%__GlobalKey__c": "86b78513-a7aa-69c2-873f-fb02fc1f9f06",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Picklists:Data Type",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_PicklistsCustom5602",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Picklists Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__Picklist__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Description__c",
+        "%vlocity_namespace%__GlobalKey__c": "eb41a819-bd92-ce08-1dc6-d831c67c73b9",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Picklists:Description",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_PicklistsCustom8615",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Picklists Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__ConfigurationValue__c": "FAKEMAPPING",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__Picklist__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Id",
+        "%vlocity_namespace%__FilterOperator__c": "=",
+        "%vlocity_namespace%__GlobalKey__c": "612fe14d-01ab-dd0a-2047-df8edb15b792",
+        "%vlocity_namespace%__IsDisabled__c": true,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_PicklistsCustoma0h4J000000gNNkQAMItem0",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Picklists Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__Picklist__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Name",
+        "%vlocity_namespace%__GlobalKey__c": "9dba6d48-4526-4a6d-0ad5-ac123c558f38",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Picklists:Picklist Name",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_PicklistsCustom7778",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Picklists Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

@@ -1,0 +1,103 @@
+{
+    "Picklists": [
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_TYPE_OF_USAGE_PICKLIST",
+            "Picklist Name": "Type of Usage Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Number",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_OFFER_NATURE_PICKLIST",
+            "Picklist Name": "Offer Nature Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Date",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_LIMITED_UNILIMITED_PICKLIST",
+            "Picklist Name": "Limited Unilimited Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Date/Time",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_CALLING_AND_MESSAGING_DESTINATION_PICKLIST",
+            "Picklist Name": "Calling and Messaging Destination Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Boolean",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_ROAMING_ZONE_PICKLIST",
+            "Picklist Name": "Roaming Zone Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_DATA_USAGE_THEME_PICKLIST",
+            "Picklist Name": "Data Usage Theme Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_VALIDITY_UNIT_PICKLIST",
+            "Picklist Name": "Validity Unit Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_ALLOWANCE_UNIT_PICKLIST",
+            "Picklist Name": "Allowance Unit Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_PHONE_NUMBER_TYPE_PICKLIST",
+            "Picklist Name": "Phone Number Type Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_DELIVERY_TYPE_PICKLIST",
+            "Picklist Name": "Delivery Type Picklist",
+            "Status": "Active"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Effective End Date": "<Empty>",
+            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
+            "Picklist Code": "REBUS_PREVIOUS_SERVICE_PROVIDER_PICKLIST",
+            "Picklist Name": "Previous Service Provider Picklist",
+            "Status": "Active"
+        }
+    ]
+}

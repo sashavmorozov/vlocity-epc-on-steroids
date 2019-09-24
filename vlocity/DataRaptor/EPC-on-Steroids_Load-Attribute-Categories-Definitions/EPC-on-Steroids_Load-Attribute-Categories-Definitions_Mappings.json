@@ -1,0 +1,73 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Code__c",
+        "%vlocity_namespace%__GlobalKey__c": "809ac3b5-0f1f-6ba4-9362-d5ad2b452c69",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Attribute Categories:Attribute Category Code",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": true,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom1795",
+        "%vlocity_namespace%__UpsertKey__c": true,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Description__c",
+        "%vlocity_namespace%__GlobalKey__c": "077701ac-b37e-dd96-3250-cad3b8ecf211",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Attribute Categories:Description",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom622",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__DisplaySequence__c",
+        "%vlocity_namespace%__GlobalKey__c": "237cc8cf-474f-99e5-3715-faa81cd0c8f0",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Attribute Categories:Sequence",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom1598",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__ConfigurationValue__c": "FAKEMAPPING",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Id",
+        "%vlocity_namespace%__FilterOperator__c": "=",
+        "%vlocity_namespace%__GlobalKey__c": "6d6ad629-62d0-a855-c7b2-e33849035266",
+        "%vlocity_namespace%__IsDisabled__c": true,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustoma0h4J000000gNWVQA2Item0",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Name",
+        "%vlocity_namespace%__GlobalKey__c": "3c9ceb75-b627-6329-4a05-71d09fc8a3ba",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Attribute Categories:Attribute Category Name",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom5947",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

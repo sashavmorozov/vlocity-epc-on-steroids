@@ -1,0 +1,89 @@
+{
+    "Picklists": [
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_[EPC_ON_STEROIDS]_DEMO_PICKLIST",
+            "Picklist Name": "[EPC on Steroids] Demo Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_LOW_MEDIUM_HIGH_PICKLIST",
+            "Picklist Name": "Low Medium High Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_SMALL_MEDIUM_LARGE_PICKLIST",
+            "Picklist Name": "Small Medium Large Picklist"
+        },
+        {
+            "Data Type": "Number",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_1_2_3_PICKLIST",
+            "Picklist Name": "1 2 3 Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_YES_NO_PICKLIST",
+            "Picklist Name": "Yes No Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_CONTRACT_TERM_PICKLIST",
+            "Picklist Name": "Contract Term Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_CUSTOMER_CATEGORY_PICKLIST",
+            "Picklist Name": "Customer Category Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_ACCESS_MEDIA_PICKLIST",
+            "Picklist Name": "Access Media Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_BUY_RENT_PICKLIST",
+            "Picklist Name": "Buy Rent Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_DURATION_UNIT_PICKLIST",
+            "Picklist Name": "Duration Unit Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_DELIVERY_TYPE_PICKLIST",
+            "Picklist Name": "Delivery Type Picklist"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_SIM_FORMAT",
+            "Picklist Name": "SIM Format"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_VIP_DEMO_PICKLIST",
+            "Picklist Name": "VIP DEMO PICKLIST123"
+        },
+        {
+            "Data Type": "Text",
+            "Description": "",
+            "Picklist Code": "VEPC_PICKLIST_VIP_DEMO_PICKLIST2",
+            "Picklist Name": "VIP DEMO PICKLIST234"
+        }
+    ],
+    "dataRaptorName": "EPC Loader_00_Picklists"
+}

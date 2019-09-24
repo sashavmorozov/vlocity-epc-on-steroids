@@ -1,0 +1,48 @@
+{
+    "Pricelists": [
+        {
+            "Active": "Yes",
+            "Currency Code": "EUR",
+            "Description": "",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Loyalty Code": "PTS",
+            "Pricebook": "Standard Price Book",
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricelist Name": "2019"
+        },
+        {
+            "Active": "Yes",
+            "Currency Code": "USD",
+            "Description": "",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Loyalty Code": "PTS",
+            "Pricebook": "Standard Price Book",
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricelist Name": "2020"
+        },
+        {
+            "Active": "Yes",
+            "Currency Code": "EUR",
+            "Description": "",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Loyalty Code": "PTS",
+            "Pricebook": "Standard Price Book",
+            "Pricelist Code": "VEPC_PRICELIST_CONSUMER_EU",
+            "Pricelist Name": "Consumer-EU"
+        },
+        {
+            "Active": "Yes",
+            "Currency Code": "GBP",
+            "Description": "",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Loyalty Code": "PTS",
+            "Pricebook": "Standard Price Book",
+            "Pricelist Code": "VEPC_PRICELIST_CONSUMER_GB",
+            "Pricelist Name": "Consumer-GB"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "Offerings Structure": [
+        {
+            "Child Offer": "L1 Child Offer 1",
+            "Child Offer Code": "VEPC_OFFERING_L1_CHILD_OFFER_1",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "L0 Offer",
+            "Parent Offering Code": "VEPC_OFFERING_L0_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": "10",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "L1 Child Offer 1",
+            "Child Offer Code": "VEPC_OFFERING_L1_CHILD_OFFER_1",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "L0 Offer",
+            "Parent Offering Code": "VEPC_OFFERING_L0_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": "20",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "L2 Virtual Group",
+            "Child Offer Code": "VEPC_OFFERING_L2_VIRTUAL_GROUP",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "L1 Child Offer 1",
+            "Parent Offering Code": "VEPC_OFFERING_L1_CHILD_OFFER_1",
+            "Relationship Type": "Child",
+            "Sequence": "10",
+            "Virtual Item": "Yes"
+        },
+        {
+            "Child Offer": "L2 Child Offer 1-1",
+            "Child Offer Code": "VEPC_OFFERING_L2_CHILD_OFFER_1_1",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "L2 Virtual Group",
+            "Parent Offering Code": "VEPC_OFFERING_L2_VIRTUAL_GROUP",
+            "Relationship Type": "Child",
+            "Sequence": "10",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "L2 Child Offer 1-2",
+            "Child Offer Code": "VEPC_OFFERING_L2_CHILD_OFFER_1_2",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "L2 Virtual Group",
+            "Parent Offering Code": "VEPC_OFFERING_L2_VIRTUAL_GROUP",
+            "Relationship Type": "Child",
+            "Sequence": "20",
+            "Virtual Item": "No"
+        },
+        {
+            "Child Offer": "L2 Child Offer 1-3",
+            "Child Offer Code": "VEPC_OFFERING_L2_CHILD_OFFER_1_3",
+            "Collapse Hierarchy": "No",
+            "Def": "1",
+            "Max": "1",
+            "Min": "1",
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "L2 Virtual Group",
+            "Parent Offering Code": "VEPC_OFFERING_L2_VIRTUAL_GROUP",
+            "Relationship Type": "Child",
+            "Sequence": "30",
+            "Virtual Item": "No"
+        }
+    ]
+}

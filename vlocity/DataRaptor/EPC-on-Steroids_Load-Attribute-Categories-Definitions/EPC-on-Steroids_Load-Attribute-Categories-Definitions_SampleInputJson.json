@@ -1,0 +1,40 @@
+{
+    "Attribute Categories": [
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_GENERIC_ATTRIBUTES",
+            "Attribute Category Name": "Generic Attributes",
+            "Description": "Group for any attribute that does not fit to any specialized attribute group",
+            "Sequence": "7000"
+        },
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_SHIPPING_DETAILS",
+            "Attribute Category Name": "Shipping Details",
+            "Description": "Attributes related to delivery request",
+            "Sequence": "7010"
+        },
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_CONTRACT_DETAILS",
+            "Attribute Category Name": "Contract Details",
+            "Description": "Attributes related to contract",
+            "Sequence": "7020"
+        },
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_INSTALLATION_DETAILS",
+            "Attribute Category Name": "Installation Details",
+            "Description": "Attributes related to installation process",
+            "Sequence": "650"
+        },
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_OTHER_DETAILS",
+            "Attribute Category Name": "Other Details",
+            "Description": "All other attributes",
+            "Sequence": "660"
+        },
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_EPC_ON_STEROIDS_DEMO_DETAILS",
+            "Attribute Category Name": "EPC on Steroids Demo Details",
+            "Description": "EPC on steroids demo",
+            "Sequence": "670"
+        }
+    ]
+}

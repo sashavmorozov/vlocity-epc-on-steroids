@@ -1,0 +1,22 @@
+{
+    "Attribute Categories": [
+        {
+            "Attribute Category Code": "AMOROZOV_ATTRIBUTE_CATEGORY_GENERIC_ATTRIBUTES",
+            "Attribute Category Name": "Generic Attributes",
+            "Description": "Group for any attribute that does not fit to any specialized attribute group",
+            "Sequence": "7000"
+        },
+        {
+            "Attribute Category Code": "AMOROZOV_ATTRIBUTE_CATEGORY_SHIPPING_DETAILS",
+            "Attribute Category Name": "Shipping Details",
+            "Description": "Attributes related to delivery request",
+            "Sequence": "7010"
+        },
+        {
+            "Attribute Category Code": "AMOROZOV_ATTRIBUTE_CATEGORY_CONTRACT_DETAILS",
+            "Attribute Category Name": "Contract Details",
+            "Description": "Attributes related to contract",
+            "Sequence": "7020"
+        }
+    ]
+}
