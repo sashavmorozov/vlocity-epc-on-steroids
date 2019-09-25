@@ -5,7 +5,7 @@
     <label>Vlocity EPC on Steroids</label>
     <oauthConfig>
         <callbackUrl>https://</callbackUrl>
-        <consumerKey>3MVG9tzQRhEbH_K3fNsB5WwrTEIXFGc17ncx_flHhKpEXWieXdnvupHW0G5rN24xdj81nKtl0mNzjTuNk.MXa</consumerKey>
+        <consumerKey></consumerKey>
         <scopes>Full</scopes>
     </oauthConfig>
 </ConnectedApp>
