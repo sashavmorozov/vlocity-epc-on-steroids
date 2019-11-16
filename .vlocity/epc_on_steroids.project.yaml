@@ -1,8 +1,9 @@
 Name: EPC on Steroids
 VlocityDataPackKeys:
     - IntegrationProcedure/EPC_LoadGenericEPCDefinitions
-    - classes/DRUtils.cls
     - IntegrationProcedure/EPC_RegenerateJSONAttributes
+    - classes/DRUtils.cls
+    - IntegrationProcedure/EPC_ClearPlatformCache
 VlocityTypesToFetch:
     - DataRaptor
     - IntegrationProcedure
