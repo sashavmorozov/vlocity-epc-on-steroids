@@ -9,7 +9,7 @@
     "columnsPropertyMap": [
     ],
     "description": "",
-    "includeAllActionsInResponse": true,
+    "includeAllActionsInResponse": false,
     "labelPlural": "",
     "labelSingular": "",
     "linkToExternalObject": "",

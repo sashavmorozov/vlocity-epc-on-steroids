@@ -1,22 +1,8 @@
 Name: EPC on Steroids
 VlocityDataPackKeys:
-    - DataRaptor/EPC on Steroids_Load Attribute Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Attribute Categories Definitions
-    - DataRaptor/EPC on Steroids_Load Attribute-to-Object Type Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Attributes Definitions
-    - DataRaptor/EPC on Steroids_Load Object Types Definitions
-    - DataRaptor/EPC on Steroids_Load Offerings Definitions
-    - DataRaptor/EPC on Steroids_Load Offerings Structure Definitions
-    - DataRaptor/EPC on Steroids_Load Picklist Values Definitions
-    - DataRaptor/EPC on Steroids_Load Picklists Definitions
-    - DataRaptor/EPC on Steroids_Load Pricelist Elements-Adjustments Definitions
-    - DataRaptor/EPC on Steroids_Load Pricelist Elements-Charges Definitions
-    - DataRaptor/EPC on Steroids_Load Pricelists Definitions
-    - DataRaptor/EPC on Steroids_Load Pricing-Pricelist Entries Definitions
-    - DataRaptor/EPC on Steroids_Load Timeplans Definitions
     - IntegrationProcedure/EPC_LoadGenericEPCDefinitions
-    - connectedApps/Vlocity_EPC_on_Steroids.connectedApp
     - classes/DRUtils.cls
+    - IntegrationProcedure/EPC_RegenerateJSONAttributes
 VlocityTypesToFetch:
     - DataRaptor
     - IntegrationProcedure
