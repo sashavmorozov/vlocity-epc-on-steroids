@@ -1,0 +1,10 @@
+
+*.db
+
+*.ts
+
+.vscode/
+
+google_scripts/.clasp.json
+
+google_scripts/appsscript.json
