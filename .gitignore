@@ -10,3 +10,5 @@ google_scripts/.clasp.json
 google_scripts/appsscript.json
 
 .vlocity/epc_on_steroids.project.yaml
+
+.vlocity/
