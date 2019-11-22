@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('css/Stylesheet'); ?>
+  </head>
+  <body>
+    <div class="text-center">
+      <img src="https://github.com/sashavmorozov/github-content/blob/master/stub-content/steroids.png?raw=true"
+        class="rounded"
+        width="128" 
+        height="128"/>
+    </div>
+    <div class="text-center">
+      <br>
+      <h3>Allow Access?</h3>
+    </div>
+    <div class="">
+      <i>EPC on Steroids</i> requests access to data on your Salesforce organization. Do you want to authorize access?
+      <br><br>
+    </div>
+     <div class="">
+      <input type="button" class="btn btn-secondary float-lg-left text-left" style="width: 48%"value="Close" onclick="google.script.host.close()" />
+      <a class="btn btn-primary text-right" href="<?= authorizationUrl ?>" target="_blank" style="width: 48%; position: absolute; right: 0">Authorize</a>
+    </div>
+     <div class="text-left" style="position: absolute; bottom: 5px;">
+     <br>
+     <br>
+     <p class="text-muted" style="font-size: 10px;">To revoke access at any time, go to <i>Security</i> > <i>Disconnect from Salesforce</i></p>
+    </div>
+  </body>
+</html>

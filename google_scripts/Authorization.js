@@ -1,36 +1,7 @@
-/**
-  Generate access token to a Salesforce organization and stores it to the Settings tab
-*/
-
-function retrieveStoredAccessToken() {
-
-    var accessToken = SpreadsheetApp.getActive().getSheetByName("Settings").getRange(accessTokenNamedRange).getValue();
-    var instanceUrl = SpreadsheetApp.getActive().getSheetByName("Settings").getRange(instanceUrlNamedRange).getValue();
-
-    if (accessToken != null && instanceUrl != null &&
-        accessToken != '' && instanceUrl != '') {
-        var obj = {};
-        obj['accessToken'] = accessToken;
-        obj['instanceUrl'] = instanceUrl;
-
-        Logger.log('Successfully retrieved access token: ' + accessToken);
-        Logger.log('Successfully retrieved access instanceUrl: ' + instanceUrl);
-
-        return obj;
-    } else {
-        Logger.log('Error: Unable to retrieved access token');
-        return null;
-    }
-}
-
-//TODO: generate deploymentId runtime
-
 function getRedirectUri() {
 
-    var deploymentId = 'AKfycbyjMo4nSKyEhgXrnoeTyw-4lbDdzXWOTwc9_J6EeA'
-    var redirectUri = 'https://script.google.com/a/vlocity.com/macros/s/' + 
-        deploymentId + 
-        '/exec' + 
+    var redirectUri = 
+        ScriptApp.getService().getUrl() + 
         '/auth/callback';
     
     Logger.log(redirectUri);
@@ -44,8 +15,6 @@ function getScriptId() {
 
 function showSidebarWebServerAuthenticationFlow() {
 
-    //var organizationType = 'production';
-    //var customerKey = '3MVG9tzQRhEbH_K3fNsB5WwrTEIXFGc17ncx_flHhKpEXWieXdnvupHW0G5rN24xdj81nKtl0mNzjTuNk.MXa';
     var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
     var url = 'https://' +
         authenticationPrefix +
@@ -68,10 +37,8 @@ function showSidebarWebServerAuthenticationFlow() {
 }
 
 function retrieveTokenByCode(authorizationCode) {
-    //var organizationType = 'production';
-    //var customerKey = '3MVG9tzQRhEbH_K3fNsB5WwrTEIXFGc17ncx_flHhKpEXWieXdnvupHW0G5rN24xdj81nKtl0mNzjTuNk.MXa';
-    //var customerSecret = '8157374DC963037C29BA3406942DEF67C0C9168E93818FA731D31FFC9C1D8365';
-    var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
+
+  var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
     var url = 'https://' + authenticationPrefix + '.salesforce.com/services/oauth2/token';
 
     var payload =
@@ -79,22 +46,26 @@ function retrieveTokenByCode(authorizationCode) {
         'client_id=' + customerKey + '&' +
         'client_secret=' + customerSecret + '&' +
         'redirect_uri=' + getRedirectUri() + '&' +
-        'code=' + authorizationCode
+        'code=' + authorizationCode;
 
     var options = {
         'method': 'post',
-        //'contentType': 'application/json',
         'payload': payload,
         'muteHttpExceptions': true,
         'escaping': false
     };
 
-    Logger.log('***request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
+    Logger.log('*** request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
     var response = UrlFetchApp.fetch(url, options);
-    Logger.log('***response:' + response);
-
+    Logger.log('*** response:' + response);
+  
     var responseObj = JSON.parse(response);
-
+  
+  if (responseObj['error'] != '' || responseObj['error'] != null) {
+   
+    logProgress('Authorization', 'retrieveTokenByCode', 'Token retrieved successfully');
+    logProgress('Authorization', 'retrieveTokenByCode', response);
+    
     Logger.log('**** response.access_token: ' + responseObj.access_token);
     Logger.log('**** response.signature: ' + responseObj.signature);
     Logger.log('**** response.instance_url: ' + responseObj.instance_url);
@@ -103,13 +74,45 @@ function retrieveTokenByCode(authorizationCode) {
     persistTokenInformation(responseObj.access_token, responseObj.instance_url);
 
     return responseObj;
+  } else {
+    logProgress('Authorization', 'retrieveTokenByCode', 'Token is not retrieved successfully');
+    logProgress('Authorization', 'retrieveTokenByCode', response);
+    return responseObj;
+  }
 }
 
 function persistTokenInformation(accessToken, instanceUrl) {
-    var accessTokenCell = SpreadsheetApp.getActive().getSheetByName("Settings").getRange(accessTokenNamedRange);
-    var instanceUrlCell = SpreadsheetApp.getActive().getSheetByName("Settings").getRange(instanceUrlNamedRange);
-    accessTokenCell.setValue(accessToken);
-    instanceUrlCell.setValue(instanceUrl);
+    scriptProperties.setProperty('accessToken', accessToken);
+    scriptProperties.setProperty('instanceUrl', instanceUrl);   
 }
 
-function usercallback() {}
+function eraseTokenInformation() {
+    scriptProperties.setProperty('accessToken', '');
+    scriptProperties.setProperty('instanceUrl', '');   
+}
+
+/**
+  Generate access token to a Salesforce organization and stores it to the Settings tab
+*/
+
+function retrieveStoredAccessToken() {
+
+    var accessToken = scriptProperties.getProperty('accessToken');
+    var instanceUrl = scriptProperties.getProperty('instanceUrl');
+  
+    if (accessToken != null && instanceUrl != null &&
+        accessToken != '' && instanceUrl != '') {
+        var obj = {};
+        obj['accessToken'] = accessToken;
+        obj['instanceUrl'] = instanceUrl;
+
+        Logger.log('Successfully retrieved access token: ' + accessToken);
+        Logger.log('Successfully retrieved access instanceUrl: ' + instanceUrl);
+
+        return obj;
+    } else {
+        Logger.log('Error: Unable to retrieved access token');
+        return null;
+    }
+}
+

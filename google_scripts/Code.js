@@ -1,6 +1,3 @@
-var accessTokenNamedRange = 'accessTokenNamedRange';
-var instanceUrlNamedRange = 'instanceUrlNamedRange';
-
 sheetToDataraptorMapping = {};
 
 
@@ -24,19 +21,21 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var sheetName = sheet.getName();
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
 
-    if (!accessTokenObj) {
+    if (!accessTokenObj || 
+        !accessTokenObj.accessToken ||
+        !accessTokenObj.instanceUrl) {
         Logger.log('Error: Access token should be generated first');
 
         logProgress(
             sheetName,
             "Process Error",
-            "Access token should be generated first. Check the Settings tab"
+            "Access token should be generated first. Connect to Salesforce organization"
         );
 
-        operationNotification('Operation failed', 'Access token should be generated first. Check the Settings tab');
+        operationNotification('Operation failed', 'Access token should be generated first. Connect to Salesforce organization');
         return;
     }
-
+  
     var accessToken = accessTokenObj.accessToken;
     var url = accessTokenObj.instanceUrl + LOAD_GENERIC_EPC_DEFINITION_VIP;
 
@@ -81,7 +80,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
             'escaping': false
         };
 
-        Logger.log('***loadActiveSheetToVlocityEPC request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
+        Logger.log('*** loadActiveSheetToVlocityEPC request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
 
         logProgress(
             sheetName,

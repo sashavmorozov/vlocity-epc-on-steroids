@@ -1,11 +1,17 @@
 function doGet(request) {
  
-    var template = HtmlService.createTemplateFromFile('pages/AuthorizationConfirmation');
-    var tokenResponse = retrieveTokenByCode(request.parameter.code);
-    template.request = request;
-    template.instance_url = tokenResponse.instance_url;
+  var template = HtmlService.createTemplateFromFile('pages/AuthorizationConfirmation');
+  var tokenResponse = retrieveTokenByCode(request.parameter.code);
+  var page;
 
-    var page = template.evaluate();
+  if (tokenResponse['error'] != null || tokenResponse['error'] != '') {
+    template = HtmlService.createTemplateFromFile('pages/AuthorizationFailed'); 
+  }
 
-    return page;
+  template.request = request;
+  template.tokenResponse = tokenResponse;
+  
+  page = template.evaluate();
+
+  return page;
 }
