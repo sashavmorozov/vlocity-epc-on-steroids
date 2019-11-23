@@ -3,6 +3,7 @@
     <contactEmail>amorozov@vlocity.com</contactEmail>
     <contactPhone>+31641484041</contactPhone>
     <label>Vlocity EPC on Steroids</label>
+    <logoUrl>https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true</logoUrl>
     <oauthConfig>
         <callbackUrl>https://</callbackUrl>
         <consumerKey></consumerKey>
