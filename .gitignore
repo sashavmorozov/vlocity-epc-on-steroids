@@ -12,3 +12,5 @@ google_scripts/appsscript.json
 .vlocity/epc_on_steroids.project.yaml
 
 .vlocity/
+
+google_scripts/Configuration.js

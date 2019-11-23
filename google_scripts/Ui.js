@@ -9,7 +9,7 @@ function onOpen() {
         .addItem('Load Selected Rows to Vlocity EPC', 'loadSelectedRowsToVlocityEPC')
         .addSubMenu(SpreadsheetApp.getUi().createMenu('Security')
             .addItem('Connect to Salesforce', 'connectToSalesforce')
-            .addItem('Disconnect from Salesforce', 'eraseTokenInformation')
+            .addItem('Disconnect from Salesforce', 'disconnectFromSalesforce')
             .addItem('Get Callback URL', 'getRedirectUriMessageBox'))
 
         .addSubMenu(SpreadsheetApp.getUi().createMenu('EPC Jobs')
@@ -62,6 +62,14 @@ function connectToSalesforce(){
   }
 }
 
+function disconnectFromSalesforce(){
+    if (scriptProperties.getProperty('instanceUrl') && scriptProperties.getProperty('accessToken')) {
+        showDialogDisconnectFromSalesforce();
+    } else {
+        showDialogAlreadyDisconnected();
+    }
+  }
+
 function showDialogWebServerAuthenticationFlow() {
 
     var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
@@ -89,12 +97,33 @@ function showDialogWebServerAuthenticationFlow() {
 }
 
 function showDialogAuthorizationAlreadyCompleted() {  
-    var template = HtmlService.createTemplateFromFile('pages/AuthorizationAlreadyCompleted'); 
+    var template = HtmlService.createTemplateFromFile('pages/AlreadyConnectedDialog'); 
     template.instanceUrl = scriptProperties.getProperty('instanceUrl'); 
     var page = template.evaluate();
   
     page.setWidth(300)
       .setHeight(400);
 
-    SpreadsheetApp.getUi().showModalDialog(page, 'Already Connected to Salesforce');
+    SpreadsheetApp.getUi().showModalDialog(page, 'Already Connected');
+}
+
+function showDialogDisconnectFromSalesforce() {  
+    var template = HtmlService.createTemplateFromFile('pages/DisconnectDialog'); 
+    template.instanceUrl = scriptProperties.getProperty('instanceUrl'); 
+    var page = template.evaluate();
+  
+    page.setWidth(300)
+      .setHeight(400);
+
+    SpreadsheetApp.getUi().showModalDialog(page, 'Disconnect?');
+}
+
+function showDialogAlreadyDisconnected() {  
+    var template = HtmlService.createTemplateFromFile('pages/AlreadyDisconnectedDialog');  
+    var page = template.evaluate();
+  
+    page.setWidth(300)
+      .setHeight(400);
+
+    SpreadsheetApp.getUi().showModalDialog(page, 'Already Disconnected');
 }
