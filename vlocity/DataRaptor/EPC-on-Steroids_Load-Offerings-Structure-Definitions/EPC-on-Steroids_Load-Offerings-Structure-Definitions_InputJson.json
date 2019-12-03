@@ -1,60 +1,28 @@
 {
     "Offerings Structure": [
         {
-            "Child Offer": "AMOROZOV Default mobile subscription",
-            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SUBSCRIPTION",
+            "Checked": true,
+            "Child Offer": "EPC on Steroids. Demo Offer L2",
+            "Child Offer Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_OFFER_L2",
             "Collapse Hierarchy": "No",
-            "Def": "1",
-            "Max": "1",
-            "Min": "1",
+            "Def": 0,
+            "Max": 1,
+            "Min": 0,
             "Override Mode": "Not Applicable",
-            "Parent Offer": "AMOROZOV 321 Offer",
-            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
+            "Parent Offer": "EPC on Steroids. Demo Offer L1",
+            "Parent Offering Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_OFFER_L1",
             "Relationship Type": "Child",
-            "Sequence": "10",
-            "Virtual Item": "No"
-        },
-        {
-            "Child Offer": "AMOROZOV Default Mobile subscriber ISDN",
-            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SUBSCRIBER_ISDN",
-            "Collapse Hierarchy": "No",
-            "Def": "1",
-            "Max": "1",
-            "Min": "1",
-            "Override Mode": "Not Applicable",
-            "Parent Offer": "AMOROZOV 321 Offer",
-            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
-            "Relationship Type": "Child",
-            "Sequence": "20",
-            "Virtual Item": "No"
-        },
-        {
-            "Child Offer": "AMOROZOV Default Mobile SUBSCRIBER",
-            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SUBSCRIBER",
-            "Collapse Hierarchy": "No",
-            "Def": "1",
-            "Max": "1",
-            "Min": "1",
-            "Override Mode": "Not Applicable",
-            "Parent Offer": "AMOROZOV 321 Offer",
-            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
-            "Relationship Type": "Child",
-            "Sequence": "30",
-            "Virtual Item": "No"
-        },
-        {
-            "Child Offer": "AMOROZOV Default Mobile SIM card",
-            "Child Offer Code": "REBUS_AMOROZOV_DEFAULT_MOBILE_SIM_CARD",
-            "Collapse Hierarchy": "No",
-            "Def": "1",
-            "Max": "1",
-            "Min": "1",
-            "Override Mode": "Not Applicable",
-            "Parent Offer": "AMOROZOV 321 Offer",
-            "Parent Offering Code": "REBUS_AMOROZOV_321_OFFER",
-            "Relationship Type": "Child",
-            "Sequence": "40",
+            "Sequence": 10,
             "Virtual Item": "No"
         }
-    ]
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "cd13a136-71b6-48b6-91ba-65369c62206c",
+        "Transaction Timestamp": "03/12/2019@16:17:21GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Offerings Structure Definitions"
 }

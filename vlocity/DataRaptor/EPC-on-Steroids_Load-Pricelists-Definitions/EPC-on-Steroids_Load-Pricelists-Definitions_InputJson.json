@@ -2,47 +2,48 @@
     "Pricelists": [
         {
             "Active": "Yes",
+            "Checked": false,
             "Currency Code": "EUR",
             "Description": "",
-            "Effective End Date": "01/01/2099",
+            "Effective End Date": "01/01/2020",
             "Effective Start Date": "01/01/2019",
             "Loyalty Code": "PTS",
             "Pricebook": "Standard Price Book",
             "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricelist Name": "2019"
+            "Pricelist Name": 2019
         },
         {
             "Active": "Yes",
-            "Currency Code": "USD",
+            "Checked": false,
+            "Currency Code": "EUR",
             "Description": "",
-            "Effective End Date": "01/01/2099",
-            "Effective Start Date": "01/01/2019",
+            "Effective End Date": "01/01/2021",
+            "Effective Start Date": "01/01/2020",
             "Loyalty Code": "PTS",
             "Pricebook": "Standard Price Book",
             "Pricelist Code": "VEPC_PRICELIST_2020",
-            "Pricelist Name": "2020"
+            "Pricelist Name": 2020
         },
         {
             "Active": "Yes",
+            "Checked": false,
             "Currency Code": "EUR",
             "Description": "",
             "Effective End Date": "01/01/2099",
-            "Effective Start Date": "01/01/2019",
+            "Effective Start Date": "01/01/2021",
             "Loyalty Code": "PTS",
             "Pricebook": "Standard Price Book",
-            "Pricelist Code": "VEPC_PRICELIST_CONSUMER_EU",
-            "Pricelist Name": "Consumer-EU"
-        },
-        {
-            "Active": "Yes",
-            "Currency Code": "GBP",
-            "Description": "",
-            "Effective End Date": "01/01/2099",
-            "Effective Start Date": "01/01/2019",
-            "Loyalty Code": "PTS",
-            "Pricebook": "Standard Price Book",
-            "Pricelist Code": "VEPC_PRICELIST_CONSUMER_GB",
-            "Pricelist Name": "Consumer-GB"
+            "Pricelist Code": "VEPC_PRICELIST_2021",
+            "Pricelist Name": 2021
         }
-    ]
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "d45351ab-a625-4980-91ff-503334a38334",
+        "Transaction Timestamp": "03/12/2019@16:06:15GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Pricelists Definitions"
 }

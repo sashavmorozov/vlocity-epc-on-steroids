@@ -1,134 +1,19 @@
 {
     "Object Types": [
         {
-            "Description": "",
-            "Object Type": "H3G Base Object Type",
+            "Checked": true,
+            "Description": "Root object type for all types under Product2",
+            "Object Type": "Base Generic Object Type",
             "Parent Object Type": ""
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G Prepaid Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G Prepaid Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Logical Resource Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Physical Resource Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Customer Facing Service  Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G PostPaid Offer Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "PoP Logical Resource Object Type",
-            "Parent Object Type": "H3G PostPaid Offer Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "PoP Physical Resource Object Type",
-            "Parent Object Type": "H3G PostPaid Offer Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "PoP Customer Facing Service  Object Type",
-            "Parent Object Type": "H3G PostPaid Offer Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G Addons Object Type",
-            "Parent Object Type": "H3G Base Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon Data Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon Streaming Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon International Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon Sharing Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon TopUp Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon Voice Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon All-IN-One Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addon Text Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addons-Other Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "Addons-Family Object Type",
-            "Parent Object Type": "H3G Addons Object Type"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G Plan Object Type",
-            "Parent Object Type": "Common Object Descriptor"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G Default Mobile Object Type",
-            "Parent Object Type": "Common Object Descriptor"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G MSISDN Object Type",
-            "Parent Object Type": "Common Object Descriptor"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G Subscriber Object Type",
-            "Parent Object Type": "Common Object Descriptor"
-        },
-        {
-            "Description": "",
-            "Object Type": "H3G SIM Card Object Type",
-            "Parent Object Type": "Common Object Descriptor"
         }
-    ]
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "997ab259-1b47-4dd7-b8ef-ffa570beafee",
+        "Transaction Timestamp": "03/12/2019@16:13:47GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Object Types Definitions"
 }

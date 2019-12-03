@@ -1,604 +1,123 @@
 {
     "Pricelist Elements-Adjustments": [
         {
-            "Adjustment Amount": "1",
+            "Adjustment Amount": 1,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "1.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_1_00_EUR",
             "Pricing Element Name": "MRC-ADJ-ABS-1.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": "2",
+            "Adjustment Amount": 2,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "2.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_2_00_EUR",
             "Pricing Element Name": "MRC-ADJ-ABS-2.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": "3",
+            "Adjustment Amount": 3,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "3.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_3_00_EUR",
             "Pricing Element Name": "MRC-ADJ-ABS-3.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": "4",
+            "Adjustment Amount": 4,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "4.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_4_00_EUR",
             "Pricing Element Name": "MRC-ADJ-ABS-4.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": "5",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "5.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_5_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-5.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "10",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "10.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_10_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-10.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "20",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "20.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_20_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-20.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "30",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "30.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_30_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-30.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "40",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "40.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_40_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-40.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "50",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "50.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_50_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-50.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "60",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "60.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_60_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-60.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "70",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "70.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_70_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-70.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "80",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "80.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_80_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-80.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "90",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "90.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_90_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-90.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "100",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "100.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_100_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-100.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
             "Adjustment Amount": "",
-            "Adjustment Percent": "1",
+            "Adjustment Percent": 2,
+            "Checked": true,
             "Currency Code": "EUR",
-            "Display Text": "1.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_1_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-1.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "2",
-            "Currency Code": "EUR",
-            "Display Text": "2.00% Off",
-            "Pricelist": "Kek",
+            "Display Text": "2.00%  Off",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_2_00_PCT",
             "Pricing Element Name": "MRC-ADJ-PCT-2.00-PCT",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
         },
         {
             "Adjustment Amount": "",
-            "Adjustment Percent": "3",
+            "Adjustment Percent": 3,
+            "Checked": true,
             "Currency Code": "EUR",
-            "Display Text": "3.00% Off",
-            "Pricelist": "Kek",
+            "Display Text": "3.00%  Off",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_3_00_PCT",
             "Pricing Element Name": "MRC-ADJ-PCT-3.00-PCT",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
         },
         {
             "Adjustment Amount": "",
-            "Adjustment Percent": "4",
+            "Adjustment Percent": 4,
+            "Checked": true,
             "Currency Code": "EUR",
-            "Display Text": "4.00% Off",
-            "Pricelist": "Kek",
+            "Display Text": "4.00%  Off",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_4_00_PCT",
             "Pricing Element Name": "MRC-ADJ-PCT-4.00-PCT",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
         },
         {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "5",
-            "Currency Code": "EUR",
-            "Display Text": "5.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_5_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-5.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "10",
-            "Currency Code": "EUR",
-            "Display Text": "10.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_10_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-10.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "20",
-            "Currency Code": "EUR",
-            "Display Text": "20.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_20_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-20.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "30",
-            "Currency Code": "EUR",
-            "Display Text": "30.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_30_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-30.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "40",
-            "Currency Code": "EUR",
-            "Display Text": "40.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_40_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-40.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "50",
-            "Currency Code": "EUR",
-            "Display Text": "50.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_50_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-50.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "60",
-            "Currency Code": "EUR",
-            "Display Text": "60.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_60_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-60.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "70",
-            "Currency Code": "EUR",
-            "Display Text": "70.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_70_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-70.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "80",
-            "Currency Code": "EUR",
-            "Display Text": "80.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_80_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-80.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "90",
-            "Currency Code": "EUR",
-            "Display Text": "90.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_90_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-90.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "100",
-            "Currency Code": "EUR",
-            "Display Text": "100.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_100_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-100.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "1",
+            "Adjustment Amount": 1,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "1.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_1_00_EUR",
             "Pricing Element Name": "OTC-ADJ-ABS-1.00-EUR",
             "Pricing Variable": "One Time Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": "2",
+            "Adjustment Amount": 2,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "2.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_2_00_EUR",
             "Pricing Element Name": "OTC-ADJ-ABS-2.00-EUR",
             "Pricing Variable": "One Time Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": "3",
+            "Adjustment Amount": 3,
             "Adjustment Percent": "",
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "3.00EUR Off",
-            "Pricelist": "Kek",
+            "Pricelist": 2019,
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_3_00_EUR",
             "Pricing Element Name": "OTC-ADJ-ABS-3.00-EUR",
             "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "4",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "4.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_4_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-4.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "5",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "5.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_5_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-5.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "10",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "10.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_10_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-10.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "20",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "20.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_20_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-20.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "30",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "30.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_30_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-30.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "40",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "40.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_40_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-40.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "50",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "50.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_50_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-50.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "60",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "60.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_60_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-60.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "70",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "70.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_70_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-70.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "80",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "80.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_80_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-80.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "90",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "90.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_90_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-90.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "100",
-            "Adjustment Percent": "",
-            "Currency Code": "EUR",
-            "Display Text": "100.00EUR Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_100_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-100.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "1",
-            "Currency Code": "EUR",
-            "Display Text": "1.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_1_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-1.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "2",
-            "Currency Code": "EUR",
-            "Display Text": "2.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_2_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-2.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "3",
-            "Currency Code": "EUR",
-            "Display Text": "3.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_3_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-3.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "4",
-            "Currency Code": "EUR",
-            "Display Text": "4.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_4_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-4.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "5",
-            "Currency Code": "EUR",
-            "Display Text": "5.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_5_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-5.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "10",
-            "Currency Code": "EUR",
-            "Display Text": "10.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_10_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-10.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "20",
-            "Currency Code": "EUR",
-            "Display Text": "20.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_20_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-20.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "30",
-            "Currency Code": "EUR",
-            "Display Text": "30.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_30_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-30.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "40",
-            "Currency Code": "EUR",
-            "Display Text": "40.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_40_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-40.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "50",
-            "Currency Code": "EUR",
-            "Display Text": "50.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_50_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-50.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "60",
-            "Currency Code": "EUR",
-            "Display Text": "60.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_60_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-60.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "70",
-            "Currency Code": "EUR",
-            "Display Text": "70.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_70_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-70.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "80",
-            "Currency Code": "EUR",
-            "Display Text": "80.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_80_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-80.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "90",
-            "Currency Code": "EUR",
-            "Display Text": "90.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_90_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-90.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": "100",
-            "Currency Code": "EUR",
-            "Display Text": "100.00% Off",
-            "Pricelist": "Kek",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_PCT_100_00_PCT",
-            "Pricing Element Name": "OTC-ADJ-PCT-100.00-PCT",
-            "Pricing Variable": "One Time Std Price Adjustment Pct"
         }
-    ]
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "2f7c33cf-62a4-4195-b038-5a7a4d633bfb",
+        "Transaction Timestamp": "03/12/2019@16:47:58GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Pricelist Elements-Adjustments Definitions"
 }

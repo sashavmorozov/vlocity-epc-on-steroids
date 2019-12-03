@@ -1,103 +1,27 @@
 {
     "Picklists": [
         {
+            "Checked": true,
             "Data Type": "Text",
             "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_TYPE_OF_USAGE_PICKLIST",
-            "Picklist Name": "Type of Usage Picklist",
-            "Status": "Active"
+            "Picklist Code": "VEPC_PICKLIST_EPC_ON_STEROIDS_DEMO_PICKLIST",
+            "Picklist Name": "EPC on Steroids. Demo Picklist"
         },
         {
-            "Data Type": "Number",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_OFFER_NATURE_PICKLIST",
-            "Picklist Name": "Offer Nature Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Date",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_LIMITED_UNILIMITED_PICKLIST",
-            "Picklist Name": "Limited Unilimited Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Date/Time",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_CALLING_AND_MESSAGING_DESTINATION_PICKLIST",
-            "Picklist Name": "Calling and Messaging Destination Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Boolean",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_ROAMING_ZONE_PICKLIST",
-            "Picklist Name": "Roaming Zone Picklist",
-            "Status": "Active"
-        },
-        {
+            "Checked": true,
             "Data Type": "Text",
             "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_DATA_USAGE_THEME_PICKLIST",
-            "Picklist Name": "Data Usage Theme Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Text",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_VALIDITY_UNIT_PICKLIST",
-            "Picklist Name": "Validity Unit Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Text",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_ALLOWANCE_UNIT_PICKLIST",
-            "Picklist Name": "Allowance Unit Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Text",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_PHONE_NUMBER_TYPE_PICKLIST",
-            "Picklist Name": "Phone Number Type Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Text",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_DELIVERY_TYPE_PICKLIST",
-            "Picklist Name": "Delivery Type Picklist",
-            "Status": "Active"
-        },
-        {
-            "Data Type": "Text",
-            "Description": "",
-            "Effective End Date": "<Empty>",
-            "Effective Start Date": "Mon Jan 01 2018 09:00:00 GMT+0100 (CET)",
-            "Picklist Code": "REBUS_PREVIOUS_SERVICE_PROVIDER_PICKLIST",
-            "Picklist Name": "Previous Service Provider Picklist",
-            "Status": "Active"
+            "Picklist Code": "VEPC_PICKLIST_LOW_MEDIUM_HIGH_PICKLIST",
+            "Picklist Name": "Low Medium High Picklist"
         }
-    ]
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "15676044-8a41-413e-96ab-2f8adbfef678",
+        "Transaction Timestamp": "03/12/2019@15:52:36GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Picklists Definitions"
 }
