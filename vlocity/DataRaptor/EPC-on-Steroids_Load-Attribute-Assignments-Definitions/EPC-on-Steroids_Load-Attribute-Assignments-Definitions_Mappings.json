@@ -372,7 +372,7 @@
         "%vlocity_namespace%__IsDisabled__c": false,
         "%vlocity_namespace%__IsRequiredForUpsert__c": false,
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute Assignment_ExplicitCustom2402",
-        "%vlocity_namespace%__TransformValuesMap__c": "{\"true\":\"false\",\"fals\":\"true\"}",
+        "%vlocity_namespace%__TransformValuesMap__c": "{\"true\":\"false\",\"false\":\"true\"}",
         "%vlocity_namespace%__UpsertKey__c": false,
         "Name": "EPC on Steroids_Load Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",

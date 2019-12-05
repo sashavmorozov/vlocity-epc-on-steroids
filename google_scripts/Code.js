@@ -1,17 +1,85 @@
 sheetToDataraptorMapping = {};
 
+var loadingProcessProgress = 0;
+
 
 function loadActiveSheetToVlocityEPC() {
+    /* Before loading */
+    resetLoadingProcessProgress();
+    resetLoadingProcessStep();
+    resetLoadingProcessError();
+    
+    showProgressDialog();  
+  
     restoreCurrentTabName();
-    var epcConfiguration = exportActiveSheetAsJson();
+
+    /* Verify connection */
+    setLoadingProcessStep('Checking connection to Salesforce');  
+    if(!isConnectedToSalesforce()) {
+      completeLoadingProcessProgress();
+      raiseLoadingProcessError();
+      return;
+    }
+    
+    setLoadingProcessStep('Exporting data from the spreadsheet');
+  
+    /* Loading */
+    var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
+    
+    setLoadingProcessStep('Adding transactional data for tracking');
+    addTransactionDetails(epcConfiguration);
+  
+    setLoadingProcessStep('Loading data to Vlocity');
     loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+  
+    /* After loading */
+    completeLoadingProcessStep();
+    completeLoadingProcessProgress();
+    resetLoadingProcessError();
 }
 
+/** DEPRECATED, REPLACED WITH loadCheckedRowsToVlocityEPC **/
 function loadSelectedRowsToVlocityEPC() {
     restoreCurrentTabName();
     var epcConfiguration = exportSelectedRowsAsJson();
     loadConfigurationToVlocityEPCChunkable(epcConfiguration);
 }
+
+function loadCheckedRowsToVlocityEPC() {
+    /* Before loading */
+    resetLoadingProcessProgress();
+    resetLoadingProcessStep();
+    resetLoadingProcessError();
+    
+    showProgressDialog();  
+  
+    restoreCurrentTabName();
+
+    /* Verify connection */
+    setLoadingProcessStep('Checking connection to Salesforce');  
+    if(!isConnectedToSalesforce()) {
+      completeLoadingProcessProgress();
+      raiseLoadingProcessError();
+      return;
+    }
+    
+    setLoadingProcessStep('Exporting data from the spreadsheet');
+  
+    /* Loading */
+    var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
+    
+    setLoadingProcessStep('Adding transactional data for tracking');
+    addTransactionDetails(epcConfiguration);
+  
+    setLoadingProcessStep('Loading data to Vlocity');
+    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+  
+    /* After loading */
+    completeLoadingProcessStep();
+    completeLoadingProcessProgress();
+    resetLoadingProcessError();
+}
+
 
 function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var LOAD_GENERIC_EPC_DEFINITION_VIP = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/EPC_LoadGenericEPCDefinitions';
@@ -21,6 +89,8 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var sheetName = sheet.getName();
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
 
+    
+    //setLoadingProcessStep("Connecting to Salesforce");
     if (!accessTokenObj || 
         !accessTokenObj.accessToken ||
         !accessTokenObj.instanceUrl) {
@@ -65,6 +135,8 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         var chunkPayload = {};
         chunkPayload['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
         chunkPayload[sheetName] = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
+      
+        addTransactionDetails(chunkPayload);
 
         Logger.log('*** Chunk range: ' + (CHUNK_SIZE * i) + ', ' + (CHUNK_SIZE * (i + 1)));
         Logger.log('*** Chunk payload: ' + JSON.stringify(chunkPayload));
@@ -115,6 +187,8 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         }
 
         if (errorDetected == true) {
+            raiseLoadingProcessError();
+            
             logProgress(
                 sheetName,
                 "Process Error",
@@ -123,13 +197,16 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
 
         processedRecords = Math.min((i + 1) * CHUNK_SIZE, payloadAsJson[sheetName].length);
         sheet.setName(sheetName + ' (' + processedRecords + '/' + payloadAsJson[sheetName].length + ')');
-
-
+      
+        loadingProcessProgress = processedRecords / payloadAsJson[sheetName].length * 100;
+        updateLoadingProcessProgress(Math.round(loadingProcessProgress));
     }
 
     sheet.setName(sheetName + ' (Loaded)');
     sheet.setName(sheetName);
-
+  
+    completeLoadingProcessProgress();
+    completeLoadingProcessStep();
 
     logProgress(
         sheetName,
@@ -255,6 +332,92 @@ function exportSelectedRowsAsJson() {
 
     resultWrapper[sheet.getName()] = result;
     return (resultWrapper);
+}
+
+/* Generates JSON data structure using rows of a current sheet (active in browser) and export scope
+* @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
+* @return JSON object (not string)
+*/
+
+function exportRowsOfActiveSheetAsJson(exportScope) {
+    return exportRowsAsJson(SpreadsheetApp.getActiveSheet().getName(), exportScope);
+}
+
+/* Generates JSON data structure using rows of a sheet identified by name and export scope
+* @param string sheetName - name of a sheet
+* @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
+* @return JSON object (not string)
+*/
+
+function exportRowsAsJson(sheetName, exportScope) {
+    
+    if (!sheetName) {
+      Logger.log('*** No sheet name provided');
+      return null;
+    }
+  
+    if (!exportScope) {
+      Logger.log('*** No export scope provided, using default export scope (include all)');
+      exportScope = CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL; 
+    }
+  
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+    var dataRange = sheet.getDataRange();
+   
+    if (dataRange) {
+        var numRows = dataRange.getNumRows();
+        var numCols = dataRange.getNumColumns();
+      
+        Logger.log('*** Data Range number of rows: ' + numRows);
+        Logger.log('*** Data Range number of columns: ' + numCols);
+        
+        var values = dataRange.getValues();
+        var rowRangeOffset = CONST_FIRST_DATA_ROW_NUMBER - 1;
+
+        var result = [];
+        var resultWrapper = {};
+
+        var header = sheet.getDataRange().getValues()[CONST_HEADER_ROW_NUMBER];
+        if (!header) return;
+
+        for (var i = 0; i < header.length; i++) {
+            Logger.log('*** Header item[' + i + ']: ' + header[i]);
+        }
+
+        for (var i = rowRangeOffset; i < values.length; i++) {
+            var rowObj = {};
+            var row = values[i];
+            
+            if (!isEmptyArray(row)) {
+              if ((exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED && 
+                   row[CONST_CHECKED_COLUMN_NUMBER - 1] === true) || 
+                  exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL) {
+                
+                for (var j = 0; j < header.length; j++) {
+                    var value = row[j];
+
+                    if (value instanceof Date && !isNaN(value.valueOf())) {
+                        //apply special formatting for date values
+                        value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
+                    }
+                  
+                    rowObj[header[j]] = value;
+                }
+
+                if (rowObj != null) result.push(rowObj);
+              }
+            }
+        }
+    }
+   
+  if (result && result.length) {
+    resultWrapper[sheetName] = result;
+    return (resultWrapper);
+  } else {
+    return null;
+  }
+
+    
 }
 
 function loadSheetToDataraptorMapping() {

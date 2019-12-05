@@ -11,6 +11,68 @@ function restoreCurrentTabName() {
 
 }
 
+function getLoadingProcessInfo(){
+  //return Math.round(Math.random() * 100);
+  var currentProgress = {};
+  currentProgress["progress"] = userProperties.getProperty('loadingProcessProgress');
+  currentProgress["step"] = userProperties.getProperty('loadingProcessStep');
+  currentProgress["error"] = userProperties.getProperty('loadingProcessError');
+  
+  return currentProgress;
+}
+
+
+function resetLoadingProcessProgress() {
+    updateLoadingProcessProgress(0);
+}
+
+function completeLoadingProcessProgress() {
+    updateLoadingProcessProgress(100);
+}
+
+function updateLoadingProcessProgress(currentProcessProgress) {
+    loadingProcessProgress = currentProcessProgress;
+    userProperties.setProperty('loadingProcessProgress', loadingProcessProgress);
+}
+
+function resetLoadingProcessStep() {
+    setLoadingProcessStep("Just started");
+}
+
+function setLoadingProcessStep(step) {
+    userProperties.setProperty('loadingProcessStep', step);
+}
+
+function completeLoadingProcessStep() {
+    setLoadingProcessStep("Just finished. You can close the window and check records in Vlocity");
+}
+
+function resetLoadingProcessError() {
+    setLoadingProcessError(false);
+}
+
+function raiseLoadingProcessError() {
+    setLoadingProcessError(true);
+}
+
+function setLoadingProcessError(error) {
+    userProperties.setProperty('loadingProcessError', error);
+}
+  
+/* The function strips out leading sequential number from a string, if used. 
+* The leading sequential number is assumed to be separated from the main string part with a space
+* Examples:
+* "01. Offerings"   > "Offerings"
+* "1216. Offerings" > "Offerings"
+* "Offerings Test"  > "Offerings Test"
+*/
+
+function removeLeadingNumber(stringValue) {
+    var regex = /[0-9]*\.* /gi;
+    stringValue = stringValue.replace(regex, '');
+    return stringValue;
+}
+
 
 function regenerateJsonAttributes() {
   var activeRange = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getActiveRange();
@@ -183,47 +245,57 @@ function clearPlatformCache() {
   return result;
 }
 
-function regenerateLayoutsForObjectTypes() {
-  var activeSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var activeRange = activeSheet.getActiveRange();
-  var activeRangeValues = activeRange.getValues();  
-  var selectionWidth = activeRange.getLastColumn();
-  var tableWidth = activeSheet.getLastColumn();
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
-  var vipName = 'EPC_RegenerateLayoutsForObjectType';
-  var vipEndpoint = VIP_PREFIX + vipName;
-  var inputParameters = {};
-  var objectTypes = [];
+
+
+function regenerateLayoutsForCheckedObjectTypes() {
+    var activeSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   
-  if (selectionWidth != tableWidth || activeSheet.getName() != 'Object Types') {
-    operationNotification(
-      "Info",
-      "\nTo regenerate layouts for object types:\n\n " +  
-      " 1. Navigate to the Object Types tab\n" +
-      " 2. Select entire rows\n" + 
-      " 3. Start the procedure\n" + 
-      "\nThe layouts will be regenerated (removed and recreated) only for the selected object types records"
-    );
-    return;
-  }
+    if (activeSheet.getName() != 'Object Types') {
+      operationNotification(
+        "Info",
+        "\nTo regenerate layouts for object types:\n\n " +  
+        " 1. Navigate to the Object Types tab\n" +
+        " 2. Check object types to regenerate layouts for\n" + 
+        " 3. Start the procedure\n" + 
+        "\nThe layouts will be regenerated (removed and recreated) only for the selected object types records"
+      );
+      return;
+    }
   
-  for (i = 0; i < activeRange.getValues().length; i++) {
-    objectTypes.push(activeRangeValues[i][0]);
-  }
+    var objectTypesData = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
+    Logger.log('*** ' + JSON.stringify(objectTypesData));
   
-  inputParameters['targetObjectTypeName'] = objectTypes;
+    if (!objectTypesData) {
+      operationNotification(
+        "Info",
+        "\nTo regenerate layouts for object types:\n\n " +  
+        " 1. Navigate to the Object Types tab\n" +
+        " 2. Check object types to regenerate layouts for\n" + 
+        " 3. Start the procedure\n" + 
+        "\nThe layouts will be regenerated (removed and recreated) only for the selected object types records"
+      );
+      return;
+    }
   
-  var payload = JSON.stringify(inputParameters);
-  Logger.log('*** payload: ' + payload);
-  //var result = invokeVipByNameChunkable(vipName, payload);
+    regenerateLayouts(objectTypesData);
+}
+
+function regenerateLayouts(objectTypesData) {
+    var vipName = 'EPC_RegenerateLayoutsForObjectType';
+    var objectTypesArray = objectTypesData["Object Types"];
   
-  for (i = 0; i < objectTypes.length; i++) {
-    var singleItemPayload = {};
-    singleItemPayload['targetObjectTypeName'] = objectTypes[i];
-    invokeVipByName(vipName, JSON.stringify(singleItemPayload));
-  }
-  
-  //return result;
+    for (i = 0; i < objectTypesArray.length; i++) {
+      var singleItemPayload = {};
+      singleItemPayload['targetObjectTypeName'] = objectTypesArray[i]["Object Type"];
+      Logger.log('*** Regenerating layout for  ' + JSON.stringify(singleItemPayload));
+      logProgress(
+            "Object Types (Layouts)",
+            "Info",
+            "Regenerating layout for " + objectTypesArray[i]["Object Type"]
+        );
+      invokeVipByName(vipName, JSON.stringify(singleItemPayload));
+    }
+    
 }
 
 function viewScriptProperties() {
@@ -235,9 +307,66 @@ function viewScriptProperties() {
 }
 
 function shortenInstanceUrl(instanceUrl) {
-  var tag = instanceUrl.match(/https:\/\/(.*?)\./);
-  Logger.log('*** shortenInstanceUrl: ' + tag[1]);
-  return tag[1];
+  
+  if (instanceUrl) {
+    var tag = instanceUrl.match(/https:\/\/(.*?)\./);
+    if (tag) {
+      Logger.log('*** shortenInstanceUrl: ' + tag[1]);
+      return tag[1];
+    } else {
+      return instanceUrl;
+    }
+    
+  } else {
+    return "Error: nothing to shorten here";
+  }
 }
+
+/* The function checks if a propery has a non-empty/non-undefined value */
+function isScriptPropertySet(propertyName) {
+  var isPropertySet = false;
+  var propertyValue = scriptProperties.getProperty(propertyName);
+  if (propertyValue !== null &&
+      propertyValue !== undefined &&
+      propertyValue !== "undefined" &&
+      propertyValue !== "") {
+    isPropertySet = true;
+  } 
+  
+  return isPropertySet;
+}
+
+/* The function checks if access token and instance URL are set */
+function isConnectedToSalesforce() {
+  var isConnected = false;
+  
+  if (isScriptPropertySet(CONST_ACCESS_TOKEN_PROPERTY_NAME) && 
+      isScriptPropertySet(CONST_INSTANCE_URL_PROPERTY_NAME)) {
+    isConnected = true;
+  } 
+  
+  return isConnected;
+}
+
+/* The function generates UUID, credit to https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript */
+
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+/* The function verifies that properties for authorization are properly set */
+
+function areAuthorizationProperiesSet() {
+  if (!customerKey || customerKey === "PUT_YOUR_VALUE_HERE") return false;
+  if (!customerSecret || customerSecret === "PUT_YOUR_VALUE_HERE") return false;
+  if (!organizationType || organizationType === "PUT_YOUR_VALUE_HERE") return false;
+  
+  return true;
+}
+
+
 
 

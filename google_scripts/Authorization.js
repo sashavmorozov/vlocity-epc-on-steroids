@@ -87,8 +87,8 @@ function persistTokenInformation(accessToken, instanceUrl) {
 }
 
 function eraseTokenInformation() {
-    scriptProperties.setProperty('accessToken', '');
-    scriptProperties.setProperty('instanceUrl', '');   
+    scriptProperties.deleteProperty('accessToken');
+    scriptProperties.deleteProperty('instanceUrl');   
 }
 
 /**

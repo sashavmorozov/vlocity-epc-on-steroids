@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('css/Stylesheet'); ?>
+  </head>
+  <body>
+      <script>
+          window.open(<?= targetUrl ?>);
+          google.script.host.close();
+    </script>
+
+    Redirecting, one second. 
+    If not redirected click <?= targetUrl ?>
+  </body>
+</html>

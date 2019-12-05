@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <?!= include('css/Stylesheet'); ?>
+</head>
+
+    <body>
+        <div class="jumbotron" style="
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius:10px;
+            background: white">
+    
+            <div style="height: 64px;">
+                <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true" class="rounded" width="64" height="64" style="margin-right: 20px;">
+                <b><?= getApplicationName() ?></b>
+    
+            </div>
+            <hr style="
+                margin-top: 10px;
+                margin-bottom: 10px;">
+    
+            <div style="margin-top: 20px;" class="">
+                <div style="height: 30px;">Application version <?= getApplicationVersion() ?></div>
+                <div style="height: 30px;">Get help with <?= getApplicationName() ?>: <a target=_bank href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki">Help center</a></div>
+                <div style="height: 30px;">Submit an idea: <a target=_bank href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki/Suggest-an-Idea">Click</a></div>
+                <div style="height: 30px;">Report an issue: <a target=_bank href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki/Report-an-Issue">Click</a></div>
+            </div>
+        </div>
+    
+        <div class="jumbotron" style="
+        padding-left: 10px;
+        padding-right: 10px;
+        " hidden>
+            <div style="margin-top: 20px;" class="" hidden="">
+                    <div style="height: 40px;">Copyright</div>
+                    <div style="height: 40px;">Terms of Service</div>
+            </div>
+        </div>
+        
+        <div class="">
+            <input type="button" class="btn btn-primary" style="width: 100%; position: absolute; bottom: 0px;" value="Close" onclick="google.script.host.close()" />
+        </div>
+    
+    </body>
+</html>

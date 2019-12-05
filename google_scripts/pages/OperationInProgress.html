@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <?!= include('css/Stylesheet'); ?>
+  <script>
+    function viewLogs() {
+      google.script.run.viewLogs();
+      google.script.host.close();
+    }
+  </script>
+</head>
+
+<body>
+  <div style="
+            border-radius:10px;
+            background: white">
+
+    <div style="height: 32px;"></div>
+    <div style="height: 32px;">
+      We are processing your request, hold tight.
+    </div>
+    <div id="loading-process-step" class="" style="height: 64px;">
+      Current step:
+    </div>
+    <div class="progress">
+
+      <div id="loading-process-progress" class="progress-bar progress-bar-striped active" role="progressbar"
+        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+        <span id="current-progress"></span>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script id="rendered-js">
+        $(function () {
+          var current_progress = 0;
+          var interval = setInterval(function () {
+            google.script.run.withSuccessHandler(onSuccess).getLoadingProcessInfo();
+
+            if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
+              clearInterval(interval);
+              $("#loading-process-progress").
+                removeClass("active").
+                addClass("progress-bar-success");
+
+              $("#view-logs").
+                prop('disabled', false);
+              
+              if ($("#loading-process-progress").hasClass("progress-bar-success")) {
+                $("#success-alert").
+                  prop('hidden', false);
+                }
+            }
+          }, 500);
+        });
+
+        function onSuccess(current_progress) {
+          var progress = current_progress["progress"];
+          var step = current_progress["step"];
+          var error = current_progress["error"];
+
+          $("#loading-process-progress").
+            css("width", progress + "%").
+            attr("aria-valuenow", progress).
+            text(progress + "%");
+
+          $("#loading-process-step").
+            html("Current step: " + step);
+
+          if (error === "true") {
+            $("#loading-process-progress").
+              removeClass("progress-bar-success").
+              addClass("progress-bar-danger");
+
+            $("#error-alert").
+              prop('hidden', false);
+              
+            $("#view-logs").
+                prop('disabled', false);
+          }
+        }
+      </script>
+    </div>
+
+  </div>
+
+  <div id="error-alert" class="alert alert-danger" role="alert" hidden>
+    An error was detected during the loading process. Check logs for more details
+  </div>
+
+  <div id="success-alert" class="alert alert-success" role="alert" hidden>
+    The loading process completed. No errors detected
+  </div>
+
+  <div class="" style="
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  ">
+    <input type="button" class="btn btn-primary" style="width: 100px;float: right;margin-left: 10px;"
+      value="Close" onclick="google.script.host.close()">
+
+    <input id="view-logs" type="button" class="btn btn-primary" style="width: 100px; float: right;" value="View Logs"
+      onclick="viewLogs()" disabled>
+
+  </div>
+
+</body>
+
+</html>

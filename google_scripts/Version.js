@@ -1,0 +1,2 @@
+var CONST_APPLICATION_VERSION = "0.4";
+var CONST_APPLICATION_NAME    = "EPC on Steroids";
