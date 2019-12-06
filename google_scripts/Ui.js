@@ -49,7 +49,7 @@ function buildMenu() {
         .createMenu("Miscellaneous")
         .addItem("📜 View Logs", "viewLogs")
         .addItem("🧹 Clear Logs", "clearLogs")
-        .addItem("🗛 Make Fancy Fonts", "applyUniformFontsAndAlignment")
+        .addItem("🗛 Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet")
     )
     .addToUi();
 

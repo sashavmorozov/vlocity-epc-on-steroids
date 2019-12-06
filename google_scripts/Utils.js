@@ -73,7 +73,7 @@ function removeLeadingNumber(stringValue) {
     return stringValue;
 }
 
-
+/*update me to support checkboxes*/
 function regenerateJsonAttributes() {
   var activeRange = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getActiveRange();
   var activeRangeValues = activeRange.getValues();  
@@ -98,7 +98,7 @@ function regenerateJsonAttributes() {
   }
   
   for (i = 0; i < activeRange.getValues().length; i++) {
-    productCodes.push(activeRangeValues[i][1]);
+    productCodes.push(activeRangeValues[i][2]);
   }
   
   inputParameters['productCodes'] = productCodes;
@@ -109,6 +109,7 @@ function regenerateJsonAttributes() {
   return result;
 }
 
+/*** DO NOT USE AT THIS MOMENT **/
 function regenerateJsonAttributesForAllProducts() {
   var OFFERINGS_TAB_NAME = "Offerings";
   

@@ -35,7 +35,7 @@ function loadActiveSheetToVlocityEPC() {
     /* After loading */
     completeLoadingProcessStep();
     completeLoadingProcessProgress();
-    resetLoadingProcessError();
+    //resetLoadingProcessError();
 }
 
 /** DEPRECATED, REPLACED WITH loadCheckedRowsToVlocityEPC **/
@@ -77,7 +77,7 @@ function loadCheckedRowsToVlocityEPC() {
     /* After loading */
     completeLoadingProcessStep();
     completeLoadingProcessProgress();
-    resetLoadingProcessError();
+    //resetLoadingProcessError();
 }
 
 
@@ -169,9 +169,21 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
 
         //error processing
         var responseAsJson = JSON.parse(response);
+      
+        processDataraptorResponse(responseAsJson);
+      
         var errorDetected = false;
-
+      
         if (responseAsJson) {
+            /*var dataraptorExecutionStatus = JSON.stringify(responseAsJson['Status']);
+          
+            Logger.log(dataraptorExecutionStatus);
+            if (dataraptorExecutionStatus == "\"Failed\"") { //whaaaat???
+              sheet.setName(sheetName + ' (Error)');
+              errorDetected = true;
+              Logger.log("im in!");
+            }*/
+          
             var result = JSON.stringify(responseAsJson['Result']);
             if (result) {
                 var hasErrors = JSON.stringify(responseAsJson['Result']['hasErrors']);
@@ -186,8 +198,10 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
             errorDetected = true;
         }
 
+        //this none-sense doesn't work
+        Logger.log('errorDetected = ' + errorDetected);
         if (errorDetected == true) {
-            raiseLoadingProcessError();
+           raiseLoadingProcessError();
             
             logProgress(
                 sheetName,
@@ -214,6 +228,39 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         "Loading process is completed");
 
     //operationNotification('Operation completed', 'Selected rows are successfully processed, errors returned: ' + 'TBD');
+}
+
+function processDataraptorResponse(response) {
+  if (!response) {
+      Logger.log('*** No response received from dataraptor');
+      return null;
+  }
+
+  var message = response["Message"];
+  var status = response["Status"];
+  var result = response["Result"];
+
+  if (!status) {
+    Logger.log('*** No status received from dataraptor. Looks suspicios');
+    raiseLoadingProcessError();
+    return null;
+  } else {
+    Logger.log('*** status: ' + status);
+    if (status === "Failed") {
+        Logger.log('*** Failed status received from dataraptor. Review and correct');
+        raiseLoadingProcessError();
+        return null;
+    } else {
+        //other search
+    }
+  }
+
+  if (!result) {
+    Logger.log('*** No result received from dataraptor. Looks suspicios');
+    raiseLoadingProcessError();
+    return null;
+  }
+
 }
 
 function exportActiveSheetAsJson() {

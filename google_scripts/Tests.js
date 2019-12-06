@@ -4,6 +4,10 @@ function test_shortenInstanceUrl() {
     return shortenInstanceUrl(instanceUrl);
   }
 
+function test_userHeaderTextStyle() {
+    Logger.log(JSON.stringify(userHeaderTextStyle));
+  }
+
 
 function test_isScriptPropertySet() {
   

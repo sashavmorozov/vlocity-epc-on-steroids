@@ -39,20 +39,15 @@
           var interval = setInterval(function () {
             google.script.run.withSuccessHandler(onSuccess).getLoadingProcessInfo();
 
+            //process is completed
             if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
               clearInterval(interval);
               $("#loading-process-progress").
-                removeClass("active").
-                addClass("progress-bar-success");
+                removeClass("active");
 
               $("#view-logs").
                 prop('disabled', false);
-              
-              if ($("#loading-process-progress").hasClass("progress-bar-success")) {
-                $("#success-alert").
-                  prop('hidden', false);
-                }
-            }
+              }
           }, 500);
         });
 
@@ -69,16 +64,23 @@
           $("#loading-process-step").
             html("Current step: " + step);
 
+          //error detected
           if (error === "true") {
             $("#loading-process-progress").
               removeClass("progress-bar-success").
               addClass("progress-bar-danger");
 
             $("#error-alert").
-              prop('hidden', false);
-              
-            $("#view-logs").
-                prop('disabled', false);
+              prop('hidden', false); 
+          }
+
+          //process is successfully completed
+          if (error === "false" && parseFloat(progress) >= 100) {
+            $("#loading-process-progress").
+              addClass("progress-bar-success");
+            
+            $("#success-alert").
+              prop('hidden', false);    
           }
         }
       </script>
