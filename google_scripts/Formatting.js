@@ -26,12 +26,12 @@ function applyDefaultFormattingToCurrentSheet() {
   applyDefaultFormattingToSheetByName(currentSheetName);
 }
 
-function applyDefaultFormattingToAllSheets() {
+/* function applyDefaultFormattingToAllSheets() {
   var sheets = SpreadsheetApp.getActive().getSheets();
   for each (var sheet in sheets) {
     applyDefaultFormattingToSheetByName(sheet.getName());
   }
-}
+} */
 
 
 function applyDefaultFormattingToSheetByName(sheetName) {

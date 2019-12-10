@@ -380,6 +380,19 @@ function areAuthorizationProperiesSet() {
   return true;
 }
 
+function isEmptyArray(inputArray){
+  
+  var isEmpty = true;
+  for (var i = 0; i < inputArray.length; i++) {
+    if (inputArray[i] !== "" &&
+        inputArray[i] !== null &&
+        inputArray[i] !== undefined) {
+      isEmpty = false;
+    }  
+  }
+  
+  return isEmpty;
+}
 
 
 
