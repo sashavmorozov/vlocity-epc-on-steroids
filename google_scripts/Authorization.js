@@ -1,118 +1,161 @@
-function getRedirectUri() {
+/**
+ * The function returns URL of the deployed web application. This URL is used to configure a connected application in Salesforce.
+ *
+ * @return {string} URL of the deployed web application
+ *
+ * @example
+ *
+ *     getRedirectUri();
+ */
 
-    var redirectUri = 
-        ScriptApp.getService().getUrl() + 
-        '/auth/callback';
-    
+function getRedirectUri() {
+    var redirectUri = ScriptApp.getService().getUrl() + "/auth/callback";
+
     Logger.log(redirectUri);
     return redirectUri;
 }
 
-function getScriptId() {
-    return ScriptApp.getScriptId();
-}
-
-
-function showSidebarWebServerAuthenticationFlow() {
-
-    var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
-    var url = 'https://' +
-        authenticationPrefix +
-        '.salesforce.com/services/oauth2/authorize';
-
-    var parameters =
-        'response_type=code' + '&' +
-        'client_id=' + customerKey + '&' +
-        'redirect_uri=' + getRedirectUri();
-
-    var authorizationUrl = url + '?' + parameters;
-
-    Logger.log('*** authorizationUrl: ' + authorizationUrl);
-
-    var template = HtmlService.createTemplateFromFile('pages/AuthorizationSidebar');
-    template.authorizationUrl = authorizationUrl;
-    var page = template.evaluate();
-
-    SpreadsheetApp.getUi().showSidebar(page);
-}
-
-function retrieveTokenByCode(authorizationCode) {
-
-  var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
-    var url = 'https://' + authenticationPrefix + '.salesforce.com/services/oauth2/token';
-
-    var payload =
-        'grant_type=authorization_code' + '&' +
-        'client_id=' + customerKey + '&' +
-        'client_secret=' + customerSecret + '&' +
-        'redirect_uri=' + getRedirectUri() + '&' +
-        'code=' + authorizationCode;
-
-    var options = {
-        'method': 'post',
-        'payload': payload,
-        'muteHttpExceptions': true,
-        'escaping': false
-    };
-
-    Logger.log('*** request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
-    var response = UrlFetchApp.fetch(url, options);
-    Logger.log('*** response:' + response);
-  
-    var responseObj = JSON.parse(response);
-  
-  if (responseObj['error'] != '' || responseObj['error'] != null) {
-   
-    logProgress('Authorization', 'retrieveTokenByCode', 'Token retrieved successfully');
-    logProgress('Authorization', 'retrieveTokenByCode', response);
-    
-    Logger.log('**** response.access_token: ' + responseObj.access_token);
-    Logger.log('**** response.signature: ' + responseObj.signature);
-    Logger.log('**** response.instance_url: ' + responseObj.instance_url);
-    Logger.log('**** response.token_type: ' + responseObj.token_type);
-
-    persistTokenInformation(responseObj.access_token, responseObj.instance_url);
-
-    return responseObj;
-  } else {
-    logProgress('Authorization', 'retrieveTokenByCode', 'Token is not retrieved successfully');
-    logProgress('Authorization', 'retrieveTokenByCode', response);
-    return responseObj;
-  }
-}
+/**
+ * Persists token information as application property object
+ *
+ * @param {string} accessToken - Retreived access token
+ * @param {string} instanceUrl - URL of the Salesforce organization
+ * @return {void} - nothing
+ *
+ * @example
+ *     var token = "00D4J000000EIWs!AR8AQOKkJLSxq7bp8eqnkcfyUC.gKwqM8V_63fF7YvWHO_xWn3HtjQ8qkUfviBoqbjJo05FDQcjeL";
+ *     var url = "https://softb.my.salesforce.com";
+ *     persistTokenInformation(token, url);
+ */
 
 function persistTokenInformation(accessToken, instanceUrl) {
-    scriptProperties.setProperty('accessToken', accessToken);
-    scriptProperties.setProperty('instanceUrl', instanceUrl);   
-}
-
-function eraseTokenInformation() {
-    scriptProperties.deleteProperty('accessToken');
-    scriptProperties.deleteProperty('instanceUrl');   
+    scriptProperties.setProperty("accessToken", accessToken);
+    scriptProperties.setProperty("instanceUrl", instanceUrl);
 }
 
 /**
-  Generate access token to a Salesforce organization and stores it to the Settings tab
-*/
+ * Erases previously stored access tokens. Used to force re-authorize the application at this moment
+ *
+ * @return {void} - nothing
+ *
+ * @example
+ *     eraseTokenInformation();
+ */
+
+function eraseTokenInformation() {
+    scriptProperties.deleteProperty("accessToken");
+    scriptProperties.deleteProperty("instanceUrl");
+}
+
+/**
+ * Retrieves previously stored access tokens from the script properties
+ * 
+ * @return {Object} - a JS object containing both token and corresponding instance URL information
+ *
+ * @example
+ *     var token = retrieveStoredAccessToken()["accessToken"];
+ */
 
 function retrieveStoredAccessToken() {
+    var accessToken = scriptProperties.getProperty("accessToken");
+    var instanceUrl = scriptProperties.getProperty("instanceUrl");
 
-    var accessToken = scriptProperties.getProperty('accessToken');
-    var instanceUrl = scriptProperties.getProperty('instanceUrl');
-  
-    if (accessToken != null && instanceUrl != null &&
-        accessToken != '' && instanceUrl != '') {
+    if (
+        accessToken != null &&
+        instanceUrl != null &&
+        accessToken != "" &&
+        instanceUrl != ""
+    ) {
         var obj = {};
-        obj['accessToken'] = accessToken;
-        obj['instanceUrl'] = instanceUrl;
+        obj["accessToken"] = accessToken;
+        obj["instanceUrl"] = instanceUrl;
 
-        Logger.log('Successfully retrieved access token: ' + accessToken);
-        Logger.log('Successfully retrieved access instanceUrl: ' + instanceUrl);
+        Logger.log("Successfully retrieved access token: " + accessToken);
+        Logger.log("Successfully retrieved access instanceUrl: " + instanceUrl);
 
         return obj;
     } else {
-        Logger.log('Error: Unable to retrieved access token');
+        Logger.log("Error: Unable to retrieved access token");
         return null;
     }
 }
 
+/**
+ * Retrieves an access token from a resource server based on a previously generated access code
+ * 
+ * @param {string} authorizationCode - Access code previously generated by a resource server (Salesforce organization)
+ * 
+ * @return {Object} - a JS object containing both token and corresponding instance URL information
+ *
+ * @example
+ *     var template = HtmlService.createTemplateFromFile('pages/AuthorizationConfirmation');
+ *     var tokenResponse = retrieveTokenByCode(request.parameter.code);
+ */
+
+function retrieveTokenByCode(authorizationCode) {
+    var authenticationPrefix =
+        organizationType == "production" ? "login" : "test";
+    var url =
+        "https://" +
+        authenticationPrefix +
+        ".salesforce.com/services/oauth2/token";
+
+    var payload =
+        "grant_type=authorization_code" +
+        "&" +
+        "client_id=" +
+        customerKey +
+        "&" +
+        "client_secret=" +
+        customerSecret +
+        "&" +
+        "redirect_uri=" +
+        getRedirectUri() +
+        "&" +
+        "code=" +
+        authorizationCode;
+
+    var options = {
+        method: "post",
+        payload: payload,
+        muteHttpExceptions: true,
+        escaping: false
+    };
+
+    Logger.log(
+        "*** generate token request:" + JSON.stringify(UrlFetchApp.getRequest(url, options))
+    );
+    var response = UrlFetchApp.fetch(url, options);
+    Logger.log("*** rgenerate token esponse:" + response);
+
+    var responseObj = JSON.parse(response);
+
+    if (responseObj["error"] != "" || responseObj["error"] != null) {
+        logProgress(
+            "Authorization",
+            "retrieveTokenByCode",
+            "Token generation process is successful"
+        );
+        logProgress("Authorization", "retrieveTokenByCode", response);
+
+        Logger.log("**** response.access_token: " + responseObj.access_token);
+        Logger.log("**** response.signature: " + responseObj.signature);
+        Logger.log("**** response.instance_url: " + responseObj.instance_url);
+        Logger.log("**** response.token_type: " + responseObj.token_type);
+
+        persistTokenInformation(
+            responseObj.access_token,
+            responseObj.instance_url
+        );
+
+        return responseObj;
+    } else {
+        logProgress(
+            "Authorization",
+            "retrieveTokenByCode",
+            "Token generation process is failed"
+        );
+        logProgress("Authorization", "retrieveTokenByCode", response);
+        return responseObj;
+    }
+}

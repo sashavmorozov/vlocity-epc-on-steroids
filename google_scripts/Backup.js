@@ -38,3 +38,36 @@ function regenerateLayoutsForObjectTypes_DELETE_ME() {
     invokeVipByName(vipName, JSON.stringify(singleItemPayload));
   }
 }
+
+
+/**
+ * DEPRECATED. Used to provide a dialog for the connection establishing process. Replaced with specialized UI.
+ *
+ * @return {void} nothing
+ *
+ * @example
+ *
+ *     showSidebarWebServerAuthenticationFlow();
+ */
+function showSidebarWebServerAuthenticationFlow() {
+
+  var authenticationPrefix = (organizationType == 'production' ? 'login' : 'test');
+  var url = 'https://' +
+      authenticationPrefix +
+      '.salesforce.com/services/oauth2/authorize';
+
+  var parameters =
+      'response_type=code' + '&' +
+      'client_id=' + customerKey + '&' +
+      'redirect_uri=' + getRedirectUri();
+
+  var authorizationUrl = url + '?' + parameters;
+
+  Logger.log('*** authorizationUrl: ' + authorizationUrl);
+
+  var template = HtmlService.createTemplateFromFile('pages/AuthorizationSidebar');
+  template.authorizationUrl = authorizationUrl;
+  var page = template.evaluate();
+
+  SpreadsheetApp.getUi().showSidebar(page);
+}

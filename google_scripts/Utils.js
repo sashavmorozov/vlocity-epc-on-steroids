@@ -17,6 +17,7 @@ function getLoadingProcessInfo(){
   currentProgress["progress"] = userProperties.getProperty('loadingProcessProgress');
   currentProgress["step"] = userProperties.getProperty('loadingProcessStep');
   currentProgress["error"] = userProperties.getProperty('loadingProcessError');
+  currentProgress["warning"] = userProperties.getProperty('loadingProcessWarning');
   
   return currentProgress;
 }
@@ -53,6 +54,17 @@ function resetLoadingProcessError() {
 
 function raiseLoadingProcessError() {
     setLoadingProcessError(true);
+}
+
+/* loading process warnings section */
+function setLoadingProcessWarning(message) {
+    userProperties.setProperty('loadingProcessWarning', 'true');
+    userProperties.setProperty('loadingProcessWarningMessage', message);
+}
+
+function resetLoadingProcessWarning() {
+    userProperties.setProperty('loadingProcessWarning', 'false');
+    userProperties.setProperty('loadingProcessWarningMessage', 'n/a');
 }
 
 function setLoadingProcessError(error) {

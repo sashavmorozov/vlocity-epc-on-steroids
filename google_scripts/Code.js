@@ -8,6 +8,7 @@ function loadActiveSheetToVlocityEPC() {
     resetLoadingProcessProgress();
     resetLoadingProcessStep();
     resetLoadingProcessError();
+    resetLoadingProcessWarning();
     
     showProgressDialog();  
   
@@ -50,6 +51,7 @@ function loadCheckedRowsToVlocityEPC() {
     resetLoadingProcessProgress();
     resetLoadingProcessStep();
     resetLoadingProcessError();
+    resetLoadingProcessWarning();
     
     showProgressDialog();  
   
@@ -170,7 +172,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         //error processing
         var responseAsJson = JSON.parse(response);
       
-        processDataraptorResponse(responseAsJson);
+        processDataraptorResponse(responseAsJson, chunkPayload[sheetName].length);
       
         var errorDetected = false;
       
@@ -230,7 +232,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     //operationNotification('Operation completed', 'Selected rows are successfully processed, errors returned: ' + 'TBD');
 }
 
-function processDataraptorResponse(response) {
+function processDataraptorResponse(response, expectedCreatedRecordCount) {
   if (!response) {
       Logger.log('*** No response received from dataraptor');
       return null;
@@ -259,6 +261,23 @@ function processDataraptorResponse(response) {
     Logger.log('*** No result received from dataraptor. Looks suspicios');
     raiseLoadingProcessError();
     return null;
+  }
+
+  if(result) {
+      var itnerfaceInfo = result["interfaceInfo"];
+      var keyMap = Object.keys(itnerfaceInfo);
+      var dataraptorName = keyMap[0];
+      Logger.log('*** dataraptor name: ' + dataraptorName);
+
+      var createdObjectCount = result["createdObjectsByOrder"][dataraptorName]["1"].length;
+      Logger.log(createdObjectCount);
+      Logger.log(expectedCreatedRecordCount);
+    
+      //check me
+      if (expectedCreatedRecordCount !== createdObjectCount) {
+        Logger.log("Houston, we have a problem");
+        //setLoadingProcessWarning("Record count mismatch. Check data and dependencies. URL>>");
+      }
   }
 
 }

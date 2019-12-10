@@ -47,9 +47,9 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
-        .addItem("📜 View Logs", "viewLogs")
-        .addItem("🧹 Clear Logs", "clearLogs")
-        .addItem("🗛 Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet")
+        .addItem("View Logs", "viewLogs")
+        .addItem("Clear Logs", "clearLogs")
+        .addItem("Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet")
     )
     .addToUi();
 
@@ -61,8 +61,8 @@ function buildMenu() {
     .addToUi();
 
   ui.createMenu("Logs")
-    .addItem("📜 View Logs", "viewLogs")
-    .addItem("🧹 Clear Logs", "clearLogs")
+    .addItem("View Logs", "viewLogs")
+    .addItem("Clear Logs", "clearLogs")
     .addToUi();
 
   /* ui.createMenu("More EOS tools")
