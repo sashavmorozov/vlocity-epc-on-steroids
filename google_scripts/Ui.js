@@ -366,3 +366,20 @@ function redirectToReportIssue() {
     "https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki/Report-an-Issue";
   redirectToUrl(url);
 }
+
+function displayDialog(dialogPage, dialogTitle, dialogParams) {
+  var template = HtmlService.createTemplateFromFile(dialogPage);
+  template.dialogParams = dialogParams;
+  
+  var page = template.evaluate();
+  page.setWidth(300).setHeight(400);
+
+  SpreadsheetApp.getUi().showModalDialog(page, dialogTitle);
+}
+
+function displayWarningDialog(dialogParams) {
+  var dialogPage = "pages/WarningDialog";
+  var dialogTitle = "Warning";
+
+  displayDialog(dialogPage, dialogTitle, dialogParams);
+}

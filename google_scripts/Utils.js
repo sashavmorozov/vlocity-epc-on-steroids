@@ -386,6 +386,7 @@ function isEmptyArray(inputArray){
   for (var i = 0; i < inputArray.length; i++) {
     if (inputArray[i] !== "" &&
         inputArray[i] !== null &&
+        inputArray[i] !== false &&
         inputArray[i] !== undefined) {
       isEmpty = false;
     }  
