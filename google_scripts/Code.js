@@ -26,17 +26,6 @@ function loadActiveSheetToVlocityEPC() {
   
     /* Loading */
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
-    console.log("*** epcConfiguration:" + epcConfiguration);
-
-    if (!epcConfiguration) {
-        console.log("*** Error: an empty sheet, no data to upload");
-        var dialogParams = {
-          "warningMessage": "Doesn't look good",
-          "warningMessageDescription": "Please verify the spreadsheet has data to upload. Looks like an empty spreadsheet now"
-        };
-        displayWarningDialog(dialogParams);
-        return;
-    }
     
     setLoadingProcessStep('Adding transactional data for tracking');
     addTransactionDetails(epcConfiguration);
@@ -71,7 +60,6 @@ function loadCheckedRowsToVlocityEPC() {
     /* Verify connection */
     setLoadingProcessStep('Checking connection to Salesforce');  
     if(!isConnectedToSalesforce()) {
-      console.log("*** Error: Not connected to Salesforce");
       completeLoadingProcessProgress();
       raiseLoadingProcessError();
       return;
@@ -81,17 +69,6 @@ function loadCheckedRowsToVlocityEPC() {
   
     /* Loading */
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
-    console.log("*** epcConfiguration:" + epcConfiguration);
-
-    if (!epcConfiguration) {
-        console.log("*** Error: no rows checked, no data to upload");
-        var dialogParams = {
-          "warningMessage": "Doesn't look good",
-          "warningMessageDescription": "Please verify you checked the records you want to load. Looks like nothing was selected"
-        };
-        displayWarningDialog(dialogParams);
-        return;
-    }
     
     setLoadingProcessStep('Adding transactional data for tracking');
     addTransactionDetails(epcConfiguration);
@@ -114,13 +91,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var sheetName = sheet.getName();
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
 
-    Logger.log("*** epcConfiguration: " + epcConfiguration);
-  
-    if (!epcConfiguration) {
-      console.log("*** Error: no data to upload");
-      return;
-    }
-  
+    
     //setLoadingProcessStep("Connecting to Salesforce");
     if (!accessTokenObj || 
         !accessTokenObj.accessToken ||
@@ -297,7 +268,7 @@ function processDataraptorResponse(response, expectedCreatedRecordCount) {
       var keyMap = Object.keys(itnerfaceInfo);
       var dataraptorName = keyMap[0];
       Logger.log('*** dataraptor name: ' + dataraptorName);
-
+      /*
       var createdObjectCount = result["createdObjectsByOrder"][dataraptorName]["1"].length;
       Logger.log(createdObjectCount);
       Logger.log(expectedCreatedRecordCount);
@@ -307,6 +278,7 @@ function processDataraptorResponse(response, expectedCreatedRecordCount) {
         Logger.log("Houston, we have a problem");
         //setLoadingProcessWarning("Record count mismatch. Check data and dependencies. URL>>");
       }
+      */
   }
 
 }
