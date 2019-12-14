@@ -55,6 +55,7 @@
           var progress = current_progress["progress"];
           var step = current_progress["step"];
           var error = current_progress["error"];
+          var warning = current_progress["warning"];
 
           $("#loading-process-progress").
             css("width", progress + "%").
@@ -68,14 +69,26 @@
           if (error === "true") {
             $("#loading-process-progress").
               removeClass("progress-bar-success").
+              removeClass("progress-bar-warning").
               addClass("progress-bar-danger");
 
             $("#error-alert").
               prop('hidden', false); 
           }
 
+          //warning detected
+          if (warning === "true") {
+            $("#loading-process-progress").
+              removeClass("progress-bar-success").
+              removeClass("progress-bar-danger").
+              addClass("progress-bar-warning");
+
+            $("#warning-alert").
+              prop('hidden', false); 
+          }
+
           //process is successfully completed
-          if (error === "false" && parseFloat(progress) >= 100) {
+          if (error === "false" && warning === "false" && parseFloat(progress) >= 100) {
             $("#loading-process-progress").
               addClass("progress-bar-success");
             
@@ -90,6 +103,10 @@
 
   <div id="error-alert" class="alert alert-danger" role="alert" hidden>
     An error was detected during the loading process. Check logs for more details
+  </div>
+
+  <div id="warning-alert" class="alert alert-warning" role="alert" hidden>
+    No errors were detected during the loading process but it seems like not all records were loaded. Check logs for more details, verify that dependencies are met. More infor here "URL"
   </div>
 
   <div id="success-alert" class="alert alert-success" role="alert" hidden>

@@ -14,9 +14,10 @@ function restoreCurrentTabName() {
 function getLoadingProcessInfo(){
   //return Math.round(Math.random() * 100);
   var currentProgress = {};
-  currentProgress["progress"] = userProperties.getProperty('loadingProcessProgress');
-  currentProgress["step"] = userProperties.getProperty('loadingProcessStep');
-  currentProgress["error"] = userProperties.getProperty('loadingProcessError');
+  currentProgress["progress"] = PropertiesService.getUserProperties().getProperty('loadingProcessProgress');
+  currentProgress["step"] = PropertiesService.getUserProperties().getProperty('loadingProcessStep');
+  currentProgress["error"] = PropertiesService.getUserProperties().getProperty('loadingProcessError');
+  currentProgress["warning"] = PropertiesService.getUserProperties().getProperty('loadingProcessWarning');
   
   return currentProgress;
 }
@@ -32,7 +33,7 @@ function completeLoadingProcessProgress() {
 
 function updateLoadingProcessProgress(currentProcessProgress) {
     loadingProcessProgress = currentProcessProgress;
-    userProperties.setProperty('loadingProcessProgress', loadingProcessProgress);
+    PropertiesService.getUserProperties().setProperty('loadingProcessProgress', loadingProcessProgress);
 }
 
 function resetLoadingProcessStep() {
@@ -40,7 +41,7 @@ function resetLoadingProcessStep() {
 }
 
 function setLoadingProcessStep(step) {
-    userProperties.setProperty('loadingProcessStep', step);
+  PropertiesService.getUserProperties().setProperty('loadingProcessStep', step);
 }
 
 function completeLoadingProcessStep() {
@@ -55,8 +56,19 @@ function raiseLoadingProcessError() {
     setLoadingProcessError(true);
 }
 
+/* loading process warnings section */
+function setLoadingProcessWarning(message) {
+    PropertiesService.getUserProperties().setProperty('loadingProcessWarning', 'true');
+    PropertiesService.getUserProperties().setProperty('loadingProcessWarningMessage', message);
+}
+
+function resetLoadingProcessWarning() {
+    PropertiesService.getUserProperties().setProperty('loadingProcessWarning', 'false');
+    PropertiesService.getUserProperties().setProperty('loadingProcessWarningMessage', 'n/a');
+}
+
 function setLoadingProcessError(error) {
-    userProperties.setProperty('loadingProcessError', error);
+    PropertiesService.getUserProperties().setProperty('loadingProcessError', error);
 }
   
 /* The function strips out leading sequential number from a string, if used. 
@@ -368,6 +380,20 @@ function areAuthorizationProperiesSet() {
   return true;
 }
 
+function isEmptyArray(inputArray){
+  
+  var isEmpty = true;
+  for (var i = 0; i < inputArray.length; i++) {
+    if (inputArray[i] !== "" &&
+        inputArray[i] !== null &&
+        inputArray[i] !== false &&
+        inputArray[i] !== undefined) {
+      isEmpty = false;
+    }  
+  }
+  
+  return isEmpty;
+}
 
 
 

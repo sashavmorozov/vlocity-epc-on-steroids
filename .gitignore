@@ -14,3 +14,9 @@ google_scripts/appsscript.json
 .vlocity/
 
 google_scripts/Configuration.js
+
+.prettierrc
+
+.DS_Store
+
+google_scripts/Sandbox.js

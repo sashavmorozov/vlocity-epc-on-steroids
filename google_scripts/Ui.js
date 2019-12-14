@@ -47,9 +47,9 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
-        .addItem("📜 View Logs", "viewLogs")
-        .addItem("🧹 Clear Logs", "clearLogs")
-        .addItem("🗛 Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet")
+        .addItem("View Logs", "viewLogs")
+        .addItem("Clear Logs", "clearLogs")
+        .addItem("Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet")
     )
     .addToUi();
 
@@ -61,8 +61,8 @@ function buildMenu() {
     .addToUi();
 
   ui.createMenu("Logs")
-    .addItem("📜 View Logs", "viewLogs")
-    .addItem("🧹 Clear Logs", "clearLogs")
+    .addItem("View Logs", "viewLogs")
+    .addItem("Clear Logs", "clearLogs")
     .addToUi();
 
   /* ui.createMenu("More EOS tools")
@@ -365,4 +365,21 @@ function redirectToReportIssue() {
   var url =
     "https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki/Report-an-Issue";
   redirectToUrl(url);
+}
+
+function displayDialog(dialogPage, dialogTitle, dialogParams) {
+  var template = HtmlService.createTemplateFromFile(dialogPage);
+  template.dialogParams = dialogParams;
+  
+  var page = template.evaluate();
+  page.setWidth(300).setHeight(400);
+
+  SpreadsheetApp.getUi().showModalDialog(page, dialogTitle);
+}
+
+function displayWarningDialog(dialogParams) {
+  var dialogPage = "pages/WarningDialog";
+  var dialogTitle = "Warning";
+
+  displayDialog(dialogPage, dialogTitle, dialogParams);
 }
