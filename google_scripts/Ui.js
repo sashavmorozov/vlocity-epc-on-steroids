@@ -43,13 +43,27 @@ function buildMenu() {
         .createMenu("Data Export")
         .addItem("Save Current Tab as JSON to Drive", "saveActiveSheetAsJson")
     )
+  
+    .addSubMenu(
+      SpreadsheetApp.getUi()
+        .createMenu("Data Import")
+        .addItem("Import Entity for Current Sheet from Catalog", "retrieveCurrentSheetFromCatalog")
+    )
 
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
         .addItem("View Logs", "viewLogs")
         .addItem("Clear Logs", "clearLogs")
-        .addItem("Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet")
+        .addItem("Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet"))
+      
+    .addSubMenu(
+      SpreadsheetApp.getUi()
+        .createMenu("View")
+        .addItem("Show all tabs", "showAllSheets")
+        .addItem("Show only EPC/CPQ tabs", "showOnlyEpcCpqSheets")
+        .addItem("Show only OM tabs", "showOnlyOmSheets")
+       
     )
     .addToUi();
 
@@ -383,3 +397,116 @@ function displayWarningDialog(dialogParams) {
 
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }
+
+/**
+ * Shows all sheets in the app
+ *
+ * @param {string} accessToken - Retreived access token
+ * @param {string} instanceUrl - URL of the Salesforce organization
+ * @return {void} - nothing
+ *
+ * @example
+ *     var token = "00D4J000000EIWs!AR8AQOKkJLSxq7bp8eqnkcfyUC.gKwqM8V_63fF7YvWHO_xWn3HtjQ8qkUfviBoqbjJo05FDQcjeL";
+ *     var url = "https://softb.my.salesforce.com";
+ *     persistTokenInformation(token, url);
+ */
+
+function showAllSheets() {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+  /*
+  var sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
+  for each (var s in sheets) {
+    if (s.isSheetHidden()) {
+      s.showSheet();
+    }
+  }
+  */
+  
+  showOnlySpecificDomainSheets(commonSheets.concat(cpqSheets, omSheets));
+
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+}
+
+/**
+ * Shows only common and OM-related sheets in the app
+ *
+ * @return {void} - nothing
+ *
+ * @example
+ *     showOnlyOmSheets()
+ */
+
+function showOnlyOmSheets() {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  showOnlySpecificDomainSheets(omSheets);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+}
+
+/**
+ * Shows only common and EPC/CPQ-related sheets in the app
+ *
+ * @return {void} - nothing
+ *
+ * @example
+ *     showOnlyOmSheets()
+ */
+
+function showOnlyEpcCpqSheets() {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  showOnlySpecificDomainSheets(cpqSheets);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+}
+
+/**
+ * Shows all sheets related to a specific domain (parameter)
+ *
+ * @param {string[]} domainSheets - Array of names of related sheets
+ * @return {void} - nothing
+ *
+ * @example
+ *     showOnlySpecificDomainSheets(cpqSheets);
+ */
+
+function showOnlySpecificDomainSheets(domainSheets) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+  var sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
+  var sheetNamesToHide = [];
+  var sheetNamesToUnhide = [];
+  for each (var s in sheets) {
+    var sheetName = s.getName();
+    if (domainSheets.indexOf(sheetName) === -1 &&
+       commonSheets.indexOf(sheetName) === -1) {
+      sheetNamesToHide.push(sheetName);
+    }
+    
+    if (domainSheets.indexOf(sheetName) !== -1 ||
+       commonSheets.indexOf(sheetName) !== -1) {
+      sheetNamesToUnhide.push(sheetName);
+    }
+  }
+  
+  console.log("*** VARIABLE: sheetsNamesToHide: " + JSON.stringify(sheetNamesToHide));
+  
+  for each (var sheetName in sheetNamesToHide) {
+        var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+    if (!sheet.isSheetHidden()) {
+    SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName).hideSheet();
+    }
+  }
+  
+  for each (var sheetName in sheetNamesToUnhide) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+    if (sheet.isSheetHidden()) {
+    SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName).showSheet();
+    }
+  }
+
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+}
+
+
+
+
+

@@ -20,3 +20,5 @@ google_scripts/Configuration.js
 .DS_Store
 
 google_scripts/Sandbox.js
+
+google_scripts/Tests.js

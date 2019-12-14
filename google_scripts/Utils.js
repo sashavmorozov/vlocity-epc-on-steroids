@@ -14,10 +14,10 @@ function restoreCurrentTabName() {
 function getLoadingProcessInfo(){
   //return Math.round(Math.random() * 100);
   var currentProgress = {};
-  currentProgress["progress"] = PropertiesService.getUserProperties().getProperty('loadingProcessProgress');
-  currentProgress["step"] = PropertiesService.getUserProperties().getProperty('loadingProcessStep');
-  currentProgress["error"] = PropertiesService.getUserProperties().getProperty('loadingProcessError');
-  currentProgress["warning"] = PropertiesService.getUserProperties().getProperty('loadingProcessWarning');
+  currentProgress["progress"] = userProperties.getProperty('loadingProcessProgress');
+  currentProgress["step"] = userProperties.getProperty('loadingProcessStep');
+  currentProgress["error"] = userProperties.getProperty('loadingProcessError');
+  currentProgress["warning"] = userProperties.getProperty('loadingProcessWarning');
   
   return currentProgress;
 }
@@ -33,7 +33,7 @@ function completeLoadingProcessProgress() {
 
 function updateLoadingProcessProgress(currentProcessProgress) {
     loadingProcessProgress = currentProcessProgress;
-    PropertiesService.getUserProperties().setProperty('loadingProcessProgress', loadingProcessProgress);
+    userProperties.setProperty('loadingProcessProgress', loadingProcessProgress);
 }
 
 function resetLoadingProcessStep() {
@@ -41,7 +41,7 @@ function resetLoadingProcessStep() {
 }
 
 function setLoadingProcessStep(step) {
-  PropertiesService.getUserProperties().setProperty('loadingProcessStep', step);
+    userProperties.setProperty('loadingProcessStep', step);
 }
 
 function completeLoadingProcessStep() {
@@ -58,17 +58,17 @@ function raiseLoadingProcessError() {
 
 /* loading process warnings section */
 function setLoadingProcessWarning(message) {
-    PropertiesService.getUserProperties().setProperty('loadingProcessWarning', 'true');
-    PropertiesService.getUserProperties().setProperty('loadingProcessWarningMessage', message);
+    userProperties.setProperty('loadingProcessWarning', 'true');
+    userProperties.setProperty('loadingProcessWarningMessage', message);
 }
 
 function resetLoadingProcessWarning() {
-    PropertiesService.getUserProperties().setProperty('loadingProcessWarning', 'false');
-    PropertiesService.getUserProperties().setProperty('loadingProcessWarningMessage', 'n/a');
+    userProperties.setProperty('loadingProcessWarning', 'false');
+    userProperties.setProperty('loadingProcessWarningMessage', 'n/a');
 }
 
 function setLoadingProcessError(error) {
-    PropertiesService.getUserProperties().setProperty('loadingProcessError', error);
+    userProperties.setProperty('loadingProcessError', error);
 }
   
 /* The function strips out leading sequential number from a string, if used. 
@@ -159,14 +159,93 @@ function regenerateJsonAttributesForAllProducts() {
 }
 
 
-function invokeVipByName_Test() {
-  var vipName = 'EPC_LoadGenericEPCDefinitions';
-  var payload = {};
-  payload['dataRaptorName'] = 'EPC on Steroids_Export All Offerings';
-  return invokeVipByName(vipName, JSON.stringify(payload));
+function invokeVipByName(vipName, payload) {
+    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+  var VIP_PREFIX = "/services/apexrest/vlocity_cmt/v1/integrationprocedure/";
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var accessTokenObj = retrieveStoredAccessToken();
+
+  if (!accessTokenObj) {
+    var errorMessage =
+      "Access token is not available. Check settings or connection to Salesforce org";
+    console.log("*** ERROR: " + errorMessage);
+
+    logProgress(vipName, "Error", errorMessage);
+
+    var dialogParams = {
+      warningMessage: "Doesn't look good",
+      warningMessageDescription: errorMessage
+    };
+    displayWarningDialog(dialogParams);
+
+    return;
+  }
+
+  var accessToken = accessTokenObj.accessToken;
+  var url = accessTokenObj.instanceUrl + vipEndpoint;
+
+  var options = {
+    method: "post",
+    contentType: "application/json",
+    payload: payload,
+    muteHttpExceptions: true,
+    headers: {
+      Authorization: "Bearer " + accessToken
+    },
+    escaping: false
+  };
+
+  console.log(
+    "*** invokeVipByName request:" +
+      JSON.stringify(UrlFetchApp.getRequest(url, options))
+  );
+
+  logProgress(vipName, "Info: Request Payload", payload);
+
+  var response = UrlFetchApp.fetch(url, options);
+  console.log("*** invokeVipByName response:" + response);
+
+  logProgress(vipName, "Info: Response Payload", response);
+
+  //error processing
+  var responseAsJson = JSON.parse(response);
+  var errorDetected = false;
+
+  if (responseAsJson) {
+    var result = JSON.stringify(responseAsJson["Result"]);
+    if (result) {
+      var hasErrors = JSON.stringify(responseAsJson["Result"]["hasErrors"]);
+      console.log("*** hasErrors: " + hasErrors);
+      errorDetected = hasErrors;
+    } else {
+      errorDetected = true;
+    }
+  } else {
+    errorDetected = true;
+  }
+
+  if (errorDetected == true) {
+    logProgress(
+      vipName,
+      "Error",
+      "An error detected while invoking the integration procedure. Review the logs for more details"
+    );
+    return STRING_EMPTY_STRING_CONST;
+  }
+
+  logProgress(
+    vipName,
+    "Info",
+    "Integration procedure is called successfully, no errors detected"
+  );
+
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return JSON.stringify(responseAsJson.Result.returnResultsData);
 }
 
-function invokeVipByName(vipName, payload) {
+
+function invokeVipByName_DELME(vipName, payload) {
     var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
     var vipEndpoint = VIP_PREFIX + vipName;
     var accessTokenObj = retrieveStoredAccessToken();
@@ -175,12 +254,12 @@ function invokeVipByName(vipName, payload) {
         Logger.log('Error: Access token should be generated first');
 
         logProgress(
-            sheetName,
-            "Process Error",
-            "Access token should be generated first. Check the Settings tab"
+            "Utils",
+            "Error",
+            "Access token is not available. Check settings or connection to Salesforce org"
         );
 
-        operationNotification('Operation failed', 'Access token should be generated first. Check the Settings tab');
+        operationNotification("Error", 'Access token is not available. Check settings or connection to Salesforce org');
         return;
     }
 
@@ -393,6 +472,16 @@ function isEmptyArray(inputArray){
   }
   
   return isEmpty;
+}
+
+/* Checks if an object is empty: https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object */
+function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
 }
 
 

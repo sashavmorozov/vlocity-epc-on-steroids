@@ -1,6 +1,7 @@
 var LOGS_SHEET_NAME = "Logs";
 var LOGS_TIMESTAMP_FORMAT = "dd MMM yyyy, HH:mm:ss";
 var LOGS_TIMESTAMP_ZONE = "GMT";
+var CONST_MAX_LOG_MESSAGE_LENGTH = 5000;
 
 function viewLogs() {
     SpreadsheetApp.setActiveSheet(SpreadsheetApp.getActive().getSheetByName(LOGS_SHEET_NAME)); 
@@ -35,19 +36,31 @@ function clearLogs() {
 }
 
 function logProgress(entityName, entryName, entryDetails) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
-    var logsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(LOGS_SHEET_NAME);
-    var lastRowNumber = logsSheet.getLastRow();
-    var obj = [
-        []
-    ];
-    
-    obj[0][0] = Utilities.formatDate(new Date(), LOGS_TIMESTAMP_ZONE, LOGS_TIMESTAMP_FORMAT);
-    obj[0][1] = entityName;
-    obj[0][2] = entryName;
-    obj[0][3] = entryDetails;
+  if (entryDetails.toString().length > CONST_MAX_LOG_MESSAGE_LENGTH) {
+    entryDetails =
+      "Logging output too large. Truncating output. " +
+      entryDetails.toString().substring(0, CONST_MAX_LOG_MESSAGE_LENGTH);
+  }
 
-    var r = logsSheet.getRange(lastRowNumber + 1, 1, 1, obj[0].length);
+  var logsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(
+    LOGS_SHEET_NAME
+  );
+  var lastRowNumber = logsSheet.getLastRow();
+  var obj = [[]];
 
-    r.setValues(obj);
+  obj[0][0] = Utilities.formatDate(
+    new Date(),
+    LOGS_TIMESTAMP_ZONE,
+    LOGS_TIMESTAMP_FORMAT
+  );
+  obj[0][1] = entityName;
+  obj[0][2] = entryName;
+  obj[0][3] = entryDetails;
+
+  var r = logsSheet.getRange(lastRowNumber + 1, 1, 1, obj[0].length);
+
+  r.setValues(obj);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
 }
