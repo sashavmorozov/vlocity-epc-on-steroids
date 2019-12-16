@@ -24,7 +24,7 @@ function getLoadingProcessInfo(){
 
 
 function resetLoadingProcessProgress() {
-    updateLoadingProcessProgress(0);
+    updateLoadingProcessProgress(15);
 }
 
 function completeLoadingProcessProgress() {

@@ -52,7 +52,8 @@
         });
 
         function onSuccess(current_progress) {
-          var progress = current_progress["progress"];
+          var CONST_MIN_PROGRESS = 15;
+          var progress = Math.max(CONST_MIN_PROGRESS, current_progress["progress"]);
           var step = current_progress["step"];
           var error = current_progress["error"];
           var warning = current_progress["warning"];
