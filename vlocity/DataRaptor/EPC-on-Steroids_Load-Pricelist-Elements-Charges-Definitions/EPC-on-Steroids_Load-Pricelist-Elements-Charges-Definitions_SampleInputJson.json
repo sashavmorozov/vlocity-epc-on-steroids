@@ -2,112 +2,56 @@
     "Pricelist Elements-Charges": [
         {
             "Amount": 0,
-            "Checked": false,
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "EUR0.00",
             "Pricelist": 2019,
+            "Pricelist Code": "VEPC_PRICELIST_2019",
             "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_0_00_EUR",
             "Pricing Element Name": "MRC-0.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price"
         },
         {
             "Amount": 1,
-            "Checked": false,
+            "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "EUR1.00",
             "Pricelist": 2019,
+            "Pricelist Code": "VEPC_PRICELIST_2019",
             "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_1_00_EUR",
             "Pricing Element Name": "MRC-1.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price"
         },
         {
-            "Amount": 2,
-            "Checked": false,
+            "Amount": 0,
+            "Checked": true,
             "Currency Code": "EUR",
-            "Display Text": "EUR2.00",
+            "Display Text": "EUR0.00",
             "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_2_00_EUR",
-            "Pricing Element Name": "MRC-2.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_0_00_EUR",
+            "Pricing Element Name": "OTC-0.00-EUR",
+            "Pricing Variable": "One Time Std Price"
         },
         {
-            "Amount": 3,
-            "Checked": false,
+            "Amount": 1,
+            "Checked": true,
             "Currency Code": "EUR",
-            "Display Text": "EUR3.00",
+            "Display Text": "EUR1.00",
             "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_3_00_EUR",
-            "Pricing Element Name": "MRC-3.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
-        },
-        {
-            "Amount": 4,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Display Text": "EUR4.00",
-            "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_4_00_EUR",
-            "Pricing Element Name": "MRC-4.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
-        },
-        {
-            "Amount": 5,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Display Text": "EUR5.00",
-            "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_5_00_EUR",
-            "Pricing Element Name": "MRC-5.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
-        },
-        {
-            "Amount": 10,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Display Text": "EUR10.00",
-            "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_10_00_EUR",
-            "Pricing Element Name": "MRC-10.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
-        },
-        {
-            "Amount": 20,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Display Text": "EUR20.00",
-            "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_20_00_EUR",
-            "Pricing Element Name": "MRC-20.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
-        },
-        {
-            "Amount": 30,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Display Text": "EUR30.00",
-            "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_30_00_EUR",
-            "Pricing Element Name": "MRC-30.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
-        },
-        {
-            "Amount": 40,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Display Text": "EUR40.00",
-            "Pricelist": 2019,
-            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_40_00_EUR",
-            "Pricing Element Name": "MRC-40.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price"
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_1_00_EUR",
+            "Pricing Element Name": "OTC-1.00-EUR",
+            "Pricing Variable": "One Time Std Price"
         }
     ],
     "Transaction Details": {
-        "Application Version": "0.4",
+        "Application Version": "0.5",
         "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
-        "Transaction ID": "6f551a48-53c6-4a03-ad0e-566eff7b1447",
-        "Transaction Timestamp": "03/12/2019@16:44:46GMT"
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
+        "Transaction ID": "4429e8c2-2563-43cb-a8ff-9d0d2fd9bccc",
+        "Transaction Timestamp": "16/12/2019@19:33:48GMT"
     },
     "dataRaptorName": "EPC on Steroids_Load Pricelist Elements-Charges Definitions"
 }
