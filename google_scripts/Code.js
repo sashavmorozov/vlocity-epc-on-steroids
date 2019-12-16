@@ -17,22 +17,37 @@ function loadActiveSheetToVlocityEPC() {
     /* Verify connection */
     setLoadingProcessStep('Checking connection to Salesforce');  
     if(!isConnectedToSalesforce()) {
-      completeLoadingProcessProgress();
-      raiseLoadingProcessError();
+      console.log("*** Error: The application is not yet connected to Salesforce");
+      var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
+      };
+      displayErrorDialog(dialogParams);       
       return;
     }
     
     setLoadingProcessStep('Exporting data from the spreadsheet');
   
     /* Loading */
+    var sheetName = SpreadsheetApp.getActiveSheet().getName();
+    if (nonDataSheets.indexOf(sheetName) !== -1) {
+        console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
+        var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "Upload process is not supported for this sheet: " + sheetName
+        };
+        displayWarningDialog(dialogParams);
+        return;
+    }
+
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
     console.log("*** epcConfiguration:" + epcConfiguration);
 
     if (!epcConfiguration) {
         console.log("*** Error: an empty sheet, no data to upload");
         var dialogParams = {
-          "warningMessage": "Doesn't look good",
-          "warningMessageDescription": "Please verify the spreadsheet has data to upload. Looks like an empty spreadsheet now"
+          "message": "Doesn't look good",
+          "messageDescription": "Please verify the spreadsheet has data to upload. Looks like an empty spreadsheet now"
         };
         displayWarningDialog(dialogParams);
         return;
@@ -71,23 +86,38 @@ function loadCheckedRowsToVlocityEPC() {
     /* Verify connection */
     setLoadingProcessStep('Checking connection to Salesforce');  
     if(!isConnectedToSalesforce()) {
-      console.log("*** Error: Not connected to Salesforce");
-      completeLoadingProcessProgress();
-      raiseLoadingProcessError();
+      console.log("*** Error: The application is not yet connected to Salesforce");
+      var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
+      };
+      displayErrorDialog(dialogParams);       
+    
       return;
     }
     
     setLoadingProcessStep('Exporting data from the spreadsheet');
   
     /* Loading */
+    var sheetName = SpreadsheetApp.getActiveSheet().getName();
+    if (nonDataSheets.indexOf(sheetName) !== -1) {
+        console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
+        var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "Upload process is not supported for this sheet: " + sheetName
+        };
+        displayWarningDialog(dialogParams);
+        return;
+    }
+
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
     console.log("*** epcConfiguration:" + epcConfiguration);
 
     if (!epcConfiguration) {
         console.log("*** Error: no rows checked, no data to upload");
         var dialogParams = {
-          "warningMessage": "Doesn't look good",
-          "warningMessageDescription": "Please verify you checked the records you want to load. Looks like nothing was selected"
+          "message": "Doesn't look good",
+          "messageDescription": "Please verify you checked the records you want to load. Looks like nothing was selected"
         };
         displayWarningDialog(dialogParams);
         return;

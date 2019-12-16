@@ -398,6 +398,13 @@ function displayWarningDialog(dialogParams) {
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }
 
+function displayErrorDialog(dialogParams) {
+  var dialogPage = "pages/ErrorDialog";
+  var dialogTitle = "Error";
+
+  displayDialog(dialogPage, dialogTitle, dialogParams);
+}
+
 /**
  * Shows all sheets in the app
  *
