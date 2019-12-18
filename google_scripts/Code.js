@@ -9,32 +9,32 @@ function loadActiveSheetToVlocityEPC() {
     resetLoadingProcessStep();
     resetLoadingProcessError();
     resetLoadingProcessWarning();
-    
-    showProgressDialog();  
-  
+
+    showProgressDialog();
+
     restoreCurrentTabName();
 
     /* Verify connection */
-    setLoadingProcessStep('Checking connection to Salesforce');  
-    if(!isConnectedToSalesforce()) {
-      console.log("*** Error: The application is not yet connected to Salesforce");
-      var dialogParams = {
-          "message": "Doesn't look good",
-          "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
-      };
-      displayErrorDialog(dialogParams);       
-      return;
+    setLoadingProcessStep('Checking connection to Salesforce');
+    if (!isConnectedToSalesforce()) {
+        console.log("*** Error: The application is not yet connected to Salesforce");
+        var dialogParams = {
+            "message": "Doesn't look good",
+            "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
+        };
+        displayErrorDialog(dialogParams);
+        return;
     }
-    
+
     setLoadingProcessStep('Exporting data from the spreadsheet');
-  
+
     /* Loading */
     var sheetName = SpreadsheetApp.getActiveSheet().getName();
     if (nonDataSheets.indexOf(sheetName) !== -1) {
         console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
         var dialogParams = {
-          "message": "Doesn't look good",
-          "messageDescription": "Upload process is not supported for this sheet: " + sheetName
+            "message": "Doesn't look good",
+            "messageDescription": "Upload process is not supported for this sheet: " + sheetName
         };
         displayWarningDialog(dialogParams);
         return;
@@ -46,19 +46,19 @@ function loadActiveSheetToVlocityEPC() {
     if (!epcConfiguration) {
         console.log("*** Error: an empty sheet, no data to upload");
         var dialogParams = {
-          "message": "Doesn't look good",
-          "messageDescription": "Please verify the spreadsheet has data to upload. Looks like an empty spreadsheet now"
+            "message": "Doesn't look good",
+            "messageDescription": "Please verify the spreadsheet has data to upload. Looks like an empty spreadsheet now"
         };
         displayWarningDialog(dialogParams);
         return;
     }
-    
+
     setLoadingProcessStep('Adding transactional data for tracking');
     addTransactionDetails(epcConfiguration);
-  
+
     setLoadingProcessStep('Loading data to Vlocity');
     loadConfigurationToVlocityEPCChunkable(epcConfiguration);
-  
+
     /* After loading */
     completeLoadingProcessStep();
     completeLoadingProcessProgress();
@@ -78,33 +78,33 @@ function loadCheckedRowsToVlocityEPC() {
     resetLoadingProcessStep();
     resetLoadingProcessError();
     resetLoadingProcessWarning();
-    
-    showProgressDialog();  
-  
+
+    showProgressDialog();
+
     restoreCurrentTabName();
 
     /* Verify connection */
-    setLoadingProcessStep('Checking connection to Salesforce');  
-    if(!isConnectedToSalesforce()) {
-      console.log("*** Error: The application is not yet connected to Salesforce");
-      var dialogParams = {
-          "message": "Doesn't look good",
-          "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
-      };
-      displayErrorDialog(dialogParams);       
-    
-      return;
+    setLoadingProcessStep('Checking connection to Salesforce');
+    if (!isConnectedToSalesforce()) {
+        console.log("*** Error: The application is not yet connected to Salesforce");
+        var dialogParams = {
+            "message": "Doesn't look good",
+            "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
+        };
+        displayErrorDialog(dialogParams);
+
+        return;
     }
-    
+
     setLoadingProcessStep('Exporting data from the spreadsheet');
-  
+
     /* Loading */
     var sheetName = SpreadsheetApp.getActiveSheet().getName();
     if (nonDataSheets.indexOf(sheetName) !== -1) {
         console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
         var dialogParams = {
-          "message": "Doesn't look good",
-          "messageDescription": "Upload process is not supported for this sheet: " + sheetName
+            "message": "Doesn't look good",
+            "messageDescription": "Upload process is not supported for this sheet: " + sheetName
         };
         displayWarningDialog(dialogParams);
         return;
@@ -116,19 +116,19 @@ function loadCheckedRowsToVlocityEPC() {
     if (!epcConfiguration) {
         console.log("*** Error: no rows checked, no data to upload");
         var dialogParams = {
-          "message": "Doesn't look good",
-          "messageDescription": "Please verify you checked the records you want to load. Looks like nothing was selected"
+            "message": "Doesn't look good",
+            "messageDescription": "Please verify you checked the records you want to load. Looks like nothing was selected"
         };
         displayWarningDialog(dialogParams);
         return;
     }
-    
+
     setLoadingProcessStep('Adding transactional data for tracking');
     addTransactionDetails(epcConfiguration);
-  
+
     setLoadingProcessStep('Loading data to Vlocity');
     loadConfigurationToVlocityEPCChunkable(epcConfiguration);
-  
+
     /* After loading */
     completeLoadingProcessStep();
     completeLoadingProcessProgress();
@@ -145,14 +145,14 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
 
     Logger.log("*** epcConfiguration: " + epcConfiguration);
-  
+
     if (!epcConfiguration) {
-      console.log("*** Error: no data to upload");
-      return;
+        console.log("*** Error: no data to upload");
+        return;
     }
-  
+
     //setLoadingProcessStep("Connecting to Salesforce");
-    if (!accessTokenObj || 
+    if (!accessTokenObj ||
         !accessTokenObj.accessToken ||
         !accessTokenObj.instanceUrl) {
         Logger.log('Error: Access token should be generated first');
@@ -166,7 +166,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         operationNotification('Operation failed', 'Access token should be generated first. Connect to Salesforce organization');
         return;
     }
-  
+
     var accessToken = accessTokenObj.accessToken;
     var url = accessTokenObj.instanceUrl + LOAD_GENERIC_EPC_DEFINITION_VIP;
 
@@ -196,7 +196,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         var chunkPayload = {};
         chunkPayload['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
         chunkPayload[sheetName] = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
-      
+
         addTransactionDetails(chunkPayload);
 
         Logger.log('*** Chunk range: ' + (CHUNK_SIZE * i) + ', ' + (CHUNK_SIZE * (i + 1)));
@@ -230,21 +230,14 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
 
         //error processing
         var responseAsJson = JSON.parse(response);
-      
+
         processDataraptorResponse(responseAsJson, chunkPayload[sheetName].length);
-      
+
         var errorDetected = false;
-      
-        if (responseAsJson) {
-            /*var dataraptorExecutionStatus = JSON.stringify(responseAsJson['Status']);
-          
-            Logger.log(dataraptorExecutionStatus);
-            if (dataraptorExecutionStatus == "\"Failed\"") { //whaaaat???
-              sheet.setName(sheetName + ' (Error)');
-              errorDetected = true;
-              Logger.log("im in!");
-            }*/
-          
+
+        /* if (responseAsJson) {
+           
+
             var result = JSON.stringify(responseAsJson['Result']);
             if (result) {
                 var hasErrors = JSON.stringify(responseAsJson['Result']['hasErrors']);
@@ -257,13 +250,13 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         } else {
             sheet.setName(sheetName + ' (Error)');
             errorDetected = true;
-        }
+        } */
 
         //this none-sense doesn't work
         Logger.log('errorDetected = ' + errorDetected);
         if (errorDetected == true) {
-           raiseLoadingProcessError();
-            
+            raiseLoadingProcessError();
+
             logProgress(
                 sheetName,
                 "Process Error",
@@ -272,14 +265,14 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
 
         processedRecords = Math.min((i + 1) * CHUNK_SIZE, payloadAsJson[sheetName].length);
         sheet.setName(sheetName + ' (' + processedRecords + '/' + payloadAsJson[sheetName].length + ')');
-      
+
         loadingProcessProgress = processedRecords / payloadAsJson[sheetName].length * 100;
         updateLoadingProcessProgress(Math.round(loadingProcessProgress));
     }
 
     sheet.setName(sheetName + ' (Loaded)');
     sheet.setName(sheetName);
-  
+
     completeLoadingProcessProgress();
     completeLoadingProcessStep();
 
@@ -291,54 +284,92 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     //operationNotification('Operation completed', 'Selected rows are successfully processed, errors returned: ' + 'TBD');
 }
 
-function processDataraptorResponse(response, expectedCreatedRecordCount) {
-  if (!response) {
-      Logger.log('*** No response received from dataraptor');
-      return null;
-  }
+function processDataraptorResponse(response, inputRecordsCount) {
+    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
-  var message = response["Message"];
-  var status = response["Status"];
-  var result = response["Result"];
+    console.log("*** VARIABLE: response: " + JSON.stringify(response));
 
-  if (!status) {
-    Logger.log('*** No status received from dataraptor. Looks suspicios');
-    raiseLoadingProcessError();
-    return null;
-  } else {
-    Logger.log('*** status: ' + status);
-    if (status === "Failed") {
-        Logger.log('*** Failed status received from dataraptor. Review and correct');
+    if (!response) {
+        console.log('*** ERROR: An empty response (or no response) received from dataraptor');
+        raiseLoadingProcessError();
+        return null;
+    }
+
+    /* quick status check */
+    var dataRaptorStatus = response.Status;
+
+    if (!dataRaptorStatus) {
+        console.log('*** ERROR: An empty status (or no status) received from dataraptor');
+        raiseLoadingProcessError();
+        return;
+    } else {
+        if (dataRaptorStatus === "Failed") {
+            console.log("*** ERROR: " + "Failed status received from dataraptor. Please review the process logs and make necessary corrections");
+            var dialogParams = {
+                "message": "Doesn't look right",
+                "messageDescription": "Failed status received from dataraptor. Please review the process logs and make necessary corrections"
+            };
+            displayErrorDialog(dialogParams);
+            return;
+        } else {
+            //other search
+        }
+    }
+
+    /* execution result records count */
+    var dataRaptorResult = response.Result;
+
+    if (!dataRaptorResult) {
+        console.log('*** ERROR: An empty result (or no result) received from dataraptor');
         raiseLoadingProcessError();
         return null;
     } else {
-        //other search
+        /* result is received and is not empty */
+        var itnerfaceInfo = dataRaptorResult.interfaceInfo;
+        var itnerfaceInfoKeyMap = Object.keys(itnerfaceInfo);
+        var dataraptorName = itnerfaceInfoKeyMap[0];
+        console.log('*** VARIABLE: dataraptorName: ' + dataraptorName);
+
+        var createdObjectsCount = 0;
+        var createdObjectsByType = dataRaptorResult.createdObjectsByType;
+
+        if (isEmpty(createdObjectsByType)) {
+            console.log("*** ERROR: " + "No objects were created/updated");
+
+            var dialogParams = {
+                "message": "Doesn't look right",
+                "messageDescription": "No objects were created/updated"
+            };
+            displayErrorDialog(dialogParams);
+            return;
+        }
+
+        var createdObjectsByTypeEffective = dataRaptorResult.createdObjectsByType[dataraptorName];
+
+        var createdObjectsByTypeEffectiveKeyMap = Object.keys(createdObjectsByTypeEffective);
+        for each (var key in createdObjectsByTypeEffectiveKeyMap) {
+            createdObjectsCount += createdObjectsByTypeEffective[key].length;
+        }
+
+        var expectedCreatedObjectsCount = inputRecordsCount * createdObjectsByTypeEffectiveKeyMap.length;
+
+        console.log("*** VARIABLE: inputRecordsCount: " + inputRecordsCount);
+        console.log("*** VARIABLE: expectedCreatedObjectsCount: " + expectedCreatedObjectsCount);
+        console.log("*** VARIABLE: createdObjectsCount: " + createdObjectsCount);
+
+        if (createdObjectsCount !== expectedCreatedObjectsCount) {
+            console.log("*** WARNING: Looks like the process created/updated less records than expected. Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount);
+
+            var dialogParams = {
+                "message": "Looks okay but not quite right",
+                "messageDescription": "The process is completed and no technical errors detected. However it looks like the process created/updated less records than expected. " + "Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount + ". This could occur if some baseline records are not yet uploaded to the catalog. E.g. picklist should be uploaded befor uploading picklist values"
+            };
+            displayWarningDialog(dialogParams);
+            return;
+        }
     }
-  }
 
-  if (!result) {
-    Logger.log('*** No result received from dataraptor. Looks suspicios');
-    raiseLoadingProcessError();
-    return null;
-  }
-
-  if(result === "123") {
-      var itnerfaceInfo = result["interfaceInfo"];
-      var keyMap = Object.keys(itnerfaceInfo);
-      var dataraptorName = keyMap[0];
-      Logger.log('*** dataraptor name: ' + dataraptorName);
-
-      //var createdObjectCount = result["createdObjectsByOrder"][dataraptorName]["1"].length;
-      Logger.log(createdObjectCount);
-      Logger.log(expectedCreatedRecordCount);
-    
-      //check me
-      if (expectedCreatedRecordCount !== createdObjectCount) {
-        Logger.log("Houston, we have a problem");
-        //setLoadingProcessWarning("Record count mismatch. Check data and dependencies. URL>>");
-      }
-  }
-
+    console.log("*** METHOD_EXIT: " + arguments.callee.name);
 }
 
 function exportActiveSheetAsJson() {
@@ -460,42 +491,42 @@ function exportSelectedRowsAsJson() {
 }
 
 /* Generates JSON data structure using rows of a current sheet (active in browser) and export scope
-* @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
-* @return JSON object (not string)
-*/
+ * @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
+ * @return JSON object (not string)
+ */
 
 function exportRowsOfActiveSheetAsJson(exportScope) {
     return exportRowsAsJson(SpreadsheetApp.getActiveSheet().getName(), exportScope);
 }
 
 /* Generates JSON data structure using rows of a sheet identified by name and export scope
-* @param string sheetName - name of a sheet
-* @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
-* @return JSON object (not string)
-*/
+ * @param string sheetName - name of a sheet
+ * @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
+ * @return JSON object (not string)
+ */
 
 function exportRowsAsJson(sheetName, exportScope) {
-    
+
     if (!sheetName) {
-      Logger.log('*** No sheet name provided');
-      return null;
+        Logger.log('*** No sheet name provided');
+        return null;
     }
-  
+
     if (!exportScope) {
-      Logger.log('*** No export scope provided, using default export scope (include all)');
-      exportScope = CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL; 
+        Logger.log('*** No export scope provided, using default export scope (include all)');
+        exportScope = CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL;
     }
-  
+
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
     var dataRange = sheet.getDataRange();
-   
+
     if (dataRange) {
         var numRows = dataRange.getNumRows();
         var numCols = dataRange.getNumColumns();
-      
+
         Logger.log('*** Data Range number of rows: ' + numRows);
         Logger.log('*** Data Range number of columns: ' + numCols);
-        
+
         var values = dataRange.getValues();
         var rowRangeOffset = CONST_FIRST_DATA_ROW_NUMBER - 1;
 
@@ -512,37 +543,37 @@ function exportRowsAsJson(sheetName, exportScope) {
         for (var i = rowRangeOffset; i < values.length; i++) {
             var rowObj = {};
             var row = values[i];
-            
+
             if (!isEmptyArray(row)) {
-              if ((exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED && 
-                   row[CONST_CHECKED_COLUMN_NUMBER - 1] === true) || 
-                  exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL) {
-                
-                for (var j = 0; j < header.length; j++) {
-                    var value = row[j];
+                if ((exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED &&
+                        row[CONST_CHECKED_COLUMN_NUMBER - 1] === true) ||
+                    exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL) {
 
-                    if (value instanceof Date && !isNaN(value.valueOf())) {
-                        //apply special formatting for date values
-                        value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
+                    for (var j = 0; j < header.length; j++) {
+                        var value = row[j];
+
+                        if (value instanceof Date && !isNaN(value.valueOf())) {
+                            //apply special formatting for date values
+                            value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
+                        }
+
+                        rowObj[header[j]] = value;
                     }
-                  
-                    rowObj[header[j]] = value;
-                }
 
-                if (rowObj != null) result.push(rowObj);
-              }
+                    if (rowObj != null) result.push(rowObj);
+                }
             }
         }
     }
-   
-  if (result && result.length) {
-    resultWrapper[sheetName] = result;
-    return (resultWrapper);
-  } else {
-    return null;
-  }
 
-    
+    if (result && result.length) {
+        resultWrapper[sheetName] = result;
+        return (resultWrapper);
+    } else {
+        return null;
+    }
+
+
 }
 
 function loadSheetToDataraptorMapping() {
