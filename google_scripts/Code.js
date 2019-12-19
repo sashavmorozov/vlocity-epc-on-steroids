@@ -284,6 +284,17 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     //operationNotification('Operation completed', 'Selected rows are successfully processed, errors returned: ' + 'TBD');
 }
 
+/**
+ * Analyses the response message from a dataraptor/integration procedure. Check response status and validates the number of create/updated records
+ *
+ * @param {object} response - integration procedure response as object
+ * @param {number} inputRecordsCount - number of records to process (typically a chunk length)
+ * @return {voic} - nothing
+ *
+ * @example
+ *     processDataraptorResponse(responseAsJson, chunkPayload[sheetName].length);
+ */
+
 function processDataraptorResponse(response, inputRecordsCount) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
