@@ -462,7 +462,13 @@ function areAuthorizationProperiesSet() {
 function isEmptyArray(inputArray){
   
   var isEmpty = true;
-  for (var i = 0; i < inputArray.length; i++) {
+  
+  /* ignore specially marked rows */
+  if (inputArray[0] === "H") {
+    return true;
+  }
+
+  for (var i = 1; i < inputArray.length; i++) {
     if (inputArray[i] !== "" &&
         inputArray[i] !== null &&
         inputArray[i] !== false &&
