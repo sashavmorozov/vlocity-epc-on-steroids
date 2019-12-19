@@ -1,72 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <base target="_top" />
-        <?!= include('css/Stylesheet'); ?>
-        <script>
-            function viewLogs() {
-                google.script.run.viewLogs();
-                google.script.host.close();
-            }
-        </script>
-    </head>
 
-    <body>
-        <div
-            style="
+<head>
+    <base target="_top" />
+    <?!= include('css/Stylesheet'); ?>
+    <script>
+        function viewLogs() {
+            google.script.run.viewLogs();
+            google.script.host.close();
+        }
+    </script>
+</head>
+
+<body>
+    <div style="
             border-radius:10px;
             background: white;
-            "
-            >
-            <div style="height: 32px;"></div>
-            <!--empty div-->
-            <div style="height: 32px;">
-                <!--section 1 div-->
-                <?= dialogParams.message ?>
-            </div>
-            <div id="loading-process-step" class="" style="height: 0px;">
-                <!--section 1 div-->
-                <!-- placeholder -->
-            </div>
+            display: contents;
+            ">
+        <div style="height: 32px;"></div>
+        <!--empty div-->
+        <div style="height: 32px;">
+            <!--section 1 div-->
+            <?= dialogParams.message ?>
         </div>
-
-        <div id="error-alert" class="alert alert-danger" role="alert" hidden>
-            <?= dialogParams.messageDescription ?>
+        <div id="loading-process-step" class="" style="height: 0px;">
+            <!--section 1 div-->
+            <!-- placeholder -->
         </div>
+    </div>
 
-        <div id="warning-alert" class="alert alert-warning" role="alert">
-            <?= dialogParams.messageDescription ?>
-        </div>
+    <div id="error-alert" class="alert alert-danger" role="alert" style="white-space: pre-line;" hidden>
+        <script>
+            document.currentScript.parentNode.innerHTML = <?= dialogParams.messageDescription ?>;
+        </script>
+    </div>
 
-        <div id="success-alert" class="alert alert-success" role="alert" hidden>
-            <?= dialogParams.messageDescription ?>
-        </div>
+    <div id="warning-alert" class="alert alert-warning" role="alert" style="white-space: pre-line;">
+        <script>
+            document.currentScript.parentNode.innerHTML = <?= dialogParams.messageDescription ?>;
+        </script>
+    </div>
 
-        <!--buttons div-->
-        <div
-            class=""
-            style="
+    <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line;" hidden>
+        <script>
+            document.currentScript.parentNode.innerHTML = <?= dialogParams.messageDescription ?>;
+        </script>
+    </div>
+
+    <!--buttons div-->
+    <div class="" style="
             position: absolute;
             bottom: 0px;
             right: 0px;
-            "
-        >
-            <input
-                type="button"
-                class="btn btn-primary"
-                style="width: 100px;float: right;margin-left: 10px;"
-                value="Close"
-                onclick="google.script.host.close()"
-            />
+            ">
+        <input type="button" class="btn btn-primary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
+            onclick="google.script.host.close()" />
 
-            <input
-                id="view-logs"
-                type="button"
-                class="btn btn-primary"
-                style="width: 100px; float: right;"
-                value="View Logs"
-                onclick="viewLogs()"
-            />
-        </div>
-    </body>
+        <input id="view-logs" type="button" class="btn btn-primary" style="width: 100px; float: right;"
+            value="View Logs" onclick="viewLogs()" />
+    </div>
+</body>
+
 </html>

@@ -362,7 +362,12 @@ function processDataraptorResponse(response, inputRecordsCount) {
 
             var dialogParams = {
                 "message": "Looks okay but not quite right",
-                "messageDescription": "The process is completed and no technical errors detected. However it looks like the process created/updated less records than expected. " + "Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount + ". This could occur if some baseline records are not yet uploaded to the catalog. E.g. picklist should be uploaded before uploading picklist values"
+                "messageDescription": "The process is completed and no technical errors detected. However, it looks like the process created/updated less records than expected.\n" +
+                "<ul>" +  
+                "<li>Expected: " + expectedCreatedObjectsCount + "</li>"+
+                "<li>Actually created/updated: " + createdObjectsCount + "</li>" +
+                "</ul><br>" + 
+                "This could occur if some baseline records are not yet uploaded to the catalog. For example, a parent picklist should be uploaded before uploading picklist values"
             };
             displayWarningDialog(dialogParams);
             return;
