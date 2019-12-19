@@ -289,7 +289,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
  *
  * @param {object} response - integration procedure response as object
  * @param {number} inputRecordsCount - number of records to process (typically a chunk length)
- * @return {voic} - nothing
+ * @return {void} - nothing
  *
  * @example
  *     processDataraptorResponse(responseAsJson, chunkPayload[sheetName].length);
