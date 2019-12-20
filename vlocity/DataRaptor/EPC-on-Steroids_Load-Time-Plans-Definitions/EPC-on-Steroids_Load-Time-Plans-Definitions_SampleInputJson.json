@@ -1,68 +1,67 @@
 {
-    "Timeplans": [
+    "Time Plans": [
         {
-            "Active": "Yes",
+            "Active": true,
             "Checked": false,
             "Description": "Charge daily",
             "Effective End Date": "01/01/2099",
             "Effective Start Date": "01/01/2019",
-            "Timeplan Code": "VEPC_TIMEPLAN_TP_1D",
-            "Timeplan Name": "TP-1D",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1D",
+            "Time Plan Name": "TP-1D",
             "Total Duration": 1,
             "Total Duration UoM": "Day"
         },
         {
-            "Active": "Yes",
+            "Active": true,
             "Checked": false,
             "Description": "Charge weekly",
             "Effective End Date": "01/01/2099",
             "Effective Start Date": "01/01/2019",
-            "Timeplan Code": "VEPC_TIMEPLAN_TP_1W",
-            "Timeplan Name": "TP-1W",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1W",
+            "Time Plan Name": "TP-1W",
             "Total Duration": 1,
             "Total Duration UoM": "Week"
         },
         {
-            "Active": "Yes",
+            "Active": true,
             "Checked": false,
             "Description": "Charge monthly",
             "Effective End Date": "01/01/2099",
             "Effective Start Date": "01/01/2019",
-            "Timeplan Code": "VEPC_TIMEPLAN_TP_1M",
-            "Timeplan Name": "TP-1M",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1M",
+            "Time Plan Name": "TP-1M",
             "Total Duration": 1,
             "Total Duration UoM": "Month"
         },
         {
-            "Active": "Yes",
+            "Active": true,
             "Checked": false,
             "Description": "Charge quarterly",
             "Effective End Date": "01/01/2099",
             "Effective Start Date": "01/01/2019",
-            "Timeplan Code": "VEPC_TIMEPLAN_TP_1Q",
-            "Timeplan Name": "TP-1Q",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1Q",
+            "Time Plan Name": "TP-1Q",
             "Total Duration": 1,
             "Total Duration UoM": "Quarter"
         },
         {
-            "Active": "Yes",
+            "Active": true,
             "Checked": false,
             "Description": "Charge annually",
             "Effective End Date": "01/01/2099",
             "Effective Start Date": "01/01/2019",
-            "Timeplan Code": "VEPC_TIMEPLAN_TP_1Y",
-            "Timeplan Name": "TP-1Y",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1Y",
+            "Time Plan Name": "TP-1Y",
             "Total Duration": 1,
             "Total Duration UoM": "Year"
         }
     ],
     "Transaction Details": {
-        "Application Version": "0.4",
+        "Application Version": "0.5",
         "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
-        "Transaction ID": "fa5aabd8-fe64-4cff-adab-ec81d14e1c33",
-        "Transaction Timestamp": "03/12/2019@16:01:11GMT"
-    },
-    "dataRaptorName": "EPC on Steroids_Load Timeplans Definitions"
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
+        "Transaction ID": "0e394e45-828f-4e09-9047-6f3716b2a8aa",
+        "Transaction Timestamp": "20/12/2019@14:13:56GMT"
+    }
 }
