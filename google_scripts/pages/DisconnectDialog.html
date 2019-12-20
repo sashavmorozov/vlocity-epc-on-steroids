@@ -1,44 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <base target="_top">
-    <?!= include('css/Stylesheet'); ?>
-  </head>
-  <body>
-      <script>
-          function disconnectFromSalesforce() {
-              //document.getElementById("field2").value = document.getElementById("field1").value;
-              google.script.run.eraseTokenInformation();
-              google.script.run.operationNotification('Operation Completed', 
-                'Successfully disconnected from Salesforce');
-              google.script.host.close();
-          }
-    </script>
 
+<head>
+  <base target="_top">
+  <?!= include('css/Stylesheet'); ?>
+  <script>
+    function viewLogs() {
+      google.script.run.viewLogs();
+      google.script.host.close();
+    }
+  </script>
+
+  <script>
+    function disconnectFromSalesforce() {
+      google.script.run.eraseTokenInformation();
+    }
+  </script>
+
+</head>
+
+<body>
+  <div style="
+              border-radius:10px;
+              background: white;
+              display: contents;
+              ">
     <div class="text-center">
-      <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true"
-        class="rounded"
-        width="100" 
-        height="100"
-        alt="Pill icon by Icon8"/>
+      <img
+        src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true"
+        class="rounded" width="100" height="100" />
     </div>
-    <div class="text-center">
-      <br>
-      <h3>Revoke Access?</h3>
+    <div class="text-center" style="min-height: 32px;">
+      <h4>Revoke access?</h4>
     </div>
-    <div class="">
-      Do you want to disconnect from <a target="_blank" href="<?= instanceUrl ?>"><?= shortenInstanceUrl(instanceUrl) ?></a>?
-      <br><br>
+    <!--empty div-->
+    <div style="min-height: 32px;">
+      <!--section 1 div-->
+      Do you want to disconnect from <a target="_blank"
+        href="<?= instanceUrl ?>"><?= shortenInstanceUrl(instanceUrl) ?></a>?
     </div>
-     <br>
-     <div class="">
-      <input type="button" class="btn btn-secondary float-lg-left text-left" style="width: 48%" value="Close" onclick="google.script.host.close()" />
-      
-      <input type="button" class="btn btn-primary text-right" style="width: 48%" value="Disconnect" onclick="disconnectFromSalesforce();" />
-      
-    </div>
-     <div class="text-left" style="position: absolute; bottom: 5px;font-size: 10px;">
-     <a style="font-size: 10px;" target="_blank" href="/icons/set/pill">Pill icon</a> by <a target="_blank" href="https://icons8.com">Icons8</a>
-    </div>
-  </body>
+  </div>
+
+  <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;"
+    hidden>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script id="rendered-js">
+      $(function () {
+        var interval = setInterval(function () {
+          google.script.run.withSuccessHandler(onSuccess).getConnectedOrgDetails();
+
+          if ($("#success-alert").prop("hidden") === false) {
+            clearInterval(interval);
+          }
+        }, 1000);
+      });
+
+      function onSuccess(orgDetails) {
+        var orgUrl = orgDetails.url;
+        var orgName = orgDetails.name;
+
+        if (orgUrl === null) {
+
+          $("#success-alert").
+            prop("hidden", false).
+            html("You are now disconnected from Salesforce");
+
+          $("#connect-footnote").
+            prop("hidden", false);
+
+          $("#disconnect").
+            addClass("disabled");
+        }
+      }
+    </script>
+  </div>
+
+  <div id="connect-footnote" style="min-height: 32px; font-size: 10px;" hidden>
+    <!--section 1 div-->
+    To connect back at any time, go to Security > Connect to Salesforce
+  </div>
+  <div style="min-height: 32px; font-size: 10px;">
+    <!--section 1 div-->
+    <a style="font-size: 10px;" target="_blank" href="/icons/set/pill">Pill icon</a> by <a target="_blank"
+      href="https://icons8.com">Icons8</a>
+  </div>
+
+
+  <!--buttons div-->
+  <div class="" style="
+              position: absolute;
+              bottom: 0px;
+              right: 0px;
+              ">
+
+
+    <input id="disconnect" type="button" class="btn btn-primary" style="width: 100px;float: right;margin-left: 10px;"
+      value="Disconnect" onclick="disconnectFromSalesforce()" />
+
+    <input type="button" class="btn btn-secondary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
+      onclick="google.script.host.close()" />
+
+  </div>
+</body>
+
+
 </html>

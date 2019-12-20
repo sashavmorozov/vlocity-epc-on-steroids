@@ -29,8 +29,8 @@ function getRedirectUri() {
  */
 
 function persistTokenInformation(accessToken, instanceUrl) {
-    scriptProperties.setProperty("accessToken", accessToken);
-    scriptProperties.setProperty("instanceUrl", instanceUrl);
+    PropertiesService.getScriptProperties().setProperty("accessToken", accessToken);
+    PropertiesService.getScriptProperties().setProperty("instanceUrl", instanceUrl);
 }
 
 /**
@@ -43,8 +43,8 @@ function persistTokenInformation(accessToken, instanceUrl) {
  */
 
 function eraseTokenInformation() {
-    scriptProperties.deleteProperty("accessToken");
-    scriptProperties.deleteProperty("instanceUrl");
+    PropertiesService.getScriptProperties().deleteProperty("accessToken");
+    PropertiesService.getScriptProperties().deleteProperty("instanceUrl");
 }
 
 /**
@@ -57,8 +57,8 @@ function eraseTokenInformation() {
  */
 
 function retrieveStoredAccessToken() {
-    var accessToken = scriptProperties.getProperty("accessToken");
-    var instanceUrl = scriptProperties.getProperty("instanceUrl");
+    var accessToken = PropertiesService.getScriptProperties().getProperty("accessToken");
+    var instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
 
     if (
         accessToken != null &&
