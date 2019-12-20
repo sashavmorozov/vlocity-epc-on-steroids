@@ -535,7 +535,7 @@ function exportRowsAsJson(sheetName, exportScope) {
 
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
     var dataRange = sheet.getDataRange();
-
+  
     if (dataRange) {
         var numRows = dataRange.getNumRows();
         var numCols = dataRange.getNumColumns();
@@ -557,10 +557,12 @@ function exportRowsAsJson(sheetName, exportScope) {
         }
 
         for (var i = rowRangeOffset; i < values.length; i++) {
+            var currentRowAsRange = dataRange.offset(i, 0, 1);
+          
             var rowObj = {};
             var row = values[i];
 
-            if (!isEmptyArray(row)) {
+            if (!isEmptyArray(row) && !rangeContainsStrikethroughCells(currentRowAsRange)) {
                 if ((exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED &&
                         row[CONST_CHECKED_COLUMN_NUMBER - 1] === true) ||
                     exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL) {

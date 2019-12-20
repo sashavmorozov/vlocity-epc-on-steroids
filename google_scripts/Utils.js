@@ -490,5 +490,43 @@ function isEmpty(obj) {
     return true;
 }
 
+/**
+ * Returns true if a sheet range contains at least one strikethrough cell
+ *
+ * @param {Range} sheetRange - Google sheet range (usually a row)
+ * @return {boolean} - result of the check
+ *
+ * @example
+ *     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ *     var sheetRange = sheet.getRange('A1:D10');
+ *     var containsStrikethroughCells = rangeContainsStrikethroughCells(sheetRange);
+ */
+
+function rangeContainsStrikethroughCells(sheetRange) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+  
+  //var sheetRange = SpreadsheetApp.getActiveSheet().getRange('A31:D34'); //test data
+  
+  if (sheetRange) {
+    var numRows = sheetRange.getNumRows();
+    var numCols = sheetRange.getNumColumns();
+    var sheetRangeTextStyles = sheetRange.getTextStyles();
+    
+    for (var i = 0; i < numRows; i++) {
+      for (var j = 0; j < numCols; j++) {
+        if (sheetRangeTextStyles[i][j].isStrikethrough()) {
+          return true;
+        }
+      }
+    }
+  }
+  
+  console.timeEnd(arguments.callee.name);
+  
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return false;
+}
+
 
 
