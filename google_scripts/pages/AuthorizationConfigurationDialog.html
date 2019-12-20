@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top" />
+  <?!= include('css/Stylesheet'); ?>
+  <script>
+    function viewLogs() {
+      google.script.run.viewLogs();
+      google.script.host.close();
+    }
+  </script>
+</head>
+
+<body>
+  <div style="
+            border-radius:10px;
+            background: white;
+            display: contents;
+            ">
+    <div class="text-center">
+      <img
+        src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true"
+        class="rounded" width="100" height="100" />
+    </div>
+    <div class="text-center" style="min-height: 32px;">
+      <h4>Authorization configuration</h4>
+    </div>
+    
+    <div style="min-height: 32px;">
+      <form>
+        <div class="form-group">
+          <textarea class="form-control" id="authFormCustomerKey" rows="2" placeholder="Customer Key" style="resize: none;"></textarea>
+        </div>
+      
+        <div class="form-group">
+              <textarea class="form-control" id="authFormCustomerSecret" rows="2" placeholder="Customer Secret" style="resize: none;"></textarea>
+            </div>
+      
+        <div class="form-group">
+          <select class="form-control" id="authFormOrgType">
+            <option value="" disabled selected>Organization Type</option>
+            <option value="Production">Production</option>
+            <option value="Sandbox">Sandbox</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;"
+    hidden>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script id="rendered-js">
+      $(function () {
+        var interval = setInterval(function () {
+          google.script.run.withSuccessHandler(onSuccess).getConnectedOrgDetails();
+
+          if ($("#success-alert").prop("hidden") === false) {
+            clearInterval(interval);
+          }
+        }, 1000);
+      });
+
+      function onSuccess(orgDetails) {
+        var orgUrl = orgDetails.url;
+        var orgName = orgDetails.name;
+
+        if (orgUrl !== null) {
+
+          $("#success-alert").
+            prop("hidden", false).
+            html("You are now connected to " + orgUrl);
+
+          $("#disconnect-footnote").
+            prop("hidden", false);
+
+          $("#authorize").
+            addClass("disabled");
+        }
+      }
+    </script>
+  </div>
+
+  <div style="min-height: 32px; font-size: 10px;">
+    <!--section 1 div-->
+    <a style="font-size: 10px;" target="_blank" href="/icons/set/pill">Pill icon</a> by <a target="_blank"
+      href="https://icons8.com">Icons8</a>
+  </div>
+
+
+  <!--buttons div-->
+  <div class="" style="
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            ">
+
+    <a id="authorize" class="btn btn-primary" href="" target="_blank"
+      style="width: 100px;float: right;margin-left: 10px;">Ok</a>
+
+    <input type="button" class="btn btn-secondary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
+      onclick="google.script.host.close()" />
+
+  </div>
+</body>
+
+</html>

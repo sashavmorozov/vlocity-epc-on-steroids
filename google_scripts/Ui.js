@@ -405,6 +405,13 @@ function displayErrorDialog(dialogParams) {
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }
 
+function displayAuthorizationConfigurationDialog(dialogParams) {
+  var dialogPage = "pages/AuthorizationConfigurationDialog";
+  var dialogTitle = "Configuration";
+
+  displayDialog(dialogPage, dialogTitle, dialogParams);
+}
+
 /**
  * Shows all sheets in the app
  *
