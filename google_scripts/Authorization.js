@@ -94,7 +94,7 @@ function retrieveStoredAccessToken() {
 
 function retrieveTokenByCode(authorizationCode) {
     var authenticationPrefix =
-        organizationType == "production" ? "login" : "test";
+      PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
     var url =
         "https://" +
         authenticationPrefix +
@@ -104,10 +104,10 @@ function retrieveTokenByCode(authorizationCode) {
         "grant_type=authorization_code" +
         "&" +
         "client_id=" +
-        customerKey +
+        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
         "&" +
         "client_secret=" +
-        customerSecret +
+        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
         "&" +
         "redirect_uri=" +
         getRedirectUri() +

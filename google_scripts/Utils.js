@@ -461,9 +461,9 @@ function uuidv4() {
 /* The function verifies that properties for authorization are properly set */
 
 function areAuthorizationProperiesSet() {
-  if (!customerKey || customerKey === "PUT_YOUR_VALUE_HERE") return false;
-  if (!customerSecret || customerSecret === "PUT_YOUR_VALUE_HERE") return false;
-  if (!organizationType || organizationType === "PUT_YOUR_VALUE_HERE") return false;
+  if (!PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) || PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
+  if (!PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) || PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
+  if (!PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) || PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
   
   return true;
 }

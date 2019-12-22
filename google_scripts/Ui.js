@@ -22,6 +22,7 @@ function buildMenu() {
         .addItem("Connect to Salesforce", "connectToSalesforce")
         .addItem("Disconnect from Salesforce", "disconnectFromSalesforce")
         .addItem("Get Callback URL", "getRedirectUriMessageBox")
+        .addItem("Configure connection to Salesforce", "configureConnectionToSalesforce")
     )
 
     .addSubMenu(
@@ -138,7 +139,7 @@ function disconnectFromSalesforce() {
 
 function showDialogWebServerAuthenticationFlow() {
   var authenticationPrefix =
-    organizationType == "production" ? "login" : "test";
+    PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
   var url =
     "https://" +
     authenticationPrefix +
@@ -148,7 +149,7 @@ function showDialogWebServerAuthenticationFlow() {
     "response_type=code" +
     "&" +
     "client_id=" +
-    customerKey +
+    PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
     "&" +
     "redirect_uri=" +
     getRedirectUri();
@@ -405,9 +406,13 @@ function displayErrorDialog(dialogParams) {
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }
 
-function displayAuthorizationConfigurationDialog(dialogParams) {
-  var dialogPage = "pages/AuthorizationConfigurationDialog";
+function configureConnectionToSalesforce(dialogParams) {
+  var dialogPage = "pages/ConnectionConfigurationDialog";
   var dialogTitle = "Configuration";
+  dialogParams = {
+    configurationObj: getConfiguration()
+  };
+  
 
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }

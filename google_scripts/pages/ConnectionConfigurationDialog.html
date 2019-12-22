@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top" />
+    <?!= include('css/Stylesheet'); ?>
+
+    <script>
+        function viewLogs() {
+            google.script.run.viewLogs();
+            google.script.host.close();
+        }
+
+        //this is a very naive form validation implementation, review and make it solid
+        function saveConfiguration() {
+            var updateSuccessful = true;
+            var orgType = document.getElementById("authFormOrgType").value;
+            var customerKey = document.getElementById("authFormCustomerKey").value;
+            var customerSecret = document.getElementById("authFormCustomerSecret").value;
+
+            var configurationObj = {
+                ORG_TYPE: orgType,
+                CUSTOMER_KEY: customerKey,
+                CUSTOMER_SECRET: customerSecret
+            };
+
+            if (!orgType) {
+                document.getElementById("authFormOrgType").style.borderColor = "red";
+                updateSuccessful = false;
+            } else {
+                document.getElementById("authFormOrgType").style.borderColor = "#cccccc";
+            }
+
+            if (!customerKey) {
+                document.getElementById("authFormCustomerKey").style.borderColor = "red";
+                updateSuccessful = false;
+            } else {
+                document.getElementById("authFormCustomerKey").style.borderColor = "#cccccc";
+            }
+
+            if (!customerSecret) {
+                document.getElementById("authFormCustomerSecret").style.borderColor = "red";
+                updateSuccessful = false;
+            } else {
+                document.getElementById("authFormCustomerSecret").style.borderColor = "#cccccc";
+            }
+
+            if (!updateSuccessful) {
+                return;
+            }
+
+            if (orgType && customerKey && customerSecret) {
+                console.log("*** VARIABLE: configurationObj: " + JSON.stringify(configurationObj));
+                google.script.run.setConfiguration(configurationObj);
+
+                document.getElementById("configuration-form-div").hidden = true;
+                document.getElementById("save-button").disabled = true;
+
+                document.getElementById("error-alert").hidden = true;
+                document.getElementById("success-alert").hidden = false;
+                document.getElementById("success-alert").innerHTML = "Configuration is succesfully saved. Now you need to redeploy the application as a web app and you are all set";
+
+            } else {
+                document.getElementById("error-alert").hidden = false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div style="
+            border-radius:10px;
+            background: white;
+            display: contents;
+            ">
+        <div class="text-center">
+            <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true"
+                class="rounded" width="100" height="100" />
+        </div>
+        <div class="text-center" style="min-height: 32px;">
+            <h4>Authorization configuration</h4>
+        </div>
+
+        <div id="configuration-form-div" style="min-height: 32px;">
+            <form>
+                <div class="form-group">
+                    <textarea class="form-control" id="authFormCustomerKey" rows="2" placeholder="Customer Key"
+                        style="resize: none;"
+                        title="Customer Key"><? if (!dialogParams.configurationObj.CUSTOMER_KEY) {?><?} else { ?><?=dialogParams.configurationObj.CUSTOMER_KEY?><? } ?></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="authFormCustomerSecret" rows="2" placeholder="Customer Secret"
+                        style="resize: none;"
+                        title="Customer Secret"><? if (!dialogParams.configurationObj.CUSTOMER_SECRET) {?><?} else { ?><?=dialogParams.configurationObj.CUSTOMER_SECRET?><? } ?></textarea>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" id="authFormOrgType">
+                        <option value="" disabled selected>Organization Type</option>
+                        <option value="Production">Production</option>
+                        <option value="Sandbox">Sandbox</option>
+                    </select>
+
+                    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+                    <script id="rendered-js">
+                        $(function () {
+                            $("#authFormOrgType").val(<? if (!dialogParams.configurationObj.ORG_TYPE) {?> "" <?} else { ?><?= dialogParams.configurationObj.ORG_TYPE ?><? } ?>);
+            });
+                    </script>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;"
+        hidden>
+    </div>
+
+    <div id="error-alert" class="alert alert-danger" role="alert" style="white-space: pre-line; margin-top: 20px;"
+        hidden>All fields are mandatory
+    </div>
+
+    <div style="min-height: 32px; font-size: 10px;">
+        <a style="font-size: 10px;" target="_blank" href="/icons/set/pill">Pill icon</a> by <a target="_blank"
+            href="https://icons8.com">Icons8</a>
+    </div>
+
+
+    <!--buttons div-->
+    <div class="" style="
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            ">
+
+        <input id="save-button" type="button" class="btn btn-primary"
+            style="width: 100px;float: right;margin-left: 10px;" value="Save" onclick="saveConfiguration()" />
+
+        <input id="close-button" type="button" class="btn btn-secondary"
+            style="width: 100px;float: right;margin-left: 10px;" value="Close" onclick="google.script.host.close()" />
+
+    </div>
+</body>
+
+</html>
