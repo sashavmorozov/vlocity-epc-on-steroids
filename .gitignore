@@ -22,3 +22,5 @@ google_scripts/Configuration.js
 google_scripts/Sandbox.js
 
 google_scripts/Tests.js
+
+google_scripts/clasp.json
