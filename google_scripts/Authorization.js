@@ -11,7 +11,7 @@
 function getRedirectUri() {
     var redirectUri = ScriptApp.getService().getUrl() + "/auth/callback";
 
-    Logger.log(redirectUri);
+    console.log(redirectUri);
     return redirectUri;
 }
 
@@ -29,8 +29,8 @@ function getRedirectUri() {
  */
 
 function persistTokenInformation(accessToken, instanceUrl) {
-    PropertiesService.getScriptProperties().setProperty("accessToken", accessToken);
-    PropertiesService.getScriptProperties().setProperty("instanceUrl", instanceUrl);
+    PropertiesService.getScriptProperties().setProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME, accessToken);
+    PropertiesService.getScriptProperties().setProperty(CONST_INSTANCE_URL_PROPERTY_NAME, instanceUrl);
 }
 
 /**
@@ -43,8 +43,8 @@ function persistTokenInformation(accessToken, instanceUrl) {
  */
 
 function eraseTokenInformation() {
-    PropertiesService.getScriptProperties().deleteProperty("accessToken");
-    PropertiesService.getScriptProperties().deleteProperty("instanceUrl");
+    PropertiesService.getScriptProperties().deleteProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+    PropertiesService.getScriptProperties().deleteProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
 }
 
 /**
@@ -53,12 +53,12 @@ function eraseTokenInformation() {
  * @return {Object} - a JS object containing both token and corresponding instance URL information
  *
  * @example
- *     var token = retrieveStoredAccessToken()["accessToken"];
+ *     var accessToken = retrieveStoredAccessToken()[CONST_ACCESS_TOKEN_PROPERTY_NAME];
  */
 
 function retrieveStoredAccessToken() {
-    var accessToken = PropertiesService.getScriptProperties().getProperty("accessToken");
-    var instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
+    var accessToken = PropertiesService.getScriptProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+    var instanceUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
 
     if (
         accessToken != null &&
@@ -67,8 +67,8 @@ function retrieveStoredAccessToken() {
         instanceUrl != ""
     ) {
         var obj = {};
-        obj["accessToken"] = accessToken;
-        obj["instanceUrl"] = instanceUrl;
+        obj[CONST_ACCESS_TOKEN_PROPERTY_NAME] = accessToken;
+        obj[CONST_INSTANCE_URL_PROPERTY_NAME] = instanceUrl;
 
         Logger.log("Successfully retrieved access token: " + accessToken);
         Logger.log("Successfully retrieved access instanceUrl: " + instanceUrl);
@@ -92,7 +92,7 @@ function retrieveStoredAccessToken() {
  *     var tokenResponse = retrieveTokenByCode(request.parameter.code);
  */
 
-function retrieveTokenByCode(authorizationCode) {
+function retrieveTokenByCode_ORIG_TEST_AND_DELETE_ME(authorizationCode) {
     var authenticationPrefix =
       PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
     var url =
@@ -158,4 +158,154 @@ function retrieveTokenByCode(authorizationCode) {
         logProgress("Authorization", "retrieveTokenByCode", response);
         return responseObj;
     }
+}
+
+function retrieveTokenByCode(authorizationCode) {
+    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+    var authenticationPrefix =
+      PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
+    var url =
+        "https://" +
+        authenticationPrefix +
+        ".salesforce.com/services/oauth2/token";
+
+    var payload =
+        "grant_type=" + 
+        "authorization_code" +
+        "&" +
+        "client_id=" +
+        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
+        "&" +
+        "client_secret=" +
+        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
+        "&" +
+        "redirect_uri=" +
+        getRedirectUri() +
+        "&" +
+        "code=" +
+        authorizationCode +
+        "&" +
+        "format=" +
+        "json";
+
+    var options = {
+        method: "post",
+        payload: payload,
+        muteHttpExceptions: true,
+        escaping: false
+    };
+
+    
+    var request = UrlFetchApp.getRequest(url, options);
+    console.log("*** INFO: refresh token request: " + request);
+    logProgress("Authorization", arguments.callee.name + " request", request);
+
+    var response = UrlFetchApp.fetch(url, options);
+    console.log("*** INFO: refresh token response: " + response);
+    logProgress("Authorization", arguments.callee.name + " response", response);
+
+    var responseObj = JSON.parse(response);
+
+    if (!responseObj.error) { //check this during testing
+        logProgress("Authorization", arguments.callee.name, "Token refresh process is successful");
+
+        console.log("*** VARIABLE: " + "response.access_token: " + responseObj.access_token);
+        console.log("*** VARIABLE: " + "response.signature: " + responseObj.signature);
+        console.log("*** VARIABLE: " + "response.instance_url: " + responseObj.instance_url);
+        
+        FAIL_ME: ADD REFRESH_TOKEN TO PROPS!
+
+        persistTokenInformation(
+            responseObj.access_token,
+            responseObj.instance_url
+        );
+        
+    } else {
+        logProgress("Authorization", arguments.callee.name, "Token refresh process is not successful");
+        logProgress("Authorization", arguments.callee.name + " response.error_description", response.error_description);
+        
+    }
+
+    console.log("*** METHOD_EXIT: " + arguments.callee.name);
+    return responseObj;
+}
+
+/**
+ * Resreshes an access token from a resource server if a session expired. Reference documentation from Salesforce 
+ * is available at https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_refresh_token_oauth.htm
+ * 
+ * @param {string} refreshToken - a refresh token previously generated by a resource server (Salesforce organization)
+ * 
+ * @return {Object} - a JS object containing both token and corresponding instance URL information
+ *
+ * @example
+ *     var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+ *     var tokenResponse = regenerateToken(refreshToken);
+ */
+
+function regenerateToken(refreshToken) {
+    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+    var authenticationPrefix =
+      PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
+    var url =
+        "https://" +
+        authenticationPrefix +
+        ".salesforce.com/services/oauth2/token";
+
+    var payload =
+        "grant_type=" + 
+        "refresh_token" +
+        "&" +
+        "refresh_token=" + 
+        refreshToken + 
+        "&" + 
+        "client_id=" +
+        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
+        "&" +
+        "client_secret=" +
+        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
+        "&" +
+        "format=" +
+        "json";
+
+    var options = {
+        method: "post",
+        payload: payload,
+        muteHttpExceptions: true,
+        escaping: false
+    };
+
+    
+    var request = UrlFetchApp.getRequest(url, options);
+    console.log("*** INFO: refresh token request: " + request);
+    logProgress("Authorization", arguments.callee.name + " request", request);
+
+    var response = UrlFetchApp.fetch(url, options);
+    console.log("*** INFO: refresh token response: " + response);
+    logProgress("Authorization", arguments.callee.name + " response", response);
+
+    var responseObj = JSON.parse(response);
+
+    if (!responseObj.error) { //check this during testing
+        logProgress("Authorization", arguments.callee.name, "Token refresh process is successful");
+
+        console.log("*** VARIABLE: " + "response.access_token: " + responseObj.access_token);
+        console.log("*** VARIABLE: " + "response.signature: " + responseObj.signature);
+        console.log("*** VARIABLE: " + "response.instance_url: " + responseObj.instance_url);
+        
+        persistTokenInformation(
+            responseObj.access_token,
+            responseObj.instance_url
+        );
+        
+    } else {
+        logProgress("Authorization", arguments.callee.name, "Token refresh process is not successful");
+        logProgress("Authorization", arguments.callee.name + " response.error_description", response.error_description);
+        
+    }
+
+    console.log("*** METHOD_EXIT: " + arguments.callee.name);
+    return responseObj;
 }

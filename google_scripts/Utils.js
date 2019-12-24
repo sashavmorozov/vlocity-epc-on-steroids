@@ -426,7 +426,7 @@ function shortenInstanceUrl(instanceUrl) {
 /* The function checks if a propery has a non-empty/non-undefined value */
 function isScriptPropertySet(propertyName) {
   var isPropertySet = false;
-  var propertyValue = scriptProperties.getProperty(propertyName);
+  var propertyValue = PropertiesService.getScriptProperties().getProperty(propertyName);
   if (propertyValue !== null &&
       propertyValue !== undefined &&
       propertyValue !== "undefined" &&
