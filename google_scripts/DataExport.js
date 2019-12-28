@@ -1,22 +1,41 @@
-/* Generates JSON data structure using rows of a current sheet (active in browser) and export scope
- * @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
- * @return JSON object (not string)
+/**
+ * Generates JSON data structure using rows of a current sheet (active in browser) and export scope
+ * @param {enum} exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
+ * @return {Object} - JSON object (not a string) representing exported data
+ *
+ * @example
+ *     exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
  */
 
 function exportRowsOfActiveSheetAsJson(exportScope) {
+    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+    console.log("*** METHOD_EXIT: " + arguments.callee.name);
     return exportRowsAsJson(SpreadsheetApp.getActiveSheet().getName(), exportScope);
 }
 
-/* Generates JSON data structure using rows of a sheet identified by name and export scope
+/* 
  * @param string sheetName - name of a sheet
  * @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
  * @return JSON object (not string)
  */
 
+/**
+ * Generates JSON data structure using rows of a sheet identified by name and export scope
+ * @param {enum} exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
+ * @return {Object} - JSON object (not a string) representing exported data
+ *
+ * @example
+ *     exportRowsAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
+ */
+
 function exportRowsAsJson(sheetName, exportScope) {
+    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
     if (!sheetName) {
         Logger.log('*** No sheet name provided');
+        
+        console.log("*** METHOD_EXIT: " + arguments.callee.name);
         return null;
     }
 
@@ -42,7 +61,10 @@ function exportRowsAsJson(sheetName, exportScope) {
         var resultWrapper = {};
 
         var header = sheet.getDataRange().getValues()[CONST_LAST_HEADER_ROW_NUMBER - 1]; //CHECK ME
-        if (!header) return;
+        if (!header) {
+            console.log("*** METHOD_EXIT: " + arguments.callee.name);
+            return;
+        }
 
         for (var i = 0; i < header.length; i++) {
             console.log('*** Header item[' + i + ']: ' + header[i]);
@@ -78,12 +100,14 @@ function exportRowsAsJson(sheetName, exportScope) {
 
     if (result && result.length) {
         resultWrapper[sheetName] = result;
-        return (resultWrapper);
+
+        console.log("*** METHOD_EXIT: " + arguments.callee.name);
+        return resultWrapper;
     } else {
+
+        console.log("*** METHOD_EXIT: " + arguments.callee.name);
         return null;
     }
-
-
 }
 
 /**
