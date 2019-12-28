@@ -63,7 +63,7 @@ function retrieveSheetFromCatalogByName(sheetName) {
     dataRaptorName: sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName
   };
 
-  var retreivedData = invokeVipByName(vipName, JSON.stringify(payload));
+  var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload)); //this should be adopted to accomodate the change. Make is safe also
   console.log("**** VARIABLE: retreivedData: " + retreivedData);
   storeJsonAsTable(CONST_DATA_IMPORT_SHEET_NAME, retreivedData);
   
