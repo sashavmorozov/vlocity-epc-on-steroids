@@ -187,8 +187,7 @@ function invokeVipByNameSafe(vipName, payload) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   //console.time(arguments.callee.name);
   
-  var response = invokeVipByName(vipName, payload);
-  
+  var response = invokeVipByName(vipName, payload);  
   var responseContentAsJson = JSON.parse(response.getContentText());
   
   if (Array.isArray(responseContentAsJson)) {
@@ -202,7 +201,7 @@ function invokeVipByNameSafe(vipName, payload) {
         var refreshTokenResponse = regenerateToken(refreshToken);
         
         if (refreshTokenResponse.access_token) {
-          invokeVipByName(vipName, payload);
+          response = invokeVipByName(vipName, payload);
         }
         else {
           var message = "Unable to regenerate an access token: " + refreshTokenResponse.error_description;
@@ -215,7 +214,7 @@ function invokeVipByNameSafe(vipName, payload) {
   
   //console.timeEnd(arguments.calee.name);
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
-  return;
+  return response;
 }
 
 /**

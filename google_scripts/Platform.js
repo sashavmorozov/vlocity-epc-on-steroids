@@ -28,7 +28,7 @@ function onOpen() {
     if (isScriptPropertySet(CONST_ACCESS_TOKEN_PROPERTY_NAME) && isScriptPropertySet(CONST_REFRESH_TOKEN_PROPERTY_NAME)) {
       //regenerate access token if the application was previously authorized but a session expired
       console.log("*** INFO: " + "regenerating access token");
-      regenerateToken(refreshToken);
+      //regenerateToken(refreshToken);
     } else {
       //do nothing if the application was never authorized before
       console.log("*** INFO: " + "NOT regenerating access token");

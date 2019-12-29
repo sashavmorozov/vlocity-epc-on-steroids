@@ -41,7 +41,7 @@ function loadActiveSheetToVlocityEPC() {
     }
 
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
-    console.log("*** epcConfiguration:" + epcConfiguration);
+    console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
 
     if (!epcConfiguration) {
         console.log("*** Error: an empty sheet, no data to upload");
@@ -57,19 +57,13 @@ function loadActiveSheetToVlocityEPC() {
     addTransactionDetails(epcConfiguration);
 
     setLoadingProcessStep('Loading data to Vlocity');
-    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+    //loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+  pushConfigurationToVlocityChunkable(epcConfiguration);
 
     /* After loading */
     completeLoadingProcessStep();
     completeLoadingProcessProgress();
     //resetLoadingProcessError();
-}
-
-/** DEPRECATED, REPLACED WITH loadCheckedRowsToVlocityEPC **/
-function loadSelectedRowsToVlocityEPC() {
-    restoreCurrentTabName();
-    var epcConfiguration = exportSelectedRowsAsJson();
-    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
 }
 
 function loadCheckedRowsToVlocityEPC() {
@@ -111,7 +105,7 @@ function loadCheckedRowsToVlocityEPC() {
     }
 
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
-    console.log("*** epcConfiguration:" + epcConfiguration);
+    console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
 
     if (!epcConfiguration) {
         console.log("*** Error: no rows checked, no data to upload");
@@ -127,7 +121,7 @@ function loadCheckedRowsToVlocityEPC() {
     addTransactionDetails(epcConfiguration);
 
     setLoadingProcessStep('Loading data to Vlocity');
-    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+    pushConfigurationToVlocityChunkable(epcConfiguration);
 
     /* After loading */
     completeLoadingProcessStep();
@@ -173,7 +167,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var payloadAsJson = epcConfiguration;
     payloadAsJson['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
 
-    Logger.log('*** Request size (entities):' + payloadAsJson[sheetName].length);
+    Logger.log('*** Request size (entities): ' + payloadAsJson[sheetName].length);
 
     var payloadChunkNumber = payloadAsJson[sheetName].length / CHUNK_SIZE;
     var processedRecords = 0;
