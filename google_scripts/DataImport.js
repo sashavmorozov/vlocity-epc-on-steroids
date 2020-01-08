@@ -6,7 +6,9 @@ function test_retrieveEntityByName(){
  * Retreives catalog configuration for a current sheet and redirects to the sandbox sheet. 
  * The retreived data will be stored to "Data Import Sandbox"
  *
- * @return {void} - nothing
+ * @param
+ * 
+ * @return
  *
  * @example
  *     retrieveCurrentSheetFromCatalog();
@@ -28,7 +30,7 @@ function retrieveCurrentSheetFromCatalog() {
  *
  * @param {string} sheetName - Key for entity to be retreived from Vlocity
  * @return {void} - nothing
- *
+ * 
  * @example
  *     retrieveSheetFromCatalogByName("Offerings");
  */
