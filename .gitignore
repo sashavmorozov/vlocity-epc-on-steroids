@@ -24,3 +24,9 @@ google_scripts/Sandbox.js
 google_scripts/Tests.js
 
 google_scripts/clasp.json
+
+.sfdx/tools/tempApex.input
+
+.sfdx/sfdx-config.json
+
+.sfdx/tools/testresults/apex/test-result.txt
