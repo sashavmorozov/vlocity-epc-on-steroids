@@ -1,0 +1,17 @@
+{
+    "Cardinality": "",
+    "Checked": true,
+    "Child Offer": "EoS. Sample Child Offer 1",
+    "Child Offer Code": "VEPC_OFFERING_EOS_SAMPLE_CHILD_OFFER_1",
+    "Collapse Hierarchy": false,
+    "Def": 0,
+    "Flags": "",
+    "Max": 1,
+    "Min": 0,
+    "Override Mode": "Not Applicable",
+    "Parent Offer": "EoS. Sample Root Offer",
+    "Parent Offering Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER",
+    "Relationship Type": "Child",
+    "Sequence": 10,
+    "Virtual Item": false
+}

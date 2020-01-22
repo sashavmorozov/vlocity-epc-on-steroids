@@ -1,0 +1,18 @@
+{
+    "Active": true,
+    "Auto-Add Products": true,
+    "Checked": true,
+    "Commitment Duration Time Plan": "",
+    "Commitment Duration Time Policy": "",
+    "Description": "90% Off Promotion",
+    "Effective From": "30/04/2019",
+    "Effective Until": "30/04/2029",
+    "Follow-on Promotion": "10% Off Promotion",
+    "Orderable": true,
+    "Price List": 2019,
+    "Pricelist Code": "VEPC_PRICELIST_2019",
+    "Promotion Code": "VEPC_PROMO_90_OFF_PROMOTION",
+    "Promotion Name": "90% Off Promotion",
+    "Redeemable Code": "VEPC-PROMO-90P",
+    "Service Continuation": "Manual Opt-Out"
+}

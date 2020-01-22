@@ -1,0 +1,11 @@
+{
+    "Amount": 0,
+    "Checked": true,
+    "Currency Code": "EUR",
+    "Display Text": "EUR0.00",
+    "Pricelist": 2019,
+    "Pricelist Code": "VEPC_PRICELIST_2019",
+    "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_0_00_EUR",
+    "Pricing Element Name": "MRC-0.00-EUR",
+    "Pricing Variable": "Recurring Monthly Std Price"
+}
