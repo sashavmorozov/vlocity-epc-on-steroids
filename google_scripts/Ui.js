@@ -32,7 +32,7 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Data export")
-        .addItem("Save current tab as JSON to Drive", "saveActiveSheetAsJson")
+        .addItem("Save current tab as JSON to Drive", "exportActiveSheetAsJson")
     )
   
     .addSubMenu(
