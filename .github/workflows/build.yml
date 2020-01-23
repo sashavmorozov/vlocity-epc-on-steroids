@@ -18,6 +18,7 @@ jobs:
         pwd
         cd /home/runner/work/vlocity-epc-on-steroids/vlocity-epc-on-steroids
         ls -la
+        chmod +x git-archive-all.sh 
         ./git-archive-all.sh
         ls -la
         #comment
