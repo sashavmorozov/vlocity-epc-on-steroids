@@ -13,10 +13,10 @@ jobs:
       run: echo Hello, world!
     - name: Assemble a package
       run: |
-        echo $PATH,
-        cd /home/runner/work/vlocity-epc-on-steroids/vlocity-epc-on-steroids,
-        ls,
-        ./git-archive-all.sh
+        echo $PATH
+        cd /home/runner/work/vlocity-epc-on-steroids/vlocity-epc-on-steroids
+        ls -la
+        #./git-archive-all.sh
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
