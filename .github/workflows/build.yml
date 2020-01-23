@@ -12,7 +12,9 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Assemble a package
-      run: ./git-archive-all.sh
+      run: |
+        echo $PATH,
+        ./git-archive-all.sh
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
