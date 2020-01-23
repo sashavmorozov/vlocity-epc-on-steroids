@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - uses: actions/checkout@v2
+      with:
+        ref: v0.5
     - name: Assemble a package
       run: |
         echo $PATH
