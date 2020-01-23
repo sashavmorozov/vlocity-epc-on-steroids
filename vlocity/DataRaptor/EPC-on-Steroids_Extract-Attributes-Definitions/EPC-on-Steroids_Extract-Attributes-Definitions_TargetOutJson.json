@@ -1,0 +1,41 @@
+[
+    {
+        "Active": "Yes",
+        "Attribute Category": "EPC on Steroids Demo Details",
+        "Attribute Code": "VEPC_ATTR_EOS_DEMO_ATTRIBUTE_NUMBER",
+        "Attribute Name": "EOS. Demo Attribute - Number",
+        "Checked": true,
+        "Description": "Demo Attribute 2",
+        "Display Sequence": 20,
+        "Effective End Date": "01/01/2099",
+        "Effective Start Date": "01/01/2019",
+        "Picklist": "",
+        "Value Type": "Number"
+    },
+    {
+        "Active": "Yes",
+        "Attribute Category": "EPC on Steroids Demo Details",
+        "Attribute Code": "VEPC_ATTR_EOS_DEMO_ATTRIBUTE_PICKLIST",
+        "Attribute Name": "EOS. Demo Attribute - Picklist",
+        "Checked": true,
+        "Description": "Demo Attribute 3",
+        "Display Sequence": 30,
+        "Effective End Date": "01/01/2099",
+        "Effective Start Date": "01/01/2019",
+        "Picklist": "EPC on Steroids. Demo Picklist",
+        "Value Type": "Picklist"
+    },
+    {
+        "Active": "Yes",
+        "Attribute Category": "EPC on Steroids Demo Details",
+        "Attribute Code": "VEPC_ATTR_MITTAYKSIKKO",
+        "Attribute Name": "Mittayksikkö",
+        "Checked": true,
+        "Description": "",
+        "Display Sequence": 80,
+        "Effective End Date": "01/01/2099",
+        "Effective Start Date": "01/01/2019",
+        "Picklist": "Mittayksikkö",
+        "Value Type": "Picklist"
+    }
+]

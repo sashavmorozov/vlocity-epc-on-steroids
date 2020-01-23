@@ -125,7 +125,7 @@ function regenerateJsonAttributes() {
   inputParameters['productCodes'] = productCodes;
   
   var payload = JSON.stringify(inputParameters);
-  var result = invokeVipByName(vipName, payload);
+  var result = invokeVipByNameSafe(vipName, payload);
   
   return result;
 }
@@ -162,176 +162,158 @@ function regenerateJsonAttributesForAllProducts() {
   inputParameters['productCodes'] = productCodes;
   
   var payload = JSON.stringify(inputParameters);
-  var result = invokeVipByName(vipName, payload);
+  var result = invokeVipByNameSafe(vipName, payload);
   
   return result;
 }
 
+/**
+ * Invokes an active Vlocity integration procedure by name. 
+ * If an authorization error is returned (INVALID_SESSION_ID), the function regenerates an access token 
+ * and reexecute the integration procedure
+ * Authorization error format: [{"message":"Session expired or invalid","errorCode":"INVALID_SESSION_ID"}]
+ *
+ * @param {string} vipName - integration procedure identifier (Type_Subtype)
+ * @param {string} payload - procedure input as a JSON-based string
+ * @return {void} - nothing
+ *
+ * @example
+ *     var vipName = "Hello_World";
+ *     var payload = {hello: "world"};
+ *     invokeVipByNameSafe(vipName, JSON.stringify(payload));
+ */
 
-function invokeVipByName(vipName, payload) {
-    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
-
-  var VIP_PREFIX = "/services/apexrest/vlocity_cmt/v1/integrationprocedure/";
-  var vipEndpoint = VIP_PREFIX + vipName;
-  var accessTokenObj = retrieveStoredAccessToken();
-
-  if (!accessTokenObj) {
-    var errorMessage =
-      "Access token is not available. Check settings or connection to Salesforce org";
-    console.log("*** ERROR: " + errorMessage);
-
-    logProgress(vipName, "Error", errorMessage);
-
-    var dialogParams = {
-      warningMessage: "Doesn't look good",
-      warningMessageDescription: errorMessage
-    };
-    displayWarningDialog(dialogParams);
-
-    return;
-  }
-
-  var accessToken = accessTokenObj.accessToken;
-  var url = accessTokenObj.instanceUrl + vipEndpoint;
-
-  var options = {
-    method: "post",
-    contentType: "application/json",
-    payload: payload,
-    muteHttpExceptions: true,
-    headers: {
-      Authorization: "Bearer " + accessToken
-    },
-    escaping: false
-  };
-
-  console.log(
-    "*** invokeVipByName request:" +
-      JSON.stringify(UrlFetchApp.getRequest(url, options))
-  );
-
-  logProgress(vipName, "Info: Request Payload", payload);
-
-  var response = UrlFetchApp.fetch(url, options);
-  console.log("*** invokeVipByName response:" + response);
-
-  logProgress(vipName, "Info: Response Payload", response);
-
-  //error processing
-  var responseAsJson = JSON.parse(response);
-  var errorDetected = false;
-
-  if (responseAsJson) {
-    var result = JSON.stringify(responseAsJson["Result"]);
-    if (result) {
-      var hasErrors = JSON.stringify(responseAsJson["Result"]["hasErrors"]);
-      console.log("*** hasErrors: " + hasErrors);
-      errorDetected = hasErrors;
-    } else {
-      errorDetected = true;
+function invokeVipByNameSafe(vipName, payload) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  //console.time(arguments.callee.name);
+  
+  var response = invokeVipByName(vipName, payload);  
+  var responseContentAsJson = JSON.parse(response.getContentText());
+  
+  if (Array.isArray(responseContentAsJson)) {
+    for (var i = 0; i < responseContentAsJson.length; i++) {
+      if (responseContentAsJson[i].errorCode === "INVALID_SESSION_ID") {
+        var message = "An access token is expired and should be refreshed";
+        console.log("*** INFO: message: " + message);
+        logProgress("Integration Procedure Utils", arguments.callee.name, message);
+        
+        var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+        var refreshTokenResponse = regenerateToken(refreshToken);
+        
+        if (refreshTokenResponse.access_token) {
+          response = invokeVipByName(vipName, payload);
+        }
+        else {
+          var message = "Unable to regenerate an access token: " + refreshTokenResponse.error_description;
+          console.log("*** INFO: message: " + message);
+          logProgress("Integration Procedure Utils", arguments.callee.name, message);
+        }
+      }
     }
-  } else {
-    errorDetected = true;
   }
-
-  if (errorDetected == true) {
-    logProgress(
-      vipName,
-      "Error",
-      "An error detected while invoking the integration procedure. Review the logs for more details"
-    );
-    return STRING_EMPTY_STRING_CONST;
-  }
-
-  logProgress(
-    vipName,
-    "Info",
-    "Integration procedure is called successfully, no errors detected"
-  );
-
+  
+  //console.timeEnd(arguments.calee.name);
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
-  return JSON.stringify(responseAsJson.Result.returnResultsData);
+  return response;
 }
 
+/**
+ * Invokes an active Vlocity integration procedure by name
+ *
+ * @param {string} vipName - integration procedure identifier (Type_Subtype)
+ * @param {string} payload - procedure input as a JSON-based string
+ * @return {void} - nothing
+ *
+ * @example
+ *     var vipName = "Hello_World";
+ *     var payload = {hello: "world"};
+ *     invokeVipByName(vipName, JSON.stringify(payload));
+ */
 
-function invokeVipByName_DELME(vipName, payload) {
-    var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
-    var vipEndpoint = VIP_PREFIX + vipName;
-    var accessTokenObj = retrieveStoredAccessToken();
+function invokeVipByName(vipName, payload) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
-    if (!accessTokenObj) {
-        Logger.log('Error: Access token should be generated first');
+  var CONST_VIP_PREFIX = "/services/apexrest/vlocity_cmt/v1/integrationprocedure/";
+  var vipEndpoint = CONST_VIP_PREFIX + vipName;
+  var accessTokenObj = retrieveStoredAccessToken();
 
-        logProgress(
-            "Utils",
-            "Error",
-            "Access token is not available. Check settings or connection to Salesforce org"
-        );
+  //maybe take this out?
+  if (!accessTokenObj) {
+      var errorMessage =
+          "Access token is not available. Check settings or connection to Salesforce org";
+      console.log("*** ERROR: " + errorMessage);
 
-        operationNotification("Error", 'Access token is not available. Check settings or connection to Salesforce org');
-        return;
+      logProgress(vipName, "Error", errorMessage);
+
+      var dialogParams = {
+          warningMessage: "Doesn't look good",
+          warningMessageDescription: errorMessage
+      };
+      displayWarningDialog(dialogParams);
+
+      return;
+  }
+
+  var accessToken = PropertiesService.getScriptProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+  var instanceUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+  var url = instanceUrl + vipEndpoint;
+
+  var options = {
+      method: "post",
+      contentType: "application/json",
+      payload: payload,
+      muteHttpExceptions: true,
+      headers: {
+          Authorization: "Bearer " + accessToken
+      },
+      escaping: false
+  };
+
+  var request = UrlFetchApp.getRequest(url, options);
+  console.log("*** INFO: VIP name: " + vipName);
+  console.log("*** INFO: VIP payload: " + payload);
+  console.log("*** INFO: VIP request: " + JSON.stringify(request));
+  
+  logProgress("Integration Procedure Utils", arguments.callee.name + " vipName", vipName);
+  logProgress("Integration Procedure Utils", arguments.callee.name + " payload", payload);
+  logProgress("Integration Procedure Utils", arguments.callee.name + " request", request);
+
+  var response = UrlFetchApp.fetch(url, options);
+
+  console.log("*** INFO: VIP response: " + response);
+  logProgress("Integration Procedure Utils", arguments.callee.name + " response", response);
+  
+  /* Error detection and processing */
+  var responseContentAsJson = JSON.parse(response.getContentText());
+  
+  
+  /* Detect session expiration error */
+  if (Array.isArray(responseContentAsJson)) {
+    for (var i = 0; i < responseContentAsJson.length; i++) {
+      if (responseContentAsJson[i].errorCode === "INVALID_SESSION_ID") {
+        console.log("*** ERROR: message: " + responseContentAsJson[i].message);
+        logProgress("Integration Procedure Utils", arguments.callee.name + " error message", responseContentAsJson[i].message);
+      
+        console.log("*** METHOD_EXIT: " + arguments.callee.name);
+        return response;
+      }
     }
+  }
 
-    var accessToken = accessTokenObj.accessToken;
-    var url = accessTokenObj.instanceUrl + vipEndpoint;
+  
+  //CONTINUE HERE - CHECK HOW VIP RETURNS ERRORS
+  var validationResult = validateVipResponseForGenericErrors(JSON.parse(response));
+  logProgress("Integration Procedure Utils", arguments.callee.name + " execution status", validationResult.status);
 
-    var options = {
-        'method': 'post',
-        'contentType': 'application/json',
-        'payload': payload,
-        'muteHttpExceptions': true,
-        'headers': {
-            'Authorization': 'Bearer ' + accessToken
-        },
-        'escaping': false
-    };
+  //commented - hope nothing will be broken
+  /*
+  if (responseContentAsJson.Result.returnResultsData) {
+    return JSON.stringify(responseContentAsJson.Result.returnResultsData);
+  }
+  */
 
-    Logger.log('*** invokeVipByName request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
-
-    logProgress(
-        vipName,
-        "Request Payload",
-        payload);
-
-    var response = UrlFetchApp.fetch(url, options);
-    Logger.log('*** invokeVipByName response:' + response);
-
-    logProgress(
-        vipName,
-        "Response Payload",
-        response);
-
-    //error processing
-    var responseAsJson = JSON.parse(response);
-    var errorDetected = false;
-
-    if (responseAsJson) {
-        var result = JSON.stringify(responseAsJson['Result']);
-        if (result) {
-            var hasErrors = JSON.stringify(responseAsJson['Result']['hasErrors']);
-            Logger.log('*** hasErrors: ' + hasErrors);
-            errorDetected = hasErrors;
-        } else {
-            errorDetected = true;
-        }
-    } else {
-        errorDetected = true;
-    }
-
-    if (errorDetected == true) {
-        logProgress(
-            vipName,
-            "Process Error",
-            "An error detected while invoking the integration procedure. Review the logs for more details");
-        return STRING_EMPTY_STRING_CONST;
-    }
-
-    logProgress(
-        vipName,
-        "Process Info",
-        "Invokation process is completed successfully");
-
-    return JSON.stringify(responseAsJson['Result']['returnResultsData']);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return response;
 }
 
 function clearPlatformCache() {
@@ -341,7 +323,7 @@ function clearPlatformCache() {
   var inputParameters = {};
   
   var payload = JSON.stringify(inputParameters);
-  var result = invokeVipByName(vipName, payload);
+  var result = invokeVipByNameSafe(vipName, payload);
   
   return result;
 }
@@ -394,7 +376,7 @@ function regenerateLayouts(objectTypesData) {
             "Info",
             "Regenerating layout for " + objectTypesArray[i]["Object Type"]
         );
-      invokeVipByName(vipName, JSON.stringify(singleItemPayload));
+      invokeVipByNameSafe(vipName, JSON.stringify(singleItemPayload));
     }
     
 }
@@ -426,7 +408,7 @@ function shortenInstanceUrl(instanceUrl) {
 /* The function checks if a propery has a non-empty/non-undefined value */
 function isScriptPropertySet(propertyName) {
   var isPropertySet = false;
-  var propertyValue = scriptProperties.getProperty(propertyName);
+  var propertyValue = PropertiesService.getScriptProperties().getProperty(propertyName);
   if (propertyValue !== null &&
       propertyValue !== undefined &&
       propertyValue !== "undefined" &&
@@ -537,5 +519,59 @@ function rangeContainsStrikethroughCells(sheetRange) {
   return false;
 }
 
+/* ADD DOCS
 
+  validationResult = {
+    status (Successful, Failed)
+    errorCode
+    errorMessage
+    errorDetails
+  }
+*/
 
+function validateVipResponseForGenericErrors(response) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  var result = {
+    status: "Success",
+    errorCode: "",
+    errorMessage: "",
+    errorDescription: ""
+  }
+
+  console.log("*** VARIABLE: response: " + JSON.stringify(response));
+
+  if (!response) {
+      console.log('*** ERROR: An empty response (or no response) received from an integration procedure');
+      result.status = "Failed";
+      result.errorCode = "No response";
+      result.errorMessage = "No response provided for validation";
+      result.errorDescription = "No response provided for validation";
+      return result;
+  }
+
+  /* quick status check */
+  var vipStatus = response.Status;
+
+  if (!vipStatus) {
+      console.log('*** ERROR: An empty status (or no status) received from an integration procedure');
+      result.status = "Failed";
+      result.errorCode = "No status";
+      result.errorMessage = "No status provided for validation";
+      result.errorDescription = "No status provided in the response";
+      return result;
+  } else {
+      if (vipStatus === "Failed") {
+          console.log("*** ERROR: " + "Failed status received from an integration procedure. Please review the process logs and make necessary corrections");
+          result.status = "Failed";
+          result.errorCode = "Failed status";
+          result.errorMessage = "Failed status returned";
+          result.errorDescription = "Failed status received from an integration procedure. Please review the process logs and make necessary corrections";
+          return result;
+      } else {
+          //other search
+      }
+  }
+
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return result;
+}
