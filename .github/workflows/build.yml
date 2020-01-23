@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: v0.5
+        fetch-depth: 1
 
     - name: Assemble a package
       run: |
