@@ -1,27 +1,17 @@
-/**
- * This function is called on spreadsheet open and merely adds necessary menu items into the taskbar
- */
-function onOpen() {
-  //reset connection token and instance URL to force reconnection on every open
-  eraseTokenInformation();
-
-  buildMenu();
-}
-
 function buildMenu() {
   var ui = SpreadsheetApp.getUi();
 
   ui.createMenu("Catalog Scripts")
 
-    .addItem("Load Current Tab to Vlocity EPC", "loadActiveSheetToVlocityEPC")
-    .addItem("Load Only Checked Rows to Vlocity EPC", "loadCheckedRowsToVlocityEPC")
+    .addItem("Load current tab to Vlocity EPC", "loadActiveSheetToVlocityEPC")
+    .addItem("Load only checked rows to Vlocity EPC", "loadCheckedRowsToVlocityEPC")
   
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Security")
         .addItem("Connect to Salesforce", "connectToSalesforce")
         .addItem("Disconnect from Salesforce", "disconnectFromSalesforce")
-        .addItem("Get Callback URL", "getRedirectUriMessageBox")
+        .addItem("Get callback URL", "getRedirectUriMessageBox")
         .addItem("Configure connection to Salesforce", "configureConnectionToSalesforce")
     )
 
@@ -29,34 +19,34 @@ function buildMenu() {
       SpreadsheetApp.getUi()
         .createMenu("EPC Jobs")
         .addItem(
-          "Regenerate JSONAttribute for Selected Products",
+          "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
         )
-        .addItem("Clear Platform Cache", "clearPlatformCache")
+        .addItem("Clear platform cache", "clearPlatformCache")
         .addItem(
-          "Regenerate Object Types Layouts",
+          "Regenerate Object Types layouts",
           "regenerateLayoutsForCheckedObjectTypes"
         )
     )
 
     .addSubMenu(
       SpreadsheetApp.getUi()
-        .createMenu("Data Export")
-        .addItem("Save Current Tab as JSON to Drive", "saveActiveSheetAsJson")
+        .createMenu("Data export")
+        .addItem("Save current tab as JSON to Drive", "exportActiveSheetAsJson")
     )
   
     .addSubMenu(
       SpreadsheetApp.getUi()
-        .createMenu("Data Import")
-        .addItem("Import Entity for Current Sheet from Catalog", "retrieveCurrentSheetFromCatalog")
+        .createMenu("Data import")
+        .addItem("Import entity for current sheet from Catalog", "retrieveCurrentSheetFromCatalog")
     )
 
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
-        .addItem("View Logs", "viewLogs")
-        .addItem("Clear Logs", "clearLogs")
-        .addItem("Make Fancy Fonts", "applyDefaultFormattingToCurrentSheet"))
+        .addItem("View logs", "viewLogs")
+        .addItem("Clear logs", "clearLogs")
+        .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet"))
       
     .addSubMenu(
       SpreadsheetApp.getUi()
@@ -76,8 +66,8 @@ function buildMenu() {
     .addToUi();
 
   ui.createMenu("Logs")
-    .addItem("View Logs", "viewLogs")
-    .addItem("Clear Logs", "clearLogs")
+    .addItem("View logs", "viewLogs")
+    .addItem("Clear logs", "clearLogs")
     .addToUi();
 
   /* ui.createMenu("More EOS tools")
@@ -85,7 +75,7 @@ function buildMenu() {
     .addToUi(); */
 
   ui.createMenu("EOS help")
-    .addItem("Installation and Configuration", "redirectToInstallationNotes")
+    .addItem("Installation and configuration", "redirectToInstallationNotes")
     .addItem("About EPC on Steroids", "showAboutDialog")
     .addItem("Help center", "redirectToHelpCenter")
     .addItem("💡 Suggest an idea", "redirectToSuggestIdea")
@@ -173,7 +163,7 @@ function showDialogAuthorizationAlreadyCompleted() {
   var template = HtmlService.createTemplateFromFile(
     "pages/AlreadyConnectedDialog"
   );
-  template.instanceUrl = scriptProperties.getProperty("instanceUrl");
+  template.instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
   var page = template.evaluate();
 
   page.setWidth(300).setHeight(400);
@@ -183,7 +173,7 @@ function showDialogAuthorizationAlreadyCompleted() {
 
 function showDialogDisconnectFromSalesforce() {
   var template = HtmlService.createTemplateFromFile("pages/DisconnectDialog");
-  template.instanceUrl = scriptProperties.getProperty("instanceUrl");
+  template.instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
   var page = template.evaluate();
 
   page.setWidth(300).setHeight(400);

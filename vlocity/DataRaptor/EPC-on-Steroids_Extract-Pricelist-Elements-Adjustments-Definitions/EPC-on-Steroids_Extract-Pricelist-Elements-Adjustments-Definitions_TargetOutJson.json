@@ -1,0 +1,12 @@
+{
+    "Adjustment Amount": -1,
+    "Adjustment Percent": "",
+    "Checked": true,
+    "Currency Code": "EUR",
+    "Display Text": "1.00EUR Off",
+    "Pricelist": 2019,
+    "Pricelist Code": "VEPC_PRICELIST_2019",
+    "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_1_00_EUR",
+    "Pricing Element Name": "MRC-ADJ-ABS-1.00-EUR",
+    "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
+}

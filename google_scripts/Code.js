@@ -41,7 +41,7 @@ function loadActiveSheetToVlocityEPC() {
     }
 
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
-    console.log("*** epcConfiguration:" + epcConfiguration);
+    console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
 
     if (!epcConfiguration) {
         console.log("*** Error: an empty sheet, no data to upload");
@@ -57,19 +57,13 @@ function loadActiveSheetToVlocityEPC() {
     addTransactionDetails(epcConfiguration);
 
     setLoadingProcessStep('Loading data to Vlocity');
-    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+    //loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+  pushConfigurationToVlocityChunkable(epcConfiguration);
 
     /* After loading */
     completeLoadingProcessStep();
     completeLoadingProcessProgress();
     //resetLoadingProcessError();
-}
-
-/** DEPRECATED, REPLACED WITH loadCheckedRowsToVlocityEPC **/
-function loadSelectedRowsToVlocityEPC() {
-    restoreCurrentTabName();
-    var epcConfiguration = exportSelectedRowsAsJson();
-    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
 }
 
 function loadCheckedRowsToVlocityEPC() {
@@ -111,7 +105,7 @@ function loadCheckedRowsToVlocityEPC() {
     }
 
     var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
-    console.log("*** epcConfiguration:" + epcConfiguration);
+    console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
 
     if (!epcConfiguration) {
         console.log("*** Error: no rows checked, no data to upload");
@@ -127,7 +121,7 @@ function loadCheckedRowsToVlocityEPC() {
     addTransactionDetails(epcConfiguration);
 
     setLoadingProcessStep('Loading data to Vlocity');
-    loadConfigurationToVlocityEPCChunkable(epcConfiguration);
+    pushConfigurationToVlocityChunkable(epcConfiguration);
 
     /* After loading */
     completeLoadingProcessStep();
@@ -173,7 +167,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var payloadAsJson = epcConfiguration;
     payloadAsJson['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
 
-    Logger.log('*** Request size (entities):' + payloadAsJson[sheetName].length);
+    Logger.log('*** Request size (entities): ' + payloadAsJson[sheetName].length);
 
     var payloadChunkNumber = payloadAsJson[sheetName].length / CHUNK_SIZE;
     var processedRecords = 0;
@@ -437,18 +431,7 @@ function exportSheetAsJsonByName(sheetName) {
     return (resultWrapper);
 }
 
-function saveActiveSheetAsJson() {
-    var sheet = SpreadsheetApp.getActiveSheet();
-    return saveSheetAsJsonByName(sheet.getName());
-}
 
-function saveSheetAsJsonByName(sheetName) {
-    var currentdate = new Date();
-    var datetime = Utilities.formatDate(currentdate, "GMT", "dd/MM/yyyy@HH:mm:ss");
-    var filename = 'Vlocity-' + sheetName + "-" + datetime + ".json";
-
-    DriveApp.createFile(filename, JSON.stringify(exportSheetAsJsonByName(sheetName)), MimeType.PLAIN_TEXT);
-}
 
 function exportSelectedRowsAsJson() {
 
@@ -506,93 +489,7 @@ function exportSelectedRowsAsJson() {
     return (resultWrapper);
 }
 
-/* Generates JSON data structure using rows of a current sheet (active in browser) and export scope
- * @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
- * @return JSON object (not string)
- */
 
-function exportRowsOfActiveSheetAsJson(exportScope) {
-    return exportRowsAsJson(SpreadsheetApp.getActiveSheet().getName(), exportScope);
-}
-
-/* Generates JSON data structure using rows of a sheet identified by name and export scope
- * @param string sheetName - name of a sheet
- * @param enum exportScope - export all or only checked rows (CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED)
- * @return JSON object (not string)
- */
-
-function exportRowsAsJson(sheetName, exportScope) {
-
-    if (!sheetName) {
-        Logger.log('*** No sheet name provided');
-        return null;
-    }
-
-    if (!exportScope) {
-        Logger.log('*** No export scope provided, using default export scope (include all)');
-        exportScope = CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL;
-    }
-
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
-    var dataRange = sheet.getDataRange();
-  
-    if (dataRange) {
-        var numRows = dataRange.getNumRows();
-        var numCols = dataRange.getNumColumns();
-
-        Logger.log('*** Data Range number of rows: ' + numRows);
-        Logger.log('*** Data Range number of columns: ' + numCols);
-
-        var values = dataRange.getValues();
-        var rowRangeOffset = CONST_FIRST_DATA_ROW_NUMBER - 1;
-
-        var result = [];
-        var resultWrapper = {};
-
-        var header = sheet.getDataRange().getValues()[CONST_LAST_HEADER_ROW_NUMBER - 1]; //CHECK ME
-        if (!header) return;
-
-        for (var i = 0; i < header.length; i++) {
-            console.log('*** Header item[' + i + ']: ' + header[i]);
-        }
-
-        for (var i = rowRangeOffset; i < values.length; i++) {
-            var currentRowAsRange = dataRange.offset(i, 0, 1);
-          
-            var rowObj = {};
-            var row = values[i];
-
-            if (!isEmptyArray(row) && !rangeContainsStrikethroughCells(currentRowAsRange)) {
-                if ((exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED &&
-                        row[CONST_CHECKED_COLUMN_NUMBER - 1] === true) ||
-                    exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL) {
-
-                    for (var j = 0; j < header.length; j++) {
-                        var value = row[j];
-
-                        if (value instanceof Date && !isNaN(value.valueOf())) {
-                            //apply special formatting for date values
-                            value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
-                        }
-
-                        rowObj[header[j]] = value;
-                    }
-
-                    if (rowObj != null) result.push(rowObj);
-                }
-            }
-        }
-    }
-
-    if (result && result.length) {
-        resultWrapper[sheetName] = result;
-        return (resultWrapper);
-    } else {
-        return null;
-    }
-
-
-}
 
 function loadSheetToDataraptorMapping() {
     var sheet = SpreadsheetApp.getActive().getSheetByName('Settings');

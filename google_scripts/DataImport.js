@@ -63,9 +63,11 @@ function retrieveSheetFromCatalogByName(sheetName) {
     dataRaptorName: sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName
   };
 
-  var retreivedData = invokeVipByName(vipName, JSON.stringify(payload));
+  var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload)); //this should be adopted to accomodate the change. Make is safe also
   console.log("**** VARIABLE: retreivedData: " + retreivedData);
-  storeJsonAsTable(CONST_DATA_IMPORT_SHEET_NAME, retreivedData);
+  
+  var returnResultsData = (JSON.parse(retreivedData)).Result.returnResultsData;
+  storeJsonAsTable(CONST_DATA_IMPORT_SHEET_NAME, JSON.stringify(returnResultsData));
   
   copyDataStyleByName(sheetName, CONST_DATA_IMPORT_SHEET_NAME);
 
@@ -125,7 +127,7 @@ function storeJsonAsTable(sheetName, jsonValue) {
     var dataRow = [];
 
     for (var j = 0; j < sheetEffectiveHeadersValues.length; j++) {
-      if (jsonObj[i][sheetEffectiveHeadersValues[j]]) {
+      if (jsonObj[i][sheetEffectiveHeadersValues[j]] || jsonObj[i][sheetEffectiveHeadersValues[j]] == 0) {
         dataRow[j] = jsonObj[i][sheetEffectiveHeadersValues[j]];
       } else {
         dataRow[j] = "";

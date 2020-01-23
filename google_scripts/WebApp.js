@@ -4,7 +4,7 @@ function doGet(request) {
     var tokenResponse = retrieveTokenByCode(request.parameter.code);
     var page;
   
-    if (tokenResponse['error']) {
+    if (tokenResponse.error) {
       template = HtmlService.createTemplateFromFile('pages/AuthorizationFailed'); 
     }
   

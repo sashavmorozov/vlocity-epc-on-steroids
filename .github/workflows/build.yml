@@ -1,0 +1,30 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: v0.5
+        fetch-depth: 1
+
+    - name: Assemble a package
+      run: |
+        pwd
+        cd /home/runner/work/vlocity-epc-on-steroids/vlocity-epc-on-steroids
+        ls -la
+        chmod +x git-archive-all.sh 
+        ./git-archive-all.sh
+        ls -la
+        #comment
+
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+
