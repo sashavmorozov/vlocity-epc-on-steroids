@@ -9,14 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: v0.5
+
     - name: Assemble a package
       run: |
-        echo $PATH
+        pwd
         cd /home/runner/work/vlocity-epc-on-steroids/vlocity-epc-on-steroids
         ls -la
-        #./git-archive-all.sh
+        ./git-archive-all.sh
+        ls -la
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
