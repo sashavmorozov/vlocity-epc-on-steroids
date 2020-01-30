@@ -1,0 +1,83 @@
+{
+    "Catalogs": [
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_ROOT_CATALOG",
+            "Catalog Description": "Sample root catalog",
+            "Catalog Name": "EoS. Sample Root Catalog",
+            "Checked": true,
+            "Default Price List": "2020 Consumer",
+            "Default Price List Code": "VEPC_PRICELIST_2020_CONSUMER",
+            "End Date Time": "01/01/2021",
+            "Is Default Catalog": false,
+            "Is Root Catalog": true,
+            "Start Date Time": "01/01/2020"
+        },
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_CHILD_CATALOG_1",
+            "Catalog Description": "Sample child catalog",
+            "Catalog Name": "EoS. Sample Child Catalog 1",
+            "Checked": true,
+            "Default Price List": "2020 Business",
+            "Default Price List Code": "VEPC_PRICELIST_2020_BUSINESS",
+            "End Date Time": "01/01/2021",
+            "Is Default Catalog": false,
+            "Is Root Catalog": false,
+            "Start Date Time": "01/01/2020"
+        },
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_CHILD_CATALOG_2",
+            "Catalog Description": "Sample child catalog",
+            "Catalog Name": "EoS. Sample Child Catalog 2",
+            "Checked": true,
+            "Default Price List": "2020 Consumer",
+            "Default Price List Code": "VEPC_PRICELIST_2020_CONSUMER",
+            "End Date Time": "01/01/2021",
+            "Is Default Catalog": false,
+            "Is Root Catalog": false,
+            "Start Date Time": "01/01/2020"
+        },
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_CHILD_CATALOG_3",
+            "Catalog Description": "Sample child catalog",
+            "Catalog Name": "EoS. Sample Child Catalog 3",
+            "Checked": true,
+            "Default Price List": "2020 Consumer",
+            "Default Price List Code": "VEPC_PRICELIST_2020_CONSUMER",
+            "End Date Time": "01/01/2021",
+            "Is Default Catalog": false,
+            "Is Root Catalog": false,
+            "Start Date Time": "01/01/2020"
+        },
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_CHILD_CATALOG_4",
+            "Catalog Description": "Sample child catalog",
+            "Catalog Name": "EoS. Sample Child Catalog 4",
+            "Checked": true,
+            "Default Price List": "2020 Consumer",
+            "Default Price List Code": "VEPC_PRICELIST_2020_CONSUMER",
+            "End Date Time": "01/01/2021",
+            "Is Default Catalog": false,
+            "Is Root Catalog": false,
+            "Start Date Time": "01/01/2020"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.5",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200120-6-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/17GPA7QAUrNw-81zVW2tpgI8Q7naN2lCLUgzPGUFmS8A/edit",
+        "Transaction ID": "5d350fc1-1590-4c73-80b7-b00916af8b8a",
+        "Transaction Timestamp": "28/01/2020@15:07:37GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Catalogs Definitions"
+}

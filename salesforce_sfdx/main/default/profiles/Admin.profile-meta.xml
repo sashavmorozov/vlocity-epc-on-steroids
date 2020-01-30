@@ -40,6 +40,99 @@
 
     <fieldPermissions>
         <editable>true</editable>
+        <field>%vlocity_namespace%__Catalog__c.eos_Application_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__Catalog__c.eos_Last_Executed_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__Catalog__c.eos_Spreadsheet_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__Catalog__c.eos_Spreadsheet_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__Catalog__c.eos_Transaction_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__Catalog__c.eos_Transaction_Timestamp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogRelationship__c.eos_Application_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogRelationship__c.eos_Last_Executed_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogRelationship__c.eos_Spreadsheet_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogRelationship__c.eos_Spreadsheet_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogRelationship__c.eos_Transaction_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogRelationship__c.eos_Transaction_Timestamp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogProductRelationship__c.eos_Application_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogProductRelationship__c.eos_Last_Executed_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogProductRelationship__c.eos_Spreadsheet_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogProductRelationship__c.eos_Spreadsheet_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogProductRelationship__c.eos_Transaction_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>%vlocity_namespace%__CatalogProductRelationship__c.eos_Transaction_Timestamp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>true</editable>
         <field>%vlocity_namespace%__PromotionItem__c.eos_Application_Version__c</field>
         <readable>true</readable>
     </fieldPermissions>
