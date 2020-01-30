@@ -38,10 +38,6 @@ function clearLogs() {
 function logProgress(entityName, entryName, entryDetails) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
-  if (!entryDetails) {
-    entryDetails = "No log details provided";
-  }
-
   if (entryDetails.toString().length > CONST_MAX_LOG_MESSAGE_LENGTH) {
     entryDetails =
       "Logging output too large. Truncating output. " +
