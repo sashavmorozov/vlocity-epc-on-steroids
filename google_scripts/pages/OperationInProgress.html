@@ -26,7 +26,7 @@
     </div>
     <div class="progress">
 
-      <div id="loading-process-progress" class="progress-bar progress-bar-striped active" role="progressbar"
+      <div id="loading-process-progress" class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar"
         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
         <span id="current-progress"></span>
       </div>
@@ -43,7 +43,8 @@
             if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
               clearInterval(interval);
               $("#loading-process-progress").
-                removeClass("active");
+                removeClass("active").
+                removeClass("progress-bar-animated");
 
               $("#view-logs").
                 prop('disabled', false);
@@ -69,9 +70,9 @@
           //error detected
           if (error === "true") {
             $("#loading-process-progress").
-              removeClass("progress-bar-success").
-              removeClass("progress-bar-warning").
-              addClass("progress-bar-danger");
+              removeClass("bg-success").
+              removeClass("bg-warning").
+              addClass("bg-danger");
 
             $("#error-alert").
               prop('hidden', false); 
@@ -80,9 +81,9 @@
           //warning detected
           if (warning === "true") {
             $("#loading-process-progress").
-              removeClass("progress-bar-success").
-              removeClass("progress-bar-danger").
-              addClass("progress-bar-warning");
+              removeClass("bg-success").
+              removeClass("bg-danger").
+              addClass("bg-warning");
 
             $("#warning-alert").
               prop('hidden', false); 
@@ -91,7 +92,7 @@
           //process is successfully completed
           if (error === "false" && warning === "false" && parseFloat(progress) >= 100) {
             $("#loading-process-progress").
-              addClass("progress-bar-success");
+              addClass("bg-success");
             
             $("#success-alert").
               prop('hidden', false);    
