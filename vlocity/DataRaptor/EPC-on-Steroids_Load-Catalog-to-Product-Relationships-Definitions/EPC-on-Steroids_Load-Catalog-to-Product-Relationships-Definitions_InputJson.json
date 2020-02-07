@@ -1,0 +1,37 @@
+{
+    "Catalog to Product Relationships": [
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_ROOT_CATALOG",
+            "Catalog Name": "EoS. Sample Root Catalog",
+            "Checked": true,
+            "End Date Time": "01/01/2021",
+            "Offering Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER",
+            "Offering Name": "EoS. Sample Root Offer",
+            "Sequence Number": 10,
+            "Start Date Time": "01/01/2020"
+        },
+        {
+            "": "",
+            "Active": true,
+            "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_ROOT_CATALOG",
+            "Catalog Name": "EoS. Sample Root Catalog",
+            "Checked": true,
+            "End Date Time": "01/01/2021",
+            "Offering Code": "VEPC_OFFERING_RUGBRAUE",
+            "Offering Name": "Rúgbrauð",
+            "Sequence Number": 20,
+            "Start Date Time": "01/01/2020"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.5",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200120-6-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/17GPA7QAUrNw-81zVW2tpgI8Q7naN2lCLUgzPGUFmS8A/edit",
+        "Transaction ID": "92e93825-b809-41d5-bdfa-e3724a0aab05",
+        "Transaction Timestamp": "29/01/2020@16:13:20GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Catalog to Product Relationships Definitions"
+}

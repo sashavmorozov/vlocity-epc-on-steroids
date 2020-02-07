@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <?!= include('css/Stylesheet'); ?>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>EPC on Steroids Authorization</title>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="d-flex flex-grow-1">
+      <span class="w-100 d-lg-none d-block">
+        <!-- hidden spacer to center brand on mobile --></span>
+      <a class="navbar-brand" href="#">
+        <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/pill-white.png?raw=true" height="32" alt=""> EPC on Steroids
+      </a>
+      <div class="w-100 text-right">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+      <ul class="navbar-nav ml-auto flex-nowrap">
+        <li class="nav-item">
+          <a href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/releases" class="nav-link"
+            target="_blank">Get Client</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki/EPC-on-Steroids-Value-Proposition"
+            class="nav-link" target="_blank">Why EPC on Steroids</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/wiki" class="nav-link" target="_blank">Help
+            Center</a>
+        </li>
+        <li class="nav-item">
+          <a href="mailto:epc-on-steroids@vlocity.com" class="nav-link" target="_blank">Feedback</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-5">Something went wrong!</h1>
+        <div class="mx-auto my-25 mt-5 mb-5">We were unable to set up a connection.</div>
+        <div class="text-left" style="font-size: 10pt;"> Please refer to <a href="https://github.com/sashavmorozov/vlocity-epc-on-steroids/releases" target="_blank">installation and configuration guides</a> to make sure all necessary steps are done as prescribed. Some typical reasons for issues are
+          <ul>
+            <li>Callback URL is not properly set up in Salesforce organization</li>
+            <li>Callback URL is set up in Salesforce organization but the changes did not take effect yet</li>
+            <li>Too sctrict authentication policies configured for a Salesforce organization (e.g. IP filtering and disabled self-authentication)</li>
+          </ul>
+          If you tried everything and are still having issues - reach out to <a href="mailto:epc-on-steroids@vlocity.com" target="_blank">epc-on-steroids@vlocity.com</a></div>
+        <div class="mx-auto mt-5 mb-5"></div>
+        
+        <div class="text-left" style="font-size: 10pt;"> Technical details:</div>
+        <div class="text-left" style="font-size: 10pt;border: solid 1px;padding: 10px;font-family: monospace;border-radius: 5px;border-color: gray;margin-top: 10px; margin-bottom: 50px;"> 
+          <?= JSON.stringify(request) ?>
+        </div>
+        
+        <div class="row align-items-center"
+            style="height: 64px;">
+            <div class="col"><img class="hidden-lg img-responsive" alt=""
+              src="//c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg"
+              data-src="//c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg"
+              style="height: 64px;">
+            </div>
+            <div class="col"><img src="https://vlocity.com/assets/images/vlocity-logo-horizontal-notag.svg" 
+              alt="Vlocity"
+              style="height: 64px;">
+            </div>
+            <div class="col"><img
+              src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/pill.png?raw=true"
+              alt="EPC on Steroids"
+              style="height: 64px;">
+            </div>
+        </div>
+
+        <div class="text-white-50 mx-auto mt-5 mb-5"></div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Footer -->
+  <footer class="footer w-100 small text-center" style="position:absolute; bottom:0; height:32px">
+    <div class="container">
+      Copyright &copy; Vlocity 2020
+    </div>
+  </footer>
+
+</body>
+
+</html>
