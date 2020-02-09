@@ -627,4 +627,55 @@
         <readable>true</readable>
     </fieldPermissions>
 
+        <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Application_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Last_Executed_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Spreadsheet_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Spreadsheet_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Transaction_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Transaction_Timestamp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Data_Content__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Processing_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Processing_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>eos_Offline_Data_Upload_Chunk__c.eos_Processing_Errors__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
 </Profile>

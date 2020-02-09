@@ -352,7 +352,10 @@ function processDataraptorResponse(response, inputRecordsCount) {
         var createdObjectsByTypeEffective = dataRaptorResult.createdObjectsByType[dataraptorName];
 
         var createdObjectsByTypeEffectiveKeyMap = Object.keys(createdObjectsByTypeEffective);
-        for each (var key in createdObjectsByTypeEffectiveKeyMap) {
+      
+        for (var i = 0; i < createdObjectsByTypeEffectiveKeyMap.length; i++) { 
+        //for each (var key in createdObjectsByTypeEffectiveKeyMap) {
+            var key = createdObjectsByTypeEffectiveKeyMap[i];
             createdObjectsCount += createdObjectsByTypeEffective[key].length;
         }
 

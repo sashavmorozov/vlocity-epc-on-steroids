@@ -483,7 +483,8 @@ function showOnlySpecificDomainSheets(domainSheets) {
   var sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
   var sheetNamesToHide = [];
   var sheetNamesToUnhide = [];
-  for each (var s in sheets) {
+  for (var i = 0; i < sheets.length; i++) { 
+    var s = sheets[i];
     var sheetName = s.getName();
     if (domainSheets.indexOf(sheetName) === -1 &&
        commonSheets.indexOf(sheetName) === -1) {
@@ -498,14 +499,16 @@ function showOnlySpecificDomainSheets(domainSheets) {
   
   console.log("*** VARIABLE: sheetsNamesToHide: " + JSON.stringify(sheetNamesToHide));
   
-  for each (var sheetName in sheetNamesToHide) {
-        var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+  for (var i = 0; i < sheetNamesToHide.length; i++) { 
+    var sheetName = sheetNamesToHide[i];
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
     if (!sheet.isSheetHidden()) {
     SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName).hideSheet();
     }
   }
   
-  for each (var sheetName in sheetNamesToUnhide) {
+  for (var i = 0; i < sheetNamesToUnhide.length; i++) { 
+    var sheetName = sheetNamesToUnhide[i];
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
     if (sheet.isSheetHidden()) {
     SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName).showSheet();

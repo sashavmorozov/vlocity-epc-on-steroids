@@ -17,6 +17,7 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
     var sheet = SpreadsheetApp.getActiveSheet();
     var sheetName = sheet.getName();
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
+    var isHeavyLoad = false;
 
     Logger.log("*** VARIABLE: epcConfiguration: " + JSON.stringify(epcConfiguration));
 
@@ -46,6 +47,10 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
     payloadAsJson.dataRaptorName = sheetToDataraptorMapping[sheetName];
 
     console.log('*** INFO: Request size (entities): ' + payloadAsJson[sheetName].length);
+    if (payloadAsJson[sheetName].length > CONST_HEAVY_LOAD_THRESHOLD) {
+        isHeavyLoad = true;
+        console.log('*** INFO: A batch (non real-time) mode will be used to process this request');
+    }
 
     var payloadChunkNumber = payloadAsJson[sheetName].length / CHUNK_SIZE;
     var processedRecords = 0;
@@ -69,8 +74,18 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
         );
 
         var chunkPayload = {};
-        chunkPayload.dataRaptorName = sheetToDataraptorMapping[sheetName];
-        chunkPayload[sheetName] = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
+        chunkPayload.chunkNumber = i;
+        chunkPayload.entityName = sheetName;
+
+        if (!isHeavyLoad) {
+            chunkPayload.dataRaptorName = sheetToDataraptorMapping[sheetName];
+            chunkPayload[sheetName] = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
+        } else {           
+            chunkPayload.dataRaptorName = CONST_HEAVY_LOAD_DATARAPTOR_NAME;
+            chunkPayload.dataRaptorNameRealtime = sheetToDataraptorMapping[sheetName];
+            chunkPayload.dataContent = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
+        }
+        
 
         addTransactionDetails(chunkPayload);
 
@@ -82,7 +97,12 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
         updateLoadingProcessProgress(Math.round(loadingProcessProgress));
 
         //error processing
-        processDataraptorResponse(responseContentAsJson, chunkPayload[sheetName].length);
+        if (!isHeavyLoad) {
+            processDataraptorResponse(responseContentAsJson, chunkPayload[sheetName].length);
+        } else {           
+            //stub - update me
+        }
+        
     }
 
 
