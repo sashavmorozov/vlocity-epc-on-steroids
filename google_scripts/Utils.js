@@ -187,7 +187,15 @@ function invokeVipByNameSafe(vipName, payload) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   //console.time(arguments.callee.name);
   
-  var response = invokeVipByName(vipName, payload);  
+  var response = invokeVipByName(vipName, payload);
+
+  if (!response) {
+    var message = "Access token is not available. Check settings or connection to Salesforce org";
+    console.log("*** ERROR: message: " + message);
+    logProgress("Integration Procedure Utils", arguments.callee.name, message);
+    return;
+  }
+  
   var responseContentAsJson = JSON.parse(response.getContentText());
   
   if (Array.isArray(responseContentAsJson)) {

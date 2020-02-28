@@ -12,7 +12,6 @@
 function pushConfigurationToVlocityChunkable(epcConfiguration) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
-    var CHUNK_SIZE = 10;
     var accessTokenObj = retrieveStoredAccessToken();
     var sheet = SpreadsheetApp.getActiveSheet();
     var sheetName = sheet.getName();
@@ -42,6 +41,7 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
     }
 
     var vipName = 'EPC_LoadGenericEPCDefinitions';
+    //var vipName = 'EPC_AsyncWrapper';
 
     var payloadAsJson = epcConfiguration;
     payloadAsJson.dataRaptorName = sheetToDataraptorMapping[sheetName];
