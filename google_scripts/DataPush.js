@@ -18,7 +18,7 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
     var isHeavyLoad = false;
 
-    Logger.log("*** VARIABLE: epcConfiguration: " + JSON.stringify(epcConfiguration));
+    console.log("*** VARIABLE: epcConfiguration: " + JSON.stringify(epcConfiguration));
 
     if (!epcConfiguration) {
         var message = "No data provided to push";

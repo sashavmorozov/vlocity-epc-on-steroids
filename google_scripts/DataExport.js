@@ -33,14 +33,14 @@ function exportRowsAsJson(sheetName, exportScope) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
     if (!sheetName) {
-        Logger.log('*** No sheet name provided');
+        console.log('*** No sheet name provided');
         
         console.log("*** METHOD_EXIT: " + arguments.callee.name);
         return null;
     }
 
     if (!exportScope) {
-        Logger.log('*** No export scope provided, using default export scope (include all)');
+        console.log('*** No export scope provided, using default export scope (include all)');
         exportScope = CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL;
     }
 
@@ -51,8 +51,8 @@ function exportRowsAsJson(sheetName, exportScope) {
         var numRows = dataRange.getNumRows();
         var numCols = dataRange.getNumColumns();
 
-        Logger.log('*** Data Range number of rows: ' + numRows);
-        Logger.log('*** Data Range number of columns: ' + numCols);
+        console.log('*** Data Range number of rows: ' + numRows);
+        console.log('*** Data Range number of columns: ' + numCols);
 
         var values = dataRange.getValues();
         var rowRangeOffset = CONST_FIRST_DATA_ROW_NUMBER - 1;

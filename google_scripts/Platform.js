@@ -9,7 +9,7 @@
  */
 
 function getScriptId() {
-    Logger.log(ScriptApp.getScriptId());
+    console.log(ScriptApp.getScriptId());
     return ScriptApp.getScriptId();
 }
 

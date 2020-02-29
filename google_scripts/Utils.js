@@ -138,7 +138,7 @@ function regenerateJsonAttributesForAllProducts() {
   var dataRange = sheet.getDataRange();
   var recordsCount = dataRange.getNumRows();
   
-  Logger.log('*** ' + recordsCount);
+  console.log('*** ' + recordsCount);
   if (recordsCount > 50) {
     operationNotification(
       "Info",
@@ -354,7 +354,7 @@ function regenerateLayoutsForCheckedObjectTypes() {
     }
   
     var objectTypesData = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
-    Logger.log('*** ' + JSON.stringify(objectTypesData));
+    console.log('*** ' + JSON.stringify(objectTypesData));
   
     if (!objectTypesData) {
       operationNotification(
@@ -378,7 +378,7 @@ function regenerateLayouts(objectTypesData) {
     for (i = 0; i < objectTypesArray.length; i++) {
       var singleItemPayload = {};
       singleItemPayload['targetObjectTypeName'] = objectTypesArray[i]["Object Type"];
-      Logger.log('*** Regenerating layout for  ' + JSON.stringify(singleItemPayload));
+      console.log('*** Regenerating layout for  ' + JSON.stringify(singleItemPayload));
       logProgress(
             "Object Types (Layouts)",
             "Info",
@@ -393,7 +393,7 @@ function viewScriptProperties() {
   var keys = PropertiesService.getScriptProperties().getKeys();
   
   for (var i = 0; i < keys.length; i++) {
-    Logger.log('*** ' + keys[i] + ': ' + PropertiesService.getScriptProperties()[keys[i]]);
+    console.log('*** ' + keys[i] + ': ' + PropertiesService.getScriptProperties()[keys[i]]);
   }
 }
 
@@ -402,7 +402,7 @@ function shortenInstanceUrl(instanceUrl) {
   if (instanceUrl) {
     var tag = instanceUrl.match(/https:\/\/(.*?)\./);
     if (tag) {
-      Logger.log('*** shortenInstanceUrl: ' + tag[1]);
+      console.log('*** shortenInstanceUrl: ' + tag[1]);
       return tag[1];
     } else {
       return instanceUrl;

@@ -138,7 +138,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var sheetName = sheet.getName();
     var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
 
-    Logger.log("*** epcConfiguration: " + epcConfiguration);
+    console.log("*** epcConfiguration: " + epcConfiguration);
 
     if (!epcConfiguration) {
         console.log("*** Error: no data to upload");
@@ -149,7 +149,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     if (!accessTokenObj ||
         !accessTokenObj.accessToken ||
         !accessTokenObj.instanceUrl) {
-        Logger.log('Error: Access token should be generated first');
+        console.log('Error: Access token should be generated first');
 
         logProgress(
             sheetName,
@@ -167,7 +167,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
     var payloadAsJson = epcConfiguration;
     payloadAsJson['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
 
-    Logger.log('*** Request size (entities): ' + payloadAsJson[sheetName].length);
+    console.log('*** Request size (entities): ' + payloadAsJson[sheetName].length);
 
     var payloadChunkNumber = payloadAsJson[sheetName].length / CHUNK_SIZE;
     var processedRecords = 0;
@@ -193,8 +193,8 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
 
         addTransactionDetails(chunkPayload);
 
-        Logger.log('*** Chunk range: ' + (CHUNK_SIZE * i) + ', ' + (CHUNK_SIZE * (i + 1)));
-        Logger.log('*** Chunk payload: ' + JSON.stringify(chunkPayload));
+        console.log('*** Chunk range: ' + (CHUNK_SIZE * i) + ', ' + (CHUNK_SIZE * (i + 1)));
+        console.log('*** Chunk payload: ' + JSON.stringify(chunkPayload));
 
         var options = {
             'method': 'post',
@@ -207,7 +207,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
             'escaping': false
         };
 
-        Logger.log('*** loadActiveSheetToVlocityEPC request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
+        console.log('*** loadActiveSheetToVlocityEPC request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
 
         logProgress(
             sheetName,
@@ -215,7 +215,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
             JSON.stringify(chunkPayload));
 
         var response = UrlFetchApp.fetch(url, options);
-        Logger.log('*** loadActiveSheetToVlocityEPC response:' + response);
+        console.log('*** loadActiveSheetToVlocityEPC response:' + response);
 
         logProgress(
             sheetName,
@@ -235,7 +235,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
             var result = JSON.stringify(responseAsJson['Result']);
             if (result) {
                 var hasErrors = JSON.stringify(responseAsJson['Result']['hasErrors']);
-                Logger.log('*** hasErrors: ' + hasErrors);
+                console.log('*** hasErrors: ' + hasErrors);
                 errorDetected = hasErrors;
             } else {
                 sheet.setName(sheetName + ' (Error)');
@@ -247,7 +247,7 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
         } */
 
         //this none-sense doesn't work
-        Logger.log('errorDetected = ' + errorDetected);
+        console.log('errorDetected = ' + errorDetected);
         if (errorDetected == true) {
             raiseLoadingProcessError();
 
@@ -445,8 +445,8 @@ function exportSelectedRowsAsJson() {
     var activeRange = selection.getActiveRange();
 
     if (activeRange) {
-        Logger.log('Active Range first row: ' + selection.getActiveRange().getRow());
-        Logger.log('Active Range last row: ' + selection.getActiveRange().getLastRow());
+        console.log('Active Range first row: ' + selection.getActiveRange().getRow());
+        console.log('Active Range last row: ' + selection.getActiveRange().getLastRow());
 
         var numRows = activeRange.getNumRows();
         var numCols = activeRange.getNumColumns();
@@ -460,14 +460,14 @@ function exportSelectedRowsAsJson() {
         if (!header) return;
 
         for (var i = 0; i < header.length; i++) {
-            Logger.log(header[i]);
+            console.log(header[i]);
         }
 
         for (var i = rowRangeOffset; i < values.length; i++) {
             var rowObj = {};
             var row = values[i];
             var emptyRowFlag = true;
-            Logger.log('**current row: ' + row);
+            console.log('**current row: ' + row);
 
             for (var j = 0; j < header.length; j++) {
                 if (row[j] != "") emptyRowFlag = false;
@@ -506,6 +506,6 @@ function loadSheetToDataraptorMapping() {
         sheetToDataraptorMapping[row[0]] = row[2];
     }
 
-    Logger.log('***' + JSON.stringify(sheetToDataraptorMapping));
+    console.log('***' + JSON.stringify(sheetToDataraptorMapping));
     return sheetToDataraptorMapping;
 }

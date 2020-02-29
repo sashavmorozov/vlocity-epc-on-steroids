@@ -96,7 +96,7 @@ function include(filename) {
 }
 
 function getRedirectUriMessageBox() {
-  Logger.log("*** " + ScriptApp.getService().getUrl());
+  console.log("*** " + ScriptApp.getService().getUrl());
   operationNotification(
     "Callback URL",
     "Copy this URL into the Callback URL field of the connected app in Salesforce:\n\n" +
@@ -146,7 +146,7 @@ function showDialogWebServerAuthenticationFlow() {
 
   var authorizationUrl = url + "?" + parameters;
 
-  Logger.log("*** authorizationUrl: " + authorizationUrl);
+  console.log("*** authorizationUrl: " + authorizationUrl);
 
   var template = HtmlService.createTemplateFromFile(
     "pages/AuthorizationDialog"
@@ -231,7 +231,7 @@ function selectAllRows() {
   if (!currentState) return;
 
   if (currentState[1].toString() !== "Checked") {
-    Logger.log(
+    console.log(
       '*** This sheet does not seem to support rows checking. Make sure the header column is called "Checked"'
     );
     operationNotification(
@@ -247,7 +247,7 @@ function selectAllRows() {
 
   //craft a target selection state
   for (var i = 2; i < currentState.length; i++) {
-    Logger.log("&&& " + currentState[i][0]);
+    console.log("&&& " + currentState[i][0]);
     var targetStateItems = currentState[i][0] !== "" ? true : "";
     targetState.push([targetStateItems]);
   }
@@ -271,7 +271,7 @@ function clearSelection() {
   if (!currentState) return;
 
   if (currentState[1].toString() !== "Checked") {
-    Logger.log(
+    console.log(
       '*** This sheet does not seem to support rows checking. Make sure the header column is called "Checked"'
     );
     operationNotification(
@@ -287,7 +287,7 @@ function clearSelection() {
 
   //craft a target selection state
   for (var i = 2; i < currentState.length; i++) {
-    Logger.log("&&& " + currentState[i][0]);
+    console.log("&&& " + currentState[i][0]);
     var targetStateItems = currentState[i][0] !== "" ? false : "";
     targetState.push([targetStateItems]);
   }
@@ -311,7 +311,7 @@ function invertSelection() {
   if (!currentState) return;
 
   if (currentState[1].toString() !== "Checked") {
-    Logger.log(
+    console.log(
       '*** This sheet does not seem to support rows checking. Make sure the header column is called "Checked"'
     );
     operationNotification(
