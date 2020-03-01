@@ -199,6 +199,20 @@
     {
         "%vlocity_namespace%__DomainObjectAPIName__c": "json",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Follow-on Promotion Code",
+        "%vlocity_namespace%__GlobalKey__c": "69dc5ade-09c4-e735-0bdf-e265d54e0110",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:%vlocity_namespace%__FollowOnPromotionId__r.%vlocity_namespace%__Code__c",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Promotions DefinitionsCustom4805",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Extract Promotions Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
         "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Id",
         "%vlocity_namespace%__GlobalKey__c": "d004d414-5580-f574-58be-b97966b1b995",
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:Id",
