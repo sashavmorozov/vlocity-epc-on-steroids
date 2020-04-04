@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <base target="_top">
-  <?!= include('css/ExternalStylesheet'); ?>
-  <?!= include('css/CustomStylesheet'); ?>
-  <script>
-    function viewLogs() {
-      google.script.run.viewLogs();
-      google.script.host.close();
-    }
-  </script>
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
 
-  <script>
-    function disconnectFromSalesforce() {
-        google.script.run.eraseTokenInformation();
-    }
-  </script>
-
-</head>
-
-<body>
-  <div style="
-              border-radius:10px;
-              background: white;
-              display: contents;
-              ">
-    <div class="text-center">
-      <img
-        src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
-        class="rounded" width="100" height="100" />
+  <body>
+    <div style="border-radius:10px; background: white; display: contents;">
+      <div class="text-center">
+        <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
+          class="rounded" width="100" height="100" />
+      </div>
+      <div class="text-center" style="min-height: 32px;">
+        <h4>Revoke access?</h4>
+      </div>
+      <!--empty div-->
+      <div style="min-height: 32px;">
+        <!--section 1 div-->
+        Do you want to disconnect from <a target="_blank"
+          href="<?= instanceUrl ?>"><?= shortenInstanceUrl(instanceUrl) ?></a>?
+      </div>
     </div>
-    <div class="text-center" style="min-height: 32px;">
-      <h4>Revoke access?</h4>
+
+    <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;" hidden>
     </div>
-    <!--empty div-->
-    <div style="min-height: 32px;">
+
+    <div id="connect-footnote" style="min-height: 32px; font-size: 10px;" hidden>
       <!--section 1 div-->
-      Do you want to disconnect from <a target="_blank"
-        href="<?= instanceUrl ?>"><?= shortenInstanceUrl(instanceUrl) ?></a>?
+      To connect back at any time, go to Security > Connect to Salesforce
     </div>
-  </div>
 
-  <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;"
-    hidden>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--buttons div-->
+    <div class="" style="position: absolute; bottom: 0px; right: 0px;">
+
+      <input id="disconnect" type="button" class="btn btn-primary active" style="width: 100px;float: right;margin-left: 10px;"
+        value="Disconnect" onclick="disconnectFromSalesforce()" />
+
+      <input type="button" class="btn btn-secondary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
+        onclick="google.script.host.close()" />
+
+    </div>
+
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+        
+    <!-- scripts -->
+    <?!= include('templates/bootstrap_scripts_4.4.1'); ?>
+
     <script id="rendered-js">
       $(function () {
         var interval = setInterval(function () {
@@ -72,40 +74,17 @@
             prop("hidden", false);
 
           $("#disconnect").
-            addClass("disabled");
+            prop("hidden", true);
         }
       }
-      
-      function onFailure() {
-       //create onFailure response function
-       $("#success-alert").
-            prop("hidden", false).
-            html("Something went wrong");
+    </script>
+
+    <script>
+      function disconnectFromSalesforce() {
+          google.script.run.eraseTokenInformation();
       }
     </script>
-  </div>
 
-  <div id="connect-footnote" style="min-height: 32px; font-size: 10px;" hidden>
-    <!--section 1 div-->
-    To connect back at any time, go to Security > Connect to Salesforce
-  </div>
-
-  <!--buttons div-->
-  <div class="" style="
-              position: absolute;
-              bottom: 0px;
-              right: 0px;
-              ">
-
-
-    <input id="disconnect" type="button" class="btn btn-primary" style="width: 100px;float: right;margin-left: 10px;"
-      value="Disconnect" onclick="disconnectFromSalesforce()" />
-
-    <input type="button" class="btn btn-secondary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
-      onclick="google.script.host.close()" />
-
-  </div>
-</body>
-
+  </body>
 
 </html>

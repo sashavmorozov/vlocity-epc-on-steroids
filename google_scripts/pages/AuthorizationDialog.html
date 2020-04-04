@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <base target="_top" />
-  <?!= include('css/ExternalStylesheet'); ?>
-  <?!= include('css/CustomStylesheet'); ?>
-  <script>
-    function viewLogs() {
-      google.script.run.viewLogs();
-      google.script.host.close();
-    }
-  </script>
-</head>
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
 
-<body>
-  <div style="
-            border-radius:10px;
-            background: white;
-            display: contents;
-            ">
-    <div class="text-center">
-      <img
-        src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
-        class="rounded" width="100" height="100" />
+  <body>
+    <div style="border-radius:10px; background: white; display: contents;">
+      <div class="text-center">
+        <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
+          class="rounded" width="100" height="100" />
+      </div>
+      <div class="text-center" style="min-height: 32px;">
+        <h4>Allow access?</h4>
+      </div>
+      <!--empty div-->
+      <div style="min-height: 32px;">
+        <!--section 1 div-->
+        The application requests access to data on your Salesforce organization. Do you want to authorize access?
+      </div>
     </div>
-    <div class="text-center" style="min-height: 32px;">
-      <h4>Allow access?</h4>
+
+    <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;" hidden>
     </div>
-    <!--empty div-->
-    <div style="min-height: 32px;">
+
+    <div id="disconnect-footnote" style="min-height: 32px; font-size: 10px;" hidden>
       <!--section 1 div-->
-      The application requests access to data on your Salesforce organization. Do you want to authorize access?
+      To revoke access at any time, go to Security > Disconnect from Salesforce
     </div>
-  </div>
+    <div style="min-height: 32px; font-size: 10px;">
+      <!--section 1 div-->
+    </div>
 
-  <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;"
-    hidden>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--buttons div-->
+    <div class="" style="position: absolute;  bottom: 0px; right: 0px;">
+
+      <a id="authorize" class="btn btn-primary active" href="<?= authorizationUrl ?>" target="_blank"
+        style="width: 100px; float: right; margin-left: 10px;">Authorize</a>
+
+      <input type="button" class="btn btn-secondary" style="width: 100px; float: right; margin-left: 10px;" value="Close"
+        onclick="google.script.host.close()" />
+
+    </div>
+    
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+    
+    <!-- scripts -->
+    <?!= include('templates/bootstrap_scripts_4.4.1'); ?>
+
     <script id="rendered-js">
       $(function () {
         var interval = setInterval(function () {
@@ -57,41 +70,17 @@
 
           $("#success-alert").
             prop("hidden", false).
-            html("You are now connected to " + orgUrl);
-
+            html("You are now connected to <a href=\"" + orgUrl + "\" target=\"_blank\">" + orgUrl + "</a>");
+            
           $("#disconnect-footnote").
             prop("hidden", false);
 
           $("#authorize").
-            addClass("disabled");
+            prop("hidden", true);
         }
       }
     </script>
-  </div>
 
-  <div id="disconnect-footnote" style="min-height: 32px; font-size: 10px;" hidden>
-    <!--section 1 div-->
-    To revoke access at any time, go to Security > Disconnect from Salesforce
-  </div>
-  <div style="min-height: 32px; font-size: 10px;">
-    <!--section 1 div-->
-  </div>
-
-
-  <!--buttons div-->
-  <div class="" style="
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            ">
-
-    <a id="authorize" class="btn btn-primary" href="<?= authorizationUrl ?>" target="_blank"
-      style="width: 100px;float: right;margin-left: 10px;">Authorize</a>
-
-    <input type="button" class="btn btn-secondary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
-      onclick="google.script.host.close()" />
-
-  </div>
-</body>
+  </body>
 
 </html>
