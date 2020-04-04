@@ -2,282 +2,6 @@ sheetToDataraptorMapping = {};
 
 var loadingProcessProgress = 0;
 
-
-function loadActiveSheetToVlocityEPC() {
-    /* Before loading */
-    resetLoadingProcessProgress();
-    resetLoadingProcessStep();
-    resetLoadingProcessError();
-    resetLoadingProcessWarning();
-
-    showProgressDialog();
-
-    restoreCurrentTabName();
-
-    /* Verify connection */
-    setLoadingProcessStep('Checking connection to Salesforce');
-    if (!isConnectedToSalesforce()) {
-        console.log("*** Error: The application is not yet connected to Salesforce");
-        var dialogParams = {
-            "message": "Doesn't look good",
-            "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
-        };
-        displayErrorDialog(dialogParams);
-        return;
-    }
-
-    setLoadingProcessStep('Exporting data from the spreadsheet');
-
-    /* Loading */
-    var sheetName = SpreadsheetApp.getActiveSheet().getName();
-    if (nonDataSheets.indexOf(sheetName) !== -1) {
-        console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
-        var dialogParams = {
-            "message": "Doesn't look good",
-            "messageDescription": "Upload process is not supported for this sheet: " + sheetName
-        };
-        displayWarningDialog(dialogParams);
-        return;
-    }
-
-    var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
-    console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
-
-    if (!epcConfiguration) {
-        console.log("*** Error: an empty sheet, no data to upload");
-        var dialogParams = {
-            "message": "Doesn't look good",
-            "messageDescription": "Please verify the spreadsheet has data to upload. Looks like an empty spreadsheet now"
-        };
-        displayWarningDialog(dialogParams);
-        return;
-    }
-
-    setLoadingProcessStep('Adding transactional data for tracking');
-    addTransactionDetails(epcConfiguration);
-
-    setLoadingProcessStep('Loading data to Vlocity');
-    //loadConfigurationToVlocityEPCChunkable(epcConfiguration);
-  pushConfigurationToVlocityChunkable(epcConfiguration);
-
-    /* After loading */
-    completeLoadingProcessStep();
-    completeLoadingProcessProgress();
-    //resetLoadingProcessError();
-}
-
-function loadCheckedRowsToVlocityEPC() {
-    /* Before loading */
-    resetLoadingProcessProgress();
-    resetLoadingProcessStep();
-    resetLoadingProcessError();
-    resetLoadingProcessWarning();
-
-    showProgressDialog();
-
-    restoreCurrentTabName();
-
-    /* Verify connection */
-    setLoadingProcessStep('Checking connection to Salesforce');
-    if (!isConnectedToSalesforce()) {
-        console.log("*** Error: The application is not yet connected to Salesforce");
-        var dialogParams = {
-            "message": "Doesn't look good",
-            "messageDescription": "The application is not yet connected to Salesforce. Either connect or re-connect to Salesforce organization"
-        };
-        displayErrorDialog(dialogParams);
-
-        return;
-    }
-
-    setLoadingProcessStep('Exporting data from the spreadsheet');
-
-    /* Loading */
-    var sheetName = SpreadsheetApp.getActiveSheet().getName();
-    if (nonDataSheets.indexOf(sheetName) !== -1) {
-        console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
-        var dialogParams = {
-            "message": "Doesn't look good",
-            "messageDescription": "Upload process is not supported for this sheet: " + sheetName
-        };
-        displayWarningDialog(dialogParams);
-        return;
-    }
-
-    var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
-    console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
-
-    if (!epcConfiguration) {
-        console.log("*** Error: no rows checked, no data to upload");
-        var dialogParams = {
-            "message": "Doesn't look good",
-            "messageDescription": "Please verify you checked the records you want to load. Looks like nothing was selected"
-        };
-        displayWarningDialog(dialogParams);
-        return;
-    }
-
-    setLoadingProcessStep('Adding transactional data for tracking');
-    addTransactionDetails(epcConfiguration);
-
-    setLoadingProcessStep('Loading data to Vlocity');
-    pushConfigurationToVlocityChunkable(epcConfiguration);
-
-    /* After loading */
-    completeLoadingProcessStep();
-    completeLoadingProcessProgress();
-    //resetLoadingProcessError();
-}
-
-
-function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
-    var LOAD_GENERIC_EPC_DEFINITION_VIP = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/EPC_LoadGenericEPCDefinitions';
-    var CHUNK_SIZE = 10;
-    var accessTokenObj = retrieveStoredAccessToken();
-    var sheet = SpreadsheetApp.getActiveSheet();
-    var sheetName = sheet.getName();
-    var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
-
-    console.log("*** epcConfiguration: " + epcConfiguration);
-
-    if (!epcConfiguration) {
-        console.log("*** Error: no data to upload");
-        return;
-    }
-
-    //setLoadingProcessStep("Connecting to Salesforce");
-    if (!accessTokenObj ||
-        !accessTokenObj.accessToken ||
-        !accessTokenObj.instanceUrl) {
-        console.log('Error: Access token should be generated first');
-
-        logProgress(
-            sheetName,
-            "Process Error",
-            "Access token should be generated first. Connect to Salesforce organization"
-        );
-
-        operationNotification('Operation failed', 'Access token should be generated first. Connect to Salesforce organization');
-        return;
-    }
-
-    var accessToken = accessTokenObj.accessToken;
-    var url = accessTokenObj.instanceUrl + LOAD_GENERIC_EPC_DEFINITION_VIP;
-
-    var payloadAsJson = epcConfiguration;
-    payloadAsJson['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
-
-    console.log('*** Request size (entities): ' + payloadAsJson[sheetName].length);
-
-    var payloadChunkNumber = payloadAsJson[sheetName].length / CHUNK_SIZE;
-    var processedRecords = 0;
-
-    sheet.setName(sheetName + ' (' + processedRecords + '/' + payloadAsJson[sheetName].length + ')');
-
-    logProgress(
-        sheetName,
-        "Process Info",
-        payloadAsJson[sheetName].length + " records to be processed. Loading process will be done in " + Math.ceil(payloadChunkNumber) + " chunks, " + CHUNK_SIZE + " records each"
-    );
-
-    for (i = 0; i < payloadChunkNumber; i++) {
-        logProgress(
-            sheetName,
-            "Process Info",
-            "Processing chunk " + i
-        );
-
-        var chunkPayload = {};
-        chunkPayload['dataRaptorName'] = sheetToDataraptorMapping[sheetName];
-        chunkPayload[sheetName] = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
-
-        addTransactionDetails(chunkPayload);
-
-        console.log('*** Chunk range: ' + (CHUNK_SIZE * i) + ', ' + (CHUNK_SIZE * (i + 1)));
-        console.log('*** Chunk payload: ' + JSON.stringify(chunkPayload));
-
-        var options = {
-            'method': 'post',
-            'contentType': 'application/json',
-            'payload': JSON.stringify(chunkPayload),
-            'muteHttpExceptions': true,
-            'headers': {
-                'Authorization': 'Bearer ' + accessToken
-            },
-            'escaping': false
-        };
-
-        console.log('*** loadActiveSheetToVlocityEPC request:' + JSON.stringify(UrlFetchApp.getRequest(url, options)));
-
-        logProgress(
-            sheetName,
-            "Request Payload",
-            JSON.stringify(chunkPayload));
-
-        var response = UrlFetchApp.fetch(url, options);
-        console.log('*** loadActiveSheetToVlocityEPC response:' + response);
-
-        logProgress(
-            sheetName,
-            "Response Payload",
-            response);
-
-        //error processing
-        var responseAsJson = JSON.parse(response);
-
-        processDataraptorResponse(responseAsJson, chunkPayload[sheetName].length);
-
-        var errorDetected = false;
-
-        /* if (responseAsJson) {
-           
-
-            var result = JSON.stringify(responseAsJson['Result']);
-            if (result) {
-                var hasErrors = JSON.stringify(responseAsJson['Result']['hasErrors']);
-                console.log('*** hasErrors: ' + hasErrors);
-                errorDetected = hasErrors;
-            } else {
-                sheet.setName(sheetName + ' (Error)');
-                errorDetected = true;
-            }
-        } else {
-            sheet.setName(sheetName + ' (Error)');
-            errorDetected = true;
-        } */
-
-        //this none-sense doesn't work
-        console.log('errorDetected = ' + errorDetected);
-        if (errorDetected == true) {
-            raiseLoadingProcessError();
-
-            logProgress(
-                sheetName,
-                "Process Error",
-                "An error detected while loading the current chunk. The loading process terminated. Successfully loaded chunks are not rolled back. Review the logs for more details");
-        }
-
-        processedRecords = Math.min((i + 1) * CHUNK_SIZE, payloadAsJson[sheetName].length);
-        sheet.setName(sheetName + ' (' + processedRecords + '/' + payloadAsJson[sheetName].length + ')');
-
-        loadingProcessProgress = processedRecords / payloadAsJson[sheetName].length * 100;
-        updateLoadingProcessProgress(Math.round(loadingProcessProgress));
-    }
-
-    sheet.setName(sheetName + ' (Loaded)');
-    sheet.setName(sheetName);
-
-    completeLoadingProcessProgress();
-    completeLoadingProcessStep();
-
-    logProgress(
-        sheetName,
-        "Process Info",
-        "Loading process is completed");
-
-    //operationNotification('Operation completed', 'Selected rows are successfully processed, errors returned: ' + 'TBD');
-}
-
 /**
  * Analyses the response message from a dataraptor/integration procedure. Check response status and validates the number of create/updated records
  *
@@ -291,31 +15,55 @@ function loadConfigurationToVlocityEPCChunkable(epcConfiguration) {
 
 function processDataraptorResponse(response, inputRecordsCount) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+    
+    /* this structure will be returned as a result of the processing business logic */
+    var validationResult = {
+        status: "SUCCESS",
+        code: "",
+        message: "",
+        description: ""
+    }
 
     console.log("*** VARIABLE: response: " + JSON.stringify(response));
 
+    /* check if response is not empty */
     if (!response) {
         console.log('*** ERROR: An empty response (or no response) received from dataraptor');
-        raiseLoadingProcessError();
-        return null;
+        setAggregatedLoadingProcessStatus("ERROR");
+        
+        validationResult.status = "ERROR";
+        validationResult.code = "EMPTY_RESPONSE";
+        validationResult.message = "An empty response (or no response) received from dataraptor";
+        validationResult.description = "An empty response (or no response) received from dataraptor";
+        
+        return validationResult;
     }
 
-    /* quick status check */
+    /* check if response returned non-error status */
     var dataRaptorStatus = response.Status;
 
     if (!dataRaptorStatus) {
         console.log('*** ERROR: An empty status (or no status) received from dataraptor');
-        raiseLoadingProcessError();
-        return;
+        setAggregatedLoadingProcessStatus("ERROR");
+        
+        validationResult.status = "ERROR";
+        validationResult.code = "EMPTY_RESPONSE_STATUS";
+        validationResult.message = "An empty status (or no status) received from dataraptor";
+        validationResult.description = "An empty status (or no status) received from dataraptor";
+        
+        return validationResult;
     } else {
         if (dataRaptorStatus === "Failed") {
             console.log("*** ERROR: " + "Failed status received from dataraptor. Please review the process logs and make necessary corrections");
-            var dialogParams = {
-                "message": "Doesn't look right",
-                "messageDescription": "Failed status received from dataraptor. Please review the process logs and make necessary corrections"
-            };
-            displayErrorDialog(dialogParams);
-            return;
+            setAggregatedLoadingProcessStatus("ERROR");
+        
+            validationResult.status = "ERROR";
+            validationResult.code = "FAILED_RESPONSE_STATUS";
+            validationResult.message = "Failed status received from dataraptor. Please review the process logs and make necessary corrections";
+            validationResult.description = "Failed status received from dataraptor. Please review the process logs and make necessary corrections";
+            
+            return validationResult;
+
         } else {
             //other search
         }
@@ -324,10 +72,17 @@ function processDataraptorResponse(response, inputRecordsCount) {
     /* execution result records count */
     var dataRaptorResult = response.Result;
 
+    /* check if response result is not empty */
     if (!dataRaptorResult) {
         console.log('*** ERROR: An empty result (or no result) received from dataraptor');
-        raiseLoadingProcessError();
-        return null;
+        setAggregatedLoadingProcessStatus("ERROR");
+        
+        validationResult.status = "ERROR";
+        validationResult.code = "EMPTY_RESPONSE_RESULT";
+        validationResult.message = "An empty result (or no result) received from dataraptor";
+        validationResult.description = "An empty result (or no result) received from dataraptor";
+        
+        return validationResult;
     } else {
         /* result is received and is not empty */
         var itnerfaceInfo = dataRaptorResult.interfaceInfo;
@@ -340,13 +95,14 @@ function processDataraptorResponse(response, inputRecordsCount) {
 
         if (isEmpty(createdObjectsByType)) {
             console.log("*** ERROR: " + "No objects were created/updated");
-
-            var dialogParams = {
-                "message": "Doesn't look right",
-                "messageDescription": "No objects were created/updated"
-            };
-            displayErrorDialog(dialogParams);
-            return;
+            setAggregatedLoadingProcessStatus("ERROR");
+        
+            validationResult.status = "ERROR";
+            validationResult.code = "NO_OBJECTS_CREATED";
+            validationResult.message = "No objects were created/updated";
+            validationResult.description = "No objects were created/updated";
+            
+            return validationResult;
         }
 
         var createdObjectsByTypeEffective = dataRaptorResult.createdObjectsByType[dataraptorName];
@@ -354,7 +110,6 @@ function processDataraptorResponse(response, inputRecordsCount) {
         var createdObjectsByTypeEffectiveKeyMap = Object.keys(createdObjectsByTypeEffective);
       
         for (var i = 0; i < createdObjectsByTypeEffectiveKeyMap.length; i++) { 
-        //for each (var key in createdObjectsByTypeEffectiveKeyMap) {
             var key = createdObjectsByTypeEffectiveKeyMap[i];
             createdObjectsCount += createdObjectsByTypeEffective[key].length;
         }
@@ -366,7 +121,7 @@ function processDataraptorResponse(response, inputRecordsCount) {
         console.log("*** VARIABLE: createdObjectsCount: " + createdObjectsCount);
 
         if (createdObjectsCount !== expectedCreatedObjectsCount) {
-            console.log("*** WARNING: Looks like the process created/updated less records than expected. Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount);
+            /* console.log("*** WARNING: Looks like the process created/updated less records than expected. Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount);
 
             var dialogParams = {
                 "message": "Looks okay but not quite right",
@@ -377,11 +132,20 @@ function processDataraptorResponse(response, inputRecordsCount) {
                 "</ul><br>" + 
                 "This could occur if some baseline records are not yet uploaded to the catalog. For example, a parent picklist should be uploaded before uploading picklist values"
             };
-            displayWarningDialog(dialogParams);
-            return;
+            displayWarningDialog(dialogParams); */
+            
+            console.log("*** WARNING: " + "Looks like the process created/updated less records than expected. Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount);
+            setAggregatedLoadingProcessStatus("WARNING");
+        
+            validationResult.status = "WARNING";
+            validationResult.code = "LESS_THAN_EXPECTED_NUMBER_OF_OBJECTS_CREATED";
+            validationResult.message = "Looks like the process created/updated less records than expected. Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount;
+            validationResult.description = "Looks like the process created/updated less records than expected. Expected: " + expectedCreatedObjectsCount + ", actually created/updated: " + createdObjectsCount;
+            
+            return validationResult;
         }
     }
-
+    return validationResult;
     console.log("*** METHOD_EXIT: " + arguments.callee.name);
 }
 

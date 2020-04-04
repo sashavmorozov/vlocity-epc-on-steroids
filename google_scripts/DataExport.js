@@ -9,7 +9,9 @@
 
 function exportRowsOfActiveSheetAsJson(exportScope) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+    console.time(arguments.callee.name);
 
+    console.timeEnd(arguments.callee.name);
     console.log("*** METHOD_EXIT: " + arguments.callee.name);
     return exportRowsAsJson(SpreadsheetApp.getActiveSheet().getName(), exportScope);
 }
@@ -31,10 +33,12 @@ function exportRowsOfActiveSheetAsJson(exportScope) {
 
 function exportRowsAsJson(sheetName, exportScope) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+    console.time(arguments.callee.name);
 
     if (!sheetName) {
         console.log('*** No sheet name provided');
         
+        console.timeEnd(arguments.callee.name);
         console.log("*** METHOD_EXIT: " + arguments.callee.name);
         return null;
     }
@@ -62,13 +66,18 @@ function exportRowsAsJson(sheetName, exportScope) {
 
         var header = sheet.getDataRange().getValues()[CONST_LAST_HEADER_ROW_NUMBER - 1]; //CHECK ME
         if (!header) {
+
+            console.timeEnd(arguments.callee.name);
             console.log("*** METHOD_EXIT: " + arguments.callee.name);
             return;
         }
 
+        /* 
         for (var i = 0; i < header.length; i++) {
             console.log('*** Header item[' + i + ']: ' + header[i]);
-        }
+        } 
+        */
+
 
         for (var i = rowRangeOffset; i < values.length; i++) {
             var currentRowAsRange = dataRange.offset(i, 0, 1);
@@ -76,23 +85,25 @@ function exportRowsAsJson(sheetName, exportScope) {
             var rowObj = {};
             var row = values[i];
 
-            if (!isEmptyArray(row) && !rangeContainsStrikethroughCells(currentRowAsRange)) {
+            if (!isEmptyArray(row)) {
                 if ((exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED &&
                         row[CONST_CHECKED_COLUMN_NUMBER - 1] === true) ||
                     exportScope === CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL) {
 
-                    for (var j = 0; j < header.length; j++) {
-                        var value = row[j];
+                    if (!rangeContainsStrikethroughCells(currentRowAsRange)) {
+                        for (var j = 0; j < header.length; j++) {
+                            var value = row[j];
 
-                        if (value instanceof Date && !isNaN(value.valueOf())) {
-                            //apply special formatting for date values
-                            value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
+                            if (value instanceof Date && !isNaN(value.valueOf())) {
+                                //apply special formatting for date values
+                                value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
+                            }
+
+                            rowObj[header[j]] = value;
                         }
 
-                        rowObj[header[j]] = value;
+                        if (rowObj != null) result.push(rowObj);
                     }
-
-                    if (rowObj != null) result.push(rowObj);
                 }
             }
         }
@@ -101,10 +112,12 @@ function exportRowsAsJson(sheetName, exportScope) {
     if (result && result.length) {
         resultWrapper[sheetName] = result;
 
+        console.timeEnd(arguments.callee.name);
         console.log("*** METHOD_EXIT: " + arguments.callee.name);
         return resultWrapper;
     } else {
 
+        console.timeEnd(arguments.callee.name);
         console.log("*** METHOD_EXIT: " + arguments.callee.name);
         return null;
     }

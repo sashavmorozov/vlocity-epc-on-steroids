@@ -3,8 +3,8 @@ function buildMenu() {
 
   ui.createMenu("Catalog Scripts")
 
-    .addItem("Load current tab to Vlocity EPC", "loadActiveSheetToVlocityEPC")
-    .addItem("Load only checked rows to Vlocity EPC", "loadCheckedRowsToVlocityEPC")
+    .addItem("Load current tab to Vlocity EPC", "pushActiveSheetToVlocityEPC")
+    .addItem("Load only checked rows to Vlocity EPC", "pushCheckedRowsToVlocityEPC")
   
     .addSubMenu(
       SpreadsheetApp.getUi()
