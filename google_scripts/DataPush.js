@@ -175,7 +175,7 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
             arguments.callee.name,
             processingDetails
         );
-        setAggregatedLoadingProcessStatus(String.toUpperCase(validationResult.status));
+        setAggregatedLoadingProcessStatus(validationResult.status.toUpperCase());
 
         var processingCompleted = new Date();
         
