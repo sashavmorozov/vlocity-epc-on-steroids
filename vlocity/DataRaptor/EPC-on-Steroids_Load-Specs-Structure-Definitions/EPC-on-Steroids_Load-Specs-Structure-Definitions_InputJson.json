@@ -1,0 +1,39 @@
+{
+    "Specs Structure": [
+        {
+            "Checked": true,
+            "Child Spec": "EoS. Sample CFS Component Spec 1",
+            "Child Spec Code": "VEPC_SPEC_EOS_SAMPLE_CFS_COMPONENT_SPEC_1",
+            "Parent Spec": "EoS. Sample CFS Spec",
+            "Parent Spec Code": "VEPC_SPEC_EOS_SAMPLE_CFS_SPEC",
+            "Sequence": 10
+        },
+        {
+            "Checked": true,
+            "Child Spec": "EoS. Sample CFS Component Spec 2",
+            "Child Spec Code": "VEPC_SPEC_EOS_SAMPLE_CFS_COMPONENT_SPEC_2",
+            "Parent Spec": "EoS. Sample CFS Spec",
+            "Parent Spec Code": "VEPC_SPEC_EOS_SAMPLE_CFS_SPEC",
+            "Sequence": 20
+        },
+        {
+            "Checked": true,
+            "Child Spec": "EoS. Sample RFS Spec 1.1",
+            "Child Spec Code": "VEPC_SPEC_EOS_SAMPLE_RFS_SPEC_1_1",
+            "Parent Spec": "EoS. Sample RFS Spec 1",
+            "Parent Spec Code": "VEPC_SPEC_EOS_SAMPLE_RFS_SPEC_1",
+            "Sequence": 10
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.7",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200120-7-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1YcVjpnzpx5LqhqPglQBWR-o-4jjErV3lP1EdW_x2tMY/edit",
+        "Transaction ID": "98681d4f-74f4-4c25-aa7b-157f5e89e6ad",
+        "Transaction Timestamp": "21/03/2020@22:20:55GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Specs Structure Definitions",
+    "entityName": "Specs Structure"
+}
