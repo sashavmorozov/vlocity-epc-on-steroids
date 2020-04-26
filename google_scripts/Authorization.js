@@ -73,12 +73,12 @@ function retrieveStoredAccessToken() {
         obj[CONST_REFRESH_TOKEN_PROPERTY_NAME] = refreshToken;
         obj[CONST_INSTANCE_URL_PROPERTY_NAME] = instanceUrl;
 
-        Logger.log("Successfully retrieved access token: " + accessToken);
-        Logger.log("Successfully retrieved access instanceUrl: " + instanceUrl);
+        console.log("Successfully retrieved access token: " + accessToken);
+        console.log("Successfully retrieved access instanceUrl: " + instanceUrl);
 
         return obj;
     } else {
-        Logger.log("Error: Unable to retrieved access token");
+        console.log("Error: Unable to retrieved access token");
         return null;
     }
 }

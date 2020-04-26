@@ -16,8 +16,6 @@ function retrieveCurrentSheetFromCatalog() {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   
   var sheetName = SpreadsheetApp.getActive().getActiveSheet().getName();
-  var targetSheet = SpreadsheetApp.getActive().getSheetByName(CONST_DATA_IMPORT_SHEET_NAME);
-  SpreadsheetApp.getActive().setActiveSheet(targetSheet);
   retrieveSheetFromCatalogByName(sheetName);
   
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
@@ -37,17 +35,43 @@ function retrieveSheetFromCatalogByName(sheetName) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   console.log("*** INFO: " + "Retrieve data for " + sheetName);
   console.log("*** VARIABLE: sheetName: " + sheetName);
+  
+  /* connection validation */
+  if (!isConnectedToSalesforce()) {
+    var message = "The application is not yet connected to Salesforce. Connect to Salesforce organization first";
+    console.log("*** ERROR: " + message);
+    logProgress("Data Pull: " + sheetName, arguments.callee.name, message);
+    
+    var dialogParams = {
+         "message": "Doesn't look good",
+         "messageDescription": message
+     };
+     displayErrorDialog(dialogParams);
+     console.log("*** METHOD_EXIT: " + arguments.callee.name);
+     return;
+  }
 
   /* validations */
   var sheetToDataraptorMapping2 = loadSheetToDataraptorMapping2();
   
   if (!sheetToDataraptorMapping2[sheetName]) {
-    console.log("*** ERROR: " + "No dataraptor to import from Catalog is defined for this sheet");
-    console.log("*** METHOD_EXIT: " + arguments.callee.name);
-    return;
+    var message = "No dataraptor to import from Catalog is defined for this sheet";
+    console.log("*** ERROR: " + message);
+    logProgress("Data Pull: " + sheetName, arguments.callee.name, message);
+    
+    var dialogParams = {
+         "message": "Doesn't look good",
+         "messageDescription": message
+     };
+     displayErrorDialog(dialogParams);
+     console.log("*** METHOD_EXIT: " + arguments.callee.name);
+     return;
   }
   
   /* preparation */
+  var targetSheet = SpreadsheetApp.getActive().getSheetByName(CONST_DATA_IMPORT_SHEET_NAME);
+  SpreadsheetApp.getActive().setActiveSheet(targetSheet);
+  
   removeSheetContentByName(CONST_DATA_IMPORT_SHEET_NAME, 1, 1);
   copySheetHeaderByName(sheetName, CONST_DATA_IMPORT_SHEET_NAME);
   
@@ -63,8 +87,22 @@ function retrieveSheetFromCatalogByName(sheetName) {
     dataRaptorName: sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName
   };
 
-  var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload)); //this should be adopted to accomodate the change. Make is safe also
+  var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload));
   console.log("**** VARIABLE: retreivedData: " + retreivedData);
+  
+  if (!retreivedData) {
+    var message = "No data retreived from Vlocity catalog";
+    console.log("*** ERROR: " + message);
+    logProgress("Data Pull: " + sheetName, arguments.callee.name, message);
+    
+    var dialogParams = {
+         "message": "Doesn't look good",
+         "messageDescription": message
+     };
+     displayErrorDialog(dialogParams);
+     console.log("*** METHOD_EXIT: " + arguments.callee.name);
+     return;
+  }
   
   var returnResultsData = (JSON.parse(retreivedData)).Result.returnResultsData;
   storeJsonAsTable(CONST_DATA_IMPORT_SHEET_NAME, JSON.stringify(returnResultsData));

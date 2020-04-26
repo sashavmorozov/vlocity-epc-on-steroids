@@ -20,15 +20,50 @@ function getConnectedOrgDetails(){
   return orgDetails;
 }
 
+//OBSOLETE - REMOVE ME
 function getLoadingProcessInfo(){
   //return Math.round(Math.random() * 100);
   var currentProgress = {};
-  currentProgress["progress"] = PropertiesService.getUserProperties().getProperty('loadingProcessProgress');
-  currentProgress["step"] = PropertiesService.getUserProperties().getProperty('loadingProcessStep');
-  currentProgress["error"] = PropertiesService.getUserProperties().getProperty('loadingProcessError');
-  currentProgress["warning"] = PropertiesService.getUserProperties().getProperty('loadingProcessWarning');
+  currentProgress["progress"] = PropertiesService.getUserProperties().getProperty("loadingProcessProgress");
+  currentProgress["step"] = PropertiesService.getUserProperties().getProperty("loadingProcessStep");
+  currentProgress["error"] = PropertiesService.getUserProperties().getProperty("loadingProcessError");
+  currentProgress["warning"] = PropertiesService.getUserProperties().getProperty("loadingProcessWarning");
+  currentProgress["BACKEND_PROCESS_STATUS"] = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
   
   return currentProgress;
+}
+
+function getBackendProcessInfo(){
+  var currentBackendProcessInfo = {};
+
+  currentBackendProcessInfo["BACKEND_PROCESS_STATUS"]    = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
+  currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS");
+  currentBackendProcessInfo["BACKEND_PROCESS_STEP"]      = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STEP");
+  currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"]   = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_DETAILS");
+
+  console.log("*** " + JSON.stringify(currentBackendProcessInfo));
+  
+  return currentBackendProcessInfo;
+}
+
+function setBackendProcessInfoProcessStatus(processStatus) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_STATUS", processStatus);
+}
+
+function getBackendProcessInfoProcessStatus() {
+  PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
+}
+
+function setBackendProcessInfoProcessProgress(processProgress) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_PROGRESS", processProgress);
+}
+
+function setBackendProcessInfoProcessStep(processStep) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_STEP", processStep);
+}
+
+function setBackendProcessInfoProcessDetails(processDetails) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_DETAILS", processDetails);
 }
 
 
@@ -79,6 +114,80 @@ function resetLoadingProcessWarning() {
 function setLoadingProcessError(error) {
   PropertiesService.getUserProperties().setProperty('loadingProcessError', error);
 }
+
+function setAggregatedLoadingProcessStatus(processStatus) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+
+  /* process status can be "SUCCESS", "WARNING" or "ERROR" */
+  var currentAggregatedProcessStatus = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
+  console.log("*** VARIABLE: processStatus = " + processStatus);
+  console.log("*** VARIABLE: currentAggregatedProcessStatus = " + currentAggregatedProcessStatus);
+  console.log("*** VARIABLE: currentProgress = " + PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS"));
+
+  /* if (currentAggregatedProcessStatus == null || currentAggregatedProcessStatus == "" ||
+      CONST_PROCESS_STATUS_ENUM[processStatus] > CONST_PROCESS_STATUS_ENUM[currentAggregatedProcessStatus]) {
+    PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_STATUS", processStatus);
+  } */
+
+  var newProcessStatus = currentAggregatedProcessStatus;
+  switch (processStatus) {
+    case "ERROR": 
+      newProcessStatus = "ERROR";
+      break;
+    
+    case "WARNING":
+      if (currentAggregatedProcessStatus !== "ERROR") newProcessStatus = "WARNING";
+      break;
+      
+    case "SUCCESS":
+      if (currentAggregatedProcessStatus !== "ERROR" && currentAggregatedProcessStatus !== "WARNING" &&
+          PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS") == "100.0" //this is not nice
+      ) newProcessStatus = "SUCCESS";
+      break;
+  }
+
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_STATUS", newProcessStatus);
+
+  console.log("*** " + "New value for BACKEND_PROCESS_STATUS is " + PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS")); 
+  console.timeEnd(arguments.callee.name);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+}
+
+function getAggregatedLoadingProcessStatus() {
+  return PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
+}
+
+function viewUserProperties() {
+  console.log(JSON.stringify(PropertiesService.getUserProperties().getProperties()));
+}
+
+function deleteUserProperties() {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+  
+  PropertiesService.getUserProperties().deleteAllProperties();
+  
+  console.timeEnd(arguments.callee.name);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return;
+}
+
+/*
+
+ EOS intiates a business operation (upload data, retrieve data, run a job, etc.)
+ A business operation can be atomic (run a job, retrieve data) or composite (upload data)
+ 
+ An atomic operation translates into a single transaction (VIP call)
+ A composite operation translates into multiple atomic transactions (at this time - sequenced)
+
+ For a composite operation:
+  - Need to track aggregated progress progress (e.g. loading progress)
+  - Need to track aggregated progress status (e.g. error if at least one error occurs in atomics)
+  - Need to track aggregated progress message
+
+*/
+
   
 /* The function strips out leading sequential number from a string, if used. 
 * The leading sequential number is assumed to be separated from the main string part with a space
@@ -138,7 +247,7 @@ function regenerateJsonAttributesForAllProducts() {
   var dataRange = sheet.getDataRange();
   var recordsCount = dataRange.getNumRows();
   
-  Logger.log('*** ' + recordsCount);
+  console.log('*** ' + recordsCount);
   if (recordsCount > 50) {
     operationNotification(
       "Info",
@@ -187,7 +296,15 @@ function invokeVipByNameSafe(vipName, payload) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   //console.time(arguments.callee.name);
   
-  var response = invokeVipByName(vipName, payload);  
+  var response = invokeVipByName(vipName, payload);
+
+  if (!response) {
+    var message = "Access token is not available. Check settings or connection to Salesforce org";
+    console.log("*** ERROR: message: " + message);
+    logProgress("Integration Procedure Utils", arguments.callee.name, message);
+    return;
+  }
+  
   var responseContentAsJson = JSON.parse(response.getContentText());
   
   if (Array.isArray(responseContentAsJson)) {
@@ -316,6 +433,157 @@ function invokeVipByName(vipName, payload) {
   return response;
 }
 
+///////////////////TTTT
+/**
+ * Invokes an active Vlocity integration procedure by name. 
+ * If an authorization error is returned (INVALID_SESSION_ID), the function regenerates an access token 
+ * and reexecute the integration procedure
+ * Authorization error format: [{"message":"Session expired or invalid","errorCode":"INVALID_SESSION_ID"}]
+ *
+ * @param {string} vipName - integration procedure identifier (Type_Subtype)
+ * @param {string} payload - procedure input as a JSON-based string
+ * @return {void} - nothing
+ *
+ * @example
+ *     var vipName = "Hello_World";
+ *     var payload1 = {one: "You shoot me in a dream, you better wake up and apologize"};
+ *     var payload2 = {two: "Say what again, I double dare you motherf**ker"};
+ *     var payload3 = {three: "Sitting in your chair, I would probably say the same thing"};
+ *     var payload4 = {four: "I'm an American, our names don't mean shit"};
+ *     var payloadArray = [
+ *       JSON.stringify(payload1), 
+ *       JSON.stringify(payload2),
+ *       JSON.stringify(payload3),
+ *       JSON.stringify(payload4)
+ *     ];
+ *     invokeVipByNameBulkSafe(vipName, payloadArray);
+ */
+
+function invokeVipByNameBulkSafe(vipName, payloadArray) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+  
+  var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+  var refreshTokenResponse = regenerateToken(refreshToken);
+
+  var responsesArray;
+
+  if (refreshTokenResponse.access_token) {
+    responsesArray = invokeVipByNameBulk(vipName, payloadArray);
+  }
+  else {
+    var message = "Unable to regenerate an access token: " + refreshTokenResponse.error_description;
+    console.log("*** INFO: message: " + message);
+    logProgress("Integration Procedure Utils", arguments.callee.name, message);
+  }
+
+  
+  console.timeEnd(arguments.callee.name);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return responsesArray;
+}
+
+/**
+ * Invokes an active Vlocity integration procedure by name in a batch mode. An integration procedure is invoked as many times as many payload elements are provided. The method relies on batch HTTP request processing provided by the Google Apps Script framework  
+ *
+ * @param {string} vipName - integration procedure identifier (Type_Subtype)
+ * @param {array[string]} payloadArray - array of procedure inputs as a JSON-based string
+ * @return {void} - nothing
+ *
+ * @example
+ *     var vipName = "Hello_World";
+ *     var payloadArray = [{hello: "world"}, {thanks: "for all the fish"}] --CHANGE ME
+ *     invokeVipByNameBulk(vipName, JSON.stringify(payloadArray));
+ */
+
+function invokeVipByNameBulk(vipName, payloadArray) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+
+  var CONST_VIP_PREFIX = "/services/apexrest/vlocity_cmt/v1/integrationprocedure/";
+  var vipEndpoint = CONST_VIP_PREFIX + vipName;
+
+  var accessToken = PropertiesService.getScriptProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+  var instanceUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+  var url = instanceUrl + vipEndpoint;
+
+  var requestsArray = [];
+
+  for (var i = 0; i < payloadArray.length; i++) {
+    
+    var payload = payloadArray[i];
+    var options = {
+        method: "post",
+        contentType: "application/json",
+        payload: payload,
+        muteHttpExceptions: true,
+        headers: {
+            Authorization: "Bearer " + accessToken
+        },
+        escaping: false
+    };
+    
+
+    var request = UrlFetchApp.getRequest(url, options);
+    requestsArray.push(request);
+
+    console.log("*** INFO: VIP name: " + vipName);
+    console.log("*** INFO: VIP payload: " + payload);
+    console.log("*** INFO: VIP request: " + JSON.stringify(request));
+    
+    logProgress("Integration Procedure Utils", arguments.callee.name + " vipName", vipName);
+    logProgress("Integration Procedure Utils", arguments.callee.name + " payload", payload);
+    logProgress("Integration Procedure Utils", arguments.callee.name + " request", request);
+
+  }
+
+  console.log("*** INFO: requestsArray: " + JSON.stringify(requestsArray));
+  
+  
+  var responsesArray = UrlFetchApp.fetchAll(requestsArray);
+
+  for (var i = 0; i < responsesArray.length; i++) {
+    var response = responsesArray[i];
+    console.log("*** INFO: VIP response: " + "[" + i + "]" + response);
+    logProgress("Integration Procedure Utils", arguments.callee.name + " response", response);
+
+  }
+  
+
+  
+  
+  /* Error detection and processing */
+  /* var responseContentAsJson = JSON.parse(response.getContentText());
+   */
+  
+  /* Detect session expiration error */
+  /* if (Array.isArray(responseContentAsJson)) {
+    for (var i = 0; i < responseContentAsJson.length; i++) {
+      if (responseContentAsJson[i].errorCode === "INVALID_SESSION_ID") {
+        console.log("*** ERROR: message: " + responseContentAsJson[i].message);
+        logProgress("Integration Procedure Utils", arguments.callee.name + " error message", responseContentAsJson[i].message);
+      
+        console.log("*** METHOD_EXIT: " + arguments.callee.name);
+        return response;
+      }
+    }
+  }
+ */
+  
+  //CONTINUE HERE - CHECK HOW VIP RETURNS ERRORS
+/*   var validationResult = validateVipResponseForGenericErrors(JSON.parse(response));
+  logProgress("Integration Procedure Utils", arguments.callee.name + " execution status", validationResult.status);
+ */
+  //commented - hope nothing will be broken
+  /*
+  if (responseContentAsJson.Result.returnResultsData) {
+    return JSON.stringify(responseContentAsJson.Result.returnResultsData);
+  }
+  */
+
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  //return response;
+}
+
 function clearPlatformCache() {
   var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EPC_ClearPlatformCache';
@@ -346,7 +614,7 @@ function regenerateLayoutsForCheckedObjectTypes() {
     }
   
     var objectTypesData = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
-    Logger.log('*** ' + JSON.stringify(objectTypesData));
+    console.log('*** ' + JSON.stringify(objectTypesData));
   
     if (!objectTypesData) {
       operationNotification(
@@ -370,7 +638,7 @@ function regenerateLayouts(objectTypesData) {
     for (i = 0; i < objectTypesArray.length; i++) {
       var singleItemPayload = {};
       singleItemPayload['targetObjectTypeName'] = objectTypesArray[i]["Object Type"];
-      Logger.log('*** Regenerating layout for  ' + JSON.stringify(singleItemPayload));
+      console.log('*** Regenerating layout for  ' + JSON.stringify(singleItemPayload));
       logProgress(
             "Object Types (Layouts)",
             "Info",
@@ -385,7 +653,7 @@ function viewScriptProperties() {
   var keys = PropertiesService.getScriptProperties().getKeys();
   
   for (var i = 0; i < keys.length; i++) {
-    Logger.log('*** ' + keys[i] + ': ' + PropertiesService.getScriptProperties()[keys[i]]);
+    console.log('*** ' + keys[i] + ': ' + PropertiesService.getScriptProperties()[keys[i]]);
   }
 }
 
@@ -394,7 +662,7 @@ function shortenInstanceUrl(instanceUrl) {
   if (instanceUrl) {
     var tag = instanceUrl.match(/https:\/\/(.*?)\./);
     if (tag) {
-      Logger.log('*** shortenInstanceUrl: ' + tag[1]);
+      console.log('*** shortenInstanceUrl: ' + tag[1]);
       return tag[1];
     } else {
       return instanceUrl;

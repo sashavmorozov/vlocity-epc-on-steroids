@@ -10,9 +10,10 @@
             "Effective From": "30/04/2019",
             "Effective Until": "30/04/2029",
             "Follow-on Promotion": "60% Off Promotion",
+            "Follow-on Promotion Code": "VEPC_PROMO_60_OFF_PROMOTION",
             "Orderable": true,
-            "Price List": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
             "Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
             "Promotion Name": "10% Off Promotion",
             "Redeemable Code": "VEPC-PROMO-10P",
@@ -28,9 +29,10 @@
             "Effective From": "30/04/2019",
             "Effective Until": "30/04/2029",
             "Follow-on Promotion": "10% Off Promotion",
+            "Follow-on Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
             "Orderable": true,
-            "Price List": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
             "Promotion Code": "VEPC_PROMO_20_OFF_PROMOTION",
             "Promotion Name": "20% Off Promotion",
             "Redeemable Code": "VEPC-PROMO-20P",
@@ -38,12 +40,14 @@
         }
     ],
     "Transaction Details": {
-        "Application Version": "0.5",
+        "Application Version": "0.7",
         "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
-        "Transaction ID": "dca5f62f-59d2-40f3-9e8c-7b376998442e",
-        "Transaction Timestamp": "19/12/2019@13:46:58GMT"
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200120-7-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1YcVjpnzpx5LqhqPglQBWR-o-4jjErV3lP1EdW_x2tMY/edit",
+        "Transaction ID": "6150c16d-30c8-4c58-a0f8-3110e914ffd2",
+        "Transaction Timestamp": "01/03/2020@21:03:38GMT"
     },
-    "dataRaptorName": "EPC on Steroids_Load Promotions Definitions"
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Promotions Definitions",
+    "entityName": "Promotions"
 }

@@ -2,31 +2,40 @@
 <html>
   <head>
     <base target="_top">
-    <?!= include('css/Stylesheet'); ?>
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
   </head>
+
   <body>
-    <div class="text-center">
-      <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/icons8-pill-100.png?raw=true"
-        class="rounded"
-        width="100" 
-        height="100"/>
+    <div style="border-radius:10px; background: white; display: contents;">
+      <div class="text-center">
+        <img src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
+          class="rounded" width="100" height="100" />
+      </div>
+      <div class="text-center" style="min-height: 32px;">
+        <h4>Already Connected</h4>
+      </div>
+      <!--empty div-->
+      <div style="min-height: 32px;">
+        <!--section 1 div-->
+        The application is already connected to <a target="_blank" href="<?= instanceUrl ?>"><?= shortenInstanceUrl(instanceUrl) ?></a>
+      </div>
     </div>
-    <div class="text-center">
-      <br>
-      <h3>Already Authorized</h3>
+
+    <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line; margin-top: 20px;" hidden>
     </div>
-    <div class="">
-      The application is already connected to <a target="_blank" href="<?= instanceUrl ?>"><?= shortenInstanceUrl(instanceUrl) ?></a>
-      <br><br>
+
+    <!--buttons div-->
+    <div class="" style="position: absolute;  bottom: 0px; right: 0px;">
+
+      <input type="button" class="btn btn-secondary" style="width: 100px; float: right; margin-left: 10px;" value="Close"
+        onclick="google.script.host.close()" />
+
     </div>
-     <div class="">
-      <input type="button" class="btn btn-primary" style="width: 100%" value="Close" onclick="google.script.host.close()" />
-    </div>
-     <div class="text-left" style="position: absolute; bottom: 5px;font-size: 10px;">
-     <br>
-     <br>
-     <p class="text-muted" style="font-size: 10px;">To revoke access at any time, go to <i>Security</i> > <i>Disconnect from Salesforce</i></p>
-     <a style="font-size: 10px;" target="_blank" href="/icons/set/pill">Pill icon</a> by <a target="_blank" href="https://icons8.com">Icons8</a>
-    </div>
+    
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+
   </body>
+
 </html>

@@ -37,6 +37,14 @@ function clearLogs() {
 
 function logProgress(entityName, entryName, entryDetails) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+
+  if (!entryDetails) {
+    console.log("*** WARNING: " + "Nothing to log");
+    console.log("*** METHOD_EXIT: " + arguments.callee.name);
+    console.timeEnd(arguments.callee.name);
+    return;
+  }
 
   if (entryDetails.toString().length > CONST_MAX_LOG_MESSAGE_LENGTH) {
     entryDetails =
@@ -63,4 +71,6 @@ function logProgress(entityName, entryName, entryDetails) {
 
   r.setValues(obj);
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  console.timeEnd(arguments.callee.name);
+  return;
 }

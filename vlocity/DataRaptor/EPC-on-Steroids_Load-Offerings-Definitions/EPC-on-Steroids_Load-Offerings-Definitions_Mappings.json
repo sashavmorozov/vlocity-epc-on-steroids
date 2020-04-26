@@ -1,5 +1,21 @@
 [
     {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Formula",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 0,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Formula",
+        "%vlocity_namespace%__FormulaOrder__c": 1,
+        "%vlocity_namespace%__FormulaResultPath__c": "Offerings:Is Class Ext",
+        "%vlocity_namespace%__Formula__c": "IF(var:\"Offerings:Is Class\"==true,\"Class\",\"Product\")",
+        "%vlocity_namespace%__GlobalKey__c": "7fcfbdda-6544-cc32-c2fe-cc47adbd574e",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Offerings DefinitionsCustom7774",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Offerings Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
         "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
         "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__EffectiveDate__c",
@@ -301,6 +317,25 @@
         "%vlocity_namespace%__IsRequiredForUpsert__c": true,
         "%vlocity_namespace%__MapId__c": "EPC Loader_01_ProductsCustom8019",
         "%vlocity_namespace%__UpsertKey__c": true,
+        "Name": "EPC on Steroids_Load Offerings Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DefaultValue__c": "Product",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "RecordTypeId",
+        "%vlocity_namespace%__GlobalKey__c": "e3638033-d50a-58c3-c910-323868febf36",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Offerings:Is Class Ext",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__LookupDomainObjectFieldName__c": "Name",
+        "%vlocity_namespace%__LookupDomainObjectName__c": "RecordType",
+        "%vlocity_namespace%__LookupDomainObjectRequestedFieldName__c": "Id",
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Offerings DefinitionsCustom182",
+        "%vlocity_namespace%__TransformValuesMap__c": "{}",
+        "%vlocity_namespace%__UpsertKey__c": false,
         "Name": "EPC on Steroids_Load Offerings Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

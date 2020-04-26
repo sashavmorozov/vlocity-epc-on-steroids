@@ -3,15 +3,15 @@ function buildMenu() {
 
   ui.createMenu("Catalog Scripts")
 
-    .addItem("Load current tab to Vlocity EPC", "loadActiveSheetToVlocityEPC")
-    .addItem("Load only checked rows to Vlocity EPC", "loadCheckedRowsToVlocityEPC")
+    .addItem("Load current tab to Vlocity EPC", "pushActiveSheetToVlocityEPC")
+    .addItem("Load only checked rows to Vlocity EPC", "pushCheckedRowsToVlocityEPC")
   
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Security")
         .addItem("Connect to Salesforce", "connectToSalesforce")
         .addItem("Disconnect from Salesforce", "disconnectFromSalesforce")
-        .addItem("Get callback URL", "getRedirectUriMessageBox")
+        .addItem("Get callback URL", "retrieveCallbackUrl")
         .addItem("Configure connection to Salesforce", "configureConnectionToSalesforce")
     )
 
@@ -95,13 +95,18 @@ function include(filename) {
   return HtmlService.createHtmlOutputFromFile(filename).getContent();
 }
 
+//DEPRECATED
 function getRedirectUriMessageBox() {
-  Logger.log("*** " + ScriptApp.getService().getUrl());
+  console.log("*** " + ScriptApp.getService().getUrl());
   operationNotification(
     "Callback URL",
     "Copy this URL into the Callback URL field of the connected app in Salesforce:\n\n" +
       getRedirectUri()
   );
+}
+
+function retrieveCallbackUrl() {
+    showDialogCallbackUrl();
 }
 
 function connectToSalesforce() {
@@ -146,7 +151,7 @@ function showDialogWebServerAuthenticationFlow() {
 
   var authorizationUrl = url + "?" + parameters;
 
-  Logger.log("*** authorizationUrl: " + authorizationUrl);
+  console.log("*** authorizationUrl: " + authorizationUrl);
 
   var template = HtmlService.createTemplateFromFile(
     "pages/AuthorizationDialog"
@@ -169,6 +174,18 @@ function showDialogAuthorizationAlreadyCompleted() {
   page.setWidth(300).setHeight(400);
 
   SpreadsheetApp.getUi().showModalDialog(page, "Already Connected");
+}
+
+function showDialogCallbackUrl() {
+  var template = HtmlService.createTemplateFromFile(
+    "pages/GetCallbackUrlDialog"
+  );
+  template.callbackUrl = getRedirectUri();
+  var page = template.evaluate();
+
+  page.setWidth(300).setHeight(400);
+
+  SpreadsheetApp.getUi().showModalDialog(page, "Callback URL");
 }
 
 function showDialogDisconnectFromSalesforce() {
@@ -231,7 +248,7 @@ function selectAllRows() {
   if (!currentState) return;
 
   if (currentState[1].toString() !== "Checked") {
-    Logger.log(
+    console.log(
       '*** This sheet does not seem to support rows checking. Make sure the header column is called "Checked"'
     );
     operationNotification(
@@ -247,7 +264,7 @@ function selectAllRows() {
 
   //craft a target selection state
   for (var i = 2; i < currentState.length; i++) {
-    Logger.log("&&& " + currentState[i][0]);
+    console.log("&&& " + currentState[i][0]);
     var targetStateItems = currentState[i][0] !== "" ? true : "";
     targetState.push([targetStateItems]);
   }
@@ -271,7 +288,7 @@ function clearSelection() {
   if (!currentState) return;
 
   if (currentState[1].toString() !== "Checked") {
-    Logger.log(
+    console.log(
       '*** This sheet does not seem to support rows checking. Make sure the header column is called "Checked"'
     );
     operationNotification(
@@ -287,7 +304,7 @@ function clearSelection() {
 
   //craft a target selection state
   for (var i = 2; i < currentState.length; i++) {
-    Logger.log("&&& " + currentState[i][0]);
+    console.log("&&& " + currentState[i][0]);
     var targetStateItems = currentState[i][0] !== "" ? false : "";
     targetState.push([targetStateItems]);
   }
@@ -311,7 +328,7 @@ function invertSelection() {
   if (!currentState) return;
 
   if (currentState[1].toString() !== "Checked") {
-    Logger.log(
+    console.log(
       '*** This sheet does not seem to support rows checking. Make sure the header column is called "Checked"'
     );
     operationNotification(
@@ -483,7 +500,8 @@ function showOnlySpecificDomainSheets(domainSheets) {
   var sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
   var sheetNamesToHide = [];
   var sheetNamesToUnhide = [];
-  for each (var s in sheets) {
+  for (var i = 0; i < sheets.length; i++) { 
+    var s = sheets[i];
     var sheetName = s.getName();
     if (domainSheets.indexOf(sheetName) === -1 &&
        commonSheets.indexOf(sheetName) === -1) {
@@ -498,14 +516,16 @@ function showOnlySpecificDomainSheets(domainSheets) {
   
   console.log("*** VARIABLE: sheetsNamesToHide: " + JSON.stringify(sheetNamesToHide));
   
-  for each (var sheetName in sheetNamesToHide) {
-        var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+  for (var i = 0; i < sheetNamesToHide.length; i++) { 
+    var sheetName = sheetNamesToHide[i];
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
     if (!sheet.isSheetHidden()) {
     SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName).hideSheet();
     }
   }
   
-  for each (var sheetName in sheetNamesToUnhide) {
+  for (var i = 0; i < sheetNamesToUnhide.length; i++) { 
+    var sheetName = sheetNamesToUnhide[i];
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
     if (sheet.isSheetHidden()) {
     SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName).showSheet();

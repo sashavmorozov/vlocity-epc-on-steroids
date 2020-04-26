@@ -1,133 +1,159 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <base target="_top">
-  <?!= include('css/Stylesheet'); ?>
-  <script>
-    function viewLogs() {
-      google.script.run.viewLogs();
-      google.script.host.close();
-    }
-  </script>
-</head>
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
 
-<body>
-  <div style="
-            border-radius:10px;
-            background: white">
+  <body>
+    <div style="border-radius: 10px; background: white">
 
-    <div style="height: 32px;"></div>
-    <div style="height: 32px;">
-      We are processing your request, hold tight.
-    </div>
-    <div id="loading-process-step" class="" style="height: 64px;">
-      Current step:
-    </div>
-    <div class="progress">
-
-      <div id="loading-process-progress" class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar"
-        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-        <span id="current-progress"></span>
+      <div style="height: 32px;"></div>
+      <div style="height: 32px;">
+        We are processing your request, hold tight.
       </div>
 
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-      <script id="rendered-js">
-        $(function () {
-          var current_progress = 0;
-          var interval = setInterval(function () {
-            google.script.run.withSuccessHandler(onSuccess).getLoadingProcessInfo();
+      <div id="loading-process-step" class="" style="height: 64px;">
+        <!-- Current step will be shown here -->
+      </div>
 
-            //process is completed
-            if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
-              clearInterval(interval);
-              $("#loading-process-progress").
-                removeClass("active").
-                removeClass("progress-bar-animated");
+      <div class="progress">
+        <div id="loading-process-progress" class="progress-bar progress-bar-striped progress-bar-animated active"
+          role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+          <span id="current-progress"></span>
+        </div>
+      </div>
 
-              $("#view-logs").
-                prop('disabled', false);
-              }
-          }, 500);
-        });
-
-        function onSuccess(current_progress) {
-          var CONST_MIN_PROGRESS = 15;
-          var progress = Math.max(CONST_MIN_PROGRESS, current_progress["progress"]);
-          var step = current_progress["step"];
-          var error = current_progress["error"];
-          var warning = current_progress["warning"];
-
-          $("#loading-process-progress").
-            css("width", progress + "%").
-            attr("aria-valuenow", progress).
-            text(progress + "%");
-
-          $("#loading-process-step").
-            html("Current step: " + step);
-
-          //error detected
-          if (error === "true") {
-            $("#loading-process-progress").
-              removeClass("bg-success").
-              removeClass("bg-warning").
-              addClass("bg-danger");
-
-            $("#error-alert").
-              prop('hidden', false); 
-          }
-
-          //warning detected
-          if (warning === "true") {
-            $("#loading-process-progress").
-              removeClass("bg-success").
-              removeClass("bg-danger").
-              addClass("bg-warning");
-
-            $("#warning-alert").
-              prop('hidden', false); 
-          }
-
-          //process is successfully completed
-          if (error === "false" && warning === "false" && parseFloat(progress) >= 100) {
-            $("#loading-process-progress").
-              addClass("bg-success");
-            
-            $("#success-alert").
-              prop('hidden', false);    
-          }
-        }
-      </script>
     </div>
 
-  </div>
+    <div id="progress-alert" class="alert" role="alert" hidden>
+      <!-- Progress messages will be shown here -->
+    </div>
 
-  <div id="error-alert" class="alert alert-danger" role="alert" hidden>
-    An error was detected during the loading process. Check logs for more details
-  </div>
+    <div id="process-status-alert" class="alert" role="alert" hidden>
+      <!-- Aggregated progress messages will be shown here -->
+    </div>
 
-  <div id="warning-alert" class="alert alert-warning" role="alert" hidden>
-    No errors were detected during the loading process but it seems like not all records were loaded. Check logs for more details, verify that dependencies are met. More infor here "URL"
-  </div>
+    <!-- buttons -->
+    <?!= include('templates/buttons_viewlogs_close'); ?>
+    
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+    
+    <!-- scripts -->
+    <?!= include('templates/bootstrap_scripts_4.4.1'); ?>
 
-  <div id="success-alert" class="alert alert-success" role="alert" hidden>
-    The loading process completed. No errors detected
-  </div>
+    <script id="rendered-js">
+      $(function () {
+        var currentBackendProcessInfo = {};
+        var interval = setInterval(function () {
+          google.script.run.withSuccessHandler(onSuccess).getBackendProcessInfo();
 
-  <div class="" style="
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-  ">
-    <input type="button" class="btn btn-primary" style="width: 100px;float: right;margin-left: 10px;"
-      value="Close" onclick="google.script.host.close()">
+          //process is completed
+          if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
+            clearInterval(interval);
 
-    <input id="view-logs" type="button" class="btn btn-primary" style="width: 100px; float: right;" value="View Logs"
-      onclick="viewLogs()" disabled>
+            $("#loading-process-progress").
+              removeClass("active").
+              removeClass("progress-bar-animated");
 
-  </div>
+            $("#button-view-logs").
+              prop('disabled', false);
 
-</body>
+            toggleBackendProgressInfoAlert();
+          }
+        }, 1500);
+      });
+
+      function onSuccess(currentBackendProcessInfo) {
+        var CONST_MIN_PROGRESS = 15;
+
+        var processStatus = currentBackendProcessInfo["BACKEND_PROCESS_STATUS"];
+        var processProgress = Math.max(CONST_MIN_PROGRESS, currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]);
+        var processStep = currentBackendProcessInfo["BACKEND_PROCESS_STEP"];
+        var processDetails = currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"];
+
+        $("#loading-process-progress").
+          css("width", processProgress + "%").
+          attr("aria-valuenow", processProgress).
+          text(processProgress + "%");
+
+        $("#loading-process-step").
+          html("Current step: " + processStep);
+
+        toggleBackendProgressInfoAlert(processStatus);
+
+        if (parseFloat(processProgress) >= 100) {
+          var progressBarClass = "bg-success";
+          $("#loading-process-progress").
+            removeClass("progress-bar-striped");
+        } 
+      }
+
+      function toggleBackendProgressInfoAlert(processStatus) {
+        if (!processStatus) {
+          return;
+        }
+
+        switch (processStatus) {
+          case "ERROR": 
+            var processAlertClass = "alert-danger";
+            $("#process-status-alert").
+              prop('hidden', false).
+              removeClass("alert-danger").
+              removeClass("alert-warning").
+              removeClass("alert-success").
+              addClass(processAlertClass).
+              html("Some errors were detected during the loading process. Check logs for more details. View the <a href=\"javascript:void(0);\" onclick=\"javascript:viewStatusReport();\"><u>Status Report</u></a> for more details");
+
+            var progressBarClass = "bg-danger";
+            $("#loading-process-progress").
+              removeClass("bg-danger").
+              removeClass("bg-warning").
+              removeClass("bg-succes").
+              addClass(progressBarClass);
+            break;
+          
+          case "WARNING":
+            var processAlertClass = "alert-warning";
+            $("#process-status-alert").
+              prop('hidden', false).
+              removeClass("alert-danger").
+              removeClass("alert-warning").
+              removeClass("alert-success").
+              addClass(processAlertClass).
+              html("No errors were detected during the loading process but it seems like not all records were loaded. View the <a href=\"javascript:void(0);\" onclick=\"javascript:viewStatusReport();\"><u>Status Report</u></a> for more details");
+
+              var progressBarClass = "bg-warning";
+              $("#loading-process-progress").
+                removeClass("bg-danger").
+                removeClass("bg-warning").
+                removeClass("bg-succes").
+                addClass(progressBarClass);
+            break;
+            
+          case "SUCCESS":
+            var processAlertClass = "alert-success";
+            $("#process-status-alert").
+              prop('hidden', false).
+              removeClass("alert-danger").
+              removeClass("alert-warning").
+              removeClass("alert-success").
+              addClass(processAlertClass).
+              html("The process is successfully completed. No errors detected. View the <a href=\"javascript:void(0);\" onclick=\"javascript:viewStatusReport();\"><u>Status Report</u></a> for more details");
+
+              var progressBarClass = "bg-success";
+              $("#loading-process-progress").
+                removeClass("bg-danger").
+                removeClass("bg-warning").
+                removeClass("bg-success").
+                addClass(progressBarClass);
+            break;
+        }
+      }
+    </script>
+  </body>
 
 </html>
