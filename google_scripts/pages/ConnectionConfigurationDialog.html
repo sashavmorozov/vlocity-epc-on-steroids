@@ -53,7 +53,6 @@
             if (orgType && customerKey && customerSecret) {
                 console.log("*** VARIABLE: configurationObj: " + JSON.stringify(configurationObj));
                 google.script.run.setConfiguration(configurationObj);
-
                 document.getElementById("configuration-form-div").hidden = true;
                 document.getElementById("save-button").disabled = true;
 

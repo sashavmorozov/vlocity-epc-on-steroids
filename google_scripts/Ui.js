@@ -11,7 +11,7 @@ function buildMenu() {
         .createMenu("Security")
         .addItem("Connect to Salesforce", "connectToSalesforce")
         .addItem("Disconnect from Salesforce", "disconnectFromSalesforce")
-        .addItem("Get callback URL", "getRedirectUriMessageBox")
+        .addItem("Get callback URL", "retrieveCallbackUrl")
         .addItem("Configure connection to Salesforce", "configureConnectionToSalesforce")
     )
 
@@ -95,6 +95,7 @@ function include(filename) {
   return HtmlService.createHtmlOutputFromFile(filename).getContent();
 }
 
+//DEPRECATED
 function getRedirectUriMessageBox() {
   console.log("*** " + ScriptApp.getService().getUrl());
   operationNotification(
@@ -102,6 +103,10 @@ function getRedirectUriMessageBox() {
     "Copy this URL into the Callback URL field of the connected app in Salesforce:\n\n" +
       getRedirectUri()
   );
+}
+
+function retrieveCallbackUrl() {
+    showDialogCallbackUrl();
 }
 
 function connectToSalesforce() {
@@ -169,6 +174,18 @@ function showDialogAuthorizationAlreadyCompleted() {
   page.setWidth(300).setHeight(400);
 
   SpreadsheetApp.getUi().showModalDialog(page, "Already Connected");
+}
+
+function showDialogCallbackUrl() {
+  var template = HtmlService.createTemplateFromFile(
+    "pages/GetCallbackUrlDialog"
+  );
+  template.callbackUrl = getRedirectUri();
+  var page = template.evaluate();
+
+  page.setWidth(300).setHeight(400);
+
+  SpreadsheetApp.getUi().showModalDialog(page, "Callback URL");
 }
 
 function showDialogDisconnectFromSalesforce() {

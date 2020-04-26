@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
+
+  <body>
+    <div style="border-radius:10px; background: white; display: contents;">
+      <div class="text-center">
+        <img
+          src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
+          class="rounded" width="100" height="100" />
+      </div>
+      <div class="text-center" style="min-height: 32px;">
+        <h4>Callback URL</h4>
+      </div>
+      <!--empty div-->
+      <div style="min-height: 32px;">
+        <!--section 1 div-->
+        Copy this URL into the <i>Callback URL</i> field of the connected app in Salesforce</a>
+      </div>
+      <div id="callback-url" class="snippet-readonly text-break">
+          <?= callbackUrl ?>
+      </div>
+    </div>
+
+    <!--buttons div-->
+    <div id="buttons" class="" style="position: absolute; bottom: 0px; right: 0px;">
+      <input id="button-close" type="button" class="btn btn-primary"
+          style="width: 100px; float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
+
+      <input id="copy-to-clipboard" type="button" class="btn btn-primary" style="width: 100px; float: right;"
+          value="Copy" data-clipboard-target="#callback-url" onclick="toggleButtonName()">
+    </div>
+
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script>
+      var btn = document.getElementById('copy-to-clipboard');
+      var clipboard = new ClipboardJS(btn);
+
+      clipboard.on('success', function (e) {
+        console.log(e);
+      });
+
+      clipboard.on('error', function (e) {
+        console.log(e);
+      });
+    </script>
+    <script>
+      function toggleButtonName() {
+          var elem = document.getElementById("copy-to-clipboard");
+          elem.value = "Copied";
+
+          setTimeout(function () {
+            if (elem.value == "Copied") {
+              elem.value = "Copy";
+            }
+          }, 2000);
+      }
+    </script>
+
+  </body>
+
+</html>
