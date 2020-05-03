@@ -5,7 +5,7 @@
     <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
     <?!= include('css/epc_on_steroids_stylesheet'); ?>
   </head>
-  <body>
+  <body class="body-dialog">
     <div class="text-center">
       <br>
       <h3>Connection Status</h3>
@@ -14,7 +14,7 @@
       <!-- Add here some conditioning to show connected/disconnected based on instanceUrl -->
     </div>
      <br>
-     <div class="">
+     <div class="bottom-buttons-div">
 
       <input type="button" class="btn btn-primary text-right" style="width: 100%" value="Disconnect" onclick="google.script.host.close()" />
       

@@ -15,15 +15,15 @@
           class="rounded" width="100" height="100" />
       </div>
       <div class="text-center" style="min-height: 32px;">
-        <h4>Callback URL</h4>
+        <h4>Script Id</h4>
       </div>
       <!--empty div-->
       <div style="min-height: 32px;">
         <!--section 1 div-->
-        Copy this URL into the <i>Callback URL</i> field of the connected app in Salesforce</a>
+        Use this Id to set up your local development environment with <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> and <a href="https://developers.google.com/apps-script/guides/clasp" target="_blank">clasp</a>
       </div>
-      <div id="callback-url" class="snippet-readonly text-break">
-          <?= callbackUrl ?>
+      <div id="google-script-id" class="snippet-readonly text-break">
+          <?= scriptId ?>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
           style="float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
 
       <input id="copy-to-clipboard" type="button" class="btn btn-primary" style="float: right;"
-          value="Copy" data-clipboard-target="#callback-url" onclick="toggleButtonName()">
+          value="Copy" data-clipboard-target="#google-script-id" onclick="toggleButtonName()">
     </div>
 
     <!-- core_scripts -->

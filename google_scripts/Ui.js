@@ -44,6 +44,7 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
+        .addItem("Get Script Id", "retreiveScriptId")
         .addItem("View logs", "viewLogs")
         .addItem("Clear logs", "clearLogs")
         .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet"))
@@ -107,6 +108,10 @@ function getRedirectUriMessageBox() {
 
 function retrieveCallbackUrl() {
     showDialogCallbackUrl();
+}
+
+function retreiveScriptId() {
+    showDialogScriptId();
 }
 
 function connectToSalesforce() {
@@ -186,6 +191,18 @@ function showDialogCallbackUrl() {
   page.setWidth(300).setHeight(400);
 
   SpreadsheetApp.getUi().showModalDialog(page, "Callback URL");
+}
+
+function showDialogScriptId() {
+  var template = HtmlService.createTemplateFromFile(
+    "pages/GetScriptIdDialog"
+  );
+  template.scriptId = getScriptId();
+  var page = template.evaluate();
+
+  page.setWidth(300).setHeight(400);
+
+  SpreadsheetApp.getUi().showModalDialog(page, "Script Id");
 }
 
 function showDialogDisconnectFromSalesforce() {
