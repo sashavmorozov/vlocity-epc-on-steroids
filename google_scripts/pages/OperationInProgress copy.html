@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
+
+  <body class="body-dialog">
+    <div style="border-radius: 10px; background: white">
+
+      <div style="height: 32px;"></div>
+      <div style="height: 32px;">
+        We are processing your request, hold tight.
+      </div>
+
+      <div id="loading-process-step" class="" style="height: 64px;">
+        <!-- Current step will be shown here -->
+      </div>
+
+      <div class="progress">
+        <div id="loading-process-progress" class="progress-bar progress-bar-striped progress-bar-animated active"
+          role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+          <span id="current-progress"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="progress-alert" class="alert" role="alert" hidden>
+      <!-- Progress messages will be shown here -->
+    </div>
+
+    <div id="aggregated-progress-status-alert" class="alert" role="alert" hidden>
+      <!-- Aggregated progress messages will be shown here -->
+    </div>
+
+    <!-- buttons -->
+    <?!= include('templates/buttons_viewlogs_close'); ?>
+    
+    <!-- buttons -->
+    <?!= include('scripts/core_scripts'); ?>
+    
+    <!-- scripts -->
+    <?!= include('templates/bootstrap_scripts_4.4.1'); ?>
+
+    <script id="rendered-js">
+      $(function () {
+        var current_progress = 0;
+        var interval = setInterval(function () {
+          google.script.run.withSuccessHandler(onSuccess).getLoadingProcessInfo();
+
+          //process is completed
+          if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
+            clearInterval(interval);
+
+            $("#loading-process-progress").
+              removeClass("active").
+              removeClass("progress-bar-animated");
+
+            $("#button-view-logs").
+              prop('disabled', false);
+
+            toggleAggregatedProgressStatusAlert();
+          }
+        }, 500);
+      });
+
+      function onSuccess(current_progress) {
+        var CONST_MIN_PROGRESS = 15;
+        var progress = Math.max(CONST_MIN_PROGRESS, current_progress["progress"]);
+        var step = current_progress["step"];
+        var error = current_progress["error"];
+        var warning = current_progress["warning"];
+        var aggregatedProgressStatus = current_progress["BACKEND_PROCESS_STATUS"];
+
+        $("#loading-process-progress").
+          css("width", progress + "%").
+          attr("aria-valuenow", progress).
+          text(progress + "%");
+
+        $("#loading-process-step").
+          html("Current step: " + step);
+
+        //error detected
+        if (error === "true") {
+          var progressBarClass = "bg-danger";
+          $("#loading-process-progress").
+            removeClass("bg-danger").
+            removeClass("bg-warning").
+            removeClass("bg-succes").
+            addClass(progressBarClass);
+
+          var progressAlertClass = "alert-danger";
+          $("#progress-alert").
+            prop('hidden', false).
+            removeClass("alert-danger").
+            removeClass("alert-warning").
+            removeClass("alert-success").
+            addClass(progressAlertClass).
+            html("Some errors were detected during the loading process. Check logs for more details");
+        }
+
+        //warning detected
+        if (warning === "true") {
+          var progressBarClass = "bg-warning";
+          $("#loading-process-progress").
+            removeClass("bg-danger").
+            removeClass("bg-warning").
+            removeClass("bg-succes").
+            addClass(progressBarClass);
+
+          var progressAlertClass = "alert-warning";
+          $("#progress-alert").
+            prop('hidden', false).
+            removeClass("alert-danger").
+            removeClass("alert-warning").
+            removeClass("alert-success").
+            addClass(progressAlertClass).
+            html("No errors were detected during the loading process but it seems like not all records were loaded. Check logs for more details, verify that dependencies are met");
+        }
+
+        //process is successfully completed
+        if (error === "false" && warning === "false" && parseFloat(progress) >= 100) {
+          var progressBarClass = "bg-success";
+          $("#loading-process-progress").
+            removeClass("bg-danger").
+            removeClass("bg-warning").
+            removeClass("bg-succes").
+            addClass(progressBarClass);
+
+          var progressAlertClass = "alert-success";
+          $("#progress-alert").
+            prop('hidden', false).
+            removeClass("alert-danger").
+            removeClass("alert-warning").
+            removeClass("alert-success").
+            addClass(progressAlertClass).
+            html("The loading process completed. No errors detected");
+        }
+
+      }
+
+      function toggleAggregatedProgressStatusAlert(aggregatedProgressStatus) {
+        switch (aggregatedProgressStatus) {
+          case "ERROR":
+            var progressAlertClass = "alert-danger";
+            $("#aggregated-progress-status-alert").
+              prop('hidden', false).
+              addClass(progressAlertClass).
+              html("Some errors were detected during the loading process. Check logs for more details");
+            break;
+          
+          case "WARNING":
+            var progressAlertClass = "alert-success";
+              $("#aggregated-progress-status-alert").
+                prop('hidden', false).
+                addClass(progressAlertClass).
+                html("No errors were detected during the loading process but it seems like not all records were loaded. Check logs for more details, verify that dependencies are met");
+            break;
+            
+          case "SUCCESS":
+            var progressAlertClass = "alert-danger";
+            $("#aggregated-progress-status-alert").
+              prop('hidden', false).
+              addClass(progressAlertClass).
+              html("The process is successfully completed. No errors detected. ss<a href=\"google.com\">sdsd</a>");
+            break;
+        }
+      }
+    </script>
+  </body>
+
+</html>
