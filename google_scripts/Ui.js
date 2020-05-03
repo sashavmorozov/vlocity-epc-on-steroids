@@ -18,11 +18,13 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("EPC Jobs")
+        .addItem("Product hierarchy maintenance job", "runProductHierarchyMaintenanceJob")
+        .addItem("Refresh pricebook job", "runRefreshPricebookJob")
+        .addItem("Clear managed platform cache", "runClearManagedPlatformCache")
         .addItem(
           "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
         )
-        .addItem("Clear platform cache", "clearPlatformCache")
         .addItem(
           "Regenerate Object Types layouts",
           "regenerateLayoutsForCheckedObjectTypes"

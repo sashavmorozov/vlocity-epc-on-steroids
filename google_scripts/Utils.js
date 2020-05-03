@@ -584,9 +584,45 @@ function invokeVipByNameBulk(vipName, payloadArray) {
   //return response;
 }
 
-function clearPlatformCache() {
+function clearPlatformCache2() {
   var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EPC_ClearPlatformCache';
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var inputParameters = {};
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
+
+function runProductHierarchyMaintenanceJob() {
+  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+  var vipName = 'EOS_startProductHierarchyJob';
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var inputParameters = {};
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
+
+function runRefreshPricebookJob() {
+  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+  var vipName = 'EOS_refreshPriceBook';
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var inputParameters = {};
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
+
+function runClearManagedPlatformCache() {
+  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+  var vipName = 'EOS_clearPlatformCache';
   var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
   
