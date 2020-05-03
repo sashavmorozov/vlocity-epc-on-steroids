@@ -53,6 +53,7 @@
             if (orgType && customerKey && customerSecret) {
                 console.log("*** VARIABLE: configurationObj: " + JSON.stringify(configurationObj));
                 google.script.run.setConfiguration(configurationObj);
+                console.log("*** POST-STAMP");
                 document.getElementById("configuration-form-div").hidden = true;
                 document.getElementById("save-button").disabled = true;
 
@@ -67,7 +68,7 @@
     </script>
 </head>
 
-<body>
+<body class="body-dialog">
     <div style="
             border-radius:10px;
             background: white;
