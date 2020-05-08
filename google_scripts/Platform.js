@@ -13,6 +13,16 @@ function getScriptId() {
     return ScriptApp.getScriptId();
 }
 
+function generateViewRecordsUrl(objectApiName) {
+  
+    if (objectApiName) {
+      var viewUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + '/lightning/o/' + objectApiName + '/home';
+      return viewUrl;
+    } else {
+      return "Error: nothing to view here";
+    }
+  }
+
 /**
  * This function is called on spreadsheet open and merely adds necessary menu items into the taskbar
  */

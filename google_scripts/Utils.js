@@ -36,10 +36,12 @@ function getLoadingProcessInfo(){
 function getBackendProcessInfo(){
   var currentBackendProcessInfo = {};
 
-  currentBackendProcessInfo["BACKEND_PROCESS_STATUS"]    = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
-  currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS");
-  currentBackendProcessInfo["BACKEND_PROCESS_STEP"]      = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STEP");
-  currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"]   = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_DETAILS");
+  currentBackendProcessInfo["BACKEND_PROCESS_STATUS"]           = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
+  currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]         = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS");
+  currentBackendProcessInfo["BACKEND_PROCESS_STEP"]             = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STEP");
+  currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"]          = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_DETAILS");
+  currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_API_NAME"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_ENTITY_API_NAME");
+  currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_VIEW_URL"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_ENTITY_VIEW_URL");
 
   console.log("*** " + JSON.stringify(currentBackendProcessInfo));
   
@@ -64,6 +66,14 @@ function setBackendProcessInfoProcessStep(processStep) {
 
 function setBackendProcessInfoProcessDetails(processDetails) {
   PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_DETAILS", processDetails);
+}
+
+function setBackendProcessInfoProcessEntityApiName(processDetails) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_ENTITY_API_NAME", processDetails);
+}
+
+function setBackendProcessInfoProcessEntityViewUrl(processDetails) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_ENTITY_VIEW_URL", processDetails);
 }
 
 

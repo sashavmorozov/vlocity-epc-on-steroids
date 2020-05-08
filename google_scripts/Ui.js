@@ -228,8 +228,10 @@ function showDialogAlreadyDisconnected() {
   SpreadsheetApp.getUi().showModalDialog(page, "Already Disconnected");
 }
 
-function showGenericModalDialog(pageTemplateName, pageTitle) {
+function showGenericModalDialog(pageTemplateName, pageTitle, pageParams) {
   var template = HtmlService.createTemplateFromFile(pageTemplateName);
+  template.pageParams = pageParams;
+  
   var page = template.evaluate();
 
   page.setWidth(300).setHeight(400);

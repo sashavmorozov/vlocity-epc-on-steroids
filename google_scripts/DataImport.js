@@ -392,7 +392,8 @@ function loadSheetToDataraptorMapping2() {
       sheetName: row[0],
       namingPrexif: row[1],
       uploadToCatalogDataraptorName: row[2],
-      retreiveFromCatalogDataraptorName: row[3]
+      retreiveFromCatalogDataraptorName: row[3],
+      objectApiName: row[4]
     };
 
     sheetToDataraptorMapping[mappingRow.sheetName] = mappingRow;

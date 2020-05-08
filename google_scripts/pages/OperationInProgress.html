@@ -13,6 +13,7 @@
       <div style="height: 32px;"></div>
       <div style="height: 32px;">
         We are processing your request, hold tight.
+        DEMO: <a id=view-url target=_blank href="ttt">click me</a>
       </div>
 
       <div id="loading-process-step" class="" style="height: 64px;">
@@ -74,6 +75,8 @@
         var processProgress = Math.max(CONST_MIN_PROGRESS, currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]);
         var processStep = currentBackendProcessInfo["BACKEND_PROCESS_STEP"];
         var processDetails = currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"];
+        var processEntityApiName = currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_API_NAME"];
+        var processEntityViewUrl = currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_VIEW_URL"];
 
         $("#loading-process-progress").
           css("width", processProgress + "%").
@@ -82,6 +85,9 @@
 
         $("#loading-process-step").
           html("Current step: " + processStep);
+
+        $("#view-records-link").
+          attr("href", processEntityViewUrl);
 
         toggleBackendProgressInfoAlert(processStatus);
 
