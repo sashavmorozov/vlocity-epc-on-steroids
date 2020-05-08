@@ -1,7 +1,7 @@
 <div id="buttons" class="bottom-buttons-div">
     <div class="btn-group inline-table">
-        <button type="button" class="btn btn-primary btn-regular" onclick="viewLogs();">View Logs</button>
-        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="button-view-logs" type="button" class="btn btn-primary btn-regular" onclick="viewLogs();" disabled>View Logs</button>
+        <button id="button-view-dropdown" type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
         <div class="dropdown-menu">
@@ -17,7 +17,8 @@
             type="button" 
             class="btn btn-primary btn-regular"
             value="Close" 
-            onclick="google.script.host.close()">
+            onclick="google.script.host.close()"
+            disabled>
     </div>
   
 </div>
