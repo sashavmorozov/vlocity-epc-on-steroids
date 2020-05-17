@@ -599,6 +599,14 @@ function clearPlatformCache2() {
   var vipName = 'EPC_ClearPlatformCache';
   var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);
@@ -611,6 +619,14 @@ function runProductHierarchyMaintenanceJob() {
   var vipName = 'EOS_startProductHierarchyJob';
   var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);
@@ -623,6 +639,14 @@ function runRefreshPricebookJob() {
   var vipName = 'EOS_refreshPriceBook';
   var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);
@@ -635,6 +659,14 @@ function runClearManagedPlatformCache() {
   var vipName = 'EOS_clearPlatformCache';
   var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);

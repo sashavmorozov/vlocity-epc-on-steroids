@@ -9,6 +9,7 @@
  */
 
 function pushActiveSheetToVlocityEPC() {
+
     /* Before loading */
     resetProcessStep();
 
@@ -22,6 +23,14 @@ function pushActiveSheetToVlocityEPC() {
     if (!epcConfiguration) {
         return;
     }
+
+    saveLastBusinessOperationDetails(
+        SpreadsheetApp.getActiveSheet().getName(),
+        arguments.callee.name,
+        epcConfiguration,
+        "",
+        ""
+    )
 
     pushConfigurationStep(epcConfiguration);    
 
@@ -53,6 +62,14 @@ function pushCheckedRowsToVlocityEPC() {
     if (!epcConfiguration) {
         return;
     }
+
+    saveLastBusinessOperationDetails(
+        SpreadsheetApp.getActiveSheet().getName(),
+        arguments.callee.name,
+        epcConfiguration,
+        "",
+        ""
+    )
 
     pushConfigurationStep(epcConfiguration);    
 

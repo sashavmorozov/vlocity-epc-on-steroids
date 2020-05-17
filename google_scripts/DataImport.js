@@ -15,6 +15,14 @@ function test_retrieveEntityByName(){
 function retrieveCurrentSheetFromCatalog() {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    sheetName,
+    "",
+    ""
+  );
+
   var sheetName = SpreadsheetApp.getActive().getActiveSheet().getName();
   retrieveSheetFromCatalogByName(sheetName);
   

@@ -49,7 +49,8 @@ function buildMenu() {
         .addItem("Get Script Id", "retreiveScriptId")
         .addItem("View logs", "viewLogs")
         .addItem("Clear logs", "clearLogs")
-        .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet"))
+        .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet")
+        .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation"))
       
     .addSubMenu(
       SpreadsheetApp.getUi()

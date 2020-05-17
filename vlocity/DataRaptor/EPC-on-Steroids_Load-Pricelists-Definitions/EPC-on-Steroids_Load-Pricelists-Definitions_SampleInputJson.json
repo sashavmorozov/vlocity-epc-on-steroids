@@ -2,7 +2,7 @@
     "Pricelists": [
         {
             "Active": true,
-            "Checked": false,
+            "Checked": true,
             "Currency Code": "EUR",
             "Description": "",
             "Effective End Date": "31/12/2019",
@@ -12,63 +12,8 @@
             "Parent Pricelist Name": "",
             "Pricebook": "Standard Price Book",
             "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricelist Name": 2019
-        },
-        {
-            "Active": true,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Description": "",
-            "Effective End Date": "31/12/2020",
-            "Effective Start Date": "01/01/2020",
-            "Loyalty Code": "PTS",
-            "Parent Pricelist Code": "",
-            "Parent Pricelist Name": "",
-            "Pricebook": "Standard Price Book",
-            "Pricelist Code": "VEPC_PRICELIST_2020",
-            "Pricelist Name": 2020
-        },
-        {
-            "Active": true,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Description": "",
-            "Effective End Date": "31/12/2021",
-            "Effective Start Date": "01/01/2021",
-            "Loyalty Code": "PTS",
-            "Parent Pricelist Code": "",
-            "Parent Pricelist Name": "",
-            "Pricebook": "Standard Price Book",
-            "Pricelist Code": "VEPC_PRICELIST_2021",
-            "Pricelist Name": 2021
-        },
-        {
-            "Active": true,
-            "Checked": false,
-            "Currency Code": "EUR",
-            "Description": "Parent pricelist",
-            "Effective End Date": "31/12/2021",
-            "Effective Start Date": "01/01/2021",
-            "Loyalty Code": "PTS",
-            "Parent Pricelist Code": "",
-            "Parent Pricelist Name": "",
-            "Pricebook": "Standard Price Book",
-            "Pricelist Code": "VEPC_PRICELIST_PARENT_PRICELIST",
-            "Pricelist Name": "Parent Pricelist"
-        },
-        {
-            "Active": true,
-            "Checked": false,
-            "Currency Code": "EUR;USD",
-            "Description": "Child pricelist",
-            "Effective End Date": "31/12/2021",
-            "Effective Start Date": "01/01/2021",
-            "Loyalty Code": "PTS",
-            "Parent Pricelist Code": "VEPC_PRICELIST_PARENT_PRICELIST",
-            "Parent Pricelist Name": "Parent Pricelist",
-            "Pricebook": "Standard Price Book",
-            "Pricelist Code": "VEPC_PRICELIST_CHILD_PRICELIST",
-            "Pricelist Name": "Child Pricelist"
+            "Pricelist Name": 2019,
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1"
         }
     ],
     "Transaction Details": {
@@ -76,8 +21,8 @@
         "Executed By": "amorozov@vlocity.com",
         "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200424-8-WIP",
         "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1Wz6Mr7-vUZ5Q6G6j3JXWsS-1TwO_k5Hd86Haol9ZQ1U/edit",
-        "Transaction ID": "af578b12-dbb2-4b37-9b08-de24f375a6f5",
-        "Transaction Timestamp": "02/05/2020@20:29:40GMT"
+        "Transaction ID": "c6cec2a2-5555-4928-87f5-cbd3b64f7d9e",
+        "Transaction Timestamp": "17/05/2020@18:47:44GMT"
     },
     "chunkNumber": 0,
     "dataRaptorName": "EPC on Steroids_Load Pricelists Definitions",

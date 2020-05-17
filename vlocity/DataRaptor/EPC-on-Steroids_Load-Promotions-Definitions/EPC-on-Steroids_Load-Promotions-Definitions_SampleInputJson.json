@@ -12,10 +12,12 @@
             "Follow-on Promotion": "60% Off Promotion",
             "Follow-on Promotion Code": "VEPC_PROMO_60_OFF_PROMOTION",
             "Orderable": true,
+            "Penalty Context Rule Set": "EOS. Demo RS PENALTY 1",
             "Price List": 2020,
             "Pricelist Code": "VEPC_PRICELIST_2020",
             "Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
             "Promotion Name": "10% Off Promotion",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
             "Redeemable Code": "VEPC-PROMO-10P",
             "Service Continuation": "Manual Opt-In"
         },
@@ -31,10 +33,12 @@
             "Follow-on Promotion": "10% Off Promotion",
             "Follow-on Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
             "Orderable": true,
+            "Penalty Context Rule Set": "EOS. Demo RS PENALTY 1",
             "Price List": 2020,
             "Pricelist Code": "VEPC_PRICELIST_2020",
             "Promotion Code": "VEPC_PROMO_20_OFF_PROMOTION",
             "Promotion Name": "20% Off Promotion",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
             "Redeemable Code": "VEPC-PROMO-20P",
             "Service Continuation": "Manual Opt-In"
         }
@@ -42,10 +46,10 @@
     "Transaction Details": {
         "Application Version": "0.7",
         "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200120-7-WIP",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1YcVjpnzpx5LqhqPglQBWR-o-4jjErV3lP1EdW_x2tMY/edit",
-        "Transaction ID": "6150c16d-30c8-4c58-a0f8-3110e914ffd2",
-        "Transaction Timestamp": "01/03/2020@21:03:38GMT"
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200424-8-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1Wz6Mr7-vUZ5Q6G6j3JXWsS-1TwO_k5Hd86Haol9ZQ1U/edit",
+        "Transaction ID": "fa950f4e-11be-4fae-bed6-e396864746bd",
+        "Transaction Timestamp": "14/05/2020@20:41:38GMT"
     },
     "chunkNumber": 0,
     "dataRaptorName": "EPC on Steroids_Load Promotions Definitions",
