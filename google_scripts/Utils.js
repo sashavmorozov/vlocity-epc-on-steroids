@@ -921,3 +921,26 @@ function validateVipResponseForGenericErrors(response) {
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
   return result;
 }
+
+/**
+ * Returns an empty array of a specified size, filled with a specified (filler) content
+ *
+ * @param {Integer} arrayLength - size of a new array
+ * @param {Object} filler - filler content
+ * @return {Array} - an array of a given size with each item initialized with the filler content
+ *
+ * @example
+ *     var emptyArray = createEmptyArray(5, "");
+ */
+
+function createEmptyArray(arrayLength, filler) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  
+  var a = [];
+  for (var i = 0; i < arrayLength; i++) {
+    a.push(filler);
+  }
+  
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return a;
+}
