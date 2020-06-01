@@ -50,7 +50,8 @@ function buildMenu() {
         .addItem("View logs", "viewLogs")
         .addItem("Clear logs", "clearLogs")
         .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet")
-        .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation"))
+        .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation")
+        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram"))
       
     .addSubMenu(
       SpreadsheetApp.getUi()
@@ -431,6 +432,13 @@ function displayWarningDialog(dialogParams) {
 function displayErrorDialog(dialogParams) {
   var dialogPage = "pages/ErrorDialog";
   var dialogTitle = "Error";
+
+  displayDialog(dialogPage, dialogTitle, dialogParams);
+}
+
+function displaySuccessDialog(dialogParams) {
+  var dialogPage = "pages/SuccessDialog";
+  var dialogTitle = "Success";
 
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }

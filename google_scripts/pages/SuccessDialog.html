@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top" />
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+    
+    <?!= include('scripts/core_scripts'); ?>
+</head>
+
+<body class="body-dialog">
+    <div style="
+            border-radius:10px;
+            background: white;
+            display: contents;
+            ">
+        <div style="height: 32px;"></div>
+        <!--empty div-->
+        <div style="height: 32px;">
+            <!--section 1 div-->
+            <?= dialogParams.message ?>
+        </div>
+        <div id="loading-process-step" class="" style="height: 0px;">
+            <!--section 1 div-->
+            <!-- placeholder -->
+        </div>
+    </div>
+
+    <div id="success-alert" class="alert alert-success" role="alert" style="white-space: pre-line;">
+        <script>
+            document.currentScript.parentNode.innerHTML = <?= dialogParams.messageDescription ?>;
+        </script>
+    </div>
+
+    <!--buttons div-->
+    <div class="bottom-buttons-div">
+        <input type="button" class="btn btn-primary" style="float: right;margin-left: 10px;" value="Close"
+            onclick="google.script.host.close()" />
+
+        <input id="view-logs" type="button" class="btn btn-primary" style="float: right;"
+            value="View Logs" onclick="viewLogs()" />
+    </div>
+</body>
+
+</html>
