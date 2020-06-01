@@ -9,6 +9,7 @@
  */
 
 function pushActiveSheetToVlocityEPC() {
+
     /* Before loading */
     resetProcessStep();
 
@@ -22,6 +23,14 @@ function pushActiveSheetToVlocityEPC() {
     if (!epcConfiguration) {
         return;
     }
+
+    saveLastBusinessOperationDetails(
+        SpreadsheetApp.getActiveSheet().getName(),
+        arguments.callee.name,
+        epcConfiguration,
+        "",
+        ""
+    )
 
     pushConfigurationStep(epcConfiguration);    
 
@@ -54,6 +63,14 @@ function pushCheckedRowsToVlocityEPC() {
         return;
     }
 
+    saveLastBusinessOperationDetails(
+        SpreadsheetApp.getActiveSheet().getName(),
+        arguments.callee.name,
+        epcConfiguration,
+        "",
+        ""
+    )
+
     pushConfigurationStep(epcConfiguration);    
 
     /* After loading */
@@ -77,7 +94,10 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
     var accessTokenObj = retrieveStoredAccessToken();
     var sheet = SpreadsheetApp.getActiveSheet();
     var sheetName = sheet.getName();
-    var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
+    var sheetToDataraptorMapping = loadSheetToDataraptorMapping2();
+
+    console.log('*** sheetToDataraptorMapping: ' + JSON.stringify(sheetToDataraptorMapping));
+
     var isHeavyLoad = false;
 
     console.log("*** VARIABLE: epcConfiguration: " + JSON.stringify(epcConfiguration));
@@ -108,7 +128,9 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
     //var vipName = 'EPC_AsyncWrapper';
 
     var payloadAsJson = epcConfiguration;
-    payloadAsJson.dataRaptorName = sheetToDataraptorMapping[sheetName];
+    payloadAsJson.dataRaptorName = sheetToDataraptorMapping[sheetName].uploadToCatalogDataraptorName;
+    setBackendProcessInfoProcessEntityApiName(sheetToDataraptorMapping[sheetName].objectApiName);
+    setBackendProcessInfoProcessEntityViewUrl(generateViewRecordsUrl(sheetToDataraptorMapping[sheetName].objectApiName));
 
     console.log("*** INFO: Request size (entities): " + payloadAsJson[sheetName].length);
     if (payloadAsJson[sheetName].length > CONST_HEAVY_LOAD_THRESHOLD) {
@@ -143,11 +165,11 @@ function pushConfigurationToVlocityChunkable(epcConfiguration) {
         chunkPayload.entityName = sheetName;
 
         if (!isHeavyLoad) {
-            chunkPayload.dataRaptorName = sheetToDataraptorMapping[sheetName];
+            chunkPayload.dataRaptorName = sheetToDataraptorMapping[sheetName].uploadToCatalogDataraptorName;
             chunkPayload[sheetName] = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
         } else {           
             chunkPayload.dataRaptorName = CONST_HEAVY_LOAD_DATARAPTOR_NAME;
-            chunkPayload.dataRaptorNameRealtime = sheetToDataraptorMapping[sheetName];
+            chunkPayload.dataRaptorNameRealtime = sheetToDataraptorMapping[sheetName].uploadToCatalogDataraptorName;
             chunkPayload.dataContent = (payloadAsJson[sheetName]).slice(CHUNK_SIZE * i, CHUNK_SIZE * (i + 1));
         }
         
@@ -232,7 +254,7 @@ function pushConfigurationToVlocityChunkable2(epcConfiguration) {
     var accessTokenObj = retrieveStoredAccessToken();
     var sheet = SpreadsheetApp.getActiveSheet();
     var sheetName = sheet.getName();
-    var sheetToDataraptorMapping = loadSheetToDataraptorMapping();
+    var sheetToDataraptorMapping = loadSheetToDataraptorMapping2();
     var isHeavyLoad = false;
 
     console.log("*** VARIABLE: epcConfiguration: " + JSON.stringify(epcConfiguration));
@@ -261,7 +283,7 @@ function pushConfigurationToVlocityChunkable2(epcConfiguration) {
     //var vipName = 'EPC_AsyncWrapper';
 
     var payloadAsJson = epcConfiguration;
-    payloadAsJson.dataRaptorName = sheetToDataraptorMapping[sheetName];
+    payloadAsJson.dataRaptorName = sheetToDataraptorMapping[sheetName].uploadToCatalogDataraptorName;
 
     console.log("*** INFO: Request size (entities): " + payloadAsJson[sheetName].length);
     if (payloadAsJson[sheetName].length > CONST_HEAVY_LOAD_THRESHOLD) {

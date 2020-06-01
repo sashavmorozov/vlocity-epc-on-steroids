@@ -18,11 +18,13 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("EPC Jobs")
+        .addItem("Product hierarchy maintenance job", "runProductHierarchyMaintenanceJob")
+        .addItem("Refresh pricebook job", "runRefreshPricebookJob")
+        .addItem("Clear managed platform cache", "runClearManagedPlatformCache")
         .addItem(
           "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
         )
-        .addItem("Clear platform cache", "clearPlatformCache")
         .addItem(
           "Regenerate Object Types layouts",
           "regenerateLayoutsForCheckedObjectTypes"
@@ -44,9 +46,12 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
+        .addItem("Get Script Id", "retreiveScriptId")
         .addItem("View logs", "viewLogs")
         .addItem("Clear logs", "clearLogs")
-        .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet"))
+        .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet")
+        .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation")
+        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram"))
       
     .addSubMenu(
       SpreadsheetApp.getUi()
@@ -107,6 +112,10 @@ function getRedirectUriMessageBox() {
 
 function retrieveCallbackUrl() {
     showDialogCallbackUrl();
+}
+
+function retreiveScriptId() {
+    showDialogScriptId();
 }
 
 function connectToSalesforce() {
@@ -188,6 +197,18 @@ function showDialogCallbackUrl() {
   SpreadsheetApp.getUi().showModalDialog(page, "Callback URL");
 }
 
+function showDialogScriptId() {
+  var template = HtmlService.createTemplateFromFile(
+    "pages/GetScriptIdDialog"
+  );
+  template.scriptId = getScriptId();
+  var page = template.evaluate();
+
+  page.setWidth(300).setHeight(400);
+
+  SpreadsheetApp.getUi().showModalDialog(page, "Script Id");
+}
+
 function showDialogDisconnectFromSalesforce() {
   var template = HtmlService.createTemplateFromFile("pages/DisconnectDialog");
   template.instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
@@ -209,8 +230,10 @@ function showDialogAlreadyDisconnected() {
   SpreadsheetApp.getUi().showModalDialog(page, "Already Disconnected");
 }
 
-function showGenericModalDialog(pageTemplateName, pageTitle) {
+function showGenericModalDialog(pageTemplateName, pageTitle, pageParams) {
   var template = HtmlService.createTemplateFromFile(pageTemplateName);
+  template.pageParams = pageParams;
+  
   var page = template.evaluate();
 
   page.setWidth(300).setHeight(400);
@@ -409,6 +432,13 @@ function displayWarningDialog(dialogParams) {
 function displayErrorDialog(dialogParams) {
   var dialogPage = "pages/ErrorDialog";
   var dialogTitle = "Error";
+
+  displayDialog(dialogPage, dialogTitle, dialogParams);
+}
+
+function displaySuccessDialog(dialogParams) {
+  var dialogPage = "pages/SuccessDialog";
+  var dialogTitle = "Success";
 
   displayDialog(dialogPage, dialogTitle, dialogParams);
 }

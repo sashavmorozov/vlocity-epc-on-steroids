@@ -9,7 +9,7 @@
     <?!= include('scripts/core_scripts'); ?>
 </head>
 
-<body>
+<body class="body-dialog">
     <div style="
             border-radius:10px;
             background: white;
@@ -46,15 +46,11 @@
     </div>
 
     <!--buttons div-->
-    <div class="" style="
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            ">
-        <input type="button" class="btn btn-primary" style="width: 100px;float: right;margin-left: 10px;" value="Close"
+    <div class="bottom-buttons-div">
+        <input type="button" class="btn btn-primary" style="float: right;margin-left: 10px;" value="Close"
             onclick="google.script.host.close()" />
 
-        <input id="view-logs" type="button" class="btn btn-primary" style="width: 100px; float: right;"
+        <input id="view-logs" type="button" class="btn btn-primary" style="float: right;"
             value="View Logs" onclick="viewLogs()" />
     </div>
 </body>

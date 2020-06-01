@@ -7,7 +7,7 @@
     <?!= include('css/epc_on_steroids_stylesheet'); ?>
   </head>
 
-  <body>
+  <body class="body-dialog">
     <div style="border-radius:10px; background: white; display: contents;">
       <div class="text-center">
         <img
@@ -28,11 +28,11 @@
     </div>
 
     <!--buttons div-->
-    <div id="buttons" class="" style="position: absolute; bottom: 0px; right: 0px;">
+    <div id="buttons" class="bottom-buttons-div">
       <input id="button-close" type="button" class="btn btn-primary"
-          style="width: 100px; float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
+          style="float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
 
-      <input id="copy-to-clipboard" type="button" class="btn btn-primary" style="width: 100px; float: right;"
+      <input id="copy-to-clipboard" type="button" class="btn btn-primary" style="float: right;"
           value="Copy" data-clipboard-target="#callback-url" onclick="toggleButtonName()">
     </div>
 

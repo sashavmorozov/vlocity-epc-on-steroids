@@ -7,7 +7,7 @@
     <?!= include('css/epc_on_steroids_stylesheet'); ?>
   </head>
 
-  <body>
+  <body class="body-dialog">
     <div style="border-radius: 10px; background: white">
 
       <div style="height: 32px;"></div>
@@ -61,6 +61,12 @@
 
             $("#button-view-logs").
               prop('disabled', false);
+            
+            $("#button-view-dropdown").
+              prop('disabled', false);
+              
+            $("#button-close").
+              prop('disabled', false);
 
             toggleBackendProgressInfoAlert();
           }
@@ -74,6 +80,8 @@
         var processProgress = Math.max(CONST_MIN_PROGRESS, currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]);
         var processStep = currentBackendProcessInfo["BACKEND_PROCESS_STEP"];
         var processDetails = currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"];
+        var processEntityApiName = currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_API_NAME"];
+        var processEntityViewUrl = currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_VIEW_URL"];
 
         $("#loading-process-progress").
           css("width", processProgress + "%").
@@ -82,6 +90,9 @@
 
         $("#loading-process-step").
           html("Current step: " + processStep);
+
+        $("#view-records-link").
+          attr("href", processEntityViewUrl);
 
         toggleBackendProgressInfoAlert(processStatus);
 

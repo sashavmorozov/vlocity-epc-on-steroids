@@ -36,10 +36,12 @@ function getLoadingProcessInfo(){
 function getBackendProcessInfo(){
   var currentBackendProcessInfo = {};
 
-  currentBackendProcessInfo["BACKEND_PROCESS_STATUS"]    = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
-  currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS");
-  currentBackendProcessInfo["BACKEND_PROCESS_STEP"]      = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STEP");
-  currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"]   = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_DETAILS");
+  currentBackendProcessInfo["BACKEND_PROCESS_STATUS"]           = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STATUS");
+  currentBackendProcessInfo["BACKEND_PROCESS_PROGRESS"]         = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS");
+  currentBackendProcessInfo["BACKEND_PROCESS_STEP"]             = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_STEP");
+  currentBackendProcessInfo["BACKEND_PROCESS_DETAILS"]          = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_DETAILS");
+  currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_API_NAME"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_ENTITY_API_NAME");
+  currentBackendProcessInfo["BACKEND_PROCESS_ENTITY_VIEW_URL"]  = PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_ENTITY_VIEW_URL");
 
   console.log("*** " + JSON.stringify(currentBackendProcessInfo));
   
@@ -64,6 +66,14 @@ function setBackendProcessInfoProcessStep(processStep) {
 
 function setBackendProcessInfoProcessDetails(processDetails) {
   PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_DETAILS", processDetails);
+}
+
+function setBackendProcessInfoProcessEntityApiName(processDetails) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_ENTITY_API_NAME", processDetails);
+}
+
+function setBackendProcessInfoProcessEntityViewUrl(processDetails) {
+  PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_ENTITY_VIEW_URL", processDetails);
 }
 
 
@@ -584,11 +594,79 @@ function invokeVipByNameBulk(vipName, payloadArray) {
   //return response;
 }
 
-function clearPlatformCache() {
+function clearPlatformCache2() {
   var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EPC_ClearPlatformCache';
   var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
+
+function runProductHierarchyMaintenanceJob() {
+  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+  var vipName = 'EOS_startProductHierarchyJob';
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
+
+function runRefreshPricebookJob() {
+  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+  var vipName = 'EOS_refreshPriceBook';
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
+
+function runClearManagedPlatformCache() {
+  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+  var vipName = 'EOS_clearPlatformCache';
+  var vipEndpoint = VIP_PREFIX + vipName;
+  var inputParameters = {};
+
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);
@@ -842,4 +920,27 @@ function validateVipResponseForGenericErrors(response) {
 
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
   return result;
+}
+
+/**
+ * Returns an empty array of a specified size, filled with a specified (filler) content
+ *
+ * @param {Integer} arrayLength - size of a new array
+ * @param {Object} filler - filler content
+ * @return {Array} - an array of a given size with each item initialized with the filler content
+ *
+ * @example
+ *     var emptyArray = createEmptyArray(5, "");
+ */
+
+function createEmptyArray(arrayLength, filler) {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  
+  var a = [];
+  for (var i = 0; i < arrayLength; i++) {
+    a.push(filler);
+  }
+  
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return a;
 }

@@ -15,6 +15,14 @@ function test_retrieveEntityByName(){
 function retrieveCurrentSheetFromCatalog() {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    sheetName,
+    "",
+    ""
+  );
+
   var sheetName = SpreadsheetApp.getActive().getActiveSheet().getName();
   retrieveSheetFromCatalogByName(sheetName);
   
@@ -392,7 +400,8 @@ function loadSheetToDataraptorMapping2() {
       sheetName: row[0],
       namingPrexif: row[1],
       uploadToCatalogDataraptorName: row[2],
-      retreiveFromCatalogDataraptorName: row[3]
+      retreiveFromCatalogDataraptorName: row[3],
+      objectApiName: row[4]
     };
 
     sheetToDataraptorMapping[mappingRow.sheetName] = mappingRow;

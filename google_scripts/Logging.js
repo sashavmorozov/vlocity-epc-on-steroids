@@ -3,6 +3,11 @@ var LOGS_TIMESTAMP_FORMAT = "dd MMM yyyy, HH:mm:ss";
 var LOGS_TIMESTAMP_ZONE = "GMT";
 var CONST_MAX_LOG_MESSAGE_LENGTH = 5000;
 
+/* Maxiumum number of log entries stored on the Logs sheet. 
+ * Once reached - the content of the sheet will be erased
+ */
+var CONST_MAX_NUMBER_OF_LOG_ENTRIES = 250;
+
 function viewLogs() {
     SpreadsheetApp.setActiveSheet(SpreadsheetApp.getActive().getSheetByName(LOGS_SHEET_NAME)); 
 }
@@ -55,7 +60,15 @@ function logProgress(entityName, entryName, entryDetails) {
   var logsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(
     LOGS_SHEET_NAME
   );
+  console.time("getLastRow");
   var lastRowNumber = logsSheet.getLastRow();
+  console.timeEnd("getLastRow");
+
+  if (lastRowNumber > CONST_MAX_NUMBER_OF_LOG_ENTRIES) {
+    console.log("*** INFO: " + "Application logs are recycled");
+    clearLogs();
+    lastRowNumber = logsSheet.getLastRow();
+  }
   var obj = [[]];
 
   obj[0][0] = Utilities.formatDate(
@@ -67,9 +80,14 @@ function logProgress(entityName, entryName, entryDetails) {
   obj[0][2] = entryName;
   obj[0][3] = entryDetails;
 
+  console.time("getRange");
   var r = logsSheet.getRange(lastRowNumber + 1, 1, 1, obj[0].length);
+  console.timeEnd("getRange");
 
+  console.time("setValues");
   r.setValues(obj);
+  console.timeEnd("setValues");
+
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
   console.timeEnd(arguments.callee.name);
   return;

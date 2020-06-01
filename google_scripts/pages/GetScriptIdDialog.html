@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
+
+  <body class="body-dialog">
+    <div style="border-radius:10px; background: white; display: contents;">
+      <div class="text-center">
+        <img
+          src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
+          class="rounded" width="100" height="100" />
+      </div>
+      <div class="text-center" style="min-height: 32px;">
+        <h4>Script Id</h4>
+      </div>
+      <!--empty div-->
+      <div style="min-height: 32px;">
+        <!--section 1 div-->
+        Use this Id to set up your local development environment with <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> and <a href="https://developers.google.com/apps-script/guides/clasp" target="_blank">clasp</a>
+      </div>
+      <div id="google-script-id" class="snippet-readonly text-break">
+          <?= scriptId ?>
+      </div>
+    </div>
+
+    <!--buttons div-->
+    <div id="buttons" class="bottom-buttons-div">
+      <input id="button-close" type="button" class="btn btn-primary"
+          style="float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
+
+      <input id="copy-to-clipboard" type="button" class="btn btn-primary" style="float: right;"
+          value="Copy" data-clipboard-target="#google-script-id" onclick="toggleButtonName()">
+    </div>
+
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script>
+      var btn = document.getElementById('copy-to-clipboard');
+      var clipboard = new ClipboardJS(btn);
+
+      clipboard.on('success', function (e) {
+        console.log(e);
+      });
+
+      clipboard.on('error', function (e) {
+        console.log(e);
+      });
+    </script>
+    <script>
+      function toggleButtonName() {
+          var elem = document.getElementById("copy-to-clipboard");
+          elem.value = "Copied";
+
+          setTimeout(function () {
+            if (elem.value == "Copied") {
+              elem.value = "Copy";
+            }
+          }, 2000);
+      }
+    </script>
+
+  </body>
+
+</html>

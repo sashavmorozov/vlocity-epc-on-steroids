@@ -53,6 +53,7 @@
             if (orgType && customerKey && customerSecret) {
                 console.log("*** VARIABLE: configurationObj: " + JSON.stringify(configurationObj));
                 google.script.run.setConfiguration(configurationObj);
+                console.log("*** POST-STAMP");
                 document.getElementById("configuration-form-div").hidden = true;
                 document.getElementById("save-button").disabled = true;
 
@@ -67,7 +68,7 @@
     </script>
 </head>
 
-<body>
+<body class="body-dialog">
     <div style="
             border-radius:10px;
             background: white;
@@ -84,13 +85,13 @@
         <div id="configuration-form-div" style="min-height: 32px;">
             <form>
                 <div class="form-group">
-                    <textarea class="form-control" id="authFormCustomerKey" rows="2" placeholder="Customer Key"
+                    <textarea class="form-control" id="authFormCustomerKey" rows="2" placeholder="Customer Key" spellcheck="false"
                         style="resize: none;"
                         title="Customer Key"><? if (!dialogParams.configurationObj.CUSTOMER_KEY) {?><?} else { ?><?=dialogParams.configurationObj.CUSTOMER_KEY?><? } ?></textarea>
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-control" id="authFormCustomerSecret" rows="2" placeholder="Customer Secret"
+                    <textarea class="form-control" id="authFormCustomerSecret" rows="2" placeholder="Customer Secret" spellcheck="false"
                         style="resize: none;"
                         title="Customer Secret"><? if (!dialogParams.configurationObj.CUSTOMER_SECRET) {?><?} else { ?><?=dialogParams.configurationObj.CUSTOMER_SECRET?><? } ?></textarea>
                 </div>
@@ -124,17 +125,13 @@
 
 
     <!--buttons div-->
-    <div class="" style="
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            ">
+    <div class="bottom-buttons-div">
 
         <input id="save-button" type="button" class="btn btn-primary"
-            style="width: 100px;float: right;margin-left: 10px;" value="Save" onclick="saveConfiguration()" />
+            style="float: right;margin-left: 10px;" value="Save" onclick="saveConfiguration()" />
 
         <input id="close-button" type="button" class="btn btn-secondary"
-            style="width: 100px;float: right;margin-left: 10px;" value="Close" onclick="google.script.host.close()" />
+            style="float: right;margin-left: 10px;" value="Close" onclick="google.script.host.close()" />
 
     </div>
 </body>

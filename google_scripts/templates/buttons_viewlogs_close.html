@@ -1,7 +1,24 @@
-<div id="buttons" class="" style="position: absolute; bottom: 0px; right: 0px;">
-    <input id="button-close" type="button" class="btn btn-primary"
-        style="width: 100px; float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
+<div id="buttons" class="bottom-buttons-div">
+    <div class="btn-group inline-table">
+        <button id="button-view-logs" type="button" class="btn btn-primary btn-regular" onclick="viewLogs();" disabled>View Logs</button>
+        <button id="button-view-dropdown" type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a id="view-logs-link" class="dropdown-item" href="#" onclick="viewLogs();">View Logs</a>
+          <a id="view-summary-link" class="dropdown-item" href="#" onclick="viewStatusReport();">View Status Report</a>
+          <a id="view-records-link" class="dropdown-item" href="#" target=_blank>View Records</a>
+        </div>
+    </div>
 
-    <input id="button-view-logs" type="button" class="btn btn-primary" style="width: 100px; float: right;"
-        value="View Logs" onclick="viewLogs()" disabled>
+    <div class="inline-table">
+        <input 
+            id="button-close" 
+            type="button" 
+            class="btn btn-primary btn-regular"
+            value="Close" 
+            onclick="google.script.host.close()"
+            disabled>
+    </div>
+  
 </div>

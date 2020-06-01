@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <base target="_top">
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+  </head>
+
+  <body class="body-dialog">
+    <div style="border-radius:10px; background: white; display: contents;">
+      <div class="text-center">
+        <img
+          src="https://github.com/sashavmorozov/vlocity-epc-on-steroids/blob/master/resources/icons/vlocity-pill-blue-white.png?raw=true"
+          class="rounded" width="100" height="100" />
+      </div>
+      <div class="text-center" style="min-height: 32px;">
+        <h4>Re-execute Last Operation</h4>
+      </div>
+      <!--empty div-->
+      <div style="min-height: 32px;">
+        <!--section 1 div-->
+        The following operation is being re-executed:
+      </div>
+      <div id="callback-url" class="snippet-readonly text-break">
+          <?= pageParams.operationName ?>
+      </div>
+    </div>
+
+    <!--buttons div-->
+    <div id="buttons" class="bottom-buttons-div">
+      <input id="button-close" type="button" class="btn btn-primary"
+          style="float: right; margin-left: 10px;" value="Close" onclick="google.script.host.close()">
+    </div>
+
+    <!-- core_scripts -->
+    <?!= include('scripts/core_scripts'); ?>
+  </body>
+
+</html>
