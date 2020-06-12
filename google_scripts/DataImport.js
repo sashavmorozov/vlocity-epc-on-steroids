@@ -378,6 +378,8 @@ function copyDataStyleByName(sourceSheetName, targetSheetName) {
     SpreadsheetApp.CopyPasteType.PASTE_CONDITIONAL_FORMATTING,
     false
   );
+
+  //targetRange.clearDataValidations();
   
   console.log("*** METHOD_EXIT: " +  arguments.callee.name);
 }
