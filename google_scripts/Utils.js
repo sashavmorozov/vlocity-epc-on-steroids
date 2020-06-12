@@ -214,76 +214,68 @@ function removeLeadingNumber(stringValue) {
 }
 
 /*update me to support checkboxes*/
-function regenerateJsonAttributes() {
-  var activeRange = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getActiveRange();
-  var activeRangeValues = activeRange.getValues();  
-  var selectionWidth = activeRange.getLastColumn();
-  var tableWidth = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getLastColumn();
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
-  var vipName = 'EPC_RegenerateJSONAttributes';
-  var vipEndpoint = VIP_PREFIX + vipName;
-  var inputParameters = {};
-  var productCodes = [];
-  
-  if (selectionWidth != tableWidth) {
-    operationNotification(
-      "Info",
-      "\nTo regenerate JSONAttributes for products:\n\n " +  
-      " 1. Navigate to the Offerings tab\n" +
-      " 2. Select entire rows\n" + 
-      " 3. Start the prcedure\n" + 
-      "\nThe field will be regenerated only for the selected product records"
-    );
-    return;
-  }
-  
-  for (i = 0; i < activeRange.getValues().length; i++) {
-    productCodes.push(activeRangeValues[i][2]);
-  }
-  
-  inputParameters['productCodes'] = productCodes;
-  
-  var payload = JSON.stringify(inputParameters);
-  var result = invokeVipByNameSafe(vipName, payload);
-  
-  return result;
-}
+/**
+ * Initiates the process to regenrate JSON Attribute field on a product (oofering or a specification). 
+ * Uses OOB Vlocity API 
+ *
+ * @param {void}
+ * @return {Integer} - operation state, success (1) or failure (0)
+ *
+ * @example
+ *     regenerateJsonAttributes();
+ */
 
-/*** DO NOT USE AT THIS MOMENT **/
-function regenerateJsonAttributesForAllProducts() {
-  var OFFERINGS_TAB_NAME = "Offerings";
-  
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(OFFERINGS_TAB_NAME);
-  var dataRange = sheet.getDataRange();
-  var recordsCount = dataRange.getNumRows();
-  
-  console.log('*** ' + recordsCount);
-  if (recordsCount > 50) {
-    operationNotification(
-      "Info",
-      "The operation supports up to 150 products at this moment.\n " +  
-      "If you have more than 150 rows - update JSONAttribute in chunks manually"
-    );
-    return;
-  }
-  
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+function regenerateJsonAttributes() {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+
   var vipName = 'EPC_RegenerateJSONAttributes';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
   var productCodes = [];
-  var dataValues = dataRange.getValues();
-  
-  for (i = 0; i < dataValues.length; i++) {
-    productCodes.push(dataValues[i][1]);
+  var state = 1;
+
+  var sheetName = SpreadsheetApp.getActiveSheet().getName();
+  if (sheetName !== "Offerings" && sheetName !== "Specifications") {
+      console.log("*** Error: JSON regeneration process is not supported for this sheet: " + sheetName);
+      var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "Navigate to either Offerings or Specifications tab and check some entries to use this capability"};
+      displayWarningDialog(dialogParams);
+      state = 0;
+      return state;
+  }
+
+  var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
+  console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
+
+  if (!epcConfiguration) {
+      console.log("*** Error: no rows checked, no data to process");
+      var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "Please verify you checked the records you want to process. Looks like nothing was selected"
+      };
+      displayWarningDialog(dialogParams);
+      state = 0;
+      return state;
+  }
+
+  for (i = 0; i < epcConfiguration[sheetName].length; i++) {
+    if (sheetName === "Offerings") {
+      productCodes.push(epcConfiguration[sheetName][i]["Offering Code"]);
+    }
+    if (sheetName === "Specifications") {
+      productCodes.push(epcConfiguration[sheetName][i]["Spec Code"]);
+    }
   }
   
-  inputParameters['productCodes'] = productCodes;
+  inputParameters["productCodes"] = productCodes;
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);
-  
-  return result;
+
+  console.timeEnd(arguments.callee.name);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return state;
 }
 
 /**
