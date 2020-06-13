@@ -403,7 +403,8 @@ function loadSheetToDataraptorMapping2() {
       namingPrexif: row[1],
       uploadToCatalogDataraptorName: row[2],
       retreiveFromCatalogDataraptorName: row[3],
-      objectApiName: row[4]
+      objectApiName: row[4],
+      getIdDataraptorName: row[5]
     };
 
     sheetToDataraptorMapping[mappingRow.sheetName] = mappingRow;

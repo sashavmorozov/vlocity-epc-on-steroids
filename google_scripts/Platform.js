@@ -16,10 +16,22 @@ function getScriptId() {
 function generateViewRecordsUrl(objectApiName) {
   
   if (objectApiName) {
-    var viewUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + '/lightning/o/' + objectApiName + '/home';
+    var viewUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + "/lightning/o/" + objectApiName + "/home";
     return viewUrl;
   } else {
-    return "Error: nothing to view here";
+    console.log("*** ERROR: nothing to view here");
+    return;
+  }
+}
+
+function generateViewSingleRecordsUrl(objectApiName, recordId) {
+  
+  if (objectApiName && recordId) {
+    var viewUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + "/lightning/r/" + objectApiName + "/" + recordId + "/view";
+    return viewUrl;
+  } else {
+    console.log("*** ERROR: nothing to view here");
+    return;
   }
 }
 

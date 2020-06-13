@@ -51,7 +51,8 @@ function buildMenu() {
         .addItem("Clear logs", "clearLogs")
         .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet")
         .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation")
-        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram"))
+        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram")
+        .addItem("View record in Salesforce", "viewRecordInSalesforce"))
       
     .addSubMenu(
       SpreadsheetApp.getUi()

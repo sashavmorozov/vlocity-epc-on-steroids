@@ -1,0 +1,27 @@
+{
+    "data": [
+        {
+            "Additional Properties": "",
+            "Assetizable": true,
+            "Checked": true,
+            "Description": "Sample. Product class",
+            "End of Life Date": "30/04/2029",
+            "Family": "",
+            "Fulfillment Start Date": "30/06/2019",
+            "Is Class": true,
+            "Lifecycle Details": "",
+            "Object Type": "Base Product Spec Object Type",
+            "Parent Class": "",
+            "Scope": "Downstream Order Item",
+            "Selling End Date": "30/04/2029",
+            "Selling Start Date": "30/04/2019",
+            "Spec Code": "VEPC_SPEC_EOS_SAMPLE_CLASS",
+            "Spec Name": "EoS. Sample Class",
+            "Specification Type": "Product",
+            "Status": "Active",
+            "Sub-Type": "",
+            "Type": ""
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Specifications Definitions"
+}

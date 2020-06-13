@@ -216,7 +216,7 @@
     {
         "%vlocity_namespace%__DomainObjectAPIName__c": "json",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
-        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Parent Offering Code",
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Parent Offer Code",
         "%vlocity_namespace%__GlobalKey__c": "171ce1ad-98c8-9476-083b-81a9eff67376",
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:%vlocity_namespace%__ParentProductId__r.ProductCode",
         "%vlocity_namespace%__IsDisabled__c": false,

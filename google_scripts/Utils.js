@@ -936,3 +936,58 @@ function createEmptyArray(arrayLength, filler) {
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
   return a;
 }
+
+function viewRecordInSalesforce() {
+  var sheetName = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getName();
+  var data = exportRowsAsJson(sheetName, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
+
+  console.log("Data: " + JSON.stringify(data));
+
+  if (!data) {
+    console.log("*** Error: no rows checked");
+    var dialogParams = {
+        "message": "Doesn't look good",
+        "messageDescription": "Please verify you checked the record to view. Looks like nothing was selected"
+    };
+    displayWarningDialog(dialogParams);
+    state = 0;
+    return state;
+  }
+
+  if (data[sheetName].length != 1) {
+    console.log("*** Error: too many rows selected, select only one");
+    var dialogParams = {
+        "message": "Doesn't look good",
+        "messageDescription": "Please verify you checked only one record to view. Looks like more than one row was selected"
+    };
+    displayWarningDialog(dialogParams);
+    state = 0;
+    return state;
+  }
+  var sheetToDataraptorMapping = loadSheetToDataraptorMapping2();
+  var vipName = "EPC_LoadGenericEPCDefinitions"; //TODO: Make a separate VIP for data retreival process
+  var payload = {
+    data: data[sheetName],
+    dataRaptorName: sheetToDataraptorMapping[sheetName].getIdDataraptorName
+  };
+
+  var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload));
+  var retreivedDataAsJson = JSON.parse(retreivedData);
+  
+  var url = generateViewSingleRecordsUrl(sheetToDataraptorMapping[sheetName].objectApiName, retreivedDataAsJson.Result.returnResultsData.Id);
+  if (url) {
+    redirectToUrl(url);
+  } else {
+    console.log("*** Error: Unable to generate URL");
+    var dialogParams = {
+        "message": "Doesn't look good",
+        "messageDescription": "An error occurred while looking for the record. Are you sure the record is already uploaded the Vlocity catalog?"
+    };
+    displayWarningDialog(dialogParams);
+    state = 0;
+    return state;
+  }
+  
+  state = 1;
+  return state;
+}

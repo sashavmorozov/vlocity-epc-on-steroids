@@ -1,28 +1,64 @@
 {
     "Offerings Structure": [
         {
+            "Cardinality": "",
             "Checked": true,
-            "Child Offer": "EPC on Steroids. Demo Offer L2",
-            "Child Offer Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_OFFER_L2",
-            "Collapse Hierarchy": "No",
+            "Child Offer": "EoS. Sample Child Offer 1",
+            "Child Offer Code": "VEPC_OFFERING_EOS_SAMPLE_CHILD_OFFER_1",
+            "Collapse Hierarchy": false,
             "Def": 0,
+            "Flags": "",
             "Max": 1,
             "Min": 0,
             "Override Mode": "Not Applicable",
-            "Parent Offer": "EPC on Steroids. Demo Offer L1",
-            "Parent Offering Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_OFFER_L1",
+            "Parent Offer": "EoS. Sample Root Offer",
+            "Parent Offer Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER",
             "Relationship Type": "Child",
             "Sequence": 10,
-            "Virtual Item": "No"
+            "Virtual Item": false
+        },
+        {
+            "Cardinality": "",
+            "Checked": true,
+            "Child Offer": "EoS. Sample Child Offer 2",
+            "Child Offer Code": "VEPC_OFFERING_EOS_SAMPLE_CHILD_OFFER_2",
+            "Collapse Hierarchy": false,
+            "Def": 0,
+            "Flags": "",
+            "Max": 1,
+            "Min": 0,
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "EoS. Sample Root Offer",
+            "Parent Offering Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": 20,
+            "Virtual Item": false
+        },
+        {
+            "Cardinality": "",
+            "Checked": true,
+            "Child Offer": "EoS. Sample Child Offer 3",
+            "Child Offer Code": "VEPC_OFFERING_EOS_SAMPLE_CHILD_OFFER_3",
+            "Collapse Hierarchy": false,
+            "Def": 0,
+            "Flags": "",
+            "Max": 1,
+            "Min": 0,
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "EoS. Sample Root Offer",
+            "Parent Offering Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER",
+            "Relationship Type": "Child",
+            "Sequence": 30,
+            "Virtual Item": true
         }
     ],
     "Transaction Details": {
-        "Application Version": "0.4",
+        "Application Version": "0.5",
         "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
-        "Transaction ID": "cd13a136-71b6-48b6-91ba-65369c62206c",
-        "Transaction Timestamp": "03/12/2019@16:17:21GMT"
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
+        "Transaction ID": "dad8164a-699d-44e9-a25f-fc8399908d44",
+        "Transaction Timestamp": "14/12/2019@22:11:15GMT"
     },
     "dataRaptorName": "EPC on Steroids_Load Offerings Structure Definitions"
 }
