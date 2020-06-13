@@ -607,9 +607,7 @@ function clearPlatformCache2() {
 }
 
 function runProductHierarchyMaintenanceJob() {
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EOS_startProductHierarchyJob';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
 
   saveLastBusinessOperationDetails(
@@ -627,9 +625,7 @@ function runProductHierarchyMaintenanceJob() {
 }
 
 function runRefreshPricebookJob() {
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EOS_refreshPriceBook';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
 
   saveLastBusinessOperationDetails(
@@ -647,9 +643,7 @@ function runRefreshPricebookJob() {
 }
 
 function runClearManagedPlatformCache() {
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EOS_clearPlatformCache';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
 
   saveLastBusinessOperationDetails(
@@ -666,7 +660,23 @@ function runClearManagedPlatformCache() {
   return result;
 }
 
+function runGenerateGlobalKeys() {
+  var vipName = 'EOS_generateGlobalKeys';
+  var inputParameters = {};
 
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
 
 function regenerateLayoutsForCheckedObjectTypes() {
     var activeSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();

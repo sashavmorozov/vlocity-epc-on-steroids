@@ -21,6 +21,7 @@ function buildMenu() {
         .addItem("Product hierarchy maintenance job", "runProductHierarchyMaintenanceJob")
         .addItem("Refresh pricebook job", "runRefreshPricebookJob")
         .addItem("Clear managed platform cache", "runClearManagedPlatformCache")
+        .addItem("Generate global keys", "runGenerateGlobalKeys")
         .addItem(
           "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
