@@ -964,6 +964,8 @@ function viewRecordInSalesforce() {
     state = 0;
     return state;
   }
+
+  /* retrieve record Id from Salesforce/Vlocity org */
   var sheetToDataraptorMapping = loadSheetToDataraptorMapping2();
   var vipName = "EPC_LoadGenericEPCDefinitions"; //TODO: Make a separate VIP for data retreival process
   var payload = {
@@ -974,6 +976,7 @@ function viewRecordInSalesforce() {
   var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload));
   var retreivedDataAsJson = JSON.parse(retreivedData);
   
+  /* generate URL and redirect */
   var url = generateViewSingleRecordsUrl(sheetToDataraptorMapping[sheetName].objectApiName, retreivedDataAsJson.Result.returnResultsData.Id);
   if (url) {
     redirectToUrl(url);
