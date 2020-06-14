@@ -52,19 +52,13 @@ function exportRowsAsJson(sheetName, exportScope) {
     var dataRange = sheet.getDataRange();
   
     if (dataRange) {
-        var numRows = dataRange.getNumRows();
-        var numCols = dataRange.getNumColumns();
-
-        console.log('*** Data Range number of rows: ' + numRows);
-        console.log('*** Data Range number of columns: ' + numCols);
-
         var values = dataRange.getValues();
         var rowRangeOffset = CONST_FIRST_DATA_ROW_NUMBER - 1;
 
         var result = [];
         var resultWrapper = {};
 
-        var header = sheet.getDataRange().getValues()[CONST_LAST_HEADER_ROW_NUMBER - 1]; //CHECK ME
+        var header = values[CONST_LAST_HEADER_ROW_NUMBER - 1];
         if (!header) {
 
             console.timeEnd(arguments.callee.name);

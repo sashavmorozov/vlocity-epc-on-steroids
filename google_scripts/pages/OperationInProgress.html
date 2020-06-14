@@ -47,30 +47,32 @@
 
     <script id="rendered-js">
       $(function () {
-        var currentBackendProcessInfo = {};
-        var interval = setInterval(function () {
-          google.script.run.withSuccessHandler(onSuccess).getBackendProcessInfo();
+        setTimeout(function () {
+          var currentBackendProcessInfo = {};
+          var interval = setInterval(function () {
+            google.script.run.withSuccessHandler(onSuccess).getBackendProcessInfo();
 
-          //process is completed
-          if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
-            clearInterval(interval);
+            //process is completed
+            if ($("#loading-process-progress").attr("aria-valuenow") >= 100) {
+              clearInterval(interval);
 
-            $("#loading-process-progress").
-              removeClass("active").
-              removeClass("progress-bar-animated");
+              $("#loading-process-progress").
+                removeClass("active").
+                removeClass("progress-bar-animated");
 
-            $("#button-view-logs").
-              prop('disabled', false);
-            
-            $("#button-view-dropdown").
-              prop('disabled', false);
+              $("#button-view-logs").
+                prop('disabled', false);
               
-            $("#button-close").
-              prop('disabled', false);
+              $("#button-view-dropdown").
+                prop('disabled', false);
+                
+              $("#button-close").
+                prop('disabled', false);
 
-            toggleBackendProgressInfoAlert();
-          }
-        }, 1500);
+              toggleBackendProgressInfoAlert();
+            }
+          }, 1500)
+        }, 5000);
       });
 
       function onSuccess(currentBackendProcessInfo) {

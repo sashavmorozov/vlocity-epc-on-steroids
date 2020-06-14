@@ -396,7 +396,7 @@ function invokeVipByName(vipName, payload) {
   logProgress("Integration Procedure Utils", arguments.callee.name + " vipName", vipName);
   logProgress("Integration Procedure Utils", arguments.callee.name + " payload", payload);
   logProgress("Integration Procedure Utils", arguments.callee.name + " request", request);
-
+  
   var response = UrlFetchApp.fetch(url, options);
 
   console.log("*** INFO: VIP response: " + response);
