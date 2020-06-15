@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "Active": true,
+            "Base Price": true,
+            "Checked": true,
+            "Display Text": "EUR10.00",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Offering": "EoS. Sample Root Offer with Promo",
+            "Offering Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER_WITH_PROMO",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricing Element": "MRC-10.00-EUR",
+            "Qualification Context Rule Set": "",
+            "Time Plan": "",
+            "Time Policy": "",
+            "Virtual Price": false
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Pricing-Pricelist Entries Definitions"
+}
