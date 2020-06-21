@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "Active": true,
+            "Attribute Category": "Generic Attributes",
+            "Attribute Code": "VEPC_ATTR_EOS_DEMO_ATTRIBUTE_BOOLEAN",
+            "Attribute Name": "EOS. Demo Attribute - Boolean",
+            "Checked": true,
+            "Description": "Demo Attribute 4",
+            "Display Sequence": 50,
+            "Filterable": false,
+            "Picklist": "",
+            "Picklist Code": "",
+            "Value": "",
+            "Value Type": "Boolean"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Attributes Definitions"
+}

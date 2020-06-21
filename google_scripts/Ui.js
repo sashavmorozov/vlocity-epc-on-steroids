@@ -21,6 +21,7 @@ function buildMenu() {
         .addItem("Product hierarchy maintenance job", "runProductHierarchyMaintenanceJob")
         .addItem("Refresh pricebook job", "runRefreshPricebookJob")
         .addItem("Clear managed platform cache", "runClearManagedPlatformCache")
+        .addItem("Generate global keys", "runGenerateGlobalKeys")
         .addItem(
           "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
@@ -51,7 +52,8 @@ function buildMenu() {
         .addItem("Clear logs", "clearLogs")
         .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet")
         .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation")
-        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram"))
+        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram")
+        .addItem("View record in Salesforce", "viewRecordInSalesforce"))
       
     .addSubMenu(
       SpreadsheetApp.getUi()

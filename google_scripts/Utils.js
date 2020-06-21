@@ -214,76 +214,68 @@ function removeLeadingNumber(stringValue) {
 }
 
 /*update me to support checkboxes*/
-function regenerateJsonAttributes() {
-  var activeRange = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getActiveRange();
-  var activeRangeValues = activeRange.getValues();  
-  var selectionWidth = activeRange.getLastColumn();
-  var tableWidth = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getLastColumn();
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
-  var vipName = 'EPC_RegenerateJSONAttributes';
-  var vipEndpoint = VIP_PREFIX + vipName;
-  var inputParameters = {};
-  var productCodes = [];
-  
-  if (selectionWidth != tableWidth) {
-    operationNotification(
-      "Info",
-      "\nTo regenerate JSONAttributes for products:\n\n " +  
-      " 1. Navigate to the Offerings tab\n" +
-      " 2. Select entire rows\n" + 
-      " 3. Start the prcedure\n" + 
-      "\nThe field will be regenerated only for the selected product records"
-    );
-    return;
-  }
-  
-  for (i = 0; i < activeRange.getValues().length; i++) {
-    productCodes.push(activeRangeValues[i][2]);
-  }
-  
-  inputParameters['productCodes'] = productCodes;
-  
-  var payload = JSON.stringify(inputParameters);
-  var result = invokeVipByNameSafe(vipName, payload);
-  
-  return result;
-}
+/**
+ * Initiates the process to regenrate JSON Attribute field on a product (oofering or a specification). 
+ * Uses OOB Vlocity API 
+ *
+ * @param {void}
+ * @return {Integer} - operation state, success (1) or failure (0)
+ *
+ * @example
+ *     regenerateJsonAttributes();
+ */
 
-/*** DO NOT USE AT THIS MOMENT **/
-function regenerateJsonAttributesForAllProducts() {
-  var OFFERINGS_TAB_NAME = "Offerings";
-  
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(OFFERINGS_TAB_NAME);
-  var dataRange = sheet.getDataRange();
-  var recordsCount = dataRange.getNumRows();
-  
-  console.log('*** ' + recordsCount);
-  if (recordsCount > 50) {
-    operationNotification(
-      "Info",
-      "The operation supports up to 150 products at this moment.\n " +  
-      "If you have more than 150 rows - update JSONAttribute in chunks manually"
-    );
-    return;
-  }
-  
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
+function regenerateJsonAttributes() {
+  console.log("*** METHOD_ENTRY: " + arguments.callee.name);
+  console.time(arguments.callee.name);
+
   var vipName = 'EPC_RegenerateJSONAttributes';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
   var productCodes = [];
-  var dataValues = dataRange.getValues();
-  
-  for (i = 0; i < dataValues.length; i++) {
-    productCodes.push(dataValues[i][1]);
+  var state = 1;
+
+  var sheetName = SpreadsheetApp.getActiveSheet().getName();
+  if (sheetName !== "Offerings" && sheetName !== "Specifications") {
+      console.log("*** Error: JSON regeneration process is not supported for this sheet: " + sheetName);
+      var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "Navigate to either Offerings or Specifications tab and check some entries to use this capability"};
+      displayWarningDialog(dialogParams);
+      state = 0;
+      return state;
+  }
+
+  var epcConfiguration = exportRowsOfActiveSheetAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
+  console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
+
+  if (!epcConfiguration) {
+      console.log("*** Error: no rows checked, no data to process");
+      var dialogParams = {
+          "message": "Doesn't look good",
+          "messageDescription": "Please verify you checked the records you want to process. Looks like nothing was selected"
+      };
+      displayWarningDialog(dialogParams);
+      state = 0;
+      return state;
+  }
+
+  for (i = 0; i < epcConfiguration[sheetName].length; i++) {
+    if (sheetName === "Offerings") {
+      productCodes.push(epcConfiguration[sheetName][i]["Offering Code"]);
+    }
+    if (sheetName === "Specifications") {
+      productCodes.push(epcConfiguration[sheetName][i]["Spec Code"]);
+    }
   }
   
-  inputParameters['productCodes'] = productCodes;
+  inputParameters["productCodes"] = productCodes;
   
   var payload = JSON.stringify(inputParameters);
   var result = invokeVipByNameSafe(vipName, payload);
-  
-  return result;
+
+  console.timeEnd(arguments.callee.name);
+  console.log("*** METHOD_EXIT: " + arguments.callee.name);
+  return state;
 }
 
 /**
@@ -404,7 +396,7 @@ function invokeVipByName(vipName, payload) {
   logProgress("Integration Procedure Utils", arguments.callee.name + " vipName", vipName);
   logProgress("Integration Procedure Utils", arguments.callee.name + " payload", payload);
   logProgress("Integration Procedure Utils", arguments.callee.name + " request", request);
-
+  
   var response = UrlFetchApp.fetch(url, options);
 
   console.log("*** INFO: VIP response: " + response);
@@ -615,9 +607,7 @@ function clearPlatformCache2() {
 }
 
 function runProductHierarchyMaintenanceJob() {
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EOS_startProductHierarchyJob';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
 
   saveLastBusinessOperationDetails(
@@ -635,9 +625,7 @@ function runProductHierarchyMaintenanceJob() {
 }
 
 function runRefreshPricebookJob() {
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EOS_refreshPriceBook';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
 
   saveLastBusinessOperationDetails(
@@ -655,9 +643,7 @@ function runRefreshPricebookJob() {
 }
 
 function runClearManagedPlatformCache() {
-  var VIP_PREFIX = '/services/apexrest/vlocity_cmt/v1/integrationprocedure/';
   var vipName = 'EOS_clearPlatformCache';
-  var vipEndpoint = VIP_PREFIX + vipName;
   var inputParameters = {};
 
   saveLastBusinessOperationDetails(
@@ -674,7 +660,23 @@ function runClearManagedPlatformCache() {
   return result;
 }
 
+function runGenerateGlobalKeys() {
+  var vipName = 'EOS_generateGlobalKeys';
+  var inputParameters = {};
 
+  saveLastBusinessOperationDetails(
+    SpreadsheetApp.getActiveSheet().getName(),
+    arguments.callee.name,
+    "",
+    "",
+    ""
+  );
+  
+  var payload = JSON.stringify(inputParameters);
+  var result = invokeVipByNameSafe(vipName, payload);
+  
+  return result;
+}
 
 function regenerateLayoutsForCheckedObjectTypes() {
     var activeSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -943,4 +945,62 @@ function createEmptyArray(arrayLength, filler) {
   
   console.log("*** METHOD_EXIT: " + arguments.callee.name);
   return a;
+}
+
+function viewRecordInSalesforce() {
+  var sheetName = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getName();
+  var data = exportRowsAsJson(sheetName, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
+
+  console.log("Data: " + JSON.stringify(data));
+
+  if (!data) {
+    console.log("*** Error: no rows checked");
+    var dialogParams = {
+        "message": "Doesn't look good",
+        "messageDescription": "Please verify you checked the record to view. Looks like nothing was selected"
+    };
+    displayWarningDialog(dialogParams);
+    state = 0;
+    return state;
+  }
+
+  if (data[sheetName].length != 1) {
+    console.log("*** Error: too many rows selected, select only one");
+    var dialogParams = {
+        "message": "Doesn't look good",
+        "messageDescription": "Please verify you checked only one record to view. Looks like more than one row was selected"
+    };
+    displayWarningDialog(dialogParams);
+    state = 0;
+    return state;
+  }
+
+  /* retrieve record Id from Salesforce/Vlocity org */
+  var sheetToDataraptorMapping = loadSheetToDataraptorMapping2();
+  var vipName = "EPC_LoadGenericEPCDefinitions"; //TODO: Make a separate VIP for data retreival process
+  var payload = {
+    data: data[sheetName],
+    dataRaptorName: sheetToDataraptorMapping[sheetName].getIdDataraptorName
+  };
+
+  var retreivedData = invokeVipByNameSafe(vipName, JSON.stringify(payload));
+  var retreivedDataAsJson = JSON.parse(retreivedData);
+  
+  /* generate URL and redirect */
+  var url = generateViewSingleRecordsUrl(sheetToDataraptorMapping[sheetName].objectApiName, retreivedDataAsJson.Result.returnResultsData.Id);
+  if (url) {
+    redirectToUrl(url);
+  } else {
+    console.log("*** Error: Unable to generate URL");
+    var dialogParams = {
+        "message": "Doesn't look good",
+        "messageDescription": "An error occurred while looking for the record. Are you sure the record is already uploaded the Vlocity catalog?"
+    };
+    displayWarningDialog(dialogParams);
+    state = 0;
+    return state;
+  }
+  
+  state = 1;
+  return state;
 }

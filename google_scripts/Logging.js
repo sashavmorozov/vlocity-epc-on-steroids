@@ -60,6 +60,7 @@ function logProgress(entityName, entryName, entryDetails) {
   var logsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(
     LOGS_SHEET_NAME
   );
+  
   console.time("getLastRow");
   var lastRowNumber = logsSheet.getLastRow();
   console.timeEnd("getLastRow");

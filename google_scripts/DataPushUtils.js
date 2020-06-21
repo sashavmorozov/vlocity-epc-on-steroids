@@ -52,6 +52,8 @@ function collectRecordsToPushStep (exportScope) {
     setBackendProcessInfoProcessStep("Exporting data from the spreadsheet");
     setBackendProcessInfoProcessDetails("Gathering data from the spreadsheet to push");
 
+    showProgressDialog();
+
     var sheetName = SpreadsheetApp.getActiveSheet().getName();
     if (nonDataSheets.indexOf(sheetName) !== -1) {
         console.log("*** Error: Upload process is not supported for this sheet: " + sheetName);
@@ -66,7 +68,7 @@ function collectRecordsToPushStep (exportScope) {
 
     var epcConfiguration = exportRowsOfActiveSheetAsJson(exportScope);
     console.log("*** epcConfiguration:" + JSON.stringify(epcConfiguration));
-
+    
     if (!epcConfiguration) {
         console.log("*** Error: no rows checked, no data to upload");
         var dialogParams = {
@@ -79,7 +81,7 @@ function collectRecordsToPushStep (exportScope) {
     }
 
     addTransactionDetails(epcConfiguration);
-
+    
     console.timeEnd(arguments.callee.name);
     console.log("*** METHOD_EXIT: " + arguments.callee.name);
     return epcConfiguration;
@@ -94,8 +96,9 @@ function pushConfigurationStep (epcConfiguration) {
     setBackendProcessInfoProcessStep("Loading data to Vlocity");
     setBackendProcessInfoProcessDetails("Loading the collected data into Vlocity");
 
-    showProgressDialog(); //hack
-    pushConfigurationToVlocityChunkable(epcConfiguration);
+    //showProgressDialog(); //hack
+    pushConfigurationToVlocityChunkable(epcConfiguration); 
+    //pushConfigurationToVlocityChunkable2(epcConfiguration); //experimental for batch request processing
 
     console.timeEnd(arguments.callee.name);
     console.log("*** METHOD_EXIT: " + arguments.callee.name);
