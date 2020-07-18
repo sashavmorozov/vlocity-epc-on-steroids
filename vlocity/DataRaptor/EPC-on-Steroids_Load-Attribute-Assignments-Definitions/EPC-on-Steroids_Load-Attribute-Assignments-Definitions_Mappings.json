@@ -493,6 +493,20 @@
     {
         "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeAssignment__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 2,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__ValueDescription__c",
+        "%vlocity_namespace%__GlobalKey__c": "5fdec09a-4834-9388-eae2-6d2beaed7cd7",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Attribute Assignments:Help Text",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Assignments DefinitionsCustom4908",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Assignments Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeAssignment__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 2,
         "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Value__c",
         "%vlocity_namespace%__GlobalKey__c": "cc7b94d0-8c98-8289-a7b9-02fe723e2616",
         "%vlocity_namespace%__InterfaceFieldAPIName__c": "Attribute Assignments:Value",

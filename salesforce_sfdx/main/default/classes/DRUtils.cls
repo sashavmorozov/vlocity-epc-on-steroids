@@ -1,4 +1,4 @@
-global with sharing class DRUtils implements %vlocity_namespace%.VlocityOpenInterface {
+global with sharing class DRUtils implements vlocity_cmt.VlocityOpenInterface {
 
     global Boolean invokeMethod(String methodName, Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
         Boolean result = true;
@@ -28,7 +28,7 @@ global with sharing class DRUtils implements %vlocity_namespace%.VlocityOpenInte
             '(' + DATARAPTOR_KEY + 
             '): ' + dataRaptorName);
 
-        %vlocity_namespace%.DRProcessResult result = %vlocity_namespace%.DRGlobal.process(inputMap, dataRaptorName);
+        vlocity_cmt.DRProcessResult result = vlocity_cmt.DRGlobal.process(inputMap, dataRaptorName);
         
         
         //System.debug('***' + JSON.serialize(resultMap));
