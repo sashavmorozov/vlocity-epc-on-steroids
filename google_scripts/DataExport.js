@@ -28,7 +28,7 @@ function exportRowsOfActiveSheetAsJson(exportScope) {
  * @return {Object} - JSON object (not a string) representing exported data
  *
  * @example
- *     exportRowsAsJson(CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
+ *     exportRowsAsJson("Offerings", CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL);
  */
 
 function exportRowsAsJson(sheetName, exportScope) {
@@ -153,5 +153,6 @@ function saveSheetByNameAsJsonToGDrive(sheetName) {
     var filename = 'Vlocity-' + sheetName + "-" + datetime + ".json";
 
     console.log("*** METHOD_EXIT: " + arguments.callee.name);
-    return DriveApp.createFile(filename, JSON.stringify(exportSheetAsJsonByName(sheetName)), MimeType.PLAIN_TEXT);
+    //return DriveApp.createFile(filename, JSON.stringify(exportSheetAsJsonByName(sheetName)), MimeType.PLAIN_TEXT);
+    return DriveApp.createFile(filename, JSON.stringify(exportRowsAsJson(sheetName, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ALL)), MimeType.PLAIN_TEXT);
 }
