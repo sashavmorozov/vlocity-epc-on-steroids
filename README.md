@@ -8,6 +8,6 @@ A typical process to configure a new offering (or another artifact) is illustrat
 
 Collaboration and versioning capabilities are backed by Google Spreadsheets engine.
 
-![](https://github.com/sashavmorozov/github-content/blob/master/stub-content/good-afternoon-placeholder.png?raw=true) 
+![image](https://user-images.githubusercontent.com/46906391/87882685-20f69e00-ca02-11ea-8755-4d8b27aaf64c.png)
 
 Get your copy and start managing the catalog configurations with a breeze
