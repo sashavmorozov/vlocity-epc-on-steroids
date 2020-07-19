@@ -10,4 +10,4 @@ Collaboration and versioning capabilities are backed by Google Spreadsheets engi
 
 ![image](https://user-images.githubusercontent.com/46906391/87882685-20f69e00-ca02-11ea-8755-4d8b27aaf64c.png)
 
-Get your copy and start managing the catalog configurations with a breeze
+Get your copy and start managing the catalog configurations with a breeze. For more details, please check the [First Call Deck](https://docs.google.com/presentation/d/1nqFemAhbt3S-nE7Kg2RmVjaPPPJegXy7TRBk6yDYBFo/edit?usp=sharing).
