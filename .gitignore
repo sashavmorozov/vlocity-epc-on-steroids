@@ -30,3 +30,5 @@ google_scripts/clasp.json
 .sfdx/sfdx-config.json
 
 .sfdx/tools/testresults/apex/test-result.txt
+
+.sfdx/orgs/
