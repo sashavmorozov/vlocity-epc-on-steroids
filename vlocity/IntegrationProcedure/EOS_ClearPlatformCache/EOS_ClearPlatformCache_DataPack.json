@@ -1,10 +1,13 @@
 {
     "%vlocity_namespace%__AdditionalInformation__c": "Initiates the Vlocity Clear Platform Cache Job job. Used by the EPC on Steroids app",
     "%vlocity_namespace%__CustomJavaScript__c": "{}",
+    "%vlocity_namespace%__DisableMetadataCache__c": false,
+    "%vlocity_namespace%__ElementTypeToHTMLTemplateList__c": "{\"ElementTypeToHTMLTemplateList\":[]}",
     "%vlocity_namespace%__Element__c": [
         "EOS_ClearPlatformCache_Element_Invoke-Console-Controller.json",
         "EOS_ClearPlatformCache_Element_Generate-Response.json"
     ],
+    "%vlocity_namespace%__IsLwcEnabled__c": false,
     "%vlocity_namespace%__IsProcedure__c": true,
     "%vlocity_namespace%__IsReusable__c": false,
     "%vlocity_namespace%__Language__c": "Procedure",
