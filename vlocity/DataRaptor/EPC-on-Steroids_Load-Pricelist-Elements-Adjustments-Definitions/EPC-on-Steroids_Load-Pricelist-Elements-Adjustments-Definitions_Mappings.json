@@ -115,6 +115,23 @@
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
     },
     {
+        "%vlocity_namespace%__DefaultValue__c": "PricingElement__c",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__PricingElement__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__ObjectTypeId__c",
+        "%vlocity_namespace%__GlobalKey__c": "c57a9eeb-05c8-680d-c559-077875801b09",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": true,
+        "%vlocity_namespace%__LookupDomainObjectFieldName__c": "%vlocity_namespace%__ObjectApiName__c",
+        "%vlocity_namespace%__LookupDomainObjectName__c": "%vlocity_namespace%__ObjectClass__c",
+        "%vlocity_namespace%__LookupDomainObjectRequestedFieldName__c": "Id",
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Adjustments DefinitionsCustom4787",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Pricelist Elements-Adjustments Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
         "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__PricingElement__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
         "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__PriceListId__c",
