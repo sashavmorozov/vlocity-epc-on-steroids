@@ -1,5 +1,5 @@
 global with sharing class VlocityMaintenanceJobsUtils implements vlocity_cmt.VlocityOpenInterface {
-    public VlocityMaintenanceJobsUtils() {
+    global VlocityMaintenanceJobsUtils() {
 
     }
 
