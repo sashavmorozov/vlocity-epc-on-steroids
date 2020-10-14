@@ -3,7 +3,7 @@
     "%vlocity_namespace%__OmniScriptId__c": {
         "Name": "Start Clear Platform Cache Job",
         "VlocityDataPackType": "VlocityMatchingKeyObject",
-        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/EOS/ClearPlatformCache/Procedure",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/EOS/clearPlatformCacheJob/Procedure",
         "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
     },
     "%vlocity_namespace%__PropertySet__c": {
@@ -40,5 +40,5 @@
     "Name": "Invoke Console Controller",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",
-    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/EOS/ClearPlatformCache/Procedure/Invoke Console Controller"
+    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/EOS/clearPlatformCacheJob/Procedure/Invoke Console Controller"
 }

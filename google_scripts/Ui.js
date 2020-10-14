@@ -20,8 +20,8 @@ function buildMenu() {
         .createMenu("EPC Jobs")
         .addItem("Product hierarchy maintenance job", "runProductHierarchyMaintenanceJob")
         .addItem("Refresh pricebook job", "runRefreshPricebookJob")
-        .addItem("Clear managed platform cache", "runClearManagedPlatformCache")
-        .addItem("Generate global keys", "runGenerateGlobalKeys")
+        .addItem("Clear managed platform cache", "runClearManagedPlatformCacheJob")
+        .addItem("Generate global keys", "runGenerateGlobalKeysJob")
         .addItem(
           "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
@@ -29,6 +29,10 @@ function buildMenu() {
         .addItem(
           "Regenerate Object Types layouts",
           "regenerateLayoutsForCheckedObjectTypes"
+        )
+        .addItem(
+          "Fix Picklist Values for selected products",
+          "runFixPicklistValuesForCheckedProductsJob"
         )
     )
 

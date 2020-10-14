@@ -1,4 +1,7 @@
 {
+    "additionalChainableResponse": {
+    },
+    "chainableActualTimeLimit": null,
     "chainableCpuLimit": 2000,
     "chainableDMLRowsLimit": null,
     "chainableDMLStatementsLimit": null,
@@ -9,14 +12,18 @@
     "columnsPropertyMap": [
     ],
     "description": "",
-    "includeAllActionsInResponse": true,
+    "includeAllActionsInResponse": false,
     "labelPlural": "",
     "labelSingular": "",
     "linkToExternalObject": "",
     "nameColumn": "",
+    "queueableChainableCpuLimit": 40000,
+    "queueableChainableHeapSizeLimit": 6,
+    "queueableChainableQueriesLimit": 120,
     "relationshipFieldsMap": [
     ],
     "rollbackOnError": false,
     "trackingCustomData": {
-    }
+    },
+    "ttlMinutes": 5
 }

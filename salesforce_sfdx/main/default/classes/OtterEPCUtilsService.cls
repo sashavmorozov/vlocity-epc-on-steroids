@@ -26,6 +26,10 @@ global with sharing class OtterEPCUtilsService implements vlocity_cmt.VlocityOpe
 
            OtterEPCUtilsService.replicateLayoutOpenInterface(inputMap, outputMap, optionsMap);
 
+        } if (methodName.equals('fixPicklistValues')) {
+
+            OtterEPCUtilsService.fixPicklistValuesOpenInterface(inputMap, outputMap, optionsMap);
+ 
         } else {
           result = false;
         }
@@ -182,5 +186,39 @@ global with sharing class OtterEPCUtilsService implements vlocity_cmt.VlocityOpe
         outputMap.put('Result', '');
         outputMap.put('Status', 'Success');
         outputMap.put('Message', 'result - need to get output from OtterEPCUtils');
+    }
+
+    public static void fixPicklistValuesOpenInterface (Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
+        
+        final String PRODUCT_CODES_KEY = 'productCodes';
+        
+        List<Object> productCodes = (List<Object>) inputMap.get(PRODUCT_CODES_KEY);
+        List<String> productCodesString = new List<String> ();
+        for (Object o : productCodes) {
+            productCodesString.add((String) o);
+        }
+        
+        if (productCodes.size() < 1) {
+            System.debug(
+              LoggingLevel.ERROR,
+              'OtterTools > OtterEPCUtilsService > fixPicklistValuesOpenInterface: input value ' +
+              '(' + PRODUCT_CODES_KEY + ') is empty')
+            ;
+
+            outputMap.put('Status', 'Failed');
+            outputMap.put('Message', 'input value ' +
+              '(' + PRODUCT_CODES_KEY + ') is empty');
+            return;
+        }
+
+        System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtilsService > fixPicklistValuesOpenInterface: input value ' + 
+            '(' + PRODUCT_CODES_KEY + 
+            '): ' + productCodes);
+
+        outputMap.put('Result', OtterEPCUtils.fixPicklistValues(productCodesString));
+        outputMap.put('Status', 'Success');
+        outputMap.put('Message', 'Fix Picklist attributes job successfully started. Please allow some processing time to see the results in user interface');
+
+        
     }
 }
