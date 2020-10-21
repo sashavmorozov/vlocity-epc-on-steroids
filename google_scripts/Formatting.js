@@ -21,7 +21,7 @@ function getUserDataTextStyle() {
 }
 
 /* Work in progress do not use this yet, take a while to execute */
-function applyDefaultFormattingToCurrentSheet() {
+function menuItem_applyDefaultFonts() {
   var currentSheetName = SpreadsheetApp.getActive().getActiveSheet().getName();
   applyDefaultFormattingToSheetByName(currentSheetName);
 }

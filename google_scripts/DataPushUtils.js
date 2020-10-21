@@ -1,4 +1,4 @@
-function resetProcessStep () {
+function processStep_resetProcess () {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
     console.time(arguments.callee.name);
     
@@ -105,7 +105,7 @@ function pushConfigurationStep (epcConfiguration) {
     return;
 }
 
-function completeProcessStep () {
+function processStep_completeProcess () {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
     console.time(arguments.callee.name);
     

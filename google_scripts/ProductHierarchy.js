@@ -140,7 +140,7 @@ function collectProductHierarchyData(productCode) {
   return filteredDataValues;
 }
 
-function collectDataForLucidChartDiagram() {
+function menuItem_collectDataForLucidChartDiagram() {
   var CONST_OFFERINGS_SHEET_NAME = "Offerings";
   var data = exportRowsAsJson(CONST_OFFERINGS_SHEET_NAME, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
 

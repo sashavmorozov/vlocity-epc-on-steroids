@@ -607,7 +607,10 @@ function clearPlatformCache2() {
 }
 
 
-
+function getActiveSheetName() {
+  console.log("**** ", SpreadsheetApp.getActiveSheet().getName());
+  return SpreadsheetApp.getActiveSheet().getName();
+}
 
 
 function viewScriptProperties() {
@@ -828,7 +831,7 @@ function createEmptyArray(arrayLength, filler) {
   return a;
 }
 
-function viewRecordInSalesforce() {
+function menuItem_viewRecordInSalesforce() {
   var sheetName = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getName();
   var data = exportRowsAsJson(sheetName, CONST_EXPORT_SCOPE_ENUM.INCLUDE_ONLY_CHECKED);
 

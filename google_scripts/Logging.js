@@ -12,7 +12,7 @@ function viewLogs() {
     SpreadsheetApp.setActiveSheet(SpreadsheetApp.getActive().getSheetByName(LOGS_SHEET_NAME)); 
 }
 
-function clearLogs() {
+function menuItem_clearLogs() {
 
     var logsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(LOGS_SHEET_NAME);
     var lastRowNumber = logsSheet.getLastRow();
@@ -67,7 +67,7 @@ function logProgress(entityName, entryName, entryDetails) {
 
   if (lastRowNumber > CONST_MAX_NUMBER_OF_LOG_ENTRIES) {
     console.log("*** INFO: " + "Application logs are recycled");
-    clearLogs();
+    menuItem_clearLogs();
     lastRowNumber = logsSheet.getLastRow();
   }
   var obj = [[]];
