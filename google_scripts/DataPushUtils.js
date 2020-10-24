@@ -1,19 +1,3 @@
-function processStep_resetProcess () {
-    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
-    console.time(arguments.callee.name);
-    
-    deleteUserProperties();
-
-    setBackendProcessInfoProcessProgress(0);
-    setBackendProcessInfoProcessStatus("");
-    setBackendProcessInfoProcessStep("Just started");
-    setBackendProcessInfoProcessDetails("Preparing the process, resetting progress");
-
-    console.timeEnd(arguments.callee.name);
-    console.log("*** METHOD_EXIT: " + arguments.callee.name);
-    return;
-}
-
 function checkConnectionToSalesforceStep () {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
     console.time(arguments.callee.name);
@@ -99,20 +83,6 @@ function pushConfigurationStep (epcConfiguration) {
     //showProgressDialog(); //hack
     pushConfigurationToVlocityChunkable(epcConfiguration); 
     //pushConfigurationToVlocityChunkable2(epcConfiguration); //experimental for batch request processing
-
-    console.timeEnd(arguments.callee.name);
-    console.log("*** METHOD_EXIT: " + arguments.callee.name);
-    return;
-}
-
-function processStep_completeProcess () {
-    console.log("*** METHOD_ENTRY: " + arguments.callee.name);
-    console.time(arguments.callee.name);
-    
-    setBackendProcessInfoProcessProgress(100);
-    setAggregatedLoadingProcessStatus("SUCCESS");
-    setBackendProcessInfoProcessStep("Just finished");
-    setBackendProcessInfoProcessDetails("We just finished the processing");
 
     console.timeEnd(arguments.callee.name);
     console.log("*** METHOD_EXIT: " + arguments.callee.name);

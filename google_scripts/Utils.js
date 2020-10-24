@@ -155,6 +155,9 @@ function setAggregatedLoadingProcessStatus(processStatus) {
           PropertiesService.getUserProperties().getProperty("BACKEND_PROCESS_PROGRESS") == "100.0" //this is not nice
       ) newProcessStatus = "SUCCESS";
       break;
+
+    default:
+      newProcessStatus = "";
   }
 
   PropertiesService.getUserProperties().setProperty("BACKEND_PROCESS_STATUS", newProcessStatus);
