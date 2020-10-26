@@ -1,3 +1,5 @@
+var loadingProcessProgress = 0;
+
 /**
  * Uploads (pushes) catalog configuration (whole records from the active sheet) to the Vlocity catalog. Assigned to a menu item
  *
