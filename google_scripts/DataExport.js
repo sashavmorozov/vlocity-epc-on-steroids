@@ -87,10 +87,10 @@ function exportRowsAsJson(sheetName, exportScope) {
                     if (!rangeContainsStrikethroughCells(currentRowAsRange)) {
                         for (var j = 0; j < header.length; j++) {
                             var value = row[j];
-
+                            
                             if (value instanceof Date && !isNaN(value.valueOf())) {
                                 //apply special formatting for date values
-                                value = Utilities.formatDate(value, "GMT", "dd/MM/yyyy");
+                                value = Utilities.formatDate(value, "GMT", "yyyy-MM-dd");
                             }
 
                             rowObj[header[j]] = value;
