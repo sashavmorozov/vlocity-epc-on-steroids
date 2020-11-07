@@ -1,0 +1,216 @@
+Name: epc-on-steroids-first-intall
+ignoreDependencies: false
+VlocityDataPackKeys:
+    - DataRaptor/EPC on Steroids_Get Id for Decomposition Relationships Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Object Types Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Offerings Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Offerings Structure Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Picklist Values Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Attribute-to-Object Type Assignments Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Attributes Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Catalog to Product Relationships Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Catalogs Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Catalogs Hierarchy Definitions
+    - DataRaptor/EPC on Steroids_Extract Specs Attribute Assignments Definitions
+    - DataRaptor/EPC on Steroids_Extract Specs Structure Definitions
+    - DataRaptor/EPC on Steroids_Extract Time Plans Definitions
+    - DataRaptor/EPC on Steroids_Extract Time Policies Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Attribute Categories Definitions
+    - DataRaptor/EPC on Steroids_Extract Offerings Definitions
+    - DataRaptor/EPC on Steroids_Extract Offerings Structure Definitions
+    - DataRaptor/EPC on Steroids_Extract Picklist Values Definitions
+    - DataRaptor/EPC on Steroids_Extract Picklists Definitions
+    - DataRaptor/EPC on Steroids_Extract Pricelist Elements-Adjustments Definitions
+    - DataRaptor/EPC on Steroids_Load Promotion Assignments Definitions
+    - DataRaptor/EPC on Steroids_Load Promotions Definitions
+    - DataRaptor/EPC on Steroids_Load Specifications Definitions
+    - DataRaptor/EPC on Steroids_Load Specs Attribute Assignments Definitions
+    - DataRaptor/EPC on Steroids_Load Specs Structure Definitions
+    - DataRaptor/EPC on Steroids_Extract Catalog to Product Relationships Definitions
+    - DataRaptor/EPC on Steroids_Extract Catalogs Definitions
+    - DataRaptor/EPC on Steroids_Extract Catalogs Hierarchy Definitions
+    - DataRaptor/EPC on Steroids_Extract Decomposition Relationships Definitions
+    - DataRaptor/EPC on Steroids_Extract Object Types Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Promotions Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Specifications Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Specs Structure Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Time Plans Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Promotion Assignments Definitions
+    - DataRaptor/EPC on Steroids_Load Decomposition Relationships Definitions
+    - DataRaptor/EPC on Steroids_Load Object Types Definitions
+    - DataRaptor/EPC on Steroids_Load Offerings Definitions
+    - DataRaptor/EPC on Steroids_Load Offerings Structure Definitions
+    - DataRaptor/EPC on Steroids_Load Picklist Values Definitions
+    - DataRaptor/EPC on Steroids_Load Time Plans Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Picklists Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Pricelist Elements-Adjustments Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Pricelist Elements-Charges Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Pricelists Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Pricing-Pricelist Entries Definitions
+    - DataRaptor/EPC on Steroids_Load Time Policies Definitions
+    - DataRaptor/EPC on Steroids_Load Picklists Definitions
+    - DataRaptor/EPC on Steroids_Load Pricelist Elements-Adjustments Definitions
+    - DataRaptor/EPC on Steroids_Load Pricelist Elements-Charges Definitions
+    - DataRaptor/EPC on Steroids_Load Pricelists Definitions
+    - DataRaptor/EPC on Steroids_Load Pricing-Pricelist Entries Definitions
+    - DataRaptor/EPC on Steroids_Extract Attribute Assignments Definitions
+    - DataRaptor/EPC on Steroids_Extract Attribute Categories Definitions
+    - DataRaptor/EPC on Steroids_Extract Attribute-to-Object Type Assignments Definitions
+    - DataRaptor/EPC on Steroids_Extract Attributes Definitions
+    - DataRaptor/EPC on Steroids_Extract Business Accounts
+    - DataRaptor/EPC on Steroids_Extract Pricelist Elements-Charges Definitions
+    - DataRaptor/EPC on Steroids_Extract Pricelists Definitions
+    - DataRaptor/EPC on Steroids_Extract Pricing-Pricelist Entries Definitions
+    - DataRaptor/EPC on Steroids_Extract Promotions Definitions
+    - DataRaptor/EPC on Steroids_Extract Specifications Definitions
+    - DataRaptor/EPC on Steroids_Get Id for Time Policies Definitions
+    - DataRaptor/EPC on Steroids_Load Attribute Assignments Definitions
+    - DataRaptor/EPC on Steroids_Load Attribute Categories Definitions
+    - DataRaptor/EPC on Steroids_Load Attribute-to-Object Type Assignments Definitions
+    - DataRaptor/EPC on Steroids_Load Attributes Definitions
+    - DataRaptor/EPC on Steroids_Load Business Accounts
+    - DataRaptor/EPC on Steroids_Load Catalog to Product Relationships Definitions
+    - DataRaptor/EPC on Steroids_Load Catalogs Definitions
+    - DataRaptor/EPC on Steroids_Load Catalogs Hierarchy Definitions
+    - DataRaptor/EPC on Steroids_Load Chunks for Offline Processing
+    - DataRaptor/EPC on Steroids_Load Contacts
+    - DataRaptor/EPC on Steroids_Extract Contacts
+    - IntegrationProcedure/EPC_RegenerateJSONAttributes
+    - IntegrationProcedure/EOS_startProductHierarchyJob
+    - IntegrationProcedure/EPC_LoadGenericEPCDefinitions
+    - IntegrationProcedure/EPC_RegenerateLayoutsForObjectType
+    - connectedApps/Vlocity_EPC_on_Steroids.connectedApp
+    - objects/%vlocity_namespace%__PicklistValue__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__PicklistValue__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__PicklistValue__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__PicklistValue__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__PicklistValue__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__PicklistValue__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__TimePlan__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__TimePlan__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__TimePlan__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__TimePlan__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__TimePlan__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__TimePlan__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__PriceList__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__PriceList__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__PriceList__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__PriceList__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__PriceList__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__PriceList__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__AttributeCategory__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__AttributeCategory__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__AttributeCategory__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__AttributeCategory__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__AttributeCategory__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__AttributeCategory__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__Catalog__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__Catalog__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__Catalog__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__Catalog__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__Catalog__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__Catalog__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__Promotion__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__Promotion__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__Promotion__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__Promotion__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__Promotion__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__Promotion__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__CatalogProductRelationship__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__CatalogProductRelationship__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__CatalogProductRelationship__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__CatalogProductRelationship__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__CatalogProductRelationship__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__CatalogProductRelationship__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__TimePolicy__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__TimePolicy__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__TimePolicy__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__TimePolicy__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__TimePolicy__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__TimePolicy__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__ObjectFieldAttribute__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__ObjectFieldAttribute__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__ObjectFieldAttribute__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__ObjectFieldAttribute__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__ObjectFieldAttribute__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__ObjectFieldAttribute__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__AttributeAssignment__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__AttributeAssignment__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__AttributeAssignment__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__AttributeAssignment__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__AttributeAssignment__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__AttributeAssignment__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__ObjectClass__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__ObjectClass__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__ObjectClass__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__ObjectClass__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__ObjectClass__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__ObjectClass__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__PricingElement__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__PricingElement__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__PricingElement__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__PricingElement__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__PricingElement__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__PricingElement__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__PromotionItem__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__PromotionItem__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__PromotionItem__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__PromotionItem__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__PromotionItem__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__PromotionItem__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/Product2/fields/eos_Application_Version__c.field
+    - objects/Product2/fields/eos_Last_Executed_By__c.field
+    - objects/Product2/fields/eos_Spreadsheet_Name__c.field
+    - objects/Product2/fields/eos_Spreadsheet_URL__c.field
+    - objects/Product2/fields/eos_Transaction_ID__c.field
+    - objects/Product2/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__CatalogRelationship__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__CatalogRelationship__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__CatalogRelationship__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__CatalogRelationship__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__CatalogRelationship__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__CatalogRelationship__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__PriceListEntry__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__PriceListEntry__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__PriceListEntry__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__PriceListEntry__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__PriceListEntry__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__PriceListEntry__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__Picklist__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__Picklist__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__Picklist__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__Picklist__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__Picklist__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__Picklist__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__ProductChildItem__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__ProductChildItem__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__ProductChildItem__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__ProductChildItem__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__ProductChildItem__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__ProductChildItem__c/fields/eos_Transaction_Timestamp__c.field
+    - objects/%vlocity_namespace%__Attribute__c/fields/eos_Application_Version__c.field
+    - objects/%vlocity_namespace%__Attribute__c/fields/eos_Last_Executed_By__c.field
+    - objects/%vlocity_namespace%__Attribute__c/fields/eos_Spreadsheet_Name__c.field
+    - objects/%vlocity_namespace%__Attribute__c/fields/eos_Spreadsheet_URL__c.field
+    - objects/%vlocity_namespace%__Attribute__c/fields/eos_Transaction_ID__c.field
+    - objects/%vlocity_namespace%__Attribute__c/fields/eos_Transaction_Timestamp__c.field
+    - classes/OtterEPCUtilsService.cls
+    - classes/AttributeAssignmentFix.cls
+    - classes/FixPicklistValuesUpdateJSON.cls
+    - classes/OtterEPCUtils.cls
+    - classes/DRUtils.cls
+    - classes/VlocityMaintenanceJobsUtils.cls
+VlocityTypesToFetch:
+    - DataRaptor
+    - IntegrationProcedure
+SalesforceTypesToFetch:
+    - ApexClass
+    - ConnectedApp
+    - CustomField
+    - CustomObject
