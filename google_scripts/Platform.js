@@ -35,7 +35,7 @@ function generateViewSingleRecordsUrl(objectApiName, recordId) {
   }
 }
 
-function reexecuteLastBusinessOperation() {
+function menuItem_reexecuteLastBusinessOperation() {
   
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 

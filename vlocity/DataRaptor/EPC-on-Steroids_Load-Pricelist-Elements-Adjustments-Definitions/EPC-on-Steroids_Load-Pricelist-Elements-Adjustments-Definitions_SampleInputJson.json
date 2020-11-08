@@ -1,133 +1,39 @@
 {
     "Pricelist Elements-Adjustments": [
         {
-            "Adjustment Amount": 1,
+            "Adjustment Amount": -1,
             "Adjustment Percent": "",
             "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "1.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricelist": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_1_00_EUR",
             "Pricing Element Name": "MRC-ADJ-ABS-1.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
         },
         {
-            "Adjustment Amount": 2,
+            "Adjustment Amount": -2,
             "Adjustment Percent": "",
             "Checked": true,
             "Currency Code": "EUR",
             "Display Text": "2.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricelist": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
             "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_2_00_EUR",
             "Pricing Element Name": "MRC-ADJ-ABS-2.00-EUR",
             "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": 3,
-            "Adjustment Percent": "",
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "3.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_3_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-3.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": 4,
-            "Adjustment Percent": "",
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "4.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_ABS_4_00_EUR",
-            "Pricing Element Name": "MRC-ADJ-ABS-4.00-EUR",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": 2,
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "2.00%  Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_2_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-2.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": 3,
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "3.00%  Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_3_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-3.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": "",
-            "Adjustment Percent": 4,
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "4.00%  Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_MRC_ADJ_PCT_4_00_PCT",
-            "Pricing Element Name": "MRC-ADJ-PCT-4.00-PCT",
-            "Pricing Variable": "Recurring Monthly Std Price Adjustment Pct"
-        },
-        {
-            "Adjustment Amount": 1,
-            "Adjustment Percent": "",
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "1.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_1_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-1.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": 2,
-            "Adjustment Percent": "",
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "2.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_2_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-2.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
-        },
-        {
-            "Adjustment Amount": 3,
-            "Adjustment Percent": "",
-            "Checked": true,
-            "Currency Code": "EUR",
-            "Display Text": "3.00EUR Off",
-            "Pricelist": 2019,
-            "Pricelist Code": "VEPC_PRICELIST_2019",
-            "Pricing Element Code": "VEPC_PLE_ADJUSTMENT_OTC_ADJ_ABS_3_00_EUR",
-            "Pricing Element Name": "OTC-ADJ-ABS-3.00-EUR",
-            "Pricing Variable": "One Time Std Price Adjustment Abs"
         }
     ],
     "Transaction Details": {
-        "Application Version": "0.5",
+        "Application Version": "1.0",
         "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
-        "Transaction ID": "985d8773-b11d-4390-8b79-2addaa38374e",
-        "Transaction Timestamp": "16/12/2019@19:39:40GMT"
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Core Data Bootstrap-20200820-1.1-WIP",
+        "Spreadsheet URL": "https://docs.google.com/spreadsheets/d/1e3Om-8ePjN63z6wlnaZxZpbdDZIeyuFN4Zf0B9sx6xc/edit?ouid=113753225643224599166&urlBuilderDomain=vlocity.com",
+        "Transaction ID": "55d14568-059e-4dab-89d0-88f2876b06d9",
+        "Transaction Timestamp": "11/10/2020@15:03:47GMT"
     },
-    "dataRaptorName": "EPC on Steroids_Load Pricelist Elements-Adjustments Definitions"
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Pricelist Elements-Adjustments Definitions",
+    "entityName": "Pricelist Elements-Adjustments"
 }

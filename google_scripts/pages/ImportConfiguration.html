@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top" />
+    <?!= include('css/bootstrap_stylesheet_4.4.1'); ?>
+    <?!= include('css/epc_on_steroids_stylesheet'); ?>
+    <script>
+        function viewLogs() {
+            google.script.run.viewLogs();
+            google.script.host.close();
+        }
+
+        function js_importConfigurationFromAnotherFileActiveTab() {
+            var updateSuccessful = true;
+            var sourceFileId = document.getElementById("sourceFileId").value;
+
+            if (sourceFileId) {
+                var sheetName = <?= dialogParams.activeSheetName ?>;
+                console.log("*** VARIABLE: sourceFileId: " + sourceFileId);
+                console.log("*** VARIABLE: sheetName: " + sheetName);
+
+                google.script.run.process_importConfigurationFromAnotherFileActiveTab(sourceFileId, sheetName);
+            
+            } else {
+                document.getElementById("error-alert").hidden = false;
+            }
+        }
+
+        function js_importConfigurationFromAnotherFileAllTabs() {
+            var updateSuccessful = true;
+            var sourceFileId = document.getElementById("sourceFileId").value;
+
+            if (sourceFileId) {
+                var sheetName = <?= dialogParams.activeSheetName ?>;
+                console.log("*** VARIABLE: sourceFileId: " + sourceFileId);
+                console.log("*** VARIABLE: sheetName: " + sheetName);
+
+                google.script.run.process_importConfigurationFromAnotherFileAllTabs(sourceFileId);
+            
+            } else {
+                document.getElementById("error-alert").hidden = false;
+            }
+        }
+    </script>
+</head>
+
+<body class="body-dialog">
+    <div style="
+            border-radius:10px;
+            background: white
+            ">
+        <div style="height: 32px;"></div>
+        <!--empty div-->
+        <div>
+            <!--section 1 div-->
+            This process will copy data into your spreadsheet from another spreadsheet (e.g. from a spreadsheet of an
+            older version when you are upgrading).
+            The process will import data only for the current tab, so you can import configuration tab by tab.
+            Read more about the file Id and where to get it <a
+                href="https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#openById(String)" target="blank">here</a>
+        </div>
+        <div id="loading-process-step" class="" style="height: 64px;" hidden>
+            <!--section 1 div-->
+            Situation details, dialog params <?= JSON.stringify(dialogParams) ?>
+        </div>
+        <div id="loading-process-step" class="" style="height: 64px;">
+            
+        </div>
+
+        <div id="configuration-form-div" style="min-height: 32px;">
+
+            <form>
+                <div class="form-group">
+                    <label for="sourceFileId">Source spreadsheet Id</label>
+                    <input type="email" class="form-control" id="sourceFileId" aria-describedby="sourceFileIdHelp"
+                        placeholder="Enter source spreadsheet Id"
+                        value="">
+                    <small id="sourceFileIdHelp" class="form-text text-muted">Please provide source spreadsheet
+                        identifier</small>
+                </div>
+            </form>
+
+        </div>
+
+        <div id="error-alert" class="alert alert-danger" role="alert" hidden>
+            File Id is required
+        </div>
+
+        <div id="warning-alert" class="alert alert-warning" role="alert" hidden>
+            Use me for warning messages (yellow)
+        </div>
+
+        <div id="success-alert" class="alert alert-success" role="alert" hidden>
+            Use me for success messages (green)
+        </div>
+
+        <div id="buttons" class="bottom-buttons-div">
+            <div class="btn-group inline-table">
+                <button id="button-import-active-tab-only" type="button" class="btn btn-primary btn-regular" onclick="js_importConfigurationFromAnotherFileActiveTab();">Import Active Tab Only</button>
+                <button id="button-import-options" type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a id="link-import-active-tab-only" class="dropdown-item" href="#" onclick="js_importConfigurationFromAnotherFileActiveTab();">Import Active Tab Only</a>
+                  <a id="link-import-all-tabs" class="dropdown-item" href="#" onclick="js_importConfigurationFromAnotherFileAllTabs();">Import All Tabs</a>
+                </div>
+            </div>
+        
+            <div class="inline-table">
+                <input 
+                    id="button-close" 
+                    type="button" 
+                    class="btn btn-primary btn-regular"
+                    value="Close" 
+                    onclick="google.script.host.close()">
+            </div>
+          
+        </div>
+
+        <!-- core_scripts -->
+        <?!= include('scripts/core_scripts'); ?>
+    
+        <!-- scripts -->
+        <?!= include('templates/bootstrap_scripts_4.4.1'); ?>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+var loadingProcessProgress = 0;
+
 /**
  * Uploads (pushes) catalog configuration (whole records from the active sheet) to the Vlocity catalog. Assigned to a menu item
  *
@@ -11,7 +13,7 @@
 function pushActiveSheetToVlocityEPC() {
 
     /* Before loading */
-    resetProcessStep();
+    processStep_resetProcess();
 
     /* Verify connection */
     if (!checkConnectionToSalesforceStep()) {
@@ -35,7 +37,7 @@ function pushActiveSheetToVlocityEPC() {
     pushConfigurationStep(epcConfiguration);    
 
     /* After loading */
-    completeProcessStep();
+    processStep_completeProcess();
 }
 
 /**
@@ -50,7 +52,7 @@ function pushActiveSheetToVlocityEPC() {
 
 function pushCheckedRowsToVlocityEPC() {
     /* Before loading */
-    resetProcessStep();
+    processStep_resetProcess();
 
     /* Verify connection */
     if (!checkConnectionToSalesforceStep()) {
@@ -74,7 +76,7 @@ function pushCheckedRowsToVlocityEPC() {
     pushConfigurationStep(epcConfiguration);    
 
     /* After loading */
-    completeProcessStep();
+    processStep_completeProcess();
 }
 
 /**

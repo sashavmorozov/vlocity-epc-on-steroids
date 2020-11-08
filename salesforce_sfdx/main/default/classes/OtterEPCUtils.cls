@@ -591,6 +591,54 @@ global with sharing class OtterEPCUtils {
     }
 
     /***************************************************************************************************************
+    * @description initiates a job to fix picklist values in JSONAttribute__c for a set of products
+    * @param product codes (list of strings)
+    * @return nothing
+    * @example
+    *   List<String> productCodes = new List<String> {
+    *    'ACC_OFFER_MANAGED_WAN_PREMIUM',
+    *    'ACC_OFFER_MANAGED_WAN_STANDARD',
+    *    'ACC_OFFER_MANAGED_WAN_BASE'
+    *   };
+    *   OtterEPCtils.fixPicklistValues(productCodes);
+    */
+
+    public static String fixPicklistValues(List<String> productCodes) {
+
+        Boolean refreshProdsJSONAttr = true;
+        
+        List<Product2> productRecordList = [
+            select
+                Id,
+                Name,
+                ProductCode,
+                vlocity_cmt__JSONAttribute__c
+            from
+                Product2
+            where
+                ProductCode in :productCodes
+                and ProductCode != null
+            LIMIT 10000
+        ];
+
+        List<Id> productIds = new List<Id>();
+
+        for (Product2 prod : productRecordList) {
+            prod.vlocity_cmt__JSONAttribute__c = 'Picklist attribute values fix-job successfully started. Please allow some processing time to see the results in user interface';
+            productIds.add(prod.Id);
+        }
+
+        update productRecordList;
+
+        Database.executeBatch(new FixPicklistValuesUpdateJSON(productIds, refreshProdsJSONAttr));
+
+        System.debug(LoggingLevel.INFO, 'Picklist attribute values fix-job successfully started. Please allow some processing time to see the results in user interface');
+        System.debug(LoggingLevel.INFO, 'JSONAttribute will be refreshed for ' + productRecordList.size() + ' product records');
+
+        return 'JSONAttribute will be refreshed for ' + productRecordList.size() + ' product records';
+    }
+
+    /***************************************************************************************************************
     * @description resets platform cache to ensure CPQ consumes the most recent catalog configuration
     * @param nothing
     * @return confirmation message

@@ -20,8 +20,8 @@ function buildMenu() {
         .createMenu("EPC Jobs")
         .addItem("Product hierarchy maintenance job", "runProductHierarchyMaintenanceJob")
         .addItem("Refresh pricebook job", "runRefreshPricebookJob")
-        .addItem("Clear managed platform cache", "runClearManagedPlatformCache")
-        .addItem("Generate global keys", "runGenerateGlobalKeys")
+        .addItem("Clear managed platform cache", "runClearManagedPlatformCacheJob")
+        .addItem("Generate global keys", "runGenerateGlobalKeysJob")
         .addItem(
           "Regenerate JSONAttribute for selected products",
           "regenerateJsonAttributes"
@@ -29,6 +29,10 @@ function buildMenu() {
         .addItem(
           "Regenerate Object Types layouts",
           "regenerateLayoutsForCheckedObjectTypes"
+        )
+        .addItem(
+          "Fix picklist values for selected products",
+          "runFixPicklistValuesForCheckedProductsJob"
         )
     )
 
@@ -47,13 +51,15 @@ function buildMenu() {
     .addSubMenu(
       SpreadsheetApp.getUi()
         .createMenu("Miscellaneous")
-        .addItem("Get Script Id", "retreiveScriptId")
+        .addItem("Get Script Id", "menuItem_getScriptId")
         .addItem("View logs", "viewLogs")
-        .addItem("Clear logs", "clearLogs")
-        .addItem("Apply default fonts", "applyDefaultFormattingToCurrentSheet")
-        .addItem("Re-execute last business operation", "reexecuteLastBusinessOperation")
-        .addItem("Collect data for LucidChart diagram", "collectDataForLucidChartDiagram")
-        .addItem("View record in Salesforce", "viewRecordInSalesforce"))
+        .addItem("Clear logs", "menuItem_clearLogs")
+        .addItem("Apply default fonts", "menuItem_applyDefaultFonts")
+        .addItem("Re-execute last business operation", "menuItem_reexecuteLastBusinessOperation")
+        .addItem("Collect data for LucidChart diagram", "menuItem_collectDataForLucidChartDiagram")
+        .addItem("View record in Salesforce", "menuItem_viewRecordInSalesforce")
+        .addItem("Import configuration from another file", "menuItem_importConfigurationFromAnotherFile")
+        )
       
     .addSubMenu(
       SpreadsheetApp.getUi()
@@ -74,7 +80,7 @@ function buildMenu() {
 
   ui.createMenu("Logs")
     .addItem("View logs", "viewLogs")
-    .addItem("Clear logs", "clearLogs")
+    .addItem("Clear logs", "menuItem_clearLogs")
     .addToUi();
 
   /* ui.createMenu("More EOS tools")
@@ -116,7 +122,7 @@ function retrieveCallbackUrl() {
     showDialogCallbackUrl();
 }
 
-function retreiveScriptId() {
+function menuItem_getScriptId() {
     showDialogScriptId();
 }
 

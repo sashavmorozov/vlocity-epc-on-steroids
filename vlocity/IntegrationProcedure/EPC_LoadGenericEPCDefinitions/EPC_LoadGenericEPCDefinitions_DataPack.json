@@ -1,7 +1,10 @@
 {
     "%vlocity_namespace%__AdditionalInformation__c": "EPC on Steroids. The integration procedure is intended to be called from a Google spreadsheet (script) and feed a catalog configuration JSON (specific definitions only)",
     "%vlocity_namespace%__CustomJavaScript__c": "EPC_LoadGenericEPCDefinitions_SampleInput.json",
+    "%vlocity_namespace%__DisableMetadataCache__c": false,
+    "%vlocity_namespace%__ElementTypeToHTMLTemplateList__c": "{\"ElementTypeToHTMLTemplateList\":[]}",
     "%vlocity_namespace%__Element__c": "EPC_LoadGenericEPCDefinitions_Element_Invoke-Dataraptor-by-Name.json",
+    "%vlocity_namespace%__IsLwcEnabled__c": false,
     "%vlocity_namespace%__IsProcedure__c": true,
     "%vlocity_namespace%__IsReusable__c": false,
     "%vlocity_namespace%__Language__c": "Procedure",

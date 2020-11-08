@@ -24,6 +24,7 @@
     "%vlocity_namespace%__OverwriteAllNullValues__c": false,
     "%vlocity_namespace%__PreprocessorClassName__c": "",
     "%vlocity_namespace%__ProcessNowThreshold__c": -1,
+    "%vlocity_namespace%__RequiredPermission__c": "",
     "%vlocity_namespace%__RollbackOnError__c": false,
     "%vlocity_namespace%__SampleInputCustom__c": "",
     "%vlocity_namespace%__SampleInputJSON__c": "EPC-on-Steroids_Load-Pricelist-Elements-Adjustments-Definitions_SampleInputJson.json",
