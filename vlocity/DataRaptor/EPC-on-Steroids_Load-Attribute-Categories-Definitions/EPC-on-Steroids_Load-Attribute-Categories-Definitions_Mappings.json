@@ -1,5 +1,33 @@
 [
     {
+        "%vlocity_namespace%__DefaultValue__c": "Product Attribute",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__ApplicableSubType__c",
+        "%vlocity_namespace%__GlobalKey__c": "6c6e108e-6188-5c4c-725b-90450e71b6a9",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom8021",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DefaultValue__c": "Any",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__ApplicableTypes__c",
+        "%vlocity_namespace%__GlobalKey__c": "d89f8035-e2d5-458f-6f4e-32ba65cb8785",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom6726",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "EPC on Steroids_Load Attribute Categories Definitions",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
         "%vlocity_namespace%__DomainObjectAPIName__c": "%vlocity_namespace%__AttributeCategory__c",
         "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
         "%vlocity_namespace%__DomainObjectFieldAPIName__c": "%vlocity_namespace%__Code__c",
