@@ -1,0 +1,21 @@
+{
+    "Object Layouts": [
+        {
+            "Checked": false,
+            "Layout Name": "Sample Layout",
+            "Object Type": "Object Type with Layout",
+            "Root Object Type": "Product2 Object"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "1.0",
+        "Executed By": "amorozov@salesforce.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20210624-1.2-WIP",
+        "Spreadsheet URL": "https://docs.google.com/spreadsheets/d/1oFEq568Lfo9yjn00yMD6Y8GXQeEP7BkZnMsgUWVXJZ0/edit",
+        "Transaction ID": "f9b04c9c-1760-4f45-beb8-e3250b308589",
+        "Transaction Timestamp": "09/07/2021@15:17:22GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Object Layouts Definitions",
+    "entityName": "Object Layouts"
+}

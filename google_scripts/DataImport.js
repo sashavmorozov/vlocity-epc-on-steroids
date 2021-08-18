@@ -75,6 +75,23 @@ function retrieveSheetFromCatalogByName(sheetName) {
      console.log("*** METHOD_EXIT: " + arguments.callee.name);
      return;
   }
+
+  if (sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName == "not supported" || 
+      sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName == "-"             ||
+      sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName == "n/a"           ||
+      sheetToDataraptorMapping2[sheetName].retreiveFromCatalogDataraptorName == "") {
+    var message = "Import from Catalog is not yet supported for this sheet";
+    console.log("*** ERROR: " + message);
+    logProgress("Data Pull: " + sheetName, arguments.callee.name, message);
+    
+    var dialogParams = {
+         "message": "Doesn't look good",
+         "messageDescription": message
+     };
+     displayErrorDialog(dialogParams);
+     console.log("*** METHOD_EXIT: " + arguments.callee.name);
+     return;
+  }
   
   /* preparation */
   var targetSheet = SpreadsheetApp.getActive().getSheetByName(CONST_DATA_IMPORT_SHEET_NAME);
