@@ -14,8 +14,8 @@ function restoreCurrentTabName() {
 function getConnectedOrgDetails(){
   //return Math.round(Math.random() * 100);
   var orgDetails = {};
-  orgDetails.url = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
-  orgDetails.name = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+  orgDetails.url = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+  orgDetails.name = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
     
   return orgDetails;
 }
@@ -319,7 +319,7 @@ function invokeVipByNameSafe(vipName, payload) {
         console.log("*** INFO: message: " + message);
         logProgress("Integration Procedure Utils", arguments.callee.name, message);
         
-        var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+        var refreshToken = PropertiesService.getDocumentProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
         var refreshTokenResponse = regenerateToken(refreshToken);
         
         if (refreshTokenResponse.access_token) {
@@ -376,8 +376,8 @@ function invokeVipByName(vipName, payload) {
       return;
   }
 
-  var accessToken = PropertiesService.getScriptProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
-  var instanceUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+  var accessToken = PropertiesService.getDocumentProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+  var instanceUrl = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
   var url = instanceUrl + vipEndpoint;
 
   var options = {
@@ -468,7 +468,7 @@ function invokeVipByNameBulkSafe(vipName, payloadArray) {
   console.log("*** METHOD_ENTRY: " + arguments.callee.name);
   console.time(arguments.callee.name);
   
-  var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+  var refreshToken = PropertiesService.getDocumentProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
   var refreshTokenResponse = regenerateToken(refreshToken);
 
   var responsesArray;
@@ -507,8 +507,8 @@ function invokeVipByNameBulk(vipName, payloadArray) {
   var CONST_VIP_PREFIX = "/services/apexrest/vlocity_cmt/v1/integrationprocedure/";
   var vipEndpoint = CONST_VIP_PREFIX + vipName;
 
-  var accessToken = PropertiesService.getScriptProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
-  var instanceUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+  var accessToken = PropertiesService.getDocumentProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+  var instanceUrl = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
   var url = instanceUrl + vipEndpoint;
 
   var requestsArray = [];
@@ -617,10 +617,10 @@ function getActiveSheetName() {
 
 
 function viewScriptProperties() {
-  var keys = PropertiesService.getScriptProperties().getKeys();
+  var keys = PropertiesService.getDocumentProperties().getKeys();
   
   for (var i = 0; i < keys.length; i++) {
-    console.log('*** ' + keys[i] + ': ' + PropertiesService.getScriptProperties()[keys[i]]);
+    console.log('*** ' + keys[i] + ': ' + PropertiesService.getDocumentProperties()[keys[i]]);
   }
 }
 
@@ -643,7 +643,7 @@ function shortenInstanceUrl(instanceUrl) {
 /* The function checks if a propery has a non-empty/non-undefined value */
 function isScriptPropertySet(propertyName) {
   var isPropertySet = false;
-  var propertyValue = PropertiesService.getScriptProperties().getProperty(propertyName);
+  var propertyValue = PropertiesService.getDocumentProperties().getProperty(propertyName);
   if (propertyValue !== null &&
       propertyValue !== undefined &&
       propertyValue !== "undefined" &&
@@ -678,9 +678,9 @@ function uuidv4() {
 /* The function verifies that properties for authorization are properly set */
 
 function areAuthorizationProperiesSet() {
-  if (!PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) || PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
-  if (!PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) || PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
-  if (!PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) || PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
+  if (!PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) || PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
+  if (!PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) || PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
+  if (!PropertiesService.getDocumentProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) || PropertiesService.getDocumentProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) === "PUT_YOUR_VALUE_HERE") return false;
   
   return true;
 }

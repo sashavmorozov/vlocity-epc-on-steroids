@@ -151,7 +151,7 @@ function disconnectFromSalesforce() {
 
 function showDialogWebServerAuthenticationFlow() {
   var authenticationPrefix =
-    PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
+    PropertiesService.getDocumentProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
   var url =
     "https://" +
     authenticationPrefix +
@@ -161,7 +161,7 @@ function showDialogWebServerAuthenticationFlow() {
     "response_type=code" +
     "&" +
     "client_id=" +
-    PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
+    PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
     "&" +
     "redirect_uri=" +
     getRedirectUri();
@@ -185,7 +185,7 @@ function showDialogAuthorizationAlreadyCompleted() {
   var template = HtmlService.createTemplateFromFile(
     "pages/AlreadyConnectedDialog"
   );
-  template.instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
+  template.instanceUrl = PropertiesService.getDocumentProperties().getProperty("instanceUrl");
   var page = template.evaluate();
 
   page.setWidth(300).setHeight(400);
@@ -219,7 +219,7 @@ function showDialogScriptId() {
 
 function showDialogDisconnectFromSalesforce() {
   var template = HtmlService.createTemplateFromFile("pages/DisconnectDialog");
-  template.instanceUrl = PropertiesService.getScriptProperties().getProperty("instanceUrl");
+  template.instanceUrl = PropertiesService.getDocumentProperties().getProperty("instanceUrl");
   var page = template.evaluate();
 
   page.setWidth(300).setHeight(400);
@@ -455,7 +455,7 @@ function configureConnectionToSalesforce(dialogParams) {
   var dialogPage = "pages/ConnectionConfigurationDialog";
   var dialogTitle = "Configuration";
   dialogParams = {
-    configurationObj: getConfiguration()
+    configurationObj: getDocumentConfiguration()
   };
   
 

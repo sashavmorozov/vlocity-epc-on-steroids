@@ -9,9 +9,8 @@
  */
 
 function getRedirectUri() {
-    var redirectUri = ScriptApp.getService().getUrl() + "/auth/callback";
+    var redirectUri = PropertiesService.getDocumentProperties().getProperty(CONST_WEBAPP_DEPLOYMENT_URL_NAME) + "/auth/callback";
 
-    console.log(redirectUri);
     return redirectUri;
 }
 
@@ -28,9 +27,9 @@ function getRedirectUri() {
  */
 
 function persistTokenInformation(retreiveTokenResponse) {
-    if (retreiveTokenResponse.access_token) PropertiesService.getScriptProperties().setProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME, retreiveTokenResponse.access_token);
-    if (retreiveTokenResponse.refresh_token) PropertiesService.getScriptProperties().setProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME, retreiveTokenResponse.refresh_token);
-    if (retreiveTokenResponse.instance_url) PropertiesService.getScriptProperties().setProperty(CONST_INSTANCE_URL_PROPERTY_NAME, retreiveTokenResponse.instance_url);
+    if (retreiveTokenResponse.access_token) PropertiesService.getDocumentProperties().setProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME, retreiveTokenResponse.access_token);
+    if (retreiveTokenResponse.refresh_token) PropertiesService.getDocumentProperties().setProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME, retreiveTokenResponse.refresh_token);
+    if (retreiveTokenResponse.instance_url) PropertiesService.getDocumentProperties().setProperty(CONST_INSTANCE_URL_PROPERTY_NAME, retreiveTokenResponse.instance_url);
 }
 
 /**
@@ -43,9 +42,9 @@ function persistTokenInformation(retreiveTokenResponse) {
  */
 
 function eraseTokenInformation() {
-    PropertiesService.getScriptProperties().deleteProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
-    PropertiesService.getScriptProperties().deleteProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
-    PropertiesService.getScriptProperties().deleteProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+    PropertiesService.getDocumentProperties().deleteProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+    PropertiesService.getDocumentProperties().deleteProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+    PropertiesService.getDocumentProperties().deleteProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
 }
 
 /**
@@ -58,9 +57,9 @@ function eraseTokenInformation() {
  */
 
 function retrieveStoredAccessToken() {
-    var accessToken = PropertiesService.getScriptProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
-    var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
-    var instanceUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
+    var accessToken = PropertiesService.getDocumentProperties().getProperty(CONST_ACCESS_TOKEN_PROPERTY_NAME);
+    var refreshToken = PropertiesService.getDocumentProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+    var instanceUrl = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME);
 
     if (
         accessToken != null &&
@@ -100,7 +99,7 @@ function retrieveTokenByCode(authorizationCode) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
     var authenticationPrefix =
-      PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
+      PropertiesService.getDocumentProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
     var url =
         "https://" +
         authenticationPrefix +
@@ -111,10 +110,10 @@ function retrieveTokenByCode(authorizationCode) {
         "authorization_code" +
         "&" +
         "client_id=" +
-        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
+        PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
         "&" +
         "client_secret=" +
-        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
+        PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
         "&" +
         "redirect_uri=" +
         getRedirectUri() +
@@ -134,7 +133,7 @@ function retrieveTokenByCode(authorizationCode) {
 
     
     var request = UrlFetchApp.getRequest(url, options);
-    console.log("*** INFO: retreive token request: " + request);
+    console.log("*** INFO: retreive token request: " + JSON.stringify(request));
     logProgress("Authorization", arguments.callee.name + " request", request);
 
     var response = UrlFetchApp.fetch(url, options);
@@ -174,7 +173,7 @@ function retrieveTokenByCode(authorizationCode) {
  * @return {Object} - a JS object containing both token and corresponding instance URL information
  *
  * @example
- *     var refreshToken = PropertiesService.getScriptProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
+ *     var refreshToken = PropertiesService.getDocumentProperties().getProperty(CONST_REFRESH_TOKEN_PROPERTY_NAME);
  *     var tokenResponse = regenerateToken(refreshToken);
  */
 
@@ -182,7 +181,7 @@ function regenerateToken(refreshToken) {
     console.log("*** METHOD_ENTRY: " + arguments.callee.name);
 
     var authenticationPrefix =
-      PropertiesService.getScriptProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
+      PropertiesService.getDocumentProperties().getProperty(CONST_ORG_TYPE_PROPERTY_NAME) == "Production" ? "login" : "test";
     var url =
         "https://" +
         authenticationPrefix +
@@ -196,10 +195,10 @@ function regenerateToken(refreshToken) {
         refreshToken + 
         "&" + 
         "client_id=" +
-        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
+        PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_KEY_PROPERTY_NAME) +
         "&" +
         "client_secret=" +
-        PropertiesService.getScriptProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
+        PropertiesService.getDocumentProperties().getProperty(CONST_CUSTOMER_SECRET_PROPERTY_NAME) +
         "&" +
         "format=" +
         "json";
