@@ -1,0 +1,19 @@
+{
+    "Transaction Details": {
+        "Application Version": "1.0",
+        "Executed By": "amorozov@salesforce.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20210624-1.2-WIP",
+        "Spreadsheet URL": "https://docs.google.com/spreadsheets/d/1oFEq568Lfo9yjn00yMD6Y8GXQeEP7BkZnMsgUWVXJZ0/edit",
+        "Transaction ID": "ebab09c5-f8b8-4fae-9ade-9624824d4a91",
+        "Transaction Timestamp": "10/07/2021@16:52:41GMT"
+    },
+    "UI Facets": [
+        {
+            "Checked": false,
+            "Facet Name": "Sample Facet"
+        }
+    ],
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load UI Facets Definitions",
+    "entityName": "UI Facets"
+}

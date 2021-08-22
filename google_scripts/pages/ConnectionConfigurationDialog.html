@@ -18,11 +18,13 @@
             var orgType = document.getElementById("authFormOrgType").value;
             var customerKey = document.getElementById("authFormCustomerKey").value;
             var customerSecret = document.getElementById("authFormCustomerSecret").value;
+            var webappDeploymentUrl = document.getElementById("authFormWebappDeploymentUrl").value;
 
             var configurationObj = {
                 ORG_TYPE: orgType,
                 CUSTOMER_KEY: customerKey,
-                CUSTOMER_SECRET: customerSecret
+                CUSTOMER_SECRET: customerSecret,
+                WEBAPP_DEPLOYMENT_URL: webappDeploymentUrl
             };
 
             if (!orgType) {
@@ -46,20 +48,27 @@
                 document.getElementById("authFormCustomerSecret").style.borderColor = "#cccccc";
             }
 
+            if (!webappDeploymentUrl) {
+                document.getElementById("authFormWebappDeploymentUrl").style.borderColor = "red";
+                updateSuccessful = false;
+            } else {
+                document.getElementById("authFormWebappDeploymentUrl").style.borderColor = "#cccccc";
+            }
+
             if (!updateSuccessful) {
                 return;
             }
 
-            if (orgType && customerKey && customerSecret) {
+            if (orgType && customerKey && customerSecret && webappDeploymentUrl) {
                 console.log("*** VARIABLE: configurationObj: " + JSON.stringify(configurationObj));
-                google.script.run.setConfiguration(configurationObj);
-                console.log("*** POST-STAMP");
+                google.script.run.setDocumentConfiguration(configurationObj);
+                
                 document.getElementById("configuration-form-div").hidden = true;
                 document.getElementById("save-button").disabled = true;
 
                 document.getElementById("error-alert").hidden = true;
                 document.getElementById("success-alert").hidden = false;
-                document.getElementById("success-alert").innerHTML = "Configuration is succesfully saved. Now you need to redeploy the application as a web app and you are all set";
+                document.getElementById("success-alert").innerHTML = "Configuration is succesfully saved";
 
             } else {
                 document.getElementById("error-alert").hidden = false;
@@ -110,6 +119,13 @@
             });
                     </script>
                 </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="authFormWebappDeploymentUrl" rows="2" placeholder="Application Deployment URL" spellcheck="false"
+                        style="resize: none;"
+                        title="Customer Secret"><? if (!dialogParams.configurationObj.WEBAPP_DEPLOYMENT_URL) {?><?} else { ?><?=dialogParams.configurationObj.WEBAPP_DEPLOYMENT_URL?><? } ?></textarea>
+                </div>
+
             </form>
         </div>
 

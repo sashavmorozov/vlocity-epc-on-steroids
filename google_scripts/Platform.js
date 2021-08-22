@@ -16,7 +16,7 @@ function getScriptId() {
 function generateViewRecordsUrl(objectApiName) {
   
   if (objectApiName) {
-    var viewUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + "/lightning/o/" + objectApiName + "/home";
+    var viewUrl = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + "/lightning/o/" + objectApiName + "/home";
     return viewUrl;
   } else {
     console.log("*** ERROR: nothing to view here");
@@ -27,7 +27,7 @@ function generateViewRecordsUrl(objectApiName) {
 function generateViewSingleRecordsUrl(objectApiName, recordId) {
   
   if (objectApiName && recordId) {
-    var viewUrl = PropertiesService.getScriptProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + "/lightning/r/" + objectApiName + "/" + recordId + "/view";
+    var viewUrl = PropertiesService.getDocumentProperties().getProperty(CONST_INSTANCE_URL_PROPERTY_NAME) + "/lightning/r/" + objectApiName + "/" + recordId + "/view";
     return viewUrl;
   } else {
     console.log("*** ERROR: nothing to view here");
