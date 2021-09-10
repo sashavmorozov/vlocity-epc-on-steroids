@@ -34,3 +34,9 @@ google_scripts/clasp.json
 .sfdx/orgs/
 
 .sfdx/
+
+VlocityBuildLog.yaml
+
+VlocityBuildErrors.log
+
+vlocity-temp/
