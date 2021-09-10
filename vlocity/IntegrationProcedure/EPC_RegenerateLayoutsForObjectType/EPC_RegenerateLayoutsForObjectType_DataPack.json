@@ -9,6 +9,7 @@
     "%vlocity_namespace%__IsReusable__c": false,
     "%vlocity_namespace%__IsTest__c": false,
     "%vlocity_namespace%__Language__c": "Procedure",
+    "%vlocity_namespace%__OmniProcessType__c": "Integration Procedure",
     "%vlocity_namespace%__ProcedureKey__c": "EPC_RegenerateLayoutsForObjectType",
     "%vlocity_namespace%__PropertySet__c": "EPC_RegenerateLayoutsForObjectType_PropertySet.json",
     "%vlocity_namespace%__SubType__c": "RegenerateLayoutsForObjectType",
