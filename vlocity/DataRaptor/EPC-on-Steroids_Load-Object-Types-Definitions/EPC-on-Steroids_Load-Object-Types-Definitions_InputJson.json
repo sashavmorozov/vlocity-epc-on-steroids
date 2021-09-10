@@ -1,19 +1,60 @@
 {
     "Object Types": [
         {
+            "Active": true,
             "Checked": true,
-            "Description": "Root object type for all types under Product2",
+            "Effective From": "2019-05-01",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
             "Object Type": "Base Generic Object Type",
             "Parent Object Type": ""
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base Product Spec Object Type",
+            "Parent Object Type": "Base Generic Object Type"
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base CFS Spec Object Type",
+            "Parent Object Type": "Base Generic Object Type"
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base RFS Spec Object Type",
+            "Parent Object Type": "Base Generic Object Type"
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Object Type with Layout",
+            "Parent Object Type": "Base Generic Object Type"
         }
     ],
     "Transaction Details": {
-        "Application Version": "0.4",
-        "Executed By": "amorozov@vlocity.com",
-        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
-        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
-        "Transaction ID": "997ab259-1b47-4dd7-b8ef-ffa570beafee",
-        "Transaction Timestamp": "03/12/2019@16:13:47GMT"
+        "Application Version": "1.0",
+        "Executed By": "amorozov@salesforce.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20210822-1.3-WIP",
+        "Spreadsheet URL": "https://docs.google.com/spreadsheets/d/1GJTJp-uLV3uRhIv9Ar0ywhiCpFy7ZcDRezNCUmJqEXk/edit",
+        "Transaction ID": "3728f78b-618a-4db7-9419-2018915225f8",
+        "Transaction Timestamp": "10/09/2021@14:20:17GMT"
     },
-    "dataRaptorName": "EPC on Steroids_Load Object Types Definitions"
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Object Types Definitions",
+    "entityName": "Object Types"
 }
