@@ -16,6 +16,7 @@
     "%vlocity_namespace%__InterfaceObject__c": "json",
     "%vlocity_namespace%__IsDefaultForInterface__c": false,
     "%vlocity_namespace%__IsProcessSuperBulk__c": false,
+    "%vlocity_namespace%__OMplusSyncEnabled__c": true,
     "%vlocity_namespace%__OuboundStagingObjectDataField__c": "",
     "%vlocity_namespace%__OutboundConfigurationField__c": "",
     "%vlocity_namespace%__OutboundConfigurationName__c": "",
