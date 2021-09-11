@@ -1,0 +1,6 @@
+projectPath: vlocity
+autoRetryErrors: true
+autoUpdateSettings: true
+reactivateOmniScriptsWhenEmbeddedTemplateFound: true
+#gitCheck: true
+#gitCheckKey: vlocity

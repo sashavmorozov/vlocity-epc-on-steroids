@@ -1,0 +1,132 @@
+projectPath: vlocity
+autoUpdateSettings: true
+autoRetryErrors: true
+
+manifest:
+  - IntegrationProcedure/EPC_RegenerateJSONAttributes
+  - IntegrationProcedure/EOS_clearPlatformCacheJob
+  - IntegrationProcedure/EPC_RegenerateLayoutsForObjectType
+  - IntegrationProcedure/EPC_LoadGenericEPCDefinitions
+  - IntegrationProcedure/EOS_refreshPriceBookJob
+  - IntegrationProcedure/EOS_generateGlobalKeysJob
+  - IntegrationProcedure/EOS_fixPicklistValuesJob
+  - IntegrationProcedure/EOS_startProductHierarchyJob
+
+  - DataRaptor/EPC on Steroids_Extract Attribute Assignments Definitions
+  - DataRaptor/EPC on Steroids_Extract Attribute Categories Definitions
+  - DataRaptor/EPC on Steroids_Extract Attribute-to-Object Type Assignments Definitions
+  - DataRaptor/EPC on Steroids_Extract Attributes Definitions
+  - DataRaptor/EPC on Steroids_Extract Business Accounts
+  - DataRaptor/EPC on Steroids_Extract Catalog to Product Relationships Definitions
+  - DataRaptor/EPC on Steroids_Extract Catalogs Definitions
+  - DataRaptor/EPC on Steroids_Extract Catalogs Hierarchy Definitions
+  - DataRaptor/EPC on Steroids_Extract Contacts
+  - DataRaptor/EPC on Steroids_Extract Decomposition Relationships Definitions
+  - DataRaptor/EPC on Steroids_Extract Lyouts_mix Definitions
+  - DataRaptor/EPC on Steroids_Extract Object Layouts Definitions
+  - DataRaptor/EPC on Steroids_Extract Object Layouts Definitions
+  - DataRaptor/EPC on Steroids_Extract Object Types Definitions
+  - DataRaptor/EPC on Steroids_Extract Offerings Definitions
+  - DataRaptor/EPC on Steroids_Extract Offerings Structure Definitions
+  - DataRaptor/EPC on Steroids_Extract Picklist Values Definitions
+  - DataRaptor/EPC on Steroids_Extract Picklists Definitions
+  - DataRaptor/EPC on Steroids_Extract Pricelist Elements-Adjustments Definitions
+  - DataRaptor/EPC on Steroids_Extract Pricelist Elements-Charges Definitions
+  - DataRaptor/EPC on Steroids_Extract Pricelists Definitions
+  - DataRaptor/EPC on Steroids_Extract Pricing-Pricelist Entries Definitions
+  - DataRaptor/EPC on Steroids_Extract Promotions Definitions
+  - DataRaptor/EPC on Steroids_Extract Specifications Definitions
+  - DataRaptor/EPC on Steroids_Extract Specs Attribute Assignments Definitions
+  - DataRaptor/EPC on Steroids_Extract Specs Structure Definitions
+  - DataRaptor/EPC on Steroids_Extract Time Plans Definitions
+  - DataRaptor/EPC on Steroids_Extract Time Policies Definitions
+  - DataRaptor/EPC on Steroids_Extract UI Facets Definitions
+  - DataRaptor/EPC on Steroids_Extract UI Sections Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Attribute Categories Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Attribute-to-Object Type Assignments Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Attributes Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Catalog to Product Relationships Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Catalogs Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Catalogs Hierarchy Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Decomposition Relationships Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Object Layouts Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Object Types Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Offerings Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Offerings Structure Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Picklist Values Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Picklists Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Pricelist Elements-Adjustments Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Pricelist Elements-Charges Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Pricelists Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Pricing-Pricelist Entries Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Promotion Assignments Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Promotions Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Specifications Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Specs Structure Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Time Plans Definitions
+  - DataRaptor/EPC on Steroids_Get Id for Time Policies Definitions
+  - DataRaptor/EPC on Steroids_Get Id for UI Facets Definitions
+  - DataRaptor/EPC on Steroids_Get Id for UI Sections Definitions
+  - DataRaptor/EPC on Steroids_Load Attribute Assignments Definitions
+  - DataRaptor/EPC on Steroids_Load Attribute Categories Definitions
+  - DataRaptor/EPC on Steroids_Load Attribute-to-Object Type Assignments Definitions
+  - DataRaptor/EPC on Steroids_Load Attributes Definitions
+  - DataRaptor/EPC on Steroids_Load Business Accounts
+  - DataRaptor/EPC on Steroids_Load Catalog to Product Relationships Definitions
+  - DataRaptor/EPC on Steroids_Load Catalogs Definitions
+  - DataRaptor/EPC on Steroids_Load Catalogs Hierarchy Definitions
+  - DataRaptor/EPC on Steroids_Load Chunks for Offline Processing
+  - DataRaptor/EPC on Steroids_Load Contacts
+  - DataRaptor/EPC on Steroids_Load Decomposition Relationships Definitions
+  - DataRaptor/EPC on Steroids_Load Layout Configuration Definitions
+  - DataRaptor/EPC on Steroids_Load Object Layouts Definitions
+  - DataRaptor/EPC on Steroids_Load Object Types Definitions
+  - DataRaptor/EPC on Steroids_Load Offerings Definitions
+  - DataRaptor/EPC on Steroids_Load Offerings Structure Definitions
+  - DataRaptor/EPC on Steroids_Load Picklist Values Definitions
+  - DataRaptor/EPC on Steroids_Load Picklists Definitions
+  - DataRaptor/EPC on Steroids_Load Pricelist Elements-Adjustments Definitions
+  - DataRaptor/EPC on Steroids_Load Pricelist Elements-Charges Definitions
+  - DataRaptor/EPC on Steroids_Load Pricelists Definitions
+  - DataRaptor/EPC on Steroids_Load Pricing-Pricelist Entries Definitions
+  - DataRaptor/EPC on Steroids_Load Promotion Assignments Definitions
+  - DataRaptor/EPC on Steroids_Load Promotions Definitions
+  - DataRaptor/EPC on Steroids_Load Specifications Definitions
+  - DataRaptor/EPC on Steroids_Load Specs Attribute Assignments Definitions
+  - DataRaptor/EPC on Steroids_Load Specs Structure Definitions
+  - DataRaptor/EPC on Steroids_Load Time Plans Definitions
+  - DataRaptor/EPC on Steroids_Load Time Policies Definitions
+  - DataRaptor/EPC on Steroids_Load UI Facets Definitions
+  - DataRaptor/EPC on Steroids_Load UI Sections Definitions
+  
+
+queries:
+#    - VlocityDataPackType: DataRaptor
+#      query: Select Id from %vlocity_namespace%__DRBundle__c where Name like 'EPC on Steroids%'
+    
+#    - VlocityDataPackType: IntegrationProcedure
+#      query: Select Id from %vlocity_namespace%__OmniScript__c where vlocity_cmt__Type__c = 'EOS'
+    
+#    - VlocityDataPackType: IntegrationProcedure
+#      query: Select Id from %vlocity_namespace%__OmniScript__c where vlocity_cmt__Type__c = 'EPC'
+
+#deploySalesforce
+#Custom override datapack settings
+#OverrideSettings:
+#  SObjects:
+#    Product2:
+#      FilterFields:
+#      - vlocity_namespace__CategoryData__c
+#      - vlocity_namespace__AttributeMetadata__c
+#      - vlocity_namespace__JSONAttribute__c
+#      - vlocity_namespace__AttributeDefaultValues__c
+#    store objects based on name
+#    vlocity_namespace__AttributeAssignment__c:
+#      FilterFields:
+#      - vlocity_namespace__ObjectLink__c
+#    vlocity_namespace__VlocityUITemplate__c:
+#      FilterFields:
+#      - vlocity_namespace__SampleJson__c
+#    vlocity_namespace__DRBundle__c:
+#      FilterFields:
+#      #- vlocity_namespace__SampleInputJSON__c
