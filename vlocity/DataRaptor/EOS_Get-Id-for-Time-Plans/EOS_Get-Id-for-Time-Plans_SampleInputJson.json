@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "Active": true,
+            "Checked": true,
+            "Description": "Charge daily",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1D",
+            "Time Plan Name": "TP-1D",
+            "Total Duration": 1,
+            "Total Duration UoM": "Day"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Time Plans Definitions"
+}

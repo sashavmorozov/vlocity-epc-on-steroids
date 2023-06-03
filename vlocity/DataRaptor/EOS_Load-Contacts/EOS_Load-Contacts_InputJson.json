@@ -1,0 +1,33 @@
+{
+    "Contacts": [
+        {
+            "Birthdate": "01/11/1970",
+            "Checked": true,
+            "Contact Name": "Mr. Preston Mitchell",
+            "Customer Account": "Hilton Worldwide Corporate Headquarters",
+            "Email": "p.mitchell@spasibo.com",
+            "First Name": "Preston",
+            "Last Name": "Mitchell",
+            "Mailing City": "Denver",
+            "Mailing Country": "United States",
+            "Mailing Postal Code": 80202,
+            "Mailing State": "CO",
+            "Mailing Street": "1405 Curtis Street",
+            "Mobile": "415-0206-38",
+            "Salutation": "Mr.",
+            "Status": "Active",
+            "Title": "Corporal of the People"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "1.0",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Core Data Bootstrap-20200820-1.1-WIP",
+        "Spreadsheet URL": "https://docs.google.com/spreadsheets/d/1e3Om-8ePjN63z6wlnaZxZpbdDZIeyuFN4Zf0B9sx6xc/edit?ouid=113753225643224599166&urlBuilderDomain=vlocity.com",
+        "Transaction ID": "8f6e5206-1133-4e72-ba1a-7bc884eab981",
+        "Transaction Timestamp": "02/09/2020@16:51:15GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Contacts",
+    "entityName": "Contacts"
+}

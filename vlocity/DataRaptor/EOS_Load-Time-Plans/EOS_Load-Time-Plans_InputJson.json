@@ -1,0 +1,67 @@
+{
+    "Time Plans": [
+        {
+            "Active": true,
+            "Checked": false,
+            "Description": "Charge daily",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1D",
+            "Time Plan Name": "TP-1D",
+            "Total Duration": 1,
+            "Total Duration UoM": "Day"
+        },
+        {
+            "Active": true,
+            "Checked": false,
+            "Description": "Charge weekly",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1W",
+            "Time Plan Name": "TP-1W",
+            "Total Duration": 1,
+            "Total Duration UoM": "Week"
+        },
+        {
+            "Active": true,
+            "Checked": false,
+            "Description": "Charge monthly",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1M",
+            "Time Plan Name": "TP-1M",
+            "Total Duration": 1,
+            "Total Duration UoM": "Month"
+        },
+        {
+            "Active": true,
+            "Checked": false,
+            "Description": "Charge quarterly",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1Q",
+            "Time Plan Name": "TP-1Q",
+            "Total Duration": 1,
+            "Total Duration UoM": "Quarter"
+        },
+        {
+            "Active": true,
+            "Checked": false,
+            "Description": "Charge annually",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Time Plan Code": "VEPC_TIMEPLAN_TP_1Y",
+            "Time Plan Name": "TP-1Y",
+            "Total Duration": 1,
+            "Total Duration UoM": "Year"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.5",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
+        "Transaction ID": "0e394e45-828f-4e09-9047-6f3716b2a8aa",
+        "Transaction Timestamp": "20/12/2019@14:13:56GMT"
+    }
+}

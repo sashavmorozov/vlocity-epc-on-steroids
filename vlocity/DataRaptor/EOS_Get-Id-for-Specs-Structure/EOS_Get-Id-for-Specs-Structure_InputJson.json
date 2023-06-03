@@ -1,0 +1,13 @@
+{
+    "data": [
+        {
+            "Checked": true,
+            "Child Spec": "EoS. Sample CFS Component Spec 2",
+            "Child Spec Code": "VEPC_SPEC_EOS_SAMPLE_CFS_COMPONENT_SPEC_2",
+            "Parent Spec": "EoS. Sample CFS Spec",
+            "Parent Spec Code": "VEPC_SPEC_EOS_SAMPLE_CFS_SPEC",
+            "Sequence": 20
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Specs Structure Definitions"
+}

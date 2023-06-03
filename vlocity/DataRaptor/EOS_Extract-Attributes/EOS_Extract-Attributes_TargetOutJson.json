@@ -1,0 +1,14 @@
+{
+    "Active": false,
+    "Attribute Category": "Generic Attributes",
+    "Attribute Code": "VEPC_ATTR_MAMA_SAYS_HELLO",
+    "Attribute Name": "Mama says hello",
+    "Checked": true,
+    "Description": "Demo Attribute 5",
+    "Display Sequence": 80,
+    "Filterable": false,
+    "Picklist": "",
+    "Picklist Code": "",
+    "Value": "01/01/2020",
+    "Value Type": "Date"
+}

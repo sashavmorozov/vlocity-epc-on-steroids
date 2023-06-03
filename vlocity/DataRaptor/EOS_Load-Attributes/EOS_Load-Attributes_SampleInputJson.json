@@ -1,0 +1,29 @@
+{
+    "Attributes": [
+        {
+            "Active": false,
+            "Attribute Category": "Generic Attributes",
+            "Attribute Code": "VEPC_ATTR_MAMA_SAYS_HELLO",
+            "Attribute Name": "Mama says hello",
+            "Checked": true,
+            "Description": "Demo Attribute 5",
+            "Display Sequence": 80,
+            "Filterable": false,
+            "Picklist": "",
+            "Picklist Code": "",
+            "Value": "01/01/2020",
+            "Value Type": "Date"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.9",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200607-9-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1qY7jbHLThCNmiL3JAqXz8Isl-1Ph4rg1oDhhO74iBAY/edit",
+        "Transaction ID": "dae68adb-23dd-4bba-9fc5-e93d58e27c96",
+        "Transaction Timestamp": "12/06/2020@21:56:19GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Attributes Definitions",
+    "entityName": "Attributes"
+}

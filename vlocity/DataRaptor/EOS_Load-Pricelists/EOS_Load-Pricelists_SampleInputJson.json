@@ -1,0 +1,30 @@
+{
+    "Pricelists": [
+        {
+            "Active": true,
+            "Checked": true,
+            "Currency Code": "EUR",
+            "Description": "",
+            "Effective End Date": "31/12/2019",
+            "Effective Start Date": "01/01/2019",
+            "Loyalty Code": "PTS",
+            "Parent Pricelist Code": "",
+            "Parent Pricelist Name": "",
+            "Pricebook": "Standard Price Book",
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricelist Name": 2019,
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.7",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200424-8-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1Wz6Mr7-vUZ5Q6G6j3JXWsS-1TwO_k5Hd86Haol9ZQ1U/edit",
+        "Transaction ID": "c6cec2a2-5555-4928-87f5-cbd3b64f7d9e",
+        "Transaction Timestamp": "17/05/2020@18:47:44GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Pricelists Definitions",
+    "entityName": "Pricelists"
+}

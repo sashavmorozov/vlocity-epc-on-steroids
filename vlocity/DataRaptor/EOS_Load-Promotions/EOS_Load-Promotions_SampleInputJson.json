@@ -1,0 +1,57 @@
+{
+    "Promotions": [
+        {
+            "Active": true,
+            "Auto-Add Products": true,
+            "Checked": true,
+            "Commitment Duration Time Plan": "TP-1D",
+            "Commitment Duration Time Policy": "TP-YY",
+            "Description": "10% Off Promotion",
+            "Effective From": "30/04/2019",
+            "Effective Until": "30/04/2029",
+            "Follow-on Promotion": "60% Off Promotion",
+            "Follow-on Promotion Code": "VEPC_PROMO_60_OFF_PROMOTION",
+            "Orderable": true,
+            "Penalty Context Rule Set": "EOS. Demo RS PENALTY 1",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
+            "Promotion Name": "10% Off Promotion",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
+            "Redeemable Code": "VEPC-PROMO-10P",
+            "Service Continuation": "Manual Opt-In"
+        },
+        {
+            "Active": true,
+            "Auto-Add Products": false,
+            "Checked": true,
+            "Commitment Duration Time Plan": "TP-1W",
+            "Commitment Duration Time Policy": "TP-YY",
+            "Description": "20% Off Promotion",
+            "Effective From": "30/04/2019",
+            "Effective Until": "30/04/2029",
+            "Follow-on Promotion": "10% Off Promotion",
+            "Follow-on Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
+            "Orderable": true,
+            "Penalty Context Rule Set": "EOS. Demo RS PENALTY 1",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Promotion Code": "VEPC_PROMO_20_OFF_PROMOTION",
+            "Promotion Name": "20% Off Promotion",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
+            "Redeemable Code": "VEPC-PROMO-20P",
+            "Service Continuation": "Manual Opt-In"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.7",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200424-8-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1Wz6Mr7-vUZ5Q6G6j3JXWsS-1TwO_k5Hd86Haol9ZQ1U/edit",
+        "Transaction ID": "fa950f4e-11be-4fae-bed6-e396864746bd",
+        "Transaction Timestamp": "14/05/2020@20:41:38GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Promotions Definitions",
+    "entityName": "Promotions"
+}

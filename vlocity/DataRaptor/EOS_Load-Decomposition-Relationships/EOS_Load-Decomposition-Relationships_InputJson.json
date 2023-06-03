@@ -1,0 +1,53 @@
+{
+    "Decomposition Relationships": [
+        {
+            "Checked": true,
+            "Decomposition Relationship Name": "DR: EPC on Steroids. Demo Offer L1 > EPC on Steroids. Demo Product Spec",
+            "Destination Specification": "EPC on Steroids. Demo Product Spec",
+            "Destination Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_PRODUCT_SPEC",
+            "Source Specification": "EPC on Steroids. Demo Offer L1",
+            "Source Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_OFFER_L1"
+        },
+        {
+            "Checked": true,
+            "Decomposition Relationship Name": "DR: EPC on Steroids. Demo Product Spec > EPC on Steroids. Demo CFS Spec",
+            "Destination Specification": "EPC on Steroids. Demo CFS Spec",
+            "Destination Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_CFS_SPEC",
+            "Source Specification": "EPC on Steroids. Demo Product Spec",
+            "Source Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_PRODUCT_SPEC"
+        },
+        {
+            "Checked": true,
+            "Decomposition Relationship Name": "DR: EPC on Steroids. Demo CFS Spec > EPC on Steroids. Demo RFS Spec 1",
+            "Destination Specification": "EPC on Steroids. Demo RFS Spec 1",
+            "Destination Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_RFS_SPEC_1",
+            "Source Specification": "EPC on Steroids. Demo CFS Spec",
+            "Source Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_CFS_SPEC"
+        },
+        {
+            "Checked": true,
+            "Decomposition Relationship Name": "DR: EPC on Steroids. Demo CFS Spec > EPC on Steroids. Demo RFS Spec 2",
+            "Destination Specification": "EPC on Steroids. Demo RFS Spec 2",
+            "Destination Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_RFS_SPEC_2",
+            "Source Specification": "EPC on Steroids. Demo CFS Spec",
+            "Source Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_CFS_SPEC"
+        },
+        {
+            "Checked": true,
+            "Decomposition Relationship Name": "DR: EPC on Steroids. Demo CFS Spec > EPC on Steroids. Demo RFS Spec 3",
+            "Destination Specification": "EPC on Steroids. Demo RFS Spec 3",
+            "Destination Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_RFS_SPEC_3",
+            "Source Specification": "EPC on Steroids. Demo CFS Spec",
+            "Source Specification Code": "VEPC_OFFERING_EPC_ON_STEROIDS_DEMO_CFS_SPEC"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "313bdcdf-d6e6-42f4-86a2-915b1627ac78",
+        "Transaction Timestamp": "03/12/2019@16:36:58GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Decomposition Relationships Definitions"
+}

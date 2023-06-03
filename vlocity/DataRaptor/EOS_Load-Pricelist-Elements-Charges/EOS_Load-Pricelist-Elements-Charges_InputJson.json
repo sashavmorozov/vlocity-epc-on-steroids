@@ -1,0 +1,57 @@
+{
+    "Pricelist Elements-Charges": [
+        {
+            "Amount": 0,
+            "Checked": true,
+            "Currency Code": "EUR",
+            "Display Text": "EUR0.00",
+            "Pricelist": 2019,
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_0_00_EUR",
+            "Pricing Element Name": "MRC-0.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": 1,
+            "Checked": true,
+            "Currency Code": "EUR",
+            "Display Text": "EUR1.00",
+            "Pricelist": 2019,
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_1_00_EUR",
+            "Pricing Element Name": "MRC-1.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        },
+        {
+            "Amount": 0,
+            "Checked": true,
+            "Currency Code": "EUR",
+            "Display Text": "EUR0.00",
+            "Pricelist": 2019,
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_0_00_EUR",
+            "Pricing Element Name": "OTC-0.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        },
+        {
+            "Amount": 1,
+            "Checked": true,
+            "Currency Code": "EUR",
+            "Display Text": "EUR1.00",
+            "Pricelist": 2019,
+            "Pricelist Code": "VEPC_PRICELIST_2019",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_OTC_1_00_EUR",
+            "Pricing Element Name": "OTC-1.00-EUR",
+            "Pricing Variable": "One Time Std Price"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.5",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191215-5-WIP-with test data",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1mOroL61DqeOLbTLo7VyHVyzxvdtthuFbV82_ntiDB7s/edit",
+        "Transaction ID": "4429e8c2-2563-43cb-a8ff-9d0d2fd9bccc",
+        "Transaction Timestamp": "16/12/2019@19:33:48GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_Load Pricelist Elements-Charges Definitions"
+}

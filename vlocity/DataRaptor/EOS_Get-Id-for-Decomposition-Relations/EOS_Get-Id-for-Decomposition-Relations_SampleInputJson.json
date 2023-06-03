@@ -1,0 +1,13 @@
+{
+    "data": [
+        {
+            "Checked": true,
+            "Decomposition Relationship Name": "DR: EoS. Sample CFS Spec > EoS. Sample RFS Spec 2",
+            "Destination Specification": "EoS. Sample RFS Spec 2",
+            "Destination Specification Code": "VEPC_SPEC_EOS_SAMPLE_RFS_SPEC_2",
+            "Source Specification": "EoS. Sample CFS Spec",
+            "Source Specification Code": "VEPC_SPEC_EOS_SAMPLE_CFS_SPEC"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Decomposition Relationships Definitions"
+}

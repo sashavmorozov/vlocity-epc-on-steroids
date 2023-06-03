@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_INSTALLATION_DETAILS",
+            "Attribute Category Name": "Installation Details",
+            "Checked": true,
+            "Description": "Attributes related to installation process",
+            "Sequence": 650
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_Get Id for Attribute Categories Definitions"
+}

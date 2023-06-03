@@ -1,0 +1,14 @@
+{
+    "Active": true,
+    "Checked": false,
+    "Currency Code": "EUR;USD",
+    "Description": "Child pricelist",
+    "Effective End Date": "31/12/2021",
+    "Effective Start Date": "01/01/2021",
+    "Loyalty Code": "PTS",
+    "Parent Pricelist Code": "VEPC_PRICELIST_PARENT_PRICELIST",
+    "Parent Pricelist Name": "Parent Pricelist",
+    "Pricebook": "Standard Price Book",
+    "Pricelist Code": "VEPC_PRICELIST_CHILD_PRICELIST",
+    "Pricelist Name": "Child Pricelist"
+}

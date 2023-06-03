@@ -1,0 +1,21 @@
+{
+    "Assetizable": true,
+    "Attribute Category Name": "Generic Attributes",
+    "Attribute Code": "VEPC_ATTR_EOS_DEMO_ATTRIBUTE_TEXT",
+    "Attribute Name": "EOS. Demo Attribute - Text",
+    "Checked": true,
+    "Display Name": "EOS. Demo Attribute - Text",
+    "Effective End Date": "01/01/2099",
+    "Effective Start Date": "01/01/2019",
+    "Encrypted": false,
+    "Has Rules": false,
+    "Hidden": false,
+    "Object Type": "Base Product Spec Object Type",
+    "Picklist": "",
+    "Read Only": false,
+    "Required": true,
+    "Status": "Active",
+    "Translatable": true,
+    "Value": "Default Text Value",
+    "Value Type": "Text"
+}

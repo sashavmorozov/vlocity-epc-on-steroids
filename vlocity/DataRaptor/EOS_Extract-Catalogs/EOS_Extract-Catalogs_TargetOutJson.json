@@ -1,0 +1,14 @@
+{
+    "": "",
+    "Active": true,
+    "Catalog Code": "VEPC_CATALOG_EOS_SAMPLE_ROOT_CATALOG",
+    "Catalog Description": "Sample root catalog",
+    "Catalog Name": "EoS. Sample Root Catalog",
+    "Checked": true,
+    "Default Price List": "2020 Consumer",
+    "Default Price List Code": "VEPC_PRICELIST_2020_CONSUMER",
+    "End Date Time": "01/01/2021",
+    "Is Default Catalog": false,
+    "Is Root Catalog": true,
+    "Start Date Time": "01/01/2020"
+}

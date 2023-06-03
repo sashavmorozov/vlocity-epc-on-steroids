@@ -1,0 +1,66 @@
+{
+    "Pricing-Pricelist Entries": [
+        {
+            "Active": true,
+            "Base Price": true,
+            "Checked": true,
+            "Display Text": "Recurring Monthly Std Price",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Offering": "EoS. Sample Root Offer",
+            "Offering Code": "VEPC_OFFERING_EOS_SAMPLE_ROOT_OFFER",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricing Element": "MRC-1.00-EUR",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
+            "Time Plan": "",
+            "Time Policy": "",
+            "Virtual Price": false
+        },
+        {
+            "Active": true,
+            "Base Price": true,
+            "Checked": true,
+            "Display Text": "One Time Std Price",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Offering": "EoS. Sample Child Offer 1",
+            "Offering Code": "VEPC_OFFERING_EOS_SAMPLE_CHILD_OFFER_1",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricing Element": "OTC-10.00-EUR",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
+            "Time Plan": "",
+            "Time Policy": "",
+            "Virtual Price": false
+        },
+        {
+            "Active": true,
+            "Base Price": true,
+            "Checked": true,
+            "Display Text": "Recurring Monthly Std Price",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "Offering": "EoS. Sample Child Offer 2",
+            "Offering Code": "VEPC_OFFERING_EOS_SAMPLE_CHILD_OFFER_2",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricing Element": "MRC-3.00-EUR",
+            "Qualification Context Rule Set": "",
+            "Time Plan": "",
+            "Time Policy": "",
+            "Virtual Price": false
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.7",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200424-8-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1Wz6Mr7-vUZ5Q6G6j3JXWsS-1TwO_k5Hd86Haol9ZQ1U/edit",
+        "Transaction ID": "e5202f59-880a-48ab-a5fb-dd31b84661e3",
+        "Transaction Timestamp": "17/05/2020@17:27:55GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_Load Pricing-Pricelist Entries Definitions",
+    "entityName": "Pricing-Pricelist Entries"
+}
