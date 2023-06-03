@@ -10,6 +10,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom8021",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -25,6 +27,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom6726",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -40,6 +44,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom1795",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -55,6 +61,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom622",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -70,6 +78,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom1598",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -86,6 +96,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustoma0h4J000000gNWVQA2Item0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -101,6 +113,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Attribute CategoriesCustom5947",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -116,6 +130,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom2936",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -131,6 +147,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom7404",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -146,6 +164,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom5218",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -161,6 +181,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom1209",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -176,6 +198,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom8875",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -191,6 +215,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Attribute Categories DefinitionsCustom5482",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Attribute Categories Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

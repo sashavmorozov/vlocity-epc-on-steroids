@@ -15,6 +15,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustoma0h4J0000019lWmQAIItem2",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -34,6 +36,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustoma0h4J0000019lWmQAIItem0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -53,6 +57,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustoma0h4J0000019lWmQAIItem1",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -68,6 +74,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustoma0h4J0000019lWmQAIItem6",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -83,6 +91,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom700",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -98,6 +108,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustoma0h4J0000019lWmQAIItem3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -113,6 +125,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom8525",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -129,6 +143,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom9094",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -145,6 +161,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom1238",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -160,6 +178,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustoma0h4J0000019lWmQAIItem5",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -175,6 +195,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom406",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -190,6 +212,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom6880",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -205,6 +229,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom4412",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -220,6 +246,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom8533",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -235,6 +263,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom4317",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -250,6 +280,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom2368",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -265,6 +297,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom3504",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -280,6 +314,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Pricing-Pricelist Entries DefinitionsCustom5267",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Pricing-Pricelist Entries Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

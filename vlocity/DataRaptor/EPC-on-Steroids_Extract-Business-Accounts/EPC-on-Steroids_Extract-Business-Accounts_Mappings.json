@@ -15,6 +15,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem2",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -35,6 +37,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustom7400",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -54,6 +58,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -73,6 +79,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem1",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -88,6 +96,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem12",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -103,6 +113,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem4",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -118,6 +130,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem5",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -133,6 +147,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem6",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -148,6 +164,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem7",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -163,6 +181,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem8",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -178,6 +198,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem9",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -193,6 +215,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -208,6 +232,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem10",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -223,6 +249,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem11",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -238,6 +266,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem13",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -253,6 +283,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem14",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -268,6 +300,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem15",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -283,6 +317,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem16",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -298,6 +334,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem17",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -313,6 +351,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem18",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -328,6 +368,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem19",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -343,6 +385,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem20",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -358,6 +402,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem22",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -373,6 +419,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Business AccountsCustoma0h3t000009ZR3GAAWItem21",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Business Accounts",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

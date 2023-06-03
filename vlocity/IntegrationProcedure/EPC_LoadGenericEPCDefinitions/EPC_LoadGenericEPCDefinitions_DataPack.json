@@ -14,6 +14,8 @@
     "%vlocity_namespace%__PropertySet__c": "EPC_LoadGenericEPCDefinitions_PropertySet.json",
     "%vlocity_namespace%__SubType__c": "LoadGenericEPCDefinitions",
     "%vlocity_namespace%__Type__c": "EPC",
+    "IsLocked": false,
+    "MayEdit": true,
     "Name": "Load Generic EPC Definitions",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",

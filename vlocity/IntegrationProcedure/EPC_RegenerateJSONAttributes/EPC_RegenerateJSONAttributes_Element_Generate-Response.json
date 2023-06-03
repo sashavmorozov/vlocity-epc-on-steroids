@@ -31,6 +31,8 @@
     },
     "%vlocity_namespace%__ReusableOmniScript__c": false,
     "%vlocity_namespace%__Type__c": "Response Action",
+    "IsLocked": false,
+    "MayEdit": true,
     "Name": "Generate Response",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",

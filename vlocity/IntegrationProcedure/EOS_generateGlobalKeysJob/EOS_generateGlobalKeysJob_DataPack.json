@@ -17,6 +17,8 @@
     "%vlocity_namespace%__PropertySet__c": "EOS_generateGlobalKeysJob_PropertySet.json",
     "%vlocity_namespace%__SubType__c": "generateGlobalKeysJob",
     "%vlocity_namespace%__Type__c": "EOS",
+    "IsLocked": false,
+    "MayEdit": true,
     "Name": "Start Generate Global Keys Job",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",

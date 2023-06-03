@@ -15,6 +15,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom2679",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -35,6 +37,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -55,6 +59,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom3813",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -75,6 +81,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem2",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -94,6 +102,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -113,6 +123,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem1",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -133,6 +145,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom9783",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -153,6 +167,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom9711",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -173,6 +189,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom6904",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -193,6 +211,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom9015",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -213,6 +233,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom5552",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -233,6 +255,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom419",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -253,6 +277,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom7206",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -273,6 +299,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustom7197",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -288,6 +316,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem4",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -303,6 +333,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem8",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -318,6 +350,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem9",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -333,6 +367,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem6",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -348,6 +384,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem14",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -363,6 +401,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem15",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -378,6 +418,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem17",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -393,6 +435,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Specs Structure DefinitionsCustoma0h4J000001APGrQAOItem7",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Specs Structure Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

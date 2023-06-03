@@ -11,6 +11,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -26,6 +28,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem7",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -41,6 +45,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem1",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -56,6 +62,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem2",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -71,6 +79,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -86,6 +96,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem4",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -101,6 +113,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem5",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -116,6 +130,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load UI Sections DefinitionsCustoma0h09000007blpNAAQItem6",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load UI Sections Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

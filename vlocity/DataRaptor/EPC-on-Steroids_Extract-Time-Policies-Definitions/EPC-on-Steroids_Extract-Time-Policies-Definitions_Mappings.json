@@ -15,6 +15,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem2",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -34,6 +36,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem1",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -53,6 +57,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -68,6 +74,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem9",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -83,6 +91,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -98,6 +108,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom7989",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -113,6 +125,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom6191",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -128,6 +142,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem6",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -144,6 +160,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem7",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -160,6 +178,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem8",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -175,6 +195,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom5398",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -190,6 +212,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom906",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -205,6 +229,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem4",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -220,6 +246,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom5981",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -235,6 +263,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom7303",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -250,6 +280,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustom706",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -265,6 +297,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Extract Time Policies DefinitionsCustoma0h4J0000019l8fQAAItem5",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Extract Time Policies Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

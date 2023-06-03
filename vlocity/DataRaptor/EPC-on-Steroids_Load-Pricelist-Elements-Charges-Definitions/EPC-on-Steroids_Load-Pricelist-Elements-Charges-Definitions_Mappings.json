@@ -10,6 +10,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom3563",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -25,6 +27,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom4860",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -40,6 +44,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom850",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -55,6 +61,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom7678",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -70,6 +78,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom6290",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -85,6 +95,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom5697",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -103,6 +115,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom8946",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -121,6 +135,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom4896",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -140,6 +156,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -156,6 +174,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustoma0h4J000000gSoSQAUItem0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -171,6 +191,8 @@
         "%vlocity_namespace%__MapId__c": "EPC Loader_00_Pricing_Elements_ChargesCustom3271",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -186,6 +208,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Charges DefinitionsCustom5244",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -201,6 +225,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Charges DefinitionsCustom7117",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -216,6 +242,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Charges DefinitionsCustom383",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -231,6 +259,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Charges DefinitionsCustom3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -246,6 +276,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Charges DefinitionsCustom8965",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -261,6 +293,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Pricelist Elements-Charges DefinitionsCustom3793",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Pricelist Elements-Charges Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

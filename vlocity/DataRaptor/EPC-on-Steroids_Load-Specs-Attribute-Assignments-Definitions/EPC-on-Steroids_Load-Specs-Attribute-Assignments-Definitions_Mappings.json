@@ -13,6 +13,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item3",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -31,6 +33,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item4",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -49,6 +53,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item2",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -64,6 +70,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item1",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -82,6 +90,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item6",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -98,6 +108,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item0",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -113,6 +125,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item5",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -128,6 +142,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item7",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -143,6 +159,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item8",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -158,6 +176,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item9",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -173,6 +193,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item10",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -188,6 +210,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item11",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -203,6 +227,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item12",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -221,6 +247,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item18",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -236,6 +264,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item22",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -251,6 +281,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item23",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -266,6 +298,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item30",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -284,6 +318,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item20",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -300,6 +336,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item31",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -317,6 +355,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -332,6 +372,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item15",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -348,6 +390,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -365,6 +409,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -382,6 +428,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -399,6 +447,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{\"true\":\"false\",\"false\":\"true\"}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -416,6 +466,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{\"false\":\"true\",\"true\":\"false\"}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -433,6 +485,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -450,6 +504,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -468,6 +524,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item27",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -483,6 +541,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item14",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -501,6 +561,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item19",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -518,6 +580,8 @@
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__TransformValuesMap__c": "{\"Boolean\":\"Checkbox\"}",
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -533,6 +597,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item33",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -549,6 +615,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item13",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -564,6 +632,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item21",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -579,6 +649,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item35",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -594,6 +666,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item36",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -609,6 +683,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item37",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -624,6 +700,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item38",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -639,6 +717,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item39",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -654,6 +734,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Specs Attribute Assignments DefinitionsCustoma0h4J000001APGSQA4Item40",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Specs Attribute Assignments Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

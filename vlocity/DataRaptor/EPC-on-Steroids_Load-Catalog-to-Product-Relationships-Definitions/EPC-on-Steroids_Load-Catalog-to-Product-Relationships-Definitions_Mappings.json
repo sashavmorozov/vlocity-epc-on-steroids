@@ -12,6 +12,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom2005",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -30,6 +32,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom2465",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -45,6 +49,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom7378",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -60,6 +66,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom2398",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -75,6 +83,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom3561",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -93,6 +103,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom200",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": true,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -108,6 +120,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom1573",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -124,6 +138,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom5973",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -139,6 +155,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom564",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -154,6 +172,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom3000",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -169,6 +189,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom3464",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -184,6 +206,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom3954",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -199,6 +223,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom7360",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -214,6 +240,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom5070",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
@@ -229,6 +257,8 @@
         "%vlocity_namespace%__MapId__c": "EPC on Steroids_Load Catalog to Product Relationships DefinitionsCustom1327",
         "%vlocity_namespace%__OMplusSyncEnabled__c": true,
         "%vlocity_namespace%__UpsertKey__c": false,
+        "IsLocked": false,
+        "MayEdit": true,
         "Name": "EPC on Steroids_Load Catalog to Product Relationships Definitions",
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"

@@ -43,6 +43,8 @@
     "%vlocity_namespace%__UseTranslations__c": false,
     "%vlocity_namespace%__XmlOutputSequence__c": "",
     "%vlocity_namespace%__XmlRemoveDeclaration__c": false,
+    "IsLocked": false,
+    "MayEdit": true,
     "Name": "EPC on Steroids_Load Layout Configuration Definitions",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__DRBundle__c",

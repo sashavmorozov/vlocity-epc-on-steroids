@@ -14,6 +14,8 @@
     "%vlocity_namespace%__PropertySet__c": "EPC_RegenerateLayoutsForObjectType_PropertySet.json",
     "%vlocity_namespace%__SubType__c": "RegenerateLayoutsForObjectType",
     "%vlocity_namespace%__Type__c": "EPC",
+    "IsLocked": false,
+    "MayEdit": true,
     "Name": "RegenerateLayoutsForObjectType",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
