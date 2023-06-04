@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+
+
+    <!-- PROFILES -->
+
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+
+    <!-- FIELDS -->
+
+    <types>
+        <members>vlocity_cmt__PicklistValue__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__PicklistValue__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__PicklistValue__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__PicklistValue__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__PicklistValue__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__PicklistValue__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__TimePlan__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__TimePlan__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__TimePlan__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__TimePlan__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__TimePlan__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__TimePlan__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__PriceList__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__PriceList__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__PriceList__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__PriceList__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__PriceList__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__PriceList__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__AttributeCategory__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__AttributeCategory__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__AttributeCategory__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__AttributeCategory__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__AttributeCategory__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__AttributeCategory__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__Catalog__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__Catalog__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__Catalog__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__Catalog__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__Catalog__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__Catalog__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__Promotion__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__Promotion__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__Promotion__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__Promotion__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__Promotion__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__Promotion__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__DecompositionRelationship__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__DecompositionRelationship__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__DecompositionRelationship__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__DecompositionRelationship__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__DecompositionRelationship__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__DecompositionRelationship__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__CatalogProductRelationship__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__CatalogProductRelationship__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__CatalogProductRelationship__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__CatalogProductRelationship__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__CatalogProductRelationship__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__CatalogProductRelationship__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__TimePolicy__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__TimePolicy__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__TimePolicy__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__TimePolicy__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__TimePolicy__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__TimePolicy__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__ObjectFieldAttribute__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__ObjectFieldAttribute__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__ObjectFieldAttribute__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__ObjectFieldAttribute__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__ObjectFieldAttribute__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__ObjectFieldAttribute__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__AttributeAssignment__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__AttributeAssignment__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__AttributeAssignment__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__AttributeAssignment__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__AttributeAssignment__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__AttributeAssignment__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__ObjectClass__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__ObjectClass__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__ObjectClass__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__ObjectClass__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__ObjectClass__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__ObjectClass__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__PricingElement__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__PricingElement__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__PricingElement__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__PricingElement__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__PricingElement__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__PricingElement__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__PromotionItem__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__PromotionItem__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__PromotionItem__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__PromotionItem__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__PromotionItem__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__PromotionItem__c.eos_Transaction_Timestamp__c</members>
+        <members>Product2.eos_Application_Version__c</members>
+        <members>Product2.eos_Last_Executed_By__c</members>
+        <members>Product2.eos_Spreadsheet_Name__c</members>
+        <members>Product2.eos_Spreadsheet_URL__c</members>
+        <members>Product2.eos_Transaction_ID__c</members>
+        <members>Product2.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__CatalogRelationship__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__CatalogRelationship__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__CatalogRelationship__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__CatalogRelationship__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__CatalogRelationship__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__CatalogRelationship__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__PriceListEntry__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__PriceListEntry__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__PriceListEntry__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__PriceListEntry__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__PriceListEntry__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__PriceListEntry__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__Picklist__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__Picklist__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__Picklist__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__Picklist__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__Picklist__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__Picklist__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__ProductChildItem__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__ProductChildItem__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__ProductChildItem__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__ProductChildItem__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__ProductChildItem__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__ProductChildItem__c.eos_Transaction_Timestamp__c</members>
+        <members>vlocity_cmt__Attribute__c.eos_Application_Version__c</members>
+        <members>vlocity_cmt__Attribute__c.eos_Last_Executed_By__c</members>
+        <members>vlocity_cmt__Attribute__c.eos_Spreadsheet_Name__c</members>
+        <members>vlocity_cmt__Attribute__c.eos_Spreadsheet_URL__c</members>
+        <members>vlocity_cmt__Attribute__c.eos_Transaction_ID__c</members>
+        <members>vlocity_cmt__Attribute__c.eos_Transaction_Timestamp__c</members>
+        <name>CustomField</name>
+    </types>
+
+
+    <!-- APEX CLASSES -->
+
+    <types>
+        <members>OtterEPCUtilsService</members>
+        <members>AttributeAssignmentFix</members>
+        <members>FixPicklistValuesUpdateJSON</members>
+        <members>OtterEPCUtils</members>
+        <members>DRUtils</members>
+        <members>VlocityMaintenanceJobsUtils</members>
+        <name>ApexClass</name>
+    </types>
+
+    <!-- CONNECTED APP -->
+
+    <types>
+        <members>Vlocity_EPC_on_Steroids</members>
+        <name>ConnectedApp</name>
+    </types>
+
+    <version>51.0</version>
+</Package>
+
+<!-- https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_types_list.htm#manifest_standard_objects -->

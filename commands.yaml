@@ -1,0 +1,31 @@
+
+sfdx force:project:create --projectname vlocity-epc-on-steroids
+sfdx auth:web:login -a cmt-eos-1.3-working-org
+sfdx auth:list
+
+#Retrieve saleforce metadata
+sfdx force:source:retrieve -x .\deployment_descriptors\sfdx\epc-on-steroids-first-install.xml -u cmt-eos-1.3-working-org
+sfdx force:source:retrieve -x .\deployment_descriptors\sfdx\epc-on-steroids-upgrade.xml -u cmt-eos-1.3-working-org
+
+#Retrieve vlocity data
+vlocity packExport -job .\deployment_descriptors\vdx\export.yaml "-sfdx.username" cmt-eos-1.3-working-org
+
+
+#Deploy salesforce metadata
+sfdx force:source:deploy -x .\deployment_descriptors\sfdx\epc-on-steroids-first-install.xml -u cmt-eos-1.3-working-org
+sfdx force:source:deploy -x .\deployment_descriptors\sfdx\epc-on-steroids-upgrade.xml -u cmt-eos-1.3-working-org
+
+#test me
+vlocity packDeploy -job .\deployment_descriptors\vdx\deploy.yaml "-sfdx.username" cmt-eos-1.3-working-org
+
+
+
+##### deploy vlocity
+sfdx auth:web:login -a cmt-eos-1.3-test
+sfdx force:source:deploy -x .\deployment_descriptors\sfdx\epc-on-steroids-first-install.xml -u cmt-eos-1.3-test
+vlocity packDeploy -job .\deployment_descriptors\vdx\deploy.yaml "-sfdx.username" cmt-eos-1.3-test
+
+#requires node.js
+#requires npm
+#requires vlocity npm
+#ref: https://medium.com/@sfdc247/getting-started-with-salesforce-vlocity-buildtool-f113c629ec2e

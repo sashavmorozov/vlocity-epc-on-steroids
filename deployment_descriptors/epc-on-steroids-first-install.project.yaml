@@ -1,80 +1,88 @@
 Name: epc-on-steroids-first-intall
 ignoreDependencies: false
 VlocityDataPackKeys:
-    - DataRaptor/EPC on Steroids_Get Id for Decomposition Relationships Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Object Types Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Offerings Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Offerings Structure Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Picklist Values Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Attribute-to-Object Type Assignments Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Attributes Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Catalog to Product Relationships Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Catalogs Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Catalogs Hierarchy Definitions
-    - DataRaptor/EPC on Steroids_Extract Specs Attribute Assignments Definitions
-    - DataRaptor/EPC on Steroids_Extract Specs Structure Definitions
-    - DataRaptor/EPC on Steroids_Extract Time Plans Definitions
-    - DataRaptor/EPC on Steroids_Extract Time Policies Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Attribute Categories Definitions
-    - DataRaptor/EPC on Steroids_Extract Offerings Definitions
-    - DataRaptor/EPC on Steroids_Extract Offerings Structure Definitions
-    - DataRaptor/EPC on Steroids_Extract Picklist Values Definitions
-    - DataRaptor/EPC on Steroids_Extract Picklists Definitions
-    - DataRaptor/EPC on Steroids_Extract Pricelist Elements-Adjustments Definitions
-    - DataRaptor/EPC on Steroids_Load Promotion Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Promotions Definitions
-    - DataRaptor/EPC on Steroids_Load Specifications Definitions
-    - DataRaptor/EPC on Steroids_Load Specs Attribute Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Specs Structure Definitions
-    - DataRaptor/EPC on Steroids_Extract Catalog to Product Relationships Definitions
-    - DataRaptor/EPC on Steroids_Extract Catalogs Definitions
-    - DataRaptor/EPC on Steroids_Extract Catalogs Hierarchy Definitions
-    - DataRaptor/EPC on Steroids_Extract Decomposition Relationships Definitions
-    - DataRaptor/EPC on Steroids_Extract Object Types Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Promotions Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Specifications Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Specs Structure Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Time Plans Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Promotion Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Decomposition Relationships Definitions
-    - DataRaptor/EPC on Steroids_Load Object Types Definitions
-    - DataRaptor/EPC on Steroids_Load Offerings Definitions
-    - DataRaptor/EPC on Steroids_Load Offerings Structure Definitions
-    - DataRaptor/EPC on Steroids_Load Picklist Values Definitions
-    - DataRaptor/EPC on Steroids_Load Time Plans Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Picklists Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Pricelist Elements-Adjustments Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Pricelist Elements-Charges Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Pricelists Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Pricing-Pricelist Entries Definitions
-    - DataRaptor/EPC on Steroids_Load Time Policies Definitions
-    - DataRaptor/EPC on Steroids_Load Picklists Definitions
-    - DataRaptor/EPC on Steroids_Load Pricelist Elements-Adjustments Definitions
-    - DataRaptor/EPC on Steroids_Load Pricelist Elements-Charges Definitions
-    - DataRaptor/EPC on Steroids_Load Pricelists Definitions
-    - DataRaptor/EPC on Steroids_Load Pricing-Pricelist Entries Definitions
-    - DataRaptor/EPC on Steroids_Extract Attribute Assignments Definitions
-    - DataRaptor/EPC on Steroids_Extract Attribute Categories Definitions
-    - DataRaptor/EPC on Steroids_Extract Attribute-to-Object Type Assignments Definitions
-    - DataRaptor/EPC on Steroids_Extract Attributes Definitions
-    - DataRaptor/EPC on Steroids_Extract Business Accounts
-    - DataRaptor/EPC on Steroids_Extract Pricelist Elements-Charges Definitions
-    - DataRaptor/EPC on Steroids_Extract Pricelists Definitions
-    - DataRaptor/EPC on Steroids_Extract Pricing-Pricelist Entries Definitions
-    - DataRaptor/EPC on Steroids_Extract Promotions Definitions
-    - DataRaptor/EPC on Steroids_Extract Specifications Definitions
-    - DataRaptor/EPC on Steroids_Get Id for Time Policies Definitions
-    - DataRaptor/EPC on Steroids_Load Attribute Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Attribute Categories Definitions
-    - DataRaptor/EPC on Steroids_Load Attribute-to-Object Type Assignments Definitions
-    - DataRaptor/EPC on Steroids_Load Attributes Definitions
-    - DataRaptor/EPC on Steroids_Load Business Accounts
-    - DataRaptor/EPC on Steroids_Load Catalog to Product Relationships Definitions
-    - DataRaptor/EPC on Steroids_Load Catalogs Definitions
-    - DataRaptor/EPC on Steroids_Load Catalogs Hierarchy Definitions
-    - DataRaptor/EPC on Steroids_Load Chunks for Offline Processing
-    - DataRaptor/EPC on Steroids_Load Contacts
-    - DataRaptor/EPC on Steroids_Extract Contacts
+    - DataRaptor/EOS_Extract Object Layouts
+    - DataRaptor/EOS_Extract Object Types
+    - DataRaptor/EOS_Extract Offerings
+    - DataRaptor/EOS_Extract Offerings Structure
+    - DataRaptor/EOS_Extract Picklist Values
+    - DataRaptor/EOS_Get Id for Promotion Assignments
+    - DataRaptor/EOS_Get Id for Promotions
+    - DataRaptor/EOS_Get Id for Specifications
+    - DataRaptor/EOS_Get Id for Specs Structure
+    - DataRaptor/EOS_Get Id for Time Plans
+    - DataRaptor/EOS_Get Id for Time Policies
+    - DataRaptor/EOS_Get Id for UI Facets
+    - DataRaptor/EOS_Get Id for UI Sections
+    - DataRaptor/EOS_Load Attribute Assignments
+    - DataRaptor/EOS_Load Attribute Categories
+    - DataRaptor/EOS_Extract Attribute Assignments
+    - DataRaptor/EOS_Extract Attribute Categories
+    - DataRaptor/EOS_Extract Attribute-to-Object Type A
+    - DataRaptor/EOS_Extract Attributes
+    - DataRaptor/EOS_Extract Business Accounts
+    - DataRaptor/EOS_Load Attribute-to-Object Type Assi
+    - DataRaptor/EOS_Load Attributes
+    - DataRaptor/EOS_Load Business Accounts
+    - DataRaptor/EOS_Load Catalog to Product Relationsh
+    - DataRaptor/EOS_Load Catalogs
+    - DataRaptor/EOS_Extract Picklists
+    - DataRaptor/EOS_Extract Pricelist Elements-Adjustm
+    - DataRaptor/EOS_Extract Pricelist Elements-Charges
+    - DataRaptor/EOS_Extract Pricelists
+    - DataRaptor/EOS_Extract Pricing-Pricelist Entries
+    - DataRaptor/EOS_Load Picklists
+    - DataRaptor/EOS_Load Pricelist Elements-Adjustment
+    - DataRaptor/EOS_Load Pricelist Elements-Charges
+    - DataRaptor/EOS_Load Pricelists
+    - DataRaptor/EOS_Load Pricing-Pricelist Entries
+    - DataRaptor/EOS_Load Time Plans
+    - DataRaptor/EOS_Load Time Policies
+    - DataRaptor/EOS_Load UI Facets
+    - DataRaptor/EOS_Load UI Sections
+    - DataRaptor/EOS_Get Id for Attributes
+    - DataRaptor/EOS_Get Id for Catalog to Product Rela
+    - DataRaptor/EOS_Get Id for Catalogs
+    - DataRaptor/EOS_Get Id for Catalogs Hierarchy
+    - DataRaptor/EOS_Get Id for Decomposition Relations
+    - DataRaptor/EOS_Extract Catalog to Product Relatio
+    - DataRaptor/EOS_Extract Catalogs
+    - DataRaptor/EOS_Extract Catalogs Hierarchy
+    - DataRaptor/EOS_Extract Contacts
+    - DataRaptor/EOS_Extract Decomposition Relationship
+    - DataRaptor/EOS_Get Id for Picklists
+    - DataRaptor/EOS_Get Id for Pricelist Elements-Adju
+    - DataRaptor/EOS_Get Id for Pricelist Elements-Char
+    - DataRaptor/EOS_Get Id for Pricelists
+    - DataRaptor/EOS_Get Id for Pricing-Pricelist Entri
+    - DataRaptor/EOS_Get Id for Object Layouts
+    - DataRaptor/EOS_Get Id for Object Types
+    - DataRaptor/EOS_Get Id for Offerings
+    - DataRaptor/EOS_Get Id for Offerings Structure
+    - DataRaptor/EOS_Get Id for Picklist Values
+    - DataRaptor/EOS_Load Catalogs Hierarchy
+    - DataRaptor/EOS_Load Contacts
+    - DataRaptor/EOS_Load Decomposition Relationships
+    - DataRaptor/EOS_Load Layout Configuration
+    - DataRaptor/EOS_Extract Promotions
+    - DataRaptor/EOS_Extract Specifications
+    - DataRaptor/EOS_Extract Specs Attribute Assignment
+    - DataRaptor/EOS_Extract Specs Structure
+    - DataRaptor/EOS_Extract Time Plans
+    - DataRaptor/EOS_Load Promotion Assignments
+    - DataRaptor/EOS_Load Promotions
+    - DataRaptor/EOS_Load Specifications
+    - DataRaptor/EOS_Load Specs Attribute Assignments
+    - DataRaptor/EOS_Load Specs Structure
+    - DataRaptor/EOS_Extract Time Policies
+    - DataRaptor/EOS_Extract UI Facets
+    - DataRaptor/EOS_Extract UI Sections
+    - DataRaptor/EOS_Get Id for Attribute Categories
+    - DataRaptor/EOS_Load Object Layouts
+    - DataRaptor/EOS_Load Object Types
+    - DataRaptor/EOS_Load Offerings
+    - DataRaptor/EOS_Load Offerings Structure
+    - DataRaptor/EOS_Load Picklist Values
     - IntegrationProcedure/EPC_RegenerateJSONAttributes
     - IntegrationProcedure/EOS_startProductHierarchyJob
     - IntegrationProcedure/EPC_LoadGenericEPCDefinitions
