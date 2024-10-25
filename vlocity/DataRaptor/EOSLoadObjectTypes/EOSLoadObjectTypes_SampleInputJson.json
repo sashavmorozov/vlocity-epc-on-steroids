@@ -1,0 +1,60 @@
+{
+    "Object Types": [
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-05-01",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base Generic Object Type",
+            "Parent Object Type": ""
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base Product Spec Object Type",
+            "Parent Object Type": "Base Generic Object Type"
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base CFS Spec Object Type",
+            "Parent Object Type": "Base Generic Object Type"
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Base RFS Spec Object Type",
+            "Parent Object Type": "Base Generic Object Type"
+        },
+        {
+            "Active": true,
+            "Checked": true,
+            "Effective From": "2019-04-30",
+            "Effective Until": "2029-04-30",
+            "Lifecycle Details": "",
+            "Object Type": "Object Type with Layout",
+            "Parent Object Type": "Base Generic Object Type"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "1.0",
+        "Executed By": "amorozov@salesforce.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20210822-1.3-WIP",
+        "Spreadsheet URL": "https://docs.google.com/spreadsheets/d/1GJTJp-uLV3uRhIv9Ar0ywhiCpFy7ZcDRezNCUmJqEXk/edit",
+        "Transaction ID": "3728f78b-618a-4db7-9419-2018915225f8",
+        "Transaction Timestamp": "10/09/2021@14:20:17GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_LoadObjectTypes Definitions",
+    "entityName": "Object Types"
+}

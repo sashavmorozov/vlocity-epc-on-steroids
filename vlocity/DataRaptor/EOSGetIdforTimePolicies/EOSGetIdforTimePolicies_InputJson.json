@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "Active": true,
+            "Checked": true,
+            "Delay Offset": "",
+            "Delay Offset UoM": "",
+            "Description": "Active immediately",
+            "Effective End Date": "01/01/2099",
+            "Effective Start Date": "01/01/2019",
+            "End Policy": "End of Plan Duration",
+            "End Prorateable": true,
+            "Start Policy": "Purchase Date",
+            "Start Prorateable": true,
+            "Start Time Delayed": false,
+            "Time Policy Code": "VEPC_TIMEPOLICY_TP_YY",
+            "Time Policy Name": "TP-YY"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforTimePolicies Definitions"
+}

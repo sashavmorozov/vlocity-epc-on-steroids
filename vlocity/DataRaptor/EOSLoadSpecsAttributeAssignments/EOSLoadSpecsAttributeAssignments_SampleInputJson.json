@@ -1,0 +1,61 @@
+{
+    "Specs Attribute Assignments": [
+        {
+            "Assetizable": true,
+            "Attribute Category Name": "Generic Attributes",
+            "Attribute Code": "VEPC_ATTR_EOSDEMO_ATTRIBUTE_TEXT",
+            "Attribute Name": "EOS. Demo Attribute - Text",
+            "Behaviors": "",
+            "Checked": true,
+            "Config": "",
+            "Display Name": "EOS. Demo Attribute - Text",
+            "Encrypted": false,
+            "Has Rules": true,
+            "Hidden": false,
+            "Picklist": "",
+            "Picklist Code": "",
+            "Read Only": false,
+            "Required": false,
+            "Sequence": 10,
+            "Spec": "EoS. Sample CFS Spec",
+            "Spec Code": "VEPC_SPEC_EOSSAMPLE_CFS_SPEC",
+            "Translatable": true,
+            "Value": "Exacto_Text",
+            "Value Type": "Text"
+        },
+        {
+            "Assetizable": true,
+            "Attribute Category Name": "Generic Attributes",
+            "Attribute Code": "VEPC_ATTR_EOSDEMO_ATTRIBUTE_NUMBER",
+            "Attribute Name": "EOS. Demo Attribute - Number",
+            "Behaviors": "",
+            "Checked": true,
+            "Config": "",
+            "Display Name": "EOS. Demo Attribute - Number",
+            "Encrypted": true,
+            "Has Rules": false,
+            "Hidden": true,
+            "Picklist": "",
+            "Picklist Code": "",
+            "Read Only": false,
+            "Required": false,
+            "Sequence": 20,
+            "Spec": "EoS. Sample CFS Spec",
+            "Spec Code": "VEPC_SPEC_EOSSAMPLE_CFS_SPEC",
+            "Translatable": true,
+            "Value": 333,
+            "Value Type": "Number"
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.7",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20200120-7-WIP",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1YcVjpnzpx5LqhqPglQBWR-o-4jjErV3lP1EdW_x2tMY/edit",
+        "Transaction ID": "af4fb113-adaf-4cee-bdf4-2a58fcd1e166",
+        "Transaction Timestamp": "21/03/2020@22:34:53GMT"
+    },
+    "chunkNumber": 0,
+    "dataRaptorName": "EPC on Steroids_LoadSpecsAttributeAssignments Definitions",
+    "entityName": "Specs Attribute Assignments"
+}

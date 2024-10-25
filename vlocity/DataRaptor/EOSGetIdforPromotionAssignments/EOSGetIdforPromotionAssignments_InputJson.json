@@ -1,0 +1,42 @@
+{
+    "data": [
+        {
+            "Action Type": "Add",
+            "Active": true,
+            "Applied to Product": "EoS. Sample Child Offer 2",
+            "Applied to Product (Code)": "VEPC_OFFERING_EOSSAMPLE_CHILD_OFFER_2",
+            "Base Price": false,
+            "Cardinality": "",
+            "Cardinality Scope Check": "Context Product Scope",
+            "Checked": true,
+            "Def": 1,
+            "Display Text": "10.00%  Off",
+            "Effective From": "30/04/2019",
+            "Effective Until": "30/04/2029",
+            "General Properties": "",
+            "Is Override": false,
+            "Lifecycle Details": "",
+            "Max": 1,
+            "Min": 1,
+            "Notes": "",
+            "Parent Offer Product": "EoS. Sample Root Offer",
+            "Parent Offer Product Code": "VEPC_OFFERING_EOSSAMPLE_ROOT_OFFER",
+            "Price Alteration": "",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricing Element": "OTC-ADJ-PCT-10.00-PCT",
+            "Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
+            "Promotion Name": "10% Off Promotion",
+            "Selection Context Product": "",
+            "Selection Context Product Code": "",
+            "Selection Criteria": "",
+            "Time Plan": "TP-1M",
+            "Time Policy": "TP-YY",
+            "Undoable": true,
+            "Undoable Message": "You can undo this promotion, cool!",
+            "Update Scope": "Update Item and Child Items",
+            "Virtual Price": false
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforPromotionAssignments Definitions"
+}
