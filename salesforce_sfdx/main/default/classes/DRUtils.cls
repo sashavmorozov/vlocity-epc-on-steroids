@@ -1,4 +1,13 @@
-global with sharing class DRUtils implements vlocity_cmt.VlocityOpenInterface {
+global with sharing class DRUtils implements Callable {
+        
+    public Object call(String action, Map<String, Object> args) {
+
+        Map<String, Object> input = (Map<String, Object>)args.get('input');
+        Map<String, Object> output = (Map<String, Object>)args.get('output');
+        Map<String, Object> options = (Map<String, Object>)args.get('options');
+
+        return invokeMethod(action, input, output, options);
+    }
 
     global Boolean invokeMethod(String methodName, Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
         Boolean result = true;
