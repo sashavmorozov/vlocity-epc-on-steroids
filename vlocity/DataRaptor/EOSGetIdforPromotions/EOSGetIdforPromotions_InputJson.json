@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "Active": true,
+            "Auto-Add Products": true,
+            "Checked": true,
+            "Commitment Duration Time Plan": "TP-1D",
+            "Commitment Duration Time Policy": "TP-YY",
+            "Description": "10% Off Promotion",
+            "Effective From": "30/04/2019",
+            "Effective Until": "30/04/2029",
+            "Follow-on Promotion": "60% Off Promotion",
+            "Follow-on Promotion Code": "VEPC_PROMO_60_OFF_PROMOTION",
+            "Orderable": true,
+            "Penalty Context Rule Set": "EOS. Demo RS PENALTY 1",
+            "Price List": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Promotion Code": "VEPC_PROMO_10_OFF_PROMOTION",
+            "Promotion Name": "10% Off Promotion",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
+            "Redeemable Code": "VEPC-PROMO-10P",
+            "Service Continuation": "Manual Opt-In"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforPromotions Definitions"
+}

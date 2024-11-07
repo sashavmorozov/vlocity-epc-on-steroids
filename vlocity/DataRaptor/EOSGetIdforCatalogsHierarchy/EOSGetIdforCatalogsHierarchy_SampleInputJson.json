@@ -1,0 +1,13 @@
+{
+    "data": [
+        {
+            "Checked": true,
+            "Child Catalog Code": "VEPC_CATALOG_EOSSAMPLE_CHILD_CATALOG_1",
+            "Child Catalog Name": "EoS. Sample Child Catalog 1",
+            "Parent Catalog Code": "VEPC_CATALOG_EOSSAMPLE_ROOT_CATALOG",
+            "Parent Catalog Name": "EoS. Sample Root Catalog",
+            "Sequence Number": 10
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforCatalogsHierarchy Definitions"
+}

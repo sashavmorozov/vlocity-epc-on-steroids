@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "Cardinality": "",
+            "Checked": true,
+            "Child Offer": "EoS. Sample Child Offer 1.1",
+            "Child Offer Code": "VEPC_OFFERING_EOSSAMPLE_CHILD_OFFER_1_1",
+            "Collapse Hierarchy": false,
+            "Def": 1,
+            "Flags": "",
+            "Max": 1,
+            "Min": 1,
+            "Override Mode": "Not Applicable",
+            "Parent Offer": "EoS. Sample Child Offer 1",
+            "Parent Offer Code": "VEPC_OFFERING_EOSSAMPLE_CHILD_OFFER_1",
+            "Relationship Type": "Child",
+            "Sequence": 10,
+            "Virtual Item": false
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforOfferingsStructure Definitions"
+}

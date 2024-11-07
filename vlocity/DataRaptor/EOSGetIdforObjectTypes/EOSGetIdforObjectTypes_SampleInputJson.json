@@ -1,0 +1,11 @@
+{
+    "data": [
+        {
+            "Checked": true,
+            "Description": "Base object type to act as a root for all object types under Product2",
+            "Object Type": "Base Generic Object Type",
+            "Parent Object Type": ""
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforObjectTypes Definitions"
+}

@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "Amount": 1,
+            "Checked": true,
+            "Currency Code": "EUR",
+            "Display Text": "EUR1.00",
+            "Pricelist": 2020,
+            "Pricelist Code": "VEPC_PRICELIST_2020",
+            "Pricing Element Code": "VEPC_PLE_CHARGE_MRC_1_00_EUR",
+            "Pricing Element Name": "MRC-1.00-EUR",
+            "Pricing Variable": "Recurring Monthly Std Price"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforPricelistElementsCharges Definitions"
+}

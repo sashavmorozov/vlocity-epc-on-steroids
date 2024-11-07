@@ -4,8 +4,8 @@
     "%vlocity_namespace%__DisableMetadataCache__c": false,
     "%vlocity_namespace%__ElementTypeToHTMLTemplateList__c": "{\"ElementTypeToHTMLTemplateList\":[]}",
     "%vlocity_namespace%__Element__c": [
-        "EOS_startProductHierarchyJob_Element_Invoke-Console-Controller.json",
-        "EOS_startProductHierarchyJob_Element_Generate-Response.json"
+        "EOSstartProductHierarchyJob_Element_Invoke-Console-Controller.json",
+        "EOSstartProductHierarchyJob_Element_Generate-Response.json"
     ],
     "%vlocity_namespace%__IsLwcEnabled__c": false,
     "%vlocity_namespace%__IsProcedure__c": true,
@@ -13,8 +13,8 @@
     "%vlocity_namespace%__IsTest__c": false,
     "%vlocity_namespace%__Language__c": "Procedure",
     "%vlocity_namespace%__OmniProcessType__c": "Integration Procedure",
-    "%vlocity_namespace%__ProcedureKey__c": "EOS_startProductHierarchyJob",
-    "%vlocity_namespace%__PropertySet__c": "EOS_startProductHierarchyJob_PropertySet.json",
+    "%vlocity_namespace%__ProcedureKey__c": "EOSstartProductHierarchyJob",
+    "%vlocity_namespace%__PropertySet__c": "EOSstartProductHierarchyJob_PropertySet.json",
     "%vlocity_namespace%__SubType__c": "startProductHierarchyJob",
     "%vlocity_namespace%__Type__c": "EOS",
     "IsLocked": false,

@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "Additional Properties": "",
+            "Assetizable": true,
+            "Checked": true,
+            "Customer Category": "",
+            "Description": "Offering description 99",
+            "Distribution Channel": "",
+            "End of Life Date": "30/04/2029",
+            "Excludes": "",
+            "Family": "Sample Family 1",
+            "Fulfillment Start Date": "30/06/2019",
+            "Is Class": false,
+            "Lifecycle Details": "",
+            "Market": "",
+            "Object Type": "Base Product Spec Object Type",
+            "Offering Code": "VEPC_OFFERING_EOSSAMPLE_CHILD_OFFER_1",
+            "Offering Name": "EoS. Sample Child Offer 1",
+            "Orderable": true,
+            "Parent Class": "",
+            "Qualification Context Rule Set": "EOS. Demo RS QUAL 1",
+            "Requires": "",
+            "Scope": "Order Item",
+            "Selling End Date": "30/04/2029",
+            "Selling Start Date": "30/04/2019",
+            "Specification Type": "Offer",
+            "Status": "Active",
+            "Sub-Type": "Sample Sub-Type",
+            "Type": "Sample Type"
+        }
+    ],
+    "dataRaptorName": "EPC on Steroids_GetIdforOfferings Definitions"
+}

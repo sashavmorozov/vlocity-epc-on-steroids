@@ -1,0 +1,27 @@
+{
+    "Attribute Categories": [
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_GENERIC_ATTRIBUTES",
+            "Attribute Category Name": "Generic Attributes",
+            "Checked": true,
+            "Description": "Group for any attribute that does not fit to any specialized attribute group",
+            "Sequence": 7000
+        },
+        {
+            "Attribute Category Code": "VEPC_ATTRIBUTE_CATEGORY_SHIPPING_DETAILS",
+            "Attribute Category Name": "Shipping Details",
+            "Checked": true,
+            "Description": "Attributes related to delivery request",
+            "Sequence": 7010
+        }
+    ],
+    "Transaction Details": {
+        "Application Version": "0.4",
+        "Executed By": "amorozov@vlocity.com",
+        "Spreadsheet Name": "Vlocity.EPC on Steroids.Offering Catalog Bootstrap-20191123-4-work in progress",
+        "Spreadsheet URL": "https://docs.google.com/a/vlocity.com/spreadsheets/d/1OPzJnwcZdeBroGmd5to3feq5g1J7CQHxLRAnEr_S7R8/edit",
+        "Transaction ID": "c0309f18-a0e6-4760-ba81-257edb80ac41",
+        "Transaction Timestamp": "30/11/2019@20:57:25GMT"
+    },
+    "dataRaptorName": "EPC on Steroids_LoadAttributeCategories Definitions"
+}
