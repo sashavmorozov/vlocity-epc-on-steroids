@@ -13,7 +13,7 @@ Collaboration and versioning capabilities are backed by Google Spreadsheets engi
 
 ![image](https://user-images.githubusercontent.com/46906391/87882685-20f69e00-ca02-11ea-8755-4d8b27aaf64c.png)
 
-Get your copy and start managing the catalog configurations with a breeze. For more details, please check the [First Call Deck](https://docs.google.com/presentation/d/1nqFemAhbt3S-nE7Kg2RmVjaPPPJegXy7TRBk6yDYBFo/edit?usp=sharing).
+Get your copy and start managing the catalog configurations with a breeze. For more details, please check the [First Call Deck](https://drive.google.com/file/d/10ZGnw3w4d-xXKkZQnMxvQH1zz4fPhTXZ/view?usp=sharing).
 
 ## Safe Harbor
 Safe harbor, the EPC on Steroids application is not an official Salesforce product, we make no guarantees on the safety, security, or maintenance of the project or the deployed app and customers should not base their purchasing decision on the current feature set or future roadmap of this application.
