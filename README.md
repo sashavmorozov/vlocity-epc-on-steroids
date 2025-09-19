@@ -1,5 +1,11 @@
 # EPC on Steroids
 
+> [!IMPORTANT]  
+> **EPC on Steroids** was built to accelerate **catalog management automation** for the Salesforce Communications Cloud (formerly Vlocity) managed package. 
+>   
+> Looking for the same streamlined experience in the new **Salesforce Revenue Cloud**?  
+> Explore **Catalogic** [catalogic.futuresimple.nl](https://catalogic.futuresimple.nl/)  
+
 ## Overview
 The EPC on Steroids is a "smart" Google spreadsheet that can dramatically improve the ways how you document, implement and operate catalog-driven solutions with Vlocity Product Caralog. 
 
